@@ -1,0 +1,59 @@
+enum Role {
+	SysAdmin
+	Admin
+	Employee
+	User
+}
+
+enum Position {
+	Manager
+	Cashier
+	Technician
+	Admin
+	Driver
+	Agent
+}
+
+enum Gender {
+	Female
+	Male
+}
+
+enum BranchType {
+	Head Quarters
+	Store
+	Warehouse
+	Main Branch
+}
+
+enum ProductType {
+	Item
+	Service
+}
+
+enum TransactionType {
+	Sales
+	Expenses
+}
+
+enum OrderStatus {
+	Cart
+	Confirmed
+}
+
+enum DeliveryStatus {
+	Packaging
+	Delivering
+	Received
+}
+
+enum AttributeType {
+	Color
+	Size
+	Volume
+	Weight
+	Length
+	Width
+	Height
+	Voltage
+}

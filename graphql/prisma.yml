@@ -1,6 +1,9 @@
 endpoint: http://localhost:4466
-datamodel: datamodel.prisma
-
+#datamodel: datamodel.prisma
+datamodel:
+  - ${env:MODEL_TYPES}
+  - ${env:MODEL_ENUMS}
+# secret: ${env:GRAPHQL_KEY}
 generate:
   - generator: javascript-client
     output: ./generated/prisma-client/

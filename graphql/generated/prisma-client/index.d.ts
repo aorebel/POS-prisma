@@ -14,6 +14,28 @@ export type AtLeastOne<T, U = { [K in keyof T]: Pick<T, K> }> = Partial<T> &
   U[keyof U];
 
 export interface Exists {
+  address: (where?: AddressWhereInput) => Promise<boolean>;
+  attribute: (where?: AttributeWhereInput) => Promise<boolean>;
+  branch: (where?: BranchWhereInput) => Promise<boolean>;
+  brand: (where?: BrandWhereInput) => Promise<boolean>;
+  category: (where?: CategoryWhereInput) => Promise<boolean>;
+  company: (where?: CompanyWhereInput) => Promise<boolean>;
+  contactInfo: (where?: ContactInfoWhereInput) => Promise<boolean>;
+  delivery: (where?: DeliveryWhereInput) => Promise<boolean>;
+  file: (where?: FileWhereInput) => Promise<boolean>;
+  inventory: (where?: InventoryWhereInput) => Promise<boolean>;
+  item: (where?: ItemWhereInput) => Promise<boolean>;
+  log: (where?: LogWhereInput) => Promise<boolean>;
+  order: (where?: OrderWhereInput) => Promise<boolean>;
+  product: (where?: ProductWhereInput) => Promise<boolean>;
+  productSrp: (where?: ProductSrpWhereInput) => Promise<boolean>;
+  profile: (where?: ProfileWhereInput) => Promise<boolean>;
+  purchasePrice: (where?: PurchasePriceWhereInput) => Promise<boolean>;
+  qRCode: (where?: QRCodeWhereInput) => Promise<boolean>;
+  quote: (where?: QuoteWhereInput) => Promise<boolean>;
+  stock: (where?: StockWhereInput) => Promise<boolean>;
+  subCategory: (where?: SubCategoryWhereInput) => Promise<boolean>;
+  transaction: (where?: TransactionWhereInput) => Promise<boolean>;
   user: (where?: UserWhereInput) => Promise<boolean>;
 }
 
@@ -36,6 +58,501 @@ export interface Prisma {
    * Queries
    */
 
+  addresses: (
+    args?: {
+      where?: AddressWhereInput;
+      orderBy?: AddressOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<Address>;
+  addressesConnection: (
+    args?: {
+      where?: AddressWhereInput;
+      orderBy?: AddressOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => AddressConnectionPromise;
+  attributes: (
+    args?: {
+      where?: AttributeWhereInput;
+      orderBy?: AttributeOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<Attribute>;
+  attributesConnection: (
+    args?: {
+      where?: AttributeWhereInput;
+      orderBy?: AttributeOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => AttributeConnectionPromise;
+  branch: (where: BranchWhereUniqueInput) => BranchPromise;
+  branches: (
+    args?: {
+      where?: BranchWhereInput;
+      orderBy?: BranchOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<Branch>;
+  branchesConnection: (
+    args?: {
+      where?: BranchWhereInput;
+      orderBy?: BranchOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => BranchConnectionPromise;
+  brand: (where: BrandWhereUniqueInput) => BrandPromise;
+  brands: (
+    args?: {
+      where?: BrandWhereInput;
+      orderBy?: BrandOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<Brand>;
+  brandsConnection: (
+    args?: {
+      where?: BrandWhereInput;
+      orderBy?: BrandOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => BrandConnectionPromise;
+  category: (where: CategoryWhereUniqueInput) => CategoryPromise;
+  categories: (
+    args?: {
+      where?: CategoryWhereInput;
+      orderBy?: CategoryOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<Category>;
+  categoriesConnection: (
+    args?: {
+      where?: CategoryWhereInput;
+      orderBy?: CategoryOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => CategoryConnectionPromise;
+  company: (where: CompanyWhereUniqueInput) => CompanyPromise;
+  companies: (
+    args?: {
+      where?: CompanyWhereInput;
+      orderBy?: CompanyOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<Company>;
+  companiesConnection: (
+    args?: {
+      where?: CompanyWhereInput;
+      orderBy?: CompanyOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => CompanyConnectionPromise;
+  contactInfo: (where: ContactInfoWhereUniqueInput) => ContactInfoPromise;
+  contactInfoes: (
+    args?: {
+      where?: ContactInfoWhereInput;
+      orderBy?: ContactInfoOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<ContactInfo>;
+  contactInfoesConnection: (
+    args?: {
+      where?: ContactInfoWhereInput;
+      orderBy?: ContactInfoOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => ContactInfoConnectionPromise;
+  deliveries: (
+    args?: {
+      where?: DeliveryWhereInput;
+      orderBy?: DeliveryOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<Delivery>;
+  deliveriesConnection: (
+    args?: {
+      where?: DeliveryWhereInput;
+      orderBy?: DeliveryOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => DeliveryConnectionPromise;
+  files: (
+    args?: {
+      where?: FileWhereInput;
+      orderBy?: FileOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<File>;
+  filesConnection: (
+    args?: {
+      where?: FileWhereInput;
+      orderBy?: FileOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FileConnectionPromise;
+  inventories: (
+    args?: {
+      where?: InventoryWhereInput;
+      orderBy?: InventoryOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<Inventory>;
+  inventoriesConnection: (
+    args?: {
+      where?: InventoryWhereInput;
+      orderBy?: InventoryOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => InventoryConnectionPromise;
+  items: (
+    args?: {
+      where?: ItemWhereInput;
+      orderBy?: ItemOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<Item>;
+  itemsConnection: (
+    args?: {
+      where?: ItemWhereInput;
+      orderBy?: ItemOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => ItemConnectionPromise;
+  logs: (
+    args?: {
+      where?: LogWhereInput;
+      orderBy?: LogOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<Log>;
+  logsConnection: (
+    args?: {
+      where?: LogWhereInput;
+      orderBy?: LogOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => LogConnectionPromise;
+  orders: (
+    args?: {
+      where?: OrderWhereInput;
+      orderBy?: OrderOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<Order>;
+  ordersConnection: (
+    args?: {
+      where?: OrderWhereInput;
+      orderBy?: OrderOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => OrderConnectionPromise;
+  product: (where: ProductWhereUniqueInput) => ProductPromise;
+  products: (
+    args?: {
+      where?: ProductWhereInput;
+      orderBy?: ProductOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<Product>;
+  productsConnection: (
+    args?: {
+      where?: ProductWhereInput;
+      orderBy?: ProductOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => ProductConnectionPromise;
+  productSrps: (
+    args?: {
+      where?: ProductSrpWhereInput;
+      orderBy?: ProductSrpOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<ProductSrp>;
+  productSrpsConnection: (
+    args?: {
+      where?: ProductSrpWhereInput;
+      orderBy?: ProductSrpOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => ProductSrpConnectionPromise;
+  profile: (where: ProfileWhereUniqueInput) => ProfilePromise;
+  profiles: (
+    args?: {
+      where?: ProfileWhereInput;
+      orderBy?: ProfileOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<Profile>;
+  profilesConnection: (
+    args?: {
+      where?: ProfileWhereInput;
+      orderBy?: ProfileOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => ProfileConnectionPromise;
+  purchasePrices: (
+    args?: {
+      where?: PurchasePriceWhereInput;
+      orderBy?: PurchasePriceOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<PurchasePrice>;
+  purchasePricesConnection: (
+    args?: {
+      where?: PurchasePriceWhereInput;
+      orderBy?: PurchasePriceOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => PurchasePriceConnectionPromise;
+  qRCode: (where: QRCodeWhereUniqueInput) => QRCodePromise;
+  qRCodes: (
+    args?: {
+      where?: QRCodeWhereInput;
+      orderBy?: QRCodeOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<QRCode>;
+  qRCodesConnection: (
+    args?: {
+      where?: QRCodeWhereInput;
+      orderBy?: QRCodeOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => QRCodeConnectionPromise;
+  quotes: (
+    args?: {
+      where?: QuoteWhereInput;
+      orderBy?: QuoteOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<Quote>;
+  quotesConnection: (
+    args?: {
+      where?: QuoteWhereInput;
+      orderBy?: QuoteOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => QuoteConnectionPromise;
+  stock: (where: StockWhereUniqueInput) => StockPromise;
+  stocks: (
+    args?: {
+      where?: StockWhereInput;
+      orderBy?: StockOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<Stock>;
+  stocksConnection: (
+    args?: {
+      where?: StockWhereInput;
+      orderBy?: StockOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => StockConnectionPromise;
+  subCategory: (where: SubCategoryWhereUniqueInput) => SubCategoryPromise;
+  subCategories: (
+    args?: {
+      where?: SubCategoryWhereInput;
+      orderBy?: SubCategoryOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<SubCategory>;
+  subCategoriesConnection: (
+    args?: {
+      where?: SubCategoryWhereInput;
+      orderBy?: SubCategoryOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => SubCategoryConnectionPromise;
+  transaction: (where: TransactionWhereUniqueInput) => TransactionPromise;
+  transactions: (
+    args?: {
+      where?: TransactionWhereInput;
+      orderBy?: TransactionOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => FragmentableArray<Transaction>;
+  transactionsConnection: (
+    args?: {
+      where?: TransactionWhereInput;
+      orderBy?: TransactionOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => TransactionConnectionPromise;
   user: (where: UserWhereUniqueInput) => UserPromise;
   users: (
     args?: {
@@ -65,6 +582,260 @@ export interface Prisma {
    * Mutations
    */
 
+  createAddress: (data: AddressCreateInput) => AddressPromise;
+  updateManyAddresses: (
+    args: { data: AddressUpdateManyMutationInput; where?: AddressWhereInput }
+  ) => BatchPayloadPromise;
+  deleteManyAddresses: (where?: AddressWhereInput) => BatchPayloadPromise;
+  createAttribute: (data: AttributeCreateInput) => AttributePromise;
+  updateManyAttributes: (
+    args: {
+      data: AttributeUpdateManyMutationInput;
+      where?: AttributeWhereInput;
+    }
+  ) => BatchPayloadPromise;
+  deleteManyAttributes: (where?: AttributeWhereInput) => BatchPayloadPromise;
+  createBranch: (data: BranchCreateInput) => BranchPromise;
+  updateBranch: (
+    args: { data: BranchUpdateInput; where: BranchWhereUniqueInput }
+  ) => BranchPromise;
+  updateManyBranches: (
+    args: { data: BranchUpdateManyMutationInput; where?: BranchWhereInput }
+  ) => BatchPayloadPromise;
+  upsertBranch: (
+    args: {
+      where: BranchWhereUniqueInput;
+      create: BranchCreateInput;
+      update: BranchUpdateInput;
+    }
+  ) => BranchPromise;
+  deleteBranch: (where: BranchWhereUniqueInput) => BranchPromise;
+  deleteManyBranches: (where?: BranchWhereInput) => BatchPayloadPromise;
+  createBrand: (data: BrandCreateInput) => BrandPromise;
+  updateBrand: (
+    args: { data: BrandUpdateInput; where: BrandWhereUniqueInput }
+  ) => BrandPromise;
+  updateManyBrands: (
+    args: { data: BrandUpdateManyMutationInput; where?: BrandWhereInput }
+  ) => BatchPayloadPromise;
+  upsertBrand: (
+    args: {
+      where: BrandWhereUniqueInput;
+      create: BrandCreateInput;
+      update: BrandUpdateInput;
+    }
+  ) => BrandPromise;
+  deleteBrand: (where: BrandWhereUniqueInput) => BrandPromise;
+  deleteManyBrands: (where?: BrandWhereInput) => BatchPayloadPromise;
+  createCategory: (data: CategoryCreateInput) => CategoryPromise;
+  updateCategory: (
+    args: { data: CategoryUpdateInput; where: CategoryWhereUniqueInput }
+  ) => CategoryPromise;
+  updateManyCategories: (
+    args: { data: CategoryUpdateManyMutationInput; where?: CategoryWhereInput }
+  ) => BatchPayloadPromise;
+  upsertCategory: (
+    args: {
+      where: CategoryWhereUniqueInput;
+      create: CategoryCreateInput;
+      update: CategoryUpdateInput;
+    }
+  ) => CategoryPromise;
+  deleteCategory: (where: CategoryWhereUniqueInput) => CategoryPromise;
+  deleteManyCategories: (where?: CategoryWhereInput) => BatchPayloadPromise;
+  createCompany: (data: CompanyCreateInput) => CompanyPromise;
+  updateCompany: (
+    args: { data: CompanyUpdateInput; where: CompanyWhereUniqueInput }
+  ) => CompanyPromise;
+  updateManyCompanies: (
+    args: { data: CompanyUpdateManyMutationInput; where?: CompanyWhereInput }
+  ) => BatchPayloadPromise;
+  upsertCompany: (
+    args: {
+      where: CompanyWhereUniqueInput;
+      create: CompanyCreateInput;
+      update: CompanyUpdateInput;
+    }
+  ) => CompanyPromise;
+  deleteCompany: (where: CompanyWhereUniqueInput) => CompanyPromise;
+  deleteManyCompanies: (where?: CompanyWhereInput) => BatchPayloadPromise;
+  createContactInfo: (data: ContactInfoCreateInput) => ContactInfoPromise;
+  updateContactInfo: (
+    args: { data: ContactInfoUpdateInput; where: ContactInfoWhereUniqueInput }
+  ) => ContactInfoPromise;
+  updateManyContactInfoes: (
+    args: {
+      data: ContactInfoUpdateManyMutationInput;
+      where?: ContactInfoWhereInput;
+    }
+  ) => BatchPayloadPromise;
+  upsertContactInfo: (
+    args: {
+      where: ContactInfoWhereUniqueInput;
+      create: ContactInfoCreateInput;
+      update: ContactInfoUpdateInput;
+    }
+  ) => ContactInfoPromise;
+  deleteContactInfo: (where: ContactInfoWhereUniqueInput) => ContactInfoPromise;
+  deleteManyContactInfoes: (
+    where?: ContactInfoWhereInput
+  ) => BatchPayloadPromise;
+  createDelivery: (data: DeliveryCreateInput) => DeliveryPromise;
+  updateManyDeliveries: (
+    args: { data: DeliveryUpdateManyMutationInput; where?: DeliveryWhereInput }
+  ) => BatchPayloadPromise;
+  deleteManyDeliveries: (where?: DeliveryWhereInput) => BatchPayloadPromise;
+  createFile: (data: FileCreateInput) => FilePromise;
+  updateManyFiles: (
+    args: { data: FileUpdateManyMutationInput; where?: FileWhereInput }
+  ) => BatchPayloadPromise;
+  deleteManyFiles: (where?: FileWhereInput) => BatchPayloadPromise;
+  createInventory: (data: InventoryCreateInput) => InventoryPromise;
+  deleteManyInventories: (where?: InventoryWhereInput) => BatchPayloadPromise;
+  createItem: (data: ItemCreateInput) => ItemPromise;
+  updateManyItems: (
+    args: { data: ItemUpdateManyMutationInput; where?: ItemWhereInput }
+  ) => BatchPayloadPromise;
+  deleteManyItems: (where?: ItemWhereInput) => BatchPayloadPromise;
+  createLog: (data: LogCreateInput) => LogPromise;
+  updateManyLogs: (
+    args: { data: LogUpdateManyMutationInput; where?: LogWhereInput }
+  ) => BatchPayloadPromise;
+  deleteManyLogs: (where?: LogWhereInput) => BatchPayloadPromise;
+  createOrder: (data: OrderCreateInput) => OrderPromise;
+  updateManyOrders: (
+    args: { data: OrderUpdateManyMutationInput; where?: OrderWhereInput }
+  ) => BatchPayloadPromise;
+  deleteManyOrders: (where?: OrderWhereInput) => BatchPayloadPromise;
+  createProduct: (data: ProductCreateInput) => ProductPromise;
+  updateProduct: (
+    args: { data: ProductUpdateInput; where: ProductWhereUniqueInput }
+  ) => ProductPromise;
+  updateManyProducts: (
+    args: { data: ProductUpdateManyMutationInput; where?: ProductWhereInput }
+  ) => BatchPayloadPromise;
+  upsertProduct: (
+    args: {
+      where: ProductWhereUniqueInput;
+      create: ProductCreateInput;
+      update: ProductUpdateInput;
+    }
+  ) => ProductPromise;
+  deleteProduct: (where: ProductWhereUniqueInput) => ProductPromise;
+  deleteManyProducts: (where?: ProductWhereInput) => BatchPayloadPromise;
+  createProductSrp: (data: ProductSrpCreateInput) => ProductSrpPromise;
+  updateManyProductSrps: (
+    args: {
+      data: ProductSrpUpdateManyMutationInput;
+      where?: ProductSrpWhereInput;
+    }
+  ) => BatchPayloadPromise;
+  deleteManyProductSrps: (where?: ProductSrpWhereInput) => BatchPayloadPromise;
+  createProfile: (data: ProfileCreateInput) => ProfilePromise;
+  updateProfile: (
+    args: { data: ProfileUpdateInput; where: ProfileWhereUniqueInput }
+  ) => ProfilePromise;
+  updateManyProfiles: (
+    args: { data: ProfileUpdateManyMutationInput; where?: ProfileWhereInput }
+  ) => BatchPayloadPromise;
+  upsertProfile: (
+    args: {
+      where: ProfileWhereUniqueInput;
+      create: ProfileCreateInput;
+      update: ProfileUpdateInput;
+    }
+  ) => ProfilePromise;
+  deleteProfile: (where: ProfileWhereUniqueInput) => ProfilePromise;
+  deleteManyProfiles: (where?: ProfileWhereInput) => BatchPayloadPromise;
+  createPurchasePrice: (data: PurchasePriceCreateInput) => PurchasePricePromise;
+  updateManyPurchasePrices: (
+    args: {
+      data: PurchasePriceUpdateManyMutationInput;
+      where?: PurchasePriceWhereInput;
+    }
+  ) => BatchPayloadPromise;
+  deleteManyPurchasePrices: (
+    where?: PurchasePriceWhereInput
+  ) => BatchPayloadPromise;
+  createQRCode: (data: QRCodeCreateInput) => QRCodePromise;
+  updateQRCode: (
+    args: { data: QRCodeUpdateInput; where: QRCodeWhereUniqueInput }
+  ) => QRCodePromise;
+  updateManyQRCodes: (
+    args: { data: QRCodeUpdateManyMutationInput; where?: QRCodeWhereInput }
+  ) => BatchPayloadPromise;
+  upsertQRCode: (
+    args: {
+      where: QRCodeWhereUniqueInput;
+      create: QRCodeCreateInput;
+      update: QRCodeUpdateInput;
+    }
+  ) => QRCodePromise;
+  deleteQRCode: (where: QRCodeWhereUniqueInput) => QRCodePromise;
+  deleteManyQRCodes: (where?: QRCodeWhereInput) => BatchPayloadPromise;
+  createQuote: (data: QuoteCreateInput) => QuotePromise;
+  updateManyQuotes: (
+    args: { data: QuoteUpdateManyMutationInput; where?: QuoteWhereInput }
+  ) => BatchPayloadPromise;
+  deleteManyQuotes: (where?: QuoteWhereInput) => BatchPayloadPromise;
+  createStock: (data: StockCreateInput) => StockPromise;
+  updateStock: (
+    args: { data: StockUpdateInput; where: StockWhereUniqueInput }
+  ) => StockPromise;
+  updateManyStocks: (
+    args: { data: StockUpdateManyMutationInput; where?: StockWhereInput }
+  ) => BatchPayloadPromise;
+  upsertStock: (
+    args: {
+      where: StockWhereUniqueInput;
+      create: StockCreateInput;
+      update: StockUpdateInput;
+    }
+  ) => StockPromise;
+  deleteStock: (where: StockWhereUniqueInput) => StockPromise;
+  deleteManyStocks: (where?: StockWhereInput) => BatchPayloadPromise;
+  createSubCategory: (data: SubCategoryCreateInput) => SubCategoryPromise;
+  updateSubCategory: (
+    args: { data: SubCategoryUpdateInput; where: SubCategoryWhereUniqueInput }
+  ) => SubCategoryPromise;
+  updateManySubCategories: (
+    args: {
+      data: SubCategoryUpdateManyMutationInput;
+      where?: SubCategoryWhereInput;
+    }
+  ) => BatchPayloadPromise;
+  upsertSubCategory: (
+    args: {
+      where: SubCategoryWhereUniqueInput;
+      create: SubCategoryCreateInput;
+      update: SubCategoryUpdateInput;
+    }
+  ) => SubCategoryPromise;
+  deleteSubCategory: (where: SubCategoryWhereUniqueInput) => SubCategoryPromise;
+  deleteManySubCategories: (
+    where?: SubCategoryWhereInput
+  ) => BatchPayloadPromise;
+  createTransaction: (data: TransactionCreateInput) => TransactionPromise;
+  updateTransaction: (
+    args: { data: TransactionUpdateInput; where: TransactionWhereUniqueInput }
+  ) => TransactionPromise;
+  updateManyTransactions: (
+    args: {
+      data: TransactionUpdateManyMutationInput;
+      where?: TransactionWhereInput;
+    }
+  ) => BatchPayloadPromise;
+  upsertTransaction: (
+    args: {
+      where: TransactionWhereUniqueInput;
+      create: TransactionCreateInput;
+      update: TransactionUpdateInput;
+    }
+  ) => TransactionPromise;
+  deleteTransaction: (where: TransactionWhereUniqueInput) => TransactionPromise;
+  deleteManyTransactions: (
+    where?: TransactionWhereInput
+  ) => BatchPayloadPromise;
   createUser: (data: UserCreateInput) => UserPromise;
   updateUser: (
     args: { data: UserUpdateInput; where: UserWhereUniqueInput }
@@ -90,6 +861,72 @@ export interface Prisma {
 }
 
 export interface Subscription {
+  address: (
+    where?: AddressSubscriptionWhereInput
+  ) => AddressSubscriptionPayloadSubscription;
+  attribute: (
+    where?: AttributeSubscriptionWhereInput
+  ) => AttributeSubscriptionPayloadSubscription;
+  branch: (
+    where?: BranchSubscriptionWhereInput
+  ) => BranchSubscriptionPayloadSubscription;
+  brand: (
+    where?: BrandSubscriptionWhereInput
+  ) => BrandSubscriptionPayloadSubscription;
+  category: (
+    where?: CategorySubscriptionWhereInput
+  ) => CategorySubscriptionPayloadSubscription;
+  company: (
+    where?: CompanySubscriptionWhereInput
+  ) => CompanySubscriptionPayloadSubscription;
+  contactInfo: (
+    where?: ContactInfoSubscriptionWhereInput
+  ) => ContactInfoSubscriptionPayloadSubscription;
+  delivery: (
+    where?: DeliverySubscriptionWhereInput
+  ) => DeliverySubscriptionPayloadSubscription;
+  file: (
+    where?: FileSubscriptionWhereInput
+  ) => FileSubscriptionPayloadSubscription;
+  inventory: (
+    where?: InventorySubscriptionWhereInput
+  ) => InventorySubscriptionPayloadSubscription;
+  item: (
+    where?: ItemSubscriptionWhereInput
+  ) => ItemSubscriptionPayloadSubscription;
+  log: (
+    where?: LogSubscriptionWhereInput
+  ) => LogSubscriptionPayloadSubscription;
+  order: (
+    where?: OrderSubscriptionWhereInput
+  ) => OrderSubscriptionPayloadSubscription;
+  product: (
+    where?: ProductSubscriptionWhereInput
+  ) => ProductSubscriptionPayloadSubscription;
+  productSrp: (
+    where?: ProductSrpSubscriptionWhereInput
+  ) => ProductSrpSubscriptionPayloadSubscription;
+  profile: (
+    where?: ProfileSubscriptionWhereInput
+  ) => ProfileSubscriptionPayloadSubscription;
+  purchasePrice: (
+    where?: PurchasePriceSubscriptionWhereInput
+  ) => PurchasePriceSubscriptionPayloadSubscription;
+  qRCode: (
+    where?: QRCodeSubscriptionWhereInput
+  ) => QRCodeSubscriptionPayloadSubscription;
+  quote: (
+    where?: QuoteSubscriptionWhereInput
+  ) => QuoteSubscriptionPayloadSubscription;
+  stock: (
+    where?: StockSubscriptionWhereInput
+  ) => StockSubscriptionPayloadSubscription;
+  subCategory: (
+    where?: SubCategorySubscriptionWhereInput
+  ) => SubCategorySubscriptionPayloadSubscription;
+  transaction: (
+    where?: TransactionSubscriptionWhereInput
+  ) => TransactionSubscriptionPayloadSubscription;
   user: (
     where?: UserSubscriptionWhereInput
   ) => UserSubscriptionPayloadSubscription;
@@ -103,11 +940,347 @@ export interface ClientConstructor<T> {
  * Types
  */
 
+export type QuoteOrderByInput =
+  | "grossAmount_ASC"
+  | "grossAmount_DESC"
+  | "isDiscounted_ASC"
+  | "isDiscounted_DESC"
+  | "discountedAmount_ASC"
+  | "discountedAmount_DESC"
+  | "netAmount_ASC"
+  | "netAmount_DESC"
+  | "amountPaid_ASC"
+  | "amountPaid_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC"
+  | "id_ASC"
+  | "id_DESC";
+
+export type Position =
+  | "Manager"
+  | "Cashier"
+  | "Technician"
+  | "Admin"
+  | "Driver"
+  | "Agent";
+
 export type UserOrderByInput =
   | "id_ASC"
   | "id_DESC"
-  | "name_ASC"
-  | "name_DESC"
+  | "username_ASC"
+  | "username_DESC"
+  | "password_ASC"
+  | "password_DESC"
+  | "role_ASC"
+  | "role_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type AddressOrderByInput =
+  | "address1_ASC"
+  | "address1_DESC"
+  | "address2_ASC"
+  | "address2_DESC"
+  | "barangay_ASC"
+  | "barangay_DESC"
+  | "city_ASC"
+  | "city_DESC"
+  | "province_ASC"
+  | "province_DESC"
+  | "zip_ASC"
+  | "zip_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type LogOrderByInput =
+  | "sourceTable_ASC"
+  | "sourceTable_DESC"
+  | "sourceId_ASC"
+  | "sourceId_DESC"
+  | "actionNo_ASC"
+  | "actionNo_DESC"
+  | "actionType_ASC"
+  | "actionType_DESC"
+  | "actionTitle_ASC"
+  | "actionTitle_DESC"
+  | "tableField_ASC"
+  | "tableField_DESC"
+  | "oldValue_ASC"
+  | "oldValue_DESC"
+  | "newValue_ASC"
+  | "newValue_DESC"
+  | "comment_ASC"
+  | "comment_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type SubCategoryOrderByInput =
+  | "subCatName_ASC"
+  | "subCatName_DESC"
+  | "subCatDesc_ASC"
+  | "subCatDesc_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type FileOrderByInput =
+  | "fileType_ASC"
+  | "fileType_DESC"
+  | "fileName_ASC"
+  | "fileName_DESC"
+  | "fileSize_ASC"
+  | "fileSize_DESC"
+  | "filePath_ASC"
+  | "filePath_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type PurchasePriceOrderByInput =
+  | "price_ASC"
+  | "price_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type DeliveryOrderByInput =
+  | "status_ASC"
+  | "status_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type ProductSrpOrderByInput =
+  | "price_ASC"
+  | "price_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type BranchOrderByInput =
+  | "type_ASC"
+  | "type_DESC"
+  | "branchName_ASC"
+  | "branchName_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type InventoryOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type StockOrderByInput =
+  | "sku_ASC"
+  | "sku_DESC"
+  | "units_ASC"
+  | "units_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type ContactInfoOrderByInput =
+  | "email_ASC"
+  | "email_DESC"
+  | "primaryTel_ASC"
+  | "primaryTel_DESC"
+  | "secondaryTel_ASC"
+  | "secondaryTel_DESC"
+  | "primaryMobile_ASC"
+  | "primaryMobile_DESC"
+  | "secondaryMobile_ASC"
+  | "secondaryMobile_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type ProductOrderByInput =
+  | "type_ASC"
+  | "type_DESC"
+  | "productName_ASC"
+  | "productName_DESC"
+  | "barcode_ASC"
+  | "barcode_DESC"
+  | "desc_ASC"
+  | "desc_DESC"
+  | "slug_ASC"
+  | "slug_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type CategoryOrderByInput =
+  | "catName_ASC"
+  | "catName_DESC"
+  | "catDesc_ASC"
+  | "catDesc_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type AttributeOrderByInput =
+  | "attributeName_ASC"
+  | "attributeName_DESC"
+  | "value_ASC"
+  | "value_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type ItemOrderByInput =
+  | "units_ASC"
+  | "units_DESC"
+  | "amount_ASC"
+  | "amount_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC"
+  | "id_ASC"
+  | "id_DESC";
+
+export type TransactionType = "Sales" | "Expenses";
+
+export type TransactionOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "type_ASC"
+  | "type_DESC"
+  | "receiptNo_ASC"
+  | "receiptNo_DESC"
+  | "isPaid_ASC"
+  | "isPaid_DESC"
+  | "balance_ASC"
+  | "balance_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type AttributeType =
+  | "Color"
+  | "Size"
+  | "Volume"
+  | "Weight"
+  | "Length"
+  | "Width"
+  | "Height"
+  | "Voltage";
+
+export type ProfileOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "firstName_ASC"
+  | "firstName_DESC"
+  | "middleName_ASC"
+  | "middleName_DESC"
+  | "lastName_ASC"
+  | "lastName_DESC"
+  | "birthdate_ASC"
+  | "birthdate_DESC"
+  | "gender_ASC"
+  | "gender_DESC"
+  | "position_ASC"
+  | "position_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type BranchType =
+  | "Head"
+  | "Quarters"
+  | "Store"
+  | "Warehouse"
+  | "Main"
+  | "Branch";
+
+export type ProductType = "Item" | "Service";
+
+export type Gender = "Female" | "Male";
+
+export type OrderStatus = "Cart" | "Confirmed";
+
+export type DeliveryStatus = "Packaging" | "Delivering" | "Received";
+
+export type Role = "SysAdmin" | "Admin" | "Employee" | "User";
+
+export type CompanyOrderByInput =
+  | "companyName_ASC"
+  | "companyName_DESC"
+  | "about_ASC"
+  | "about_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type OrderOrderByInput =
+  | "status_ASC"
+  | "status_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export type QRCodeOrderByInput =
+  | "qrcode_ASC"
+  | "qrcode_DESC"
+  | "id_ASC"
+  | "id_DESC"
   | "createdAt_ASC"
   | "createdAt_DESC"
   | "updatedAt_ASC"
@@ -115,16 +1288,1832 @@ export type UserOrderByInput =
 
 export type MutationType = "CREATED" | "UPDATED" | "DELETED";
 
-export interface UserCreateInput {
-  name: String;
+export type BrandOrderByInput =
+  | "brandName_ASC"
+  | "brandName_DESC"
+  | "manufacturer_ASC"
+  | "manufacturer_DESC"
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
+export interface ProfileCreateWithoutStationInput {
+  login?: UserCreateOneWithoutProfileInput;
+  firstName: String;
+  middleName?: String;
+  lastName: String;
+  birthdate: DateTimeInput;
+  gender: Gender;
+  contactInfo: ContactInfoCreateOneWithoutOwnerInput;
+  position: Position;
+  employer: CompanyCreateOneInput;
+  address?: AddressCreateOneInput;
+  files?: FileCreateManyInput;
+  logs?: LogCreateManyInput;
+  technician?: QuoteCreateManyWithoutTechnicianInput;
+  assistant?: QuoteCreateManyInput;
 }
 
-export interface UserUpdateInput {
-  name?: String;
+export interface AddressWhereInput {
+  address1?: String;
+  address1_not?: String;
+  address1_in?: String[] | String;
+  address1_not_in?: String[] | String;
+  address1_lt?: String;
+  address1_lte?: String;
+  address1_gt?: String;
+  address1_gte?: String;
+  address1_contains?: String;
+  address1_not_contains?: String;
+  address1_starts_with?: String;
+  address1_not_starts_with?: String;
+  address1_ends_with?: String;
+  address1_not_ends_with?: String;
+  address2?: String;
+  address2_not?: String;
+  address2_in?: String[] | String;
+  address2_not_in?: String[] | String;
+  address2_lt?: String;
+  address2_lte?: String;
+  address2_gt?: String;
+  address2_gte?: String;
+  address2_contains?: String;
+  address2_not_contains?: String;
+  address2_starts_with?: String;
+  address2_not_starts_with?: String;
+  address2_ends_with?: String;
+  address2_not_ends_with?: String;
+  barangay?: String;
+  barangay_not?: String;
+  barangay_in?: String[] | String;
+  barangay_not_in?: String[] | String;
+  barangay_lt?: String;
+  barangay_lte?: String;
+  barangay_gt?: String;
+  barangay_gte?: String;
+  barangay_contains?: String;
+  barangay_not_contains?: String;
+  barangay_starts_with?: String;
+  barangay_not_starts_with?: String;
+  barangay_ends_with?: String;
+  barangay_not_ends_with?: String;
+  city?: String;
+  city_not?: String;
+  city_in?: String[] | String;
+  city_not_in?: String[] | String;
+  city_lt?: String;
+  city_lte?: String;
+  city_gt?: String;
+  city_gte?: String;
+  city_contains?: String;
+  city_not_contains?: String;
+  city_starts_with?: String;
+  city_not_starts_with?: String;
+  city_ends_with?: String;
+  city_not_ends_with?: String;
+  province?: String;
+  province_not?: String;
+  province_in?: String[] | String;
+  province_not_in?: String[] | String;
+  province_lt?: String;
+  province_lte?: String;
+  province_gt?: String;
+  province_gte?: String;
+  province_contains?: String;
+  province_not_contains?: String;
+  province_starts_with?: String;
+  province_not_starts_with?: String;
+  province_ends_with?: String;
+  province_not_ends_with?: String;
+  zip?: Int;
+  zip_not?: Int;
+  zip_in?: Int[] | Int;
+  zip_not_in?: Int[] | Int;
+  zip_lt?: Int;
+  zip_lte?: Int;
+  zip_gt?: Int;
+  zip_gte?: Int;
+  AND?: AddressWhereInput[] | AddressWhereInput;
+  OR?: AddressWhereInput[] | AddressWhereInput;
+  NOT?: AddressWhereInput[] | AddressWhereInput;
+}
+
+export interface ContactInfoUpdateOneRequiredInput {
+  create?: ContactInfoCreateInput;
+  update?: ContactInfoUpdateDataInput;
+  upsert?: ContactInfoUpsertNestedInput;
+  connect?: ContactInfoWhereUniqueInput;
+}
+
+export interface ContactInfoWhereInput {
+  owner?: ProfileWhereInput;
+  email?: String;
+  email_not?: String;
+  email_in?: String[] | String;
+  email_not_in?: String[] | String;
+  email_lt?: String;
+  email_lte?: String;
+  email_gt?: String;
+  email_gte?: String;
+  email_contains?: String;
+  email_not_contains?: String;
+  email_starts_with?: String;
+  email_not_starts_with?: String;
+  email_ends_with?: String;
+  email_not_ends_with?: String;
+  primaryTel?: String;
+  primaryTel_not?: String;
+  primaryTel_in?: String[] | String;
+  primaryTel_not_in?: String[] | String;
+  primaryTel_lt?: String;
+  primaryTel_lte?: String;
+  primaryTel_gt?: String;
+  primaryTel_gte?: String;
+  primaryTel_contains?: String;
+  primaryTel_not_contains?: String;
+  primaryTel_starts_with?: String;
+  primaryTel_not_starts_with?: String;
+  primaryTel_ends_with?: String;
+  primaryTel_not_ends_with?: String;
+  secondaryTel?: String;
+  secondaryTel_not?: String;
+  secondaryTel_in?: String[] | String;
+  secondaryTel_not_in?: String[] | String;
+  secondaryTel_lt?: String;
+  secondaryTel_lte?: String;
+  secondaryTel_gt?: String;
+  secondaryTel_gte?: String;
+  secondaryTel_contains?: String;
+  secondaryTel_not_contains?: String;
+  secondaryTel_starts_with?: String;
+  secondaryTel_not_starts_with?: String;
+  secondaryTel_ends_with?: String;
+  secondaryTel_not_ends_with?: String;
+  primaryMobile?: String;
+  primaryMobile_not?: String;
+  primaryMobile_in?: String[] | String;
+  primaryMobile_not_in?: String[] | String;
+  primaryMobile_lt?: String;
+  primaryMobile_lte?: String;
+  primaryMobile_gt?: String;
+  primaryMobile_gte?: String;
+  primaryMobile_contains?: String;
+  primaryMobile_not_contains?: String;
+  primaryMobile_starts_with?: String;
+  primaryMobile_not_starts_with?: String;
+  primaryMobile_ends_with?: String;
+  primaryMobile_not_ends_with?: String;
+  secondaryMobile?: String;
+  secondaryMobile_not?: String;
+  secondaryMobile_in?: String[] | String;
+  secondaryMobile_not_in?: String[] | String;
+  secondaryMobile_lt?: String;
+  secondaryMobile_lte?: String;
+  secondaryMobile_gt?: String;
+  secondaryMobile_gte?: String;
+  secondaryMobile_contains?: String;
+  secondaryMobile_not_contains?: String;
+  secondaryMobile_starts_with?: String;
+  secondaryMobile_not_starts_with?: String;
+  secondaryMobile_ends_with?: String;
+  secondaryMobile_not_ends_with?: String;
+  AND?: ContactInfoWhereInput[] | ContactInfoWhereInput;
+  OR?: ContactInfoWhereInput[] | ContactInfoWhereInput;
+  NOT?: ContactInfoWhereInput[] | ContactInfoWhereInput;
+}
+
+export interface ContactInfoUpdateDataInput {
+  owner?: ProfileUpdateOneRequiredWithoutContactInfoInput;
+  email?: String;
+  primaryTel?: String;
+  secondaryTel?: String;
+  primaryMobile?: String;
+  secondaryMobile?: String;
+}
+
+export interface LogWhereInput {
+  user_every?: UserWhereInput;
+  user_some?: UserWhereInput;
+  user_none?: UserWhereInput;
+  sourceTable?: String;
+  sourceTable_not?: String;
+  sourceTable_in?: String[] | String;
+  sourceTable_not_in?: String[] | String;
+  sourceTable_lt?: String;
+  sourceTable_lte?: String;
+  sourceTable_gt?: String;
+  sourceTable_gte?: String;
+  sourceTable_contains?: String;
+  sourceTable_not_contains?: String;
+  sourceTable_starts_with?: String;
+  sourceTable_not_starts_with?: String;
+  sourceTable_ends_with?: String;
+  sourceTable_not_ends_with?: String;
+  sourceId?: String;
+  sourceId_not?: String;
+  sourceId_in?: String[] | String;
+  sourceId_not_in?: String[] | String;
+  sourceId_lt?: String;
+  sourceId_lte?: String;
+  sourceId_gt?: String;
+  sourceId_gte?: String;
+  sourceId_contains?: String;
+  sourceId_not_contains?: String;
+  sourceId_starts_with?: String;
+  sourceId_not_starts_with?: String;
+  sourceId_ends_with?: String;
+  sourceId_not_ends_with?: String;
+  actionNo?: String;
+  actionNo_not?: String;
+  actionNo_in?: String[] | String;
+  actionNo_not_in?: String[] | String;
+  actionNo_lt?: String;
+  actionNo_lte?: String;
+  actionNo_gt?: String;
+  actionNo_gte?: String;
+  actionNo_contains?: String;
+  actionNo_not_contains?: String;
+  actionNo_starts_with?: String;
+  actionNo_not_starts_with?: String;
+  actionNo_ends_with?: String;
+  actionNo_not_ends_with?: String;
+  actionType?: String;
+  actionType_not?: String;
+  actionType_in?: String[] | String;
+  actionType_not_in?: String[] | String;
+  actionType_lt?: String;
+  actionType_lte?: String;
+  actionType_gt?: String;
+  actionType_gte?: String;
+  actionType_contains?: String;
+  actionType_not_contains?: String;
+  actionType_starts_with?: String;
+  actionType_not_starts_with?: String;
+  actionType_ends_with?: String;
+  actionType_not_ends_with?: String;
+  actionTitle?: String;
+  actionTitle_not?: String;
+  actionTitle_in?: String[] | String;
+  actionTitle_not_in?: String[] | String;
+  actionTitle_lt?: String;
+  actionTitle_lte?: String;
+  actionTitle_gt?: String;
+  actionTitle_gte?: String;
+  actionTitle_contains?: String;
+  actionTitle_not_contains?: String;
+  actionTitle_starts_with?: String;
+  actionTitle_not_starts_with?: String;
+  actionTitle_ends_with?: String;
+  actionTitle_not_ends_with?: String;
+  tableField?: String;
+  tableField_not?: String;
+  tableField_in?: String[] | String;
+  tableField_not_in?: String[] | String;
+  tableField_lt?: String;
+  tableField_lte?: String;
+  tableField_gt?: String;
+  tableField_gte?: String;
+  tableField_contains?: String;
+  tableField_not_contains?: String;
+  tableField_starts_with?: String;
+  tableField_not_starts_with?: String;
+  tableField_ends_with?: String;
+  tableField_not_ends_with?: String;
+  oldValue?: String;
+  oldValue_not?: String;
+  oldValue_in?: String[] | String;
+  oldValue_not_in?: String[] | String;
+  oldValue_lt?: String;
+  oldValue_lte?: String;
+  oldValue_gt?: String;
+  oldValue_gte?: String;
+  oldValue_contains?: String;
+  oldValue_not_contains?: String;
+  oldValue_starts_with?: String;
+  oldValue_not_starts_with?: String;
+  oldValue_ends_with?: String;
+  oldValue_not_ends_with?: String;
+  newValue?: String;
+  newValue_not?: String;
+  newValue_in?: String[] | String;
+  newValue_not_in?: String[] | String;
+  newValue_lt?: String;
+  newValue_lte?: String;
+  newValue_gt?: String;
+  newValue_gte?: String;
+  newValue_contains?: String;
+  newValue_not_contains?: String;
+  newValue_starts_with?: String;
+  newValue_not_starts_with?: String;
+  newValue_ends_with?: String;
+  newValue_not_ends_with?: String;
+  comment?: String;
+  comment_not?: String;
+  comment_in?: String[] | String;
+  comment_not_in?: String[] | String;
+  comment_lt?: String;
+  comment_lte?: String;
+  comment_gt?: String;
+  comment_gte?: String;
+  comment_contains?: String;
+  comment_not_contains?: String;
+  comment_starts_with?: String;
+  comment_not_starts_with?: String;
+  comment_ends_with?: String;
+  comment_not_ends_with?: String;
+  createdAt?: DateTimeInput;
+  createdAt_not?: DateTimeInput;
+  createdAt_in?: DateTimeInput[] | DateTimeInput;
+  createdAt_not_in?: DateTimeInput[] | DateTimeInput;
+  createdAt_lt?: DateTimeInput;
+  createdAt_lte?: DateTimeInput;
+  createdAt_gt?: DateTimeInput;
+  createdAt_gte?: DateTimeInput;
+  AND?: LogWhereInput[] | LogWhereInput;
+  OR?: LogWhereInput[] | LogWhereInput;
+  NOT?: LogWhereInput[] | LogWhereInput;
+}
+
+export interface ProfileUpdateOneRequiredWithoutContactInfoInput {
+  create?: ProfileCreateWithoutContactInfoInput;
+  update?: ProfileUpdateWithoutContactInfoDataInput;
+  upsert?: ProfileUpsertWithoutContactInfoInput;
+  connect?: ProfileWhereUniqueInput;
+}
+
+export interface InventoryWhereInput {
+  product?: StockWhereInput;
+  items_every?: ItemWhereInput;
+  items_some?: ItemWhereInput;
+  items_none?: ItemWhereInput;
+  AND?: InventoryWhereInput[] | InventoryWhereInput;
+  OR?: InventoryWhereInput[] | InventoryWhereInput;
+  NOT?: InventoryWhereInput[] | InventoryWhereInput;
+}
+
+export interface ProfileUpdateWithoutContactInfoDataInput {
+  login?: UserUpdateOneWithoutProfileInput;
+  firstName?: String;
+  middleName?: String;
+  lastName?: String;
+  birthdate?: DateTimeInput;
+  gender?: Gender;
+  position?: Position;
+  employer?: CompanyUpdateOneRequiredInput;
+  address?: AddressUpdateOneInput;
+  station?: BranchUpdateOneRequiredWithoutManagerInput;
+  files?: FileUpdateManyInput;
+  logs?: LogUpdateManyInput;
+  technician?: QuoteUpdateManyWithoutTechnicianInput;
+  assistant?: QuoteUpdateManyInput;
+}
+
+export interface ProfileWhereInput {
+  id?: ID_Input;
+  id_not?: ID_Input;
+  id_in?: ID_Input[] | ID_Input;
+  id_not_in?: ID_Input[] | ID_Input;
+  id_lt?: ID_Input;
+  id_lte?: ID_Input;
+  id_gt?: ID_Input;
+  id_gte?: ID_Input;
+  id_contains?: ID_Input;
+  id_not_contains?: ID_Input;
+  id_starts_with?: ID_Input;
+  id_not_starts_with?: ID_Input;
+  id_ends_with?: ID_Input;
+  id_not_ends_with?: ID_Input;
+  login?: UserWhereInput;
+  firstName?: String;
+  firstName_not?: String;
+  firstName_in?: String[] | String;
+  firstName_not_in?: String[] | String;
+  firstName_lt?: String;
+  firstName_lte?: String;
+  firstName_gt?: String;
+  firstName_gte?: String;
+  firstName_contains?: String;
+  firstName_not_contains?: String;
+  firstName_starts_with?: String;
+  firstName_not_starts_with?: String;
+  firstName_ends_with?: String;
+  firstName_not_ends_with?: String;
+  middleName?: String;
+  middleName_not?: String;
+  middleName_in?: String[] | String;
+  middleName_not_in?: String[] | String;
+  middleName_lt?: String;
+  middleName_lte?: String;
+  middleName_gt?: String;
+  middleName_gte?: String;
+  middleName_contains?: String;
+  middleName_not_contains?: String;
+  middleName_starts_with?: String;
+  middleName_not_starts_with?: String;
+  middleName_ends_with?: String;
+  middleName_not_ends_with?: String;
+  lastName?: String;
+  lastName_not?: String;
+  lastName_in?: String[] | String;
+  lastName_not_in?: String[] | String;
+  lastName_lt?: String;
+  lastName_lte?: String;
+  lastName_gt?: String;
+  lastName_gte?: String;
+  lastName_contains?: String;
+  lastName_not_contains?: String;
+  lastName_starts_with?: String;
+  lastName_not_starts_with?: String;
+  lastName_ends_with?: String;
+  lastName_not_ends_with?: String;
+  birthdate?: DateTimeInput;
+  birthdate_not?: DateTimeInput;
+  birthdate_in?: DateTimeInput[] | DateTimeInput;
+  birthdate_not_in?: DateTimeInput[] | DateTimeInput;
+  birthdate_lt?: DateTimeInput;
+  birthdate_lte?: DateTimeInput;
+  birthdate_gt?: DateTimeInput;
+  birthdate_gte?: DateTimeInput;
+  gender?: Gender;
+  gender_not?: Gender;
+  gender_in?: Gender[] | Gender;
+  gender_not_in?: Gender[] | Gender;
+  contactInfo?: ContactInfoWhereInput;
+  position?: Position;
+  position_not?: Position;
+  position_in?: Position[] | Position;
+  position_not_in?: Position[] | Position;
+  employer?: CompanyWhereInput;
+  address?: AddressWhereInput;
+  station?: BranchWhereInput;
+  files_every?: FileWhereInput;
+  files_some?: FileWhereInput;
+  files_none?: FileWhereInput;
+  logs_every?: LogWhereInput;
+  logs_some?: LogWhereInput;
+  logs_none?: LogWhereInput;
+  technician_every?: QuoteWhereInput;
+  technician_some?: QuoteWhereInput;
+  technician_none?: QuoteWhereInput;
+  assistant_every?: QuoteWhereInput;
+  assistant_some?: QuoteWhereInput;
+  assistant_none?: QuoteWhereInput;
+  AND?: ProfileWhereInput[] | ProfileWhereInput;
+  OR?: ProfileWhereInput[] | ProfileWhereInput;
+  NOT?: ProfileWhereInput[] | ProfileWhereInput;
+}
+
+export interface UserUpdateOneWithoutProfileInput {
+  create?: UserCreateWithoutProfileInput;
+  update?: UserUpdateWithoutProfileDataInput;
+  upsert?: UserUpsertWithoutProfileInput;
+  delete?: Boolean;
+  disconnect?: Boolean;
+  connect?: UserWhereUniqueInput;
+}
+
+export interface QuoteWhereInput {
+  transaction?: TransactionWhereInput;
+  cashier?: UserWhereInput;
+  technician?: ProfileWhereInput;
+  assistant?: ProfileWhereInput;
+  descriptions_every?: ItemWhereInput;
+  descriptions_some?: ItemWhereInput;
+  descriptions_none?: ItemWhereInput;
+  grossAmount?: Float;
+  grossAmount_not?: Float;
+  grossAmount_in?: Float[] | Float;
+  grossAmount_not_in?: Float[] | Float;
+  grossAmount_lt?: Float;
+  grossAmount_lte?: Float;
+  grossAmount_gt?: Float;
+  grossAmount_gte?: Float;
+  isDiscounted?: Boolean;
+  isDiscounted_not?: Boolean;
+  discountedAmount?: Float;
+  discountedAmount_not?: Float;
+  discountedAmount_in?: Float[] | Float;
+  discountedAmount_not_in?: Float[] | Float;
+  discountedAmount_lt?: Float;
+  discountedAmount_lte?: Float;
+  discountedAmount_gt?: Float;
+  discountedAmount_gte?: Float;
+  netAmount?: Float;
+  netAmount_not?: Float;
+  netAmount_in?: Float[] | Float;
+  netAmount_not_in?: Float[] | Float;
+  netAmount_lt?: Float;
+  netAmount_lte?: Float;
+  netAmount_gt?: Float;
+  netAmount_gte?: Float;
+  amountPaid?: Float;
+  amountPaid_not?: Float;
+  amountPaid_in?: Float[] | Float;
+  amountPaid_not_in?: Float[] | Float;
+  amountPaid_lt?: Float;
+  amountPaid_lte?: Float;
+  amountPaid_gt?: Float;
+  amountPaid_gte?: Float;
+  createdAt?: DateTimeInput;
+  createdAt_not?: DateTimeInput;
+  createdAt_in?: DateTimeInput[] | DateTimeInput;
+  createdAt_not_in?: DateTimeInput[] | DateTimeInput;
+  createdAt_lt?: DateTimeInput;
+  createdAt_lte?: DateTimeInput;
+  createdAt_gt?: DateTimeInput;
+  createdAt_gte?: DateTimeInput;
+  updatedAt?: DateTimeInput;
+  updatedAt_not?: DateTimeInput;
+  updatedAt_in?: DateTimeInput[] | DateTimeInput;
+  updatedAt_not_in?: DateTimeInput[] | DateTimeInput;
+  updatedAt_lt?: DateTimeInput;
+  updatedAt_lte?: DateTimeInput;
+  updatedAt_gt?: DateTimeInput;
+  updatedAt_gte?: DateTimeInput;
+  AND?: QuoteWhereInput[] | QuoteWhereInput;
+  OR?: QuoteWhereInput[] | QuoteWhereInput;
+  NOT?: QuoteWhereInput[] | QuoteWhereInput;
+}
+
+export interface OrderCreateWithoutDeliveryInput {
+  transaction: TransactionCreateOneWithoutOrderInput;
+  status: OrderStatus;
+  owner: ProfileCreateOneInput;
+}
+
+export interface ContactInfoUpdateInput {
+  owner?: ProfileUpdateOneRequiredWithoutContactInfoInput;
+  email?: String;
+  primaryTel?: String;
+  secondaryTel?: String;
+  primaryMobile?: String;
+  secondaryMobile?: String;
+}
+
+export interface TransactionCreateOneWithoutOrderInput {
+  create?: TransactionCreateWithoutOrderInput;
+  connect?: TransactionWhereUniqueInput;
+}
+
+export interface UserUpdateWithoutProfileDataInput {
+  username?: String;
+  password?: String;
+  role?: Role;
+  transactions?: QuoteUpdateManyWithoutCashierInput;
+}
+
+export interface TransactionCreateWithoutOrderInput {
+  type: TransactionType;
+  refNo?: TransactionCreateOneInput;
+  receiptNo: Int;
+  quote: QuoteCreateOneWithoutTransactionInput;
+  isPaid: Boolean;
+  balance: Float;
+}
+
+export interface TransactionWhereInput {
+  id?: ID_Input;
+  id_not?: ID_Input;
+  id_in?: ID_Input[] | ID_Input;
+  id_not_in?: ID_Input[] | ID_Input;
+  id_lt?: ID_Input;
+  id_lte?: ID_Input;
+  id_gt?: ID_Input;
+  id_gte?: ID_Input;
+  id_contains?: ID_Input;
+  id_not_contains?: ID_Input;
+  id_starts_with?: ID_Input;
+  id_not_starts_with?: ID_Input;
+  id_ends_with?: ID_Input;
+  id_not_ends_with?: ID_Input;
+  type?: TransactionType;
+  type_not?: TransactionType;
+  type_in?: TransactionType[] | TransactionType;
+  type_not_in?: TransactionType[] | TransactionType;
+  refNo?: TransactionWhereInput;
+  receiptNo?: Int;
+  receiptNo_not?: Int;
+  receiptNo_in?: Int[] | Int;
+  receiptNo_not_in?: Int[] | Int;
+  receiptNo_lt?: Int;
+  receiptNo_lte?: Int;
+  receiptNo_gt?: Int;
+  receiptNo_gte?: Int;
+  order?: OrderWhereInput;
+  quote?: QuoteWhereInput;
+  isPaid?: Boolean;
+  isPaid_not?: Boolean;
+  balance?: Float;
+  balance_not?: Float;
+  balance_in?: Float[] | Float;
+  balance_not_in?: Float[] | Float;
+  balance_lt?: Float;
+  balance_lte?: Float;
+  balance_gt?: Float;
+  balance_gte?: Float;
+  createdAt?: DateTimeInput;
+  createdAt_not?: DateTimeInput;
+  createdAt_in?: DateTimeInput[] | DateTimeInput;
+  createdAt_not_in?: DateTimeInput[] | DateTimeInput;
+  createdAt_lt?: DateTimeInput;
+  createdAt_lte?: DateTimeInput;
+  createdAt_gt?: DateTimeInput;
+  createdAt_gte?: DateTimeInput;
+  updatedAt?: DateTimeInput;
+  updatedAt_not?: DateTimeInput;
+  updatedAt_in?: DateTimeInput[] | DateTimeInput;
+  updatedAt_not_in?: DateTimeInput[] | DateTimeInput;
+  updatedAt_lt?: DateTimeInput;
+  updatedAt_lte?: DateTimeInput;
+  updatedAt_gt?: DateTimeInput;
+  updatedAt_gte?: DateTimeInput;
+  AND?: TransactionWhereInput[] | TransactionWhereInput;
+  OR?: TransactionWhereInput[] | TransactionWhereInput;
+  NOT?: TransactionWhereInput[] | TransactionWhereInput;
+}
+
+export interface QuoteCreateOneWithoutTransactionInput {
+  create?: QuoteCreateWithoutTransactionInput;
+}
+
+export interface SubCategorySubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: SubCategoryWhereInput;
+  AND?: SubCategorySubscriptionWhereInput[] | SubCategorySubscriptionWhereInput;
+  OR?: SubCategorySubscriptionWhereInput[] | SubCategorySubscriptionWhereInput;
+  NOT?: SubCategorySubscriptionWhereInput[] | SubCategorySubscriptionWhereInput;
+}
+
+export interface QuoteCreateWithoutTransactionInput {
+  cashier: UserCreateOneWithoutTransactionsInput;
+  technician?: ProfileCreateOneWithoutTechnicianInput;
+  assistant?: ProfileCreateOneInput;
+  descriptions?: ItemCreateManyInput;
+  grossAmount: Float;
+  isDiscounted: Boolean;
+  discountedAmount: Float;
+  netAmount: Float;
+  amountPaid: Float;
+}
+
+export interface QuoteSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: QuoteWhereInput;
+  AND?: QuoteSubscriptionWhereInput[] | QuoteSubscriptionWhereInput;
+  OR?: QuoteSubscriptionWhereInput[] | QuoteSubscriptionWhereInput;
+  NOT?: QuoteSubscriptionWhereInput[] | QuoteSubscriptionWhereInput;
+}
+
+export interface UserCreateOneWithoutTransactionsInput {
+  create?: UserCreateWithoutTransactionsInput;
+  connect?: UserWhereUniqueInput;
+}
+
+export interface OrderWhereInput {
+  transaction?: TransactionWhereInput;
+  delivery?: DeliveryWhereInput;
+  status?: OrderStatus;
+  status_not?: OrderStatus;
+  status_in?: OrderStatus[] | OrderStatus;
+  status_not_in?: OrderStatus[] | OrderStatus;
+  owner?: ProfileWhereInput;
+  AND?: OrderWhereInput[] | OrderWhereInput;
+  OR?: OrderWhereInput[] | OrderWhereInput;
+  NOT?: OrderWhereInput[] | OrderWhereInput;
+}
+
+export interface UserCreateWithoutTransactionsInput {
+  username: String;
+  password: String;
+  role: Role;
+  profile: ProfileCreateOneWithoutLoginInput;
+}
+
+export interface ProfileSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: ProfileWhereInput;
+  AND?: ProfileSubscriptionWhereInput[] | ProfileSubscriptionWhereInput;
+  OR?: ProfileSubscriptionWhereInput[] | ProfileSubscriptionWhereInput;
+  NOT?: ProfileSubscriptionWhereInput[] | ProfileSubscriptionWhereInput;
+}
+
+export interface ProfileCreateOneWithoutLoginInput {
+  create?: ProfileCreateWithoutLoginInput;
+  connect?: ProfileWhereUniqueInput;
+}
+
+export interface DeliveryWhereInput {
+  orders?: OrderWhereInput;
+  sender?: CompanyWhereInput;
+  receiver?: CompanyWhereInput;
+  status?: DeliveryStatus;
+  status_not?: DeliveryStatus;
+  status_in?: DeliveryStatus[] | DeliveryStatus;
+  status_not_in?: DeliveryStatus[] | DeliveryStatus;
+  AND?: DeliveryWhereInput[] | DeliveryWhereInput;
+  OR?: DeliveryWhereInput[] | DeliveryWhereInput;
+  NOT?: DeliveryWhereInput[] | DeliveryWhereInput;
+}
+
+export interface ProfileCreateWithoutLoginInput {
+  firstName: String;
+  middleName?: String;
+  lastName: String;
+  birthdate: DateTimeInput;
+  gender: Gender;
+  contactInfo: ContactInfoCreateOneWithoutOwnerInput;
+  position: Position;
+  employer: CompanyCreateOneInput;
+  address?: AddressCreateOneInput;
+  station: BranchCreateOneWithoutManagerInput;
+  files?: FileCreateManyInput;
+  logs?: LogCreateManyInput;
+  technician?: QuoteCreateManyWithoutTechnicianInput;
+  assistant?: QuoteCreateManyInput;
+}
+
+export interface ProductSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: ProductWhereInput;
+  AND?: ProductSubscriptionWhereInput[] | ProductSubscriptionWhereInput;
+  OR?: ProductSubscriptionWhereInput[] | ProductSubscriptionWhereInput;
+  NOT?: ProductSubscriptionWhereInput[] | ProductSubscriptionWhereInput;
+}
+
+export interface ContactInfoCreateOneWithoutOwnerInput {
+  create?: ContactInfoCreateWithoutOwnerInput;
+  connect?: ContactInfoWhereUniqueInput;
+}
+
+export interface LogSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: LogWhereInput;
+  AND?: LogSubscriptionWhereInput[] | LogSubscriptionWhereInput;
+  OR?: LogSubscriptionWhereInput[] | LogSubscriptionWhereInput;
+  NOT?: LogSubscriptionWhereInput[] | LogSubscriptionWhereInput;
+}
+
+export interface ContactInfoCreateWithoutOwnerInput {
+  email: String;
+  primaryTel?: String;
+  secondaryTel?: String;
+  primaryMobile?: String;
+  secondaryMobile?: String;
+}
+
+export interface InventorySubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: InventoryWhereInput;
+  AND?: InventorySubscriptionWhereInput[] | InventorySubscriptionWhereInput;
+  OR?: InventorySubscriptionWhereInput[] | InventorySubscriptionWhereInput;
+  NOT?: InventorySubscriptionWhereInput[] | InventorySubscriptionWhereInput;
+}
+
+export interface CompanyCreateOneInput {
+  create?: CompanyCreateInput;
+  connect?: CompanyWhereUniqueInput;
+}
+
+export interface DeliverySubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: DeliveryWhereInput;
+  AND?: DeliverySubscriptionWhereInput[] | DeliverySubscriptionWhereInput;
+  OR?: DeliverySubscriptionWhereInput[] | DeliverySubscriptionWhereInput;
+  NOT?: DeliverySubscriptionWhereInput[] | DeliverySubscriptionWhereInput;
+}
+
+export interface CompanyCreateInput {
+  companyName: String;
+  about?: String;
+  branches?: BranchCreateManyWithoutOwnerInput;
+  clients?: CompanyCreateOneWithoutSuppliersInput;
+  suppliers?: CompanyCreateOneWithoutClientsInput;
+  sender?: DeliveryCreateManyWithoutSenderInput;
+  receiver?: DeliveryCreateManyWithoutReceiverInput;
+}
+
+export interface ContactInfoSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: ContactInfoWhereInput;
+  AND?: ContactInfoSubscriptionWhereInput[] | ContactInfoSubscriptionWhereInput;
+  OR?: ContactInfoSubscriptionWhereInput[] | ContactInfoSubscriptionWhereInput;
+  NOT?: ContactInfoSubscriptionWhereInput[] | ContactInfoSubscriptionWhereInput;
+}
+
+export interface DeliveryCreateManyWithoutReceiverInput {
+  create?:
+    | DeliveryCreateWithoutReceiverInput[]
+    | DeliveryCreateWithoutReceiverInput;
+}
+
+export interface CompanySubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: CompanyWhereInput;
+  AND?: CompanySubscriptionWhereInput[] | CompanySubscriptionWhereInput;
+  OR?: CompanySubscriptionWhereInput[] | CompanySubscriptionWhereInput;
+  NOT?: CompanySubscriptionWhereInput[] | CompanySubscriptionWhereInput;
+}
+
+export interface DeliveryCreateWithoutReceiverInput {
+  orders: OrderCreateOneWithoutDeliveryInput;
+  sender: CompanyCreateOneWithoutSenderInput;
+  status: DeliveryStatus;
+}
+
+export interface CategorySubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: CategoryWhereInput;
+  AND?: CategorySubscriptionWhereInput[] | CategorySubscriptionWhereInput;
+  OR?: CategorySubscriptionWhereInput[] | CategorySubscriptionWhereInput;
+  NOT?: CategorySubscriptionWhereInput[] | CategorySubscriptionWhereInput;
+}
+
+export interface BranchCreateOneWithoutManagerInput {
+  create?: BranchCreateWithoutManagerInput;
+  connect?: BranchWhereUniqueInput;
+}
+
+export interface BrandSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: BrandWhereInput;
+  AND?: BrandSubscriptionWhereInput[] | BrandSubscriptionWhereInput;
+  OR?: BrandSubscriptionWhereInput[] | BrandSubscriptionWhereInput;
+  NOT?: BrandSubscriptionWhereInput[] | BrandSubscriptionWhereInput;
+}
+
+export interface BranchCreateWithoutManagerInput {
+  owner: CompanyCreateOneWithoutBranchesInput;
+  type: BranchType;
+  branchName: String;
+  address: AddressCreateOneInput;
+  contactInfo: ContactInfoCreateOneInput;
+}
+
+export interface AttributeSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: AttributeWhereInput;
+  AND?: AttributeSubscriptionWhereInput[] | AttributeSubscriptionWhereInput;
+  OR?: AttributeSubscriptionWhereInput[] | AttributeSubscriptionWhereInput;
+  NOT?: AttributeSubscriptionWhereInput[] | AttributeSubscriptionWhereInput;
+}
+
+export interface FileCreateManyInput {
+  create?: FileCreateInput[] | FileCreateInput;
 }
 
 export interface UserUpdateManyMutationInput {
-  name?: String;
+  username?: String;
+  password?: String;
+  role?: Role;
+}
+
+export interface FileCreateInput {
+  fileType: String;
+  fileName: String;
+  fileSize: String;
+  filePath: String;
+}
+
+export interface UserUpdateInput {
+  username?: String;
+  password?: String;
+  role?: Role;
+  profile?: ProfileUpdateOneRequiredWithoutLoginInput;
+  transactions?: QuoteUpdateManyWithoutCashierInput;
+}
+
+export interface LogCreateManyInput {
+  create?: LogCreateInput[] | LogCreateInput;
+}
+
+export interface TransactionUpsertNestedInput {
+  update: TransactionUpdateDataInput;
+  create: TransactionCreateInput;
+}
+
+export interface LogCreateInput {
+  user?: UserCreateManyInput;
+  sourceTable: String;
+  sourceId: String;
+  actionNo: String;
+  actionType: String;
+  actionTitle: String;
+  tableField: String;
+  oldValue: String;
+  newValue: String;
+  comment?: String;
+}
+
+export interface QRCodeWhereInput {
+  qrcode?: String;
+  qrcode_not?: String;
+  qrcode_in?: String[] | String;
+  qrcode_not_in?: String[] | String;
+  qrcode_lt?: String;
+  qrcode_lte?: String;
+  qrcode_gt?: String;
+  qrcode_gte?: String;
+  qrcode_contains?: String;
+  qrcode_not_contains?: String;
+  qrcode_starts_with?: String;
+  qrcode_not_starts_with?: String;
+  qrcode_ends_with?: String;
+  qrcode_not_ends_with?: String;
+  product?: ProductWhereInput;
+  AND?: QRCodeWhereInput[] | QRCodeWhereInput;
+  OR?: QRCodeWhereInput[] | QRCodeWhereInput;
+  NOT?: QRCodeWhereInput[] | QRCodeWhereInput;
+}
+
+export interface UserCreateManyInput {
+  create?: UserCreateInput[] | UserCreateInput;
+  connect?: UserWhereUniqueInput[] | UserWhereUniqueInput;
+}
+
+export interface ItemUpdateManyInput {
+  create?: ItemCreateInput[] | ItemCreateInput;
+  deleteMany?: ItemScalarWhereInput[] | ItemScalarWhereInput;
+  updateMany?:
+    | ItemUpdateManyWithWhereNestedInput[]
+    | ItemUpdateManyWithWhereNestedInput;
+}
+
+export interface UserCreateInput {
+  username: String;
+  password: String;
+  role: Role;
+  profile: ProfileCreateOneWithoutLoginInput;
+  transactions?: QuoteCreateManyWithoutCashierInput;
+}
+
+export type CategoryWhereUniqueInput = AtLeastOne<{
+  catName: String;
+}>;
+
+export interface QuoteCreateManyWithoutTechnicianInput {
+  create?:
+    | QuoteCreateWithoutTechnicianInput[]
+    | QuoteCreateWithoutTechnicianInput;
+}
+
+export interface ProfileUpsertWithoutTechnicianInput {
+  update: ProfileUpdateWithoutTechnicianDataInput;
+  create: ProfileCreateWithoutTechnicianInput;
+}
+
+export interface QuoteCreateWithoutTechnicianInput {
+  transaction: TransactionCreateOneWithoutQuoteInput;
+  cashier: UserCreateOneWithoutTransactionsInput;
+  assistant?: ProfileCreateOneInput;
+  descriptions?: ItemCreateManyInput;
+  grossAmount: Float;
+  isDiscounted: Boolean;
+  discountedAmount: Float;
+  netAmount: Float;
+  amountPaid: Float;
+}
+
+export interface ProfileUpdateOneWithoutTechnicianInput {
+  create?: ProfileCreateWithoutTechnicianInput;
+  update?: ProfileUpdateWithoutTechnicianDataInput;
+  upsert?: ProfileUpsertWithoutTechnicianInput;
+  delete?: Boolean;
+  disconnect?: Boolean;
+  connect?: ProfileWhereUniqueInput;
+}
+
+export interface ProfileCreateOneInput {
+  create?: ProfileCreateInput;
+  connect?: ProfileWhereUniqueInput;
+}
+
+export interface SubCategoryWhereInput {
+  category?: CategoryWhereInput;
+  subCatName?: String;
+  subCatName_not?: String;
+  subCatName_in?: String[] | String;
+  subCatName_not_in?: String[] | String;
+  subCatName_lt?: String;
+  subCatName_lte?: String;
+  subCatName_gt?: String;
+  subCatName_gte?: String;
+  subCatName_contains?: String;
+  subCatName_not_contains?: String;
+  subCatName_starts_with?: String;
+  subCatName_not_starts_with?: String;
+  subCatName_ends_with?: String;
+  subCatName_not_ends_with?: String;
+  subCatDesc?: String;
+  subCatDesc_not?: String;
+  subCatDesc_in?: String[] | String;
+  subCatDesc_not_in?: String[] | String;
+  subCatDesc_lt?: String;
+  subCatDesc_lte?: String;
+  subCatDesc_gt?: String;
+  subCatDesc_gte?: String;
+  subCatDesc_contains?: String;
+  subCatDesc_not_contains?: String;
+  subCatDesc_starts_with?: String;
+  subCatDesc_not_starts_with?: String;
+  subCatDesc_ends_with?: String;
+  subCatDesc_not_ends_with?: String;
+  products_every?: ProductWhereInput;
+  products_some?: ProductWhereInput;
+  products_none?: ProductWhereInput;
+  AND?: SubCategoryWhereInput[] | SubCategoryWhereInput;
+  OR?: SubCategoryWhereInput[] | SubCategoryWhereInput;
+  NOT?: SubCategoryWhereInput[] | SubCategoryWhereInput;
+}
+
+export interface ProfileCreateInput {
+  login?: UserCreateOneWithoutProfileInput;
+  firstName: String;
+  middleName?: String;
+  lastName: String;
+  birthdate: DateTimeInput;
+  gender: Gender;
+  contactInfo: ContactInfoCreateOneWithoutOwnerInput;
+  position: Position;
+  employer: CompanyCreateOneInput;
+  address?: AddressCreateOneInput;
+  station: BranchCreateOneWithoutManagerInput;
+  files?: FileCreateManyInput;
+  logs?: LogCreateManyInput;
+  technician?: QuoteCreateManyWithoutTechnicianInput;
+  assistant?: QuoteCreateManyInput;
+}
+
+export interface ProfileUpsertWithoutLoginInput {
+  update: ProfileUpdateWithoutLoginDataInput;
+  create: ProfileCreateWithoutLoginInput;
+}
+
+export interface QuoteCreateManyInput {
+  create?: QuoteCreateInput[] | QuoteCreateInput;
+}
+
+export type ContactInfoWhereUniqueInput = AtLeastOne<{
+  email: String;
+}>;
+
+export interface QuoteCreateInput {
+  transaction: TransactionCreateOneWithoutQuoteInput;
+  cashier: UserCreateOneWithoutTransactionsInput;
+  technician?: ProfileCreateOneWithoutTechnicianInput;
+  assistant?: ProfileCreateOneInput;
+  descriptions?: ItemCreateManyInput;
+  grossAmount: Float;
+  isDiscounted: Boolean;
+  discountedAmount: Float;
+  netAmount: Float;
+  amountPaid: Float;
+}
+
+export interface ProfileUpdateOneRequiredWithoutLoginInput {
+  create?: ProfileCreateWithoutLoginInput;
+  update?: ProfileUpdateWithoutLoginDataInput;
+  upsert?: ProfileUpsertWithoutLoginInput;
+  connect?: ProfileWhereUniqueInput;
+}
+
+export interface ProfileCreateOneWithoutTechnicianInput {
+  create?: ProfileCreateWithoutTechnicianInput;
+  connect?: ProfileWhereUniqueInput;
+}
+
+export interface UserUpdateOneRequiredWithoutTransactionsInput {
+  create?: UserCreateWithoutTransactionsInput;
+  update?: UserUpdateWithoutTransactionsDataInput;
+  upsert?: UserUpsertWithoutTransactionsInput;
+  connect?: UserWhereUniqueInput;
+}
+
+export interface ProfileCreateWithoutTechnicianInput {
+  login?: UserCreateOneWithoutProfileInput;
+  firstName: String;
+  middleName?: String;
+  lastName: String;
+  birthdate: DateTimeInput;
+  gender: Gender;
+  contactInfo: ContactInfoCreateOneWithoutOwnerInput;
+  position: Position;
+  employer: CompanyCreateOneInput;
+  address?: AddressCreateOneInput;
+  station: BranchCreateOneWithoutManagerInput;
+  files?: FileCreateManyInput;
+  logs?: LogCreateManyInput;
+  assistant?: QuoteCreateManyInput;
+}
+
+export interface QuoteUpdateOneRequiredWithoutTransactionInput {
+  create?: QuoteCreateWithoutTransactionInput;
+  update?: QuoteUpdateWithoutTransactionDataInput;
+  upsert?: QuoteUpsertWithoutTransactionInput;
+}
+
+export interface ItemCreateManyInput {
+  create?: ItemCreateInput[] | ItemCreateInput;
+}
+
+export interface ProfileUpsertNestedInput {
+  update: ProfileUpdateDataInput;
+  create: ProfileCreateInput;
+}
+
+export interface ItemCreateInput {
+  transaction: TransactionCreateOneInput;
+  inventory: InventoryCreateOneWithoutItemsInput;
+  srp?: ProductSrpCreateOneInput;
+  purchasePrice?: PurchasePriceCreateOneInput;
+  units: Int;
+  amount: Float;
+}
+
+export interface ProfileUpdateOneRequiredInput {
+  create?: ProfileCreateInput;
+  update?: ProfileUpdateDataInput;
+  upsert?: ProfileUpsertNestedInput;
+  connect?: ProfileWhereUniqueInput;
+}
+
+export interface InventoryCreateOneWithoutItemsInput {
+  create?: InventoryCreateWithoutItemsInput;
+}
+
+export interface DeliveryUpsertWithoutOrdersInput {
+  update: DeliveryUpdateWithoutOrdersDataInput;
+  create: DeliveryCreateWithoutOrdersInput;
+}
+
+export interface InventoryCreateWithoutItemsInput {
+  product: StockCreateOneWithoutInventoryInput;
+}
+
+export interface CompanyUpdateWithoutReceiverDataInput {
+  companyName?: String;
+  about?: String;
+  branches?: BranchUpdateManyWithoutOwnerInput;
+  clients?: CompanyUpdateOneWithoutSuppliersInput;
+  suppliers?: CompanyUpdateOneWithoutClientsInput;
+  sender?: DeliveryUpdateManyWithoutSenderInput;
+}
+
+export interface StockCreateOneWithoutInventoryInput {
+  create?: StockCreateWithoutInventoryInput;
+  connect?: StockWhereUniqueInput;
+}
+
+export interface CompanyUpsertWithoutSenderInput {
+  update: CompanyUpdateWithoutSenderDataInput;
+  create: CompanyCreateWithoutSenderInput;
+}
+
+export interface StockCreateWithoutInventoryInput {
+  sku: String;
+  product: ProductCreateOneWithoutStocksInput;
+  warehouse: BranchCreateOneInput;
+  units: Int;
+}
+
+export interface CompanyUpdateOneRequiredWithoutSenderInput {
+  create?: CompanyCreateWithoutSenderInput;
+  update?: CompanyUpdateWithoutSenderDataInput;
+  upsert?: CompanyUpsertWithoutSenderInput;
+  connect?: CompanyWhereUniqueInput;
+}
+
+export interface ProductCreateOneWithoutStocksInput {
+  create?: ProductCreateWithoutStocksInput;
+  connect?: ProductWhereUniqueInput;
+}
+
+export interface DeliveryUpdateOneRequiredWithoutOrdersInput {
+  create?: DeliveryCreateWithoutOrdersInput;
+  update?: DeliveryUpdateWithoutOrdersDataInput;
+  upsert?: DeliveryUpsertWithoutOrdersInput;
+}
+
+export interface ProductCreateWithoutStocksInput {
+  type: ProductType;
+  category: CategoryCreateOneWithoutProductsInput;
+  subCategory?: SubCategoryCreateOneWithoutProductsInput;
+  brand?: BrandCreateOneWithoutProductsInput;
+  productName: String;
+  barcode: Int;
+  qrcode?: QRCodeCreateOneWithoutProductInput;
+  desc?: String;
+  attributes?: AttributeCreateManyWithoutProductInput;
+  slug: String;
+  srp: ProductSrpCreateOneWithoutProductInput;
+  purchasePrice: PurchasePriceCreateOneWithoutProductInput;
+}
+
+export interface OrderUpdateWithoutTransactionDataInput {
+  delivery?: DeliveryUpdateOneRequiredWithoutOrdersInput;
+  status?: OrderStatus;
+  owner?: ProfileUpdateOneRequiredInput;
+}
+
+export interface ProductSrpCreateOneInput {
+  create?: ProductSrpCreateInput;
+}
+
+export interface TransactionUpdateDataInput {
+  type?: TransactionType;
+  refNo?: TransactionUpdateOneInput;
+  receiptNo?: Int;
+  order?: OrderUpdateOneWithoutTransactionInput;
+  quote?: QuoteUpdateOneRequiredWithoutTransactionInput;
+  isPaid?: Boolean;
+  balance?: Float;
+}
+
+export interface ProductSrpCreateInput {
+  product: ProductCreateOneWithoutSrpInput;
+  price: Float;
+}
+
+export interface TransactionUpdateOneInput {
+  create?: TransactionCreateInput;
+  update?: TransactionUpdateDataInput;
+  upsert?: TransactionUpsertNestedInput;
+  delete?: Boolean;
+  disconnect?: Boolean;
+  connect?: TransactionWhereUniqueInput;
+}
+
+export interface ProductCreateOneWithoutSrpInput {
+  create?: ProductCreateWithoutSrpInput;
+  connect?: ProductWhereUniqueInput;
+}
+
+export interface SubCategoryUpdateManyMutationInput {
+  subCatName?: String;
+  subCatDesc?: String;
+}
+
+export interface ProductCreateWithoutSrpInput {
+  type: ProductType;
+  category: CategoryCreateOneWithoutProductsInput;
+  subCategory?: SubCategoryCreateOneWithoutProductsInput;
+  brand?: BrandCreateOneWithoutProductsInput;
+  productName: String;
+  barcode: Int;
+  qrcode?: QRCodeCreateOneWithoutProductInput;
+  desc?: String;
+  attributes?: AttributeCreateManyWithoutProductInput;
+  slug: String;
+  purchasePrice: PurchasePriceCreateOneWithoutProductInput;
+  stocks?: StockCreateManyWithoutProductInput;
+}
+
+export interface ProductUpdateWithoutSubCategoryDataInput {
+  type?: ProductType;
+  category?: CategoryUpdateOneRequiredWithoutProductsInput;
+  brand?: BrandUpdateOneWithoutProductsInput;
+  productName?: String;
+  barcode?: Int;
+  qrcode?: QRCodeUpdateOneWithoutProductInput;
+  desc?: String;
+  attributes?: AttributeUpdateManyWithoutProductInput;
+  slug?: String;
+  srp?: ProductSrpUpdateOneRequiredWithoutProductInput;
+  purchasePrice?: PurchasePriceUpdateOneRequiredWithoutProductInput;
+  stocks?: StockUpdateManyWithoutProductInput;
+}
+
+export interface PurchasePriceCreateOneInput {
+  create?: PurchasePriceCreateInput;
+}
+
+export interface ProductUpdateManyWithoutSubCategoryInput {
+  create?:
+    | ProductCreateWithoutSubCategoryInput[]
+    | ProductCreateWithoutSubCategoryInput;
+  delete?: ProductWhereUniqueInput[] | ProductWhereUniqueInput;
+  connect?: ProductWhereUniqueInput[] | ProductWhereUniqueInput;
+  set?: ProductWhereUniqueInput[] | ProductWhereUniqueInput;
+  disconnect?: ProductWhereUniqueInput[] | ProductWhereUniqueInput;
+  update?:
+    | ProductUpdateWithWhereUniqueWithoutSubCategoryInput[]
+    | ProductUpdateWithWhereUniqueWithoutSubCategoryInput;
+  upsert?:
+    | ProductUpsertWithWhereUniqueWithoutSubCategoryInput[]
+    | ProductUpsertWithWhereUniqueWithoutSubCategoryInput;
+  deleteMany?: ProductScalarWhereInput[] | ProductScalarWhereInput;
+  updateMany?:
+    | ProductUpdateManyWithWhereNestedInput[]
+    | ProductUpdateManyWithWhereNestedInput;
+}
+
+export interface PurchasePriceCreateInput {
+  product: ProductCreateOneWithoutPurchasePriceInput;
+  price: Float;
+}
+
+export interface SubCategoryUpdateInput {
+  category?: CategoryUpdateOneRequiredInput;
+  subCatName?: String;
+  subCatDesc?: String;
+  products?: ProductUpdateManyWithoutSubCategoryInput;
+}
+
+export interface ProductCreateOneWithoutPurchasePriceInput {
+  create?: ProductCreateWithoutPurchasePriceInput;
+  connect?: ProductWhereUniqueInput;
+}
+
+export interface ProductCreateManyWithoutSubCategoryInput {
+  create?:
+    | ProductCreateWithoutSubCategoryInput[]
+    | ProductCreateWithoutSubCategoryInput;
+  connect?: ProductWhereUniqueInput[] | ProductWhereUniqueInput;
+}
+
+export interface ProductCreateWithoutPurchasePriceInput {
+  type: ProductType;
+  category: CategoryCreateOneWithoutProductsInput;
+  subCategory?: SubCategoryCreateOneWithoutProductsInput;
+  brand?: BrandCreateOneWithoutProductsInput;
+  productName: String;
+  barcode: Int;
+  qrcode?: QRCodeCreateOneWithoutProductInput;
+  desc?: String;
+  attributes?: AttributeCreateManyWithoutProductInput;
+  slug: String;
+  srp: ProductSrpCreateOneWithoutProductInput;
+  stocks?: StockCreateManyWithoutProductInput;
+}
+
+export interface StockUpdateManyMutationInput {
+  sku?: String;
+  units?: Int;
+}
+
+export interface CompanyCreateOneWithoutReceiverInput {
+  create?: CompanyCreateWithoutReceiverInput;
+  connect?: CompanyWhereUniqueInput;
+}
+
+export interface ProductUpdateWithoutStocksDataInput {
+  type?: ProductType;
+  category?: CategoryUpdateOneRequiredWithoutProductsInput;
+  subCategory?: SubCategoryUpdateOneWithoutProductsInput;
+  brand?: BrandUpdateOneWithoutProductsInput;
+  productName?: String;
+  barcode?: Int;
+  qrcode?: QRCodeUpdateOneWithoutProductInput;
+  desc?: String;
+  attributes?: AttributeUpdateManyWithoutProductInput;
+  slug?: String;
+  srp?: ProductSrpUpdateOneRequiredWithoutProductInput;
+  purchasePrice?: PurchasePriceUpdateOneRequiredWithoutProductInput;
+}
+
+export interface CompanyCreateWithoutReceiverInput {
+  companyName: String;
+  about?: String;
+  branches?: BranchCreateManyWithoutOwnerInput;
+  clients?: CompanyCreateOneWithoutSuppliersInput;
+  suppliers?: CompanyCreateOneWithoutClientsInput;
+  sender?: DeliveryCreateManyWithoutSenderInput;
+}
+
+export type QRCodeWhereUniqueInput = AtLeastOne<{
+  qrcode: String;
+}>;
+
+export interface ProfileCreateOneWithoutStationInput {
+  create?: ProfileCreateWithoutStationInput;
+  connect?: ProfileWhereUniqueInput;
+}
+
+export interface StockCreateInput {
+  sku: String;
+  product: ProductCreateOneWithoutStocksInput;
+  warehouse: BranchCreateOneInput;
+  units: Int;
+  inventory?: InventoryCreateOneWithoutProductInput;
+}
+
+export interface FileUpdateManyMutationInput {
+  fileType?: String;
+  fileName?: String;
+  fileSize?: String;
+  filePath?: String;
+}
+
+export interface QRCodeUpdateManyMutationInput {
+  qrcode?: String;
+}
+
+export interface InventoryCreateOneWithoutProductInput {
+  create?: InventoryCreateWithoutProductInput;
+}
+
+export interface ProductUpdateWithoutQrcodeDataInput {
+  type?: ProductType;
+  category?: CategoryUpdateOneRequiredWithoutProductsInput;
+  subCategory?: SubCategoryUpdateOneWithoutProductsInput;
+  brand?: BrandUpdateOneWithoutProductsInput;
+  productName?: String;
+  barcode?: Int;
+  desc?: String;
+  attributes?: AttributeUpdateManyWithoutProductInput;
+  slug?: String;
+  srp?: ProductSrpUpdateOneRequiredWithoutProductInput;
+  purchasePrice?: PurchasePriceUpdateOneRequiredWithoutProductInput;
+  stocks?: StockUpdateManyWithoutProductInput;
+}
+
+export interface InventoryCreateWithoutProductInput {
+  items?: ItemCreateManyWithoutInventoryInput;
+}
+
+export type StockWhereUniqueInput = AtLeastOne<{
+  sku: String;
+}>;
+
+export interface ItemCreateManyWithoutInventoryInput {
+  create?: ItemCreateWithoutInventoryInput[] | ItemCreateWithoutInventoryInput;
+}
+
+export interface ProductCreateWithoutQrcodeInput {
+  type: ProductType;
+  category: CategoryCreateOneWithoutProductsInput;
+  subCategory?: SubCategoryCreateOneWithoutProductsInput;
+  brand?: BrandCreateOneWithoutProductsInput;
+  productName: String;
+  barcode: Int;
+  desc?: String;
+  attributes?: AttributeCreateManyWithoutProductInput;
+  slug: String;
+  srp: ProductSrpCreateOneWithoutProductInput;
+  purchasePrice: PurchasePriceCreateOneWithoutProductInput;
+  stocks?: StockCreateManyWithoutProductInput;
+}
+
+export interface ItemCreateWithoutInventoryInput {
+  transaction: TransactionCreateOneInput;
+  srp?: ProductSrpCreateOneInput;
+  purchasePrice?: PurchasePriceCreateOneInput;
+  units: Int;
+  amount: Float;
+}
+
+export type SubCategoryWhereUniqueInput = AtLeastOne<{
+  subCatName: String;
+}>;
+
+export interface AttributeUpdateManyMutationInput {
+  attributeName?: AttributeType;
+  value?: String;
+}
+
+export interface PurchasePriceUpdateManyMutationInput {
+  price?: Float;
+}
+
+export interface BranchUpdateInput {
+  owner?: CompanyUpdateOneRequiredWithoutBranchesInput;
+  type?: BranchType;
+  branchName?: String;
+  address?: AddressUpdateOneRequiredInput;
+  contactInfo?: ContactInfoUpdateOneRequiredInput;
+  manager?: ProfileUpdateOneRequiredWithoutStationInput;
+}
+
+export interface ProfileUpdateInput {
+  login?: UserUpdateOneWithoutProfileInput;
+  firstName?: String;
+  middleName?: String;
+  lastName?: String;
+  birthdate?: DateTimeInput;
+  gender?: Gender;
+  contactInfo?: ContactInfoUpdateOneRequiredWithoutOwnerInput;
+  position?: Position;
+  employer?: CompanyUpdateOneRequiredInput;
+  address?: AddressUpdateOneInput;
+  station?: BranchUpdateOneRequiredWithoutManagerInput;
+  files?: FileUpdateManyInput;
+  logs?: LogUpdateManyInput;
+  technician?: QuoteUpdateManyWithoutTechnicianInput;
+  assistant?: QuoteUpdateManyInput;
+}
+
+export interface CompanyUpdateOneRequiredWithoutBranchesInput {
+  create?: CompanyCreateWithoutBranchesInput;
+  update?: CompanyUpdateWithoutBranchesDataInput;
+  upsert?: CompanyUpsertWithoutBranchesInput;
+  connect?: CompanyWhereUniqueInput;
+}
+
+export interface ProductSrpUpdateManyMutationInput {
+  price?: Float;
+}
+
+export interface CompanyUpdateWithoutBranchesDataInput {
+  companyName?: String;
+  about?: String;
+  clients?: CompanyUpdateOneWithoutSuppliersInput;
+  suppliers?: CompanyUpdateOneWithoutClientsInput;
+  sender?: DeliveryUpdateManyWithoutSenderInput;
+  receiver?: DeliveryUpdateManyWithoutReceiverInput;
+}
+
+export interface ProductUpdateInput {
+  type?: ProductType;
+  category?: CategoryUpdateOneRequiredWithoutProductsInput;
+  subCategory?: SubCategoryUpdateOneWithoutProductsInput;
+  brand?: BrandUpdateOneWithoutProductsInput;
+  productName?: String;
+  barcode?: Int;
+  qrcode?: QRCodeUpdateOneWithoutProductInput;
+  desc?: String;
+  attributes?: AttributeUpdateManyWithoutProductInput;
+  slug?: String;
+  srp?: ProductSrpUpdateOneRequiredWithoutProductInput;
+  purchasePrice?: PurchasePriceUpdateOneRequiredWithoutProductInput;
+  stocks?: StockUpdateManyWithoutProductInput;
+}
+
+export interface CompanyUpdateOneWithoutSuppliersInput {
+  create?: CompanyCreateWithoutSuppliersInput;
+  update?: CompanyUpdateWithoutSuppliersDataInput;
+  upsert?: CompanyUpsertWithoutSuppliersInput;
+  delete?: Boolean;
+  disconnect?: Boolean;
+  connect?: CompanyWhereUniqueInput;
+}
+
+export type UserWhereUniqueInput = AtLeastOne<{
+  id: ID_Input;
+  username?: String;
+}>;
+
+export interface CompanyUpdateWithoutSuppliersDataInput {
+  companyName?: String;
+  about?: String;
+  branches?: BranchUpdateManyWithoutOwnerInput;
+  clients?: CompanyUpdateOneWithoutSuppliersInput;
+  sender?: DeliveryUpdateManyWithoutSenderInput;
+  receiver?: DeliveryUpdateManyWithoutReceiverInput;
+}
+
+export interface OrderCreateInput {
+  transaction: TransactionCreateOneWithoutOrderInput;
+  delivery: DeliveryCreateOneWithoutOrdersInput;
+  status: OrderStatus;
+  owner: ProfileCreateOneInput;
+}
+
+export interface BranchUpdateManyWithoutOwnerInput {
+  create?: BranchCreateWithoutOwnerInput[] | BranchCreateWithoutOwnerInput;
+  delete?: BranchWhereUniqueInput[] | BranchWhereUniqueInput;
+  connect?: BranchWhereUniqueInput[] | BranchWhereUniqueInput;
+  set?: BranchWhereUniqueInput[] | BranchWhereUniqueInput;
+  disconnect?: BranchWhereUniqueInput[] | BranchWhereUniqueInput;
+  update?:
+    | BranchUpdateWithWhereUniqueWithoutOwnerInput[]
+    | BranchUpdateWithWhereUniqueWithoutOwnerInput;
+  upsert?:
+    | BranchUpsertWithWhereUniqueWithoutOwnerInput[]
+    | BranchUpsertWithWhereUniqueWithoutOwnerInput;
+  deleteMany?: BranchScalarWhereInput[] | BranchScalarWhereInput;
+  updateMany?:
+    | BranchUpdateManyWithWhereNestedInput[]
+    | BranchUpdateManyWithWhereNestedInput;
+}
+
+export interface AddressUpdateManyMutationInput {
+  address1?: String;
+  address2?: String;
+  barangay?: String;
+  city?: String;
+  province?: String;
+  zip?: Int;
+}
+
+export interface BranchUpdateWithWhereUniqueWithoutOwnerInput {
+  where: BranchWhereUniqueInput;
+  data: BranchUpdateWithoutOwnerDataInput;
+}
+
+export interface InventoryCreateInput {
+  product: StockCreateOneWithoutInventoryInput;
+  items?: ItemCreateManyWithoutInventoryInput;
+}
+
+export interface BranchUpdateWithoutOwnerDataInput {
+  type?: BranchType;
+  branchName?: String;
+  address?: AddressUpdateOneRequiredInput;
+  contactInfo?: ContactInfoUpdateOneRequiredInput;
+  manager?: ProfileUpdateOneRequiredWithoutStationInput;
+}
+
+export interface ProductCreateOneWithoutAttributesInput {
+  create?: ProductCreateWithoutAttributesInput;
+  connect?: ProductWhereUniqueInput;
+}
+
+export interface AddressUpdateOneRequiredInput {
+  create?: AddressCreateInput;
+  update?: AddressUpdateDataInput;
+  upsert?: AddressUpsertNestedInput;
+}
+
+export interface CategoryCreateOneWithoutProductsInput {
+  create?: CategoryCreateWithoutProductsInput;
+  connect?: CategoryWhereUniqueInput;
+}
+
+export interface AddressUpdateDataInput {
+  address1?: String;
+  address2?: String;
+  barangay?: String;
+  city?: String;
+  province?: String;
+  zip?: Int;
+}
+
+export interface SubCategoryCreateOneWithoutProductsInput {
+  create?: SubCategoryCreateWithoutProductsInput;
+  connect?: SubCategoryWhereUniqueInput;
+}
+
+export interface AddressUpsertNestedInput {
+  update: AddressUpdateDataInput;
+  create: AddressCreateInput;
+}
+
+export interface CategoryCreateOneInput {
+  create?: CategoryCreateInput;
+  connect?: CategoryWhereUniqueInput;
+}
+
+export interface FileWhereInput {
+  fileType?: String;
+  fileType_not?: String;
+  fileType_in?: String[] | String;
+  fileType_not_in?: String[] | String;
+  fileType_lt?: String;
+  fileType_lte?: String;
+  fileType_gt?: String;
+  fileType_gte?: String;
+  fileType_contains?: String;
+  fileType_not_contains?: String;
+  fileType_starts_with?: String;
+  fileType_not_starts_with?: String;
+  fileType_ends_with?: String;
+  fileType_not_ends_with?: String;
+  fileName?: String;
+  fileName_not?: String;
+  fileName_in?: String[] | String;
+  fileName_not_in?: String[] | String;
+  fileName_lt?: String;
+  fileName_lte?: String;
+  fileName_gt?: String;
+  fileName_gte?: String;
+  fileName_contains?: String;
+  fileName_not_contains?: String;
+  fileName_starts_with?: String;
+  fileName_not_starts_with?: String;
+  fileName_ends_with?: String;
+  fileName_not_ends_with?: String;
+  fileSize?: String;
+  fileSize_not?: String;
+  fileSize_in?: String[] | String;
+  fileSize_not_in?: String[] | String;
+  fileSize_lt?: String;
+  fileSize_lte?: String;
+  fileSize_gt?: String;
+  fileSize_gte?: String;
+  fileSize_contains?: String;
+  fileSize_not_contains?: String;
+  fileSize_starts_with?: String;
+  fileSize_not_starts_with?: String;
+  fileSize_ends_with?: String;
+  fileSize_not_ends_with?: String;
+  filePath?: String;
+  filePath_not?: String;
+  filePath_in?: String[] | String;
+  filePath_not_in?: String[] | String;
+  filePath_lt?: String;
+  filePath_lte?: String;
+  filePath_gt?: String;
+  filePath_gte?: String;
+  filePath_contains?: String;
+  filePath_not_contains?: String;
+  filePath_starts_with?: String;
+  filePath_not_starts_with?: String;
+  filePath_ends_with?: String;
+  filePath_not_ends_with?: String;
+  AND?: FileWhereInput[] | FileWhereInput;
+  OR?: FileWhereInput[] | FileWhereInput;
+  NOT?: FileWhereInput[] | FileWhereInput;
+}
+
+export interface ProductCreateManyWithoutCategoryInput {
+  create?:
+    | ProductCreateWithoutCategoryInput[]
+    | ProductCreateWithoutCategoryInput;
+  connect?: ProductWhereUniqueInput[] | ProductWhereUniqueInput;
+}
+
+export interface ItemWhereInput {
+  transaction?: TransactionWhereInput;
+  inventory?: InventoryWhereInput;
+  srp?: ProductSrpWhereInput;
+  purchasePrice?: PurchasePriceWhereInput;
+  units?: Int;
+  units_not?: Int;
+  units_in?: Int[] | Int;
+  units_not_in?: Int[] | Int;
+  units_lt?: Int;
+  units_lte?: Int;
+  units_gt?: Int;
+  units_gte?: Int;
+  amount?: Float;
+  amount_not?: Float;
+  amount_in?: Float[] | Float;
+  amount_not_in?: Float[] | Float;
+  amount_lt?: Float;
+  amount_lte?: Float;
+  amount_gt?: Float;
+  amount_gte?: Float;
+  createdAt?: DateTimeInput;
+  createdAt_not?: DateTimeInput;
+  createdAt_in?: DateTimeInput[] | DateTimeInput;
+  createdAt_not_in?: DateTimeInput[] | DateTimeInput;
+  createdAt_lt?: DateTimeInput;
+  createdAt_lte?: DateTimeInput;
+  createdAt_gt?: DateTimeInput;
+  createdAt_gte?: DateTimeInput;
+  updatedAt?: DateTimeInput;
+  updatedAt_not?: DateTimeInput;
+  updatedAt_in?: DateTimeInput[] | DateTimeInput;
+  updatedAt_not_in?: DateTimeInput[] | DateTimeInput;
+  updatedAt_lt?: DateTimeInput;
+  updatedAt_lte?: DateTimeInput;
+  updatedAt_gt?: DateTimeInput;
+  updatedAt_gte?: DateTimeInput;
+  AND?: ItemWhereInput[] | ItemWhereInput;
+  OR?: ItemWhereInput[] | ItemWhereInput;
+  NOT?: ItemWhereInput[] | ItemWhereInput;
+}
+
+export interface BrandCreateOneWithoutProductsInput {
+  create?: BrandCreateWithoutProductsInput;
+  connect?: BrandWhereUniqueInput;
+}
+
+export interface DeliveryUpdateManyMutationInput {
+  status?: DeliveryStatus;
+}
+
+export interface QRCodeCreateOneWithoutProductInput {
+  create?: QRCodeCreateWithoutProductInput;
+  connect?: QRCodeWhereUniqueInput;
 }
 
 export interface UserWhereInput {
@@ -142,23 +3131,400 @@ export interface UserWhereInput {
   id_not_starts_with?: ID_Input;
   id_ends_with?: ID_Input;
   id_not_ends_with?: ID_Input;
-  name?: String;
-  name_not?: String;
-  name_in?: String[] | String;
-  name_not_in?: String[] | String;
-  name_lt?: String;
-  name_lte?: String;
-  name_gt?: String;
-  name_gte?: String;
-  name_contains?: String;
-  name_not_contains?: String;
-  name_starts_with?: String;
-  name_not_starts_with?: String;
-  name_ends_with?: String;
-  name_not_ends_with?: String;
+  username?: String;
+  username_not?: String;
+  username_in?: String[] | String;
+  username_not_in?: String[] | String;
+  username_lt?: String;
+  username_lte?: String;
+  username_gt?: String;
+  username_gte?: String;
+  username_contains?: String;
+  username_not_contains?: String;
+  username_starts_with?: String;
+  username_not_starts_with?: String;
+  username_ends_with?: String;
+  username_not_ends_with?: String;
+  password?: String;
+  password_not?: String;
+  password_in?: String[] | String;
+  password_not_in?: String[] | String;
+  password_lt?: String;
+  password_lte?: String;
+  password_gt?: String;
+  password_gte?: String;
+  password_contains?: String;
+  password_not_contains?: String;
+  password_starts_with?: String;
+  password_not_starts_with?: String;
+  password_ends_with?: String;
+  password_not_ends_with?: String;
+  role?: Role;
+  role_not?: Role;
+  role_in?: Role[] | Role;
+  role_not_in?: Role[] | Role;
+  profile?: ProfileWhereInput;
+  createdAt?: DateTimeInput;
+  createdAt_not?: DateTimeInput;
+  createdAt_in?: DateTimeInput[] | DateTimeInput;
+  createdAt_not_in?: DateTimeInput[] | DateTimeInput;
+  createdAt_lt?: DateTimeInput;
+  createdAt_lte?: DateTimeInput;
+  createdAt_gt?: DateTimeInput;
+  createdAt_gte?: DateTimeInput;
+  updatedAt?: DateTimeInput;
+  updatedAt_not?: DateTimeInput;
+  updatedAt_in?: DateTimeInput[] | DateTimeInput;
+  updatedAt_not_in?: DateTimeInput[] | DateTimeInput;
+  updatedAt_lt?: DateTimeInput;
+  updatedAt_lte?: DateTimeInput;
+  updatedAt_gt?: DateTimeInput;
+  updatedAt_gte?: DateTimeInput;
+  transactions_every?: QuoteWhereInput;
+  transactions_some?: QuoteWhereInput;
+  transactions_none?: QuoteWhereInput;
   AND?: UserWhereInput[] | UserWhereInput;
   OR?: UserWhereInput[] | UserWhereInput;
   NOT?: UserWhereInput[] | UserWhereInput;
+}
+
+export interface AttributeCreateManyWithoutProductInput {
+  create?:
+    | AttributeCreateWithoutProductInput[]
+    | AttributeCreateWithoutProductInput;
+}
+
+export interface DeliveryCreateInput {
+  orders: OrderCreateOneWithoutDeliveryInput;
+  sender: CompanyCreateOneWithoutSenderInput;
+  receiver: CompanyCreateOneWithoutReceiverInput;
+  status: DeliveryStatus;
+}
+
+export interface ProductSrpCreateOneWithoutProductInput {
+  create?: ProductSrpCreateWithoutProductInput;
+}
+
+export interface ContactInfoUpdateManyMutationInput {
+  email?: String;
+  primaryTel?: String;
+  secondaryTel?: String;
+  primaryMobile?: String;
+  secondaryMobile?: String;
+}
+
+export interface PurchasePriceCreateOneWithoutProductInput {
+  create?: PurchasePriceCreateWithoutProductInput;
+}
+
+export interface QuoteUpdateManyWithoutCashierInput {
+  create?: QuoteCreateWithoutCashierInput[] | QuoteCreateWithoutCashierInput;
+  deleteMany?: QuoteScalarWhereInput[] | QuoteScalarWhereInput;
+  updateMany?:
+    | QuoteUpdateManyWithWhereNestedInput[]
+    | QuoteUpdateManyWithWhereNestedInput;
+}
+
+export interface StockCreateManyWithoutProductInput {
+  create?: StockCreateWithoutProductInput[] | StockCreateWithoutProductInput;
+  connect?: StockWhereUniqueInput[] | StockWhereUniqueInput;
+}
+
+export interface QuoteScalarWhereInput {
+  grossAmount?: Float;
+  grossAmount_not?: Float;
+  grossAmount_in?: Float[] | Float;
+  grossAmount_not_in?: Float[] | Float;
+  grossAmount_lt?: Float;
+  grossAmount_lte?: Float;
+  grossAmount_gt?: Float;
+  grossAmount_gte?: Float;
+  isDiscounted?: Boolean;
+  isDiscounted_not?: Boolean;
+  discountedAmount?: Float;
+  discountedAmount_not?: Float;
+  discountedAmount_in?: Float[] | Float;
+  discountedAmount_not_in?: Float[] | Float;
+  discountedAmount_lt?: Float;
+  discountedAmount_lte?: Float;
+  discountedAmount_gt?: Float;
+  discountedAmount_gte?: Float;
+  netAmount?: Float;
+  netAmount_not?: Float;
+  netAmount_in?: Float[] | Float;
+  netAmount_not_in?: Float[] | Float;
+  netAmount_lt?: Float;
+  netAmount_lte?: Float;
+  netAmount_gt?: Float;
+  netAmount_gte?: Float;
+  amountPaid?: Float;
+  amountPaid_not?: Float;
+  amountPaid_in?: Float[] | Float;
+  amountPaid_not_in?: Float[] | Float;
+  amountPaid_lt?: Float;
+  amountPaid_lte?: Float;
+  amountPaid_gt?: Float;
+  amountPaid_gte?: Float;
+  createdAt?: DateTimeInput;
+  createdAt_not?: DateTimeInput;
+  createdAt_in?: DateTimeInput[] | DateTimeInput;
+  createdAt_not_in?: DateTimeInput[] | DateTimeInput;
+  createdAt_lt?: DateTimeInput;
+  createdAt_lte?: DateTimeInput;
+  createdAt_gt?: DateTimeInput;
+  createdAt_gte?: DateTimeInput;
+  updatedAt?: DateTimeInput;
+  updatedAt_not?: DateTimeInput;
+  updatedAt_in?: DateTimeInput[] | DateTimeInput;
+  updatedAt_not_in?: DateTimeInput[] | DateTimeInput;
+  updatedAt_lt?: DateTimeInput;
+  updatedAt_lte?: DateTimeInput;
+  updatedAt_gt?: DateTimeInput;
+  updatedAt_gte?: DateTimeInput;
+  AND?: QuoteScalarWhereInput[] | QuoteScalarWhereInput;
+  OR?: QuoteScalarWhereInput[] | QuoteScalarWhereInput;
+  NOT?: QuoteScalarWhereInput[] | QuoteScalarWhereInput;
+}
+
+export interface BranchCreateOneInput {
+  create?: BranchCreateInput;
+  connect?: BranchWhereUniqueInput;
+}
+
+export interface QuoteUpdateManyWithWhereNestedInput {
+  where: QuoteScalarWhereInput;
+  data: QuoteUpdateManyDataInput;
+}
+
+export interface CompanyCreateOneWithoutBranchesInput {
+  create?: CompanyCreateWithoutBranchesInput;
+  connect?: CompanyWhereUniqueInput;
+}
+
+export interface QuoteUpdateManyDataInput {
+  grossAmount?: Float;
+  isDiscounted?: Boolean;
+  discountedAmount?: Float;
+  netAmount?: Float;
+  amountPaid?: Float;
+}
+
+export interface CompanyCreateOneWithoutSuppliersInput {
+  create?: CompanyCreateWithoutSuppliersInput;
+  connect?: CompanyWhereUniqueInput;
+}
+
+export interface UserUpsertWithoutProfileInput {
+  update: UserUpdateWithoutProfileDataInput;
+  create: UserCreateWithoutProfileInput;
+}
+
+export interface BranchCreateManyWithoutOwnerInput {
+  create?: BranchCreateWithoutOwnerInput[] | BranchCreateWithoutOwnerInput;
+  connect?: BranchWhereUniqueInput[] | BranchWhereUniqueInput;
+}
+
+export interface CompanyUpdateOneRequiredInput {
+  create?: CompanyCreateInput;
+  update?: CompanyUpdateDataInput;
+  upsert?: CompanyUpsertNestedInput;
+  connect?: CompanyWhereUniqueInput;
+}
+
+export interface AddressCreateOneInput {
+  create?: AddressCreateInput;
+}
+
+export interface CompanyUpdateDataInput {
+  companyName?: String;
+  about?: String;
+  branches?: BranchUpdateManyWithoutOwnerInput;
+  clients?: CompanyUpdateOneWithoutSuppliersInput;
+  suppliers?: CompanyUpdateOneWithoutClientsInput;
+  sender?: DeliveryUpdateManyWithoutSenderInput;
+  receiver?: DeliveryUpdateManyWithoutReceiverInput;
+}
+
+export interface ContactInfoCreateInput {
+  owner: ProfileCreateOneWithoutContactInfoInput;
+  email: String;
+  primaryTel?: String;
+  secondaryTel?: String;
+  primaryMobile?: String;
+  secondaryMobile?: String;
+}
+
+export interface CompanyUpdateOneWithoutClientsInput {
+  create?: CompanyCreateWithoutClientsInput;
+  update?: CompanyUpdateWithoutClientsDataInput;
+  upsert?: CompanyUpsertWithoutClientsInput;
+  delete?: Boolean;
+  disconnect?: Boolean;
+  connect?: CompanyWhereUniqueInput;
+}
+
+export interface ProfileCreateWithoutContactInfoInput {
+  login?: UserCreateOneWithoutProfileInput;
+  firstName: String;
+  middleName?: String;
+  lastName: String;
+  birthdate: DateTimeInput;
+  gender: Gender;
+  position: Position;
+  employer: CompanyCreateOneInput;
+  address?: AddressCreateOneInput;
+  station: BranchCreateOneWithoutManagerInput;
+  files?: FileCreateManyInput;
+  logs?: LogCreateManyInput;
+  technician?: QuoteCreateManyWithoutTechnicianInput;
+  assistant?: QuoteCreateManyInput;
+}
+
+export interface CompanyUpdateWithoutClientsDataInput {
+  companyName?: String;
+  about?: String;
+  branches?: BranchUpdateManyWithoutOwnerInput;
+  suppliers?: CompanyUpdateOneWithoutClientsInput;
+  sender?: DeliveryUpdateManyWithoutSenderInput;
+  receiver?: DeliveryUpdateManyWithoutReceiverInput;
+}
+
+export interface UserCreateWithoutProfileInput {
+  username: String;
+  password: String;
+  role: Role;
+  transactions?: QuoteCreateManyWithoutCashierInput;
+}
+
+export interface DeliveryUpdateManyWithoutSenderInput {
+  create?:
+    | DeliveryCreateWithoutSenderInput[]
+    | DeliveryCreateWithoutSenderInput;
+  deleteMany?: DeliveryScalarWhereInput[] | DeliveryScalarWhereInput;
+  updateMany?:
+    | DeliveryUpdateManyWithWhereNestedInput[]
+    | DeliveryUpdateManyWithWhereNestedInput;
+}
+
+export interface QuoteCreateWithoutCashierInput {
+  transaction: TransactionCreateOneWithoutQuoteInput;
+  technician?: ProfileCreateOneWithoutTechnicianInput;
+  assistant?: ProfileCreateOneInput;
+  descriptions?: ItemCreateManyInput;
+  grossAmount: Float;
+  isDiscounted: Boolean;
+  discountedAmount: Float;
+  netAmount: Float;
+  amountPaid: Float;
+}
+
+export interface DeliveryScalarWhereInput {
+  status?: DeliveryStatus;
+  status_not?: DeliveryStatus;
+  status_in?: DeliveryStatus[] | DeliveryStatus;
+  status_not_in?: DeliveryStatus[] | DeliveryStatus;
+  AND?: DeliveryScalarWhereInput[] | DeliveryScalarWhereInput;
+  OR?: DeliveryScalarWhereInput[] | DeliveryScalarWhereInput;
+  NOT?: DeliveryScalarWhereInput[] | DeliveryScalarWhereInput;
+}
+
+export interface TransactionCreateWithoutQuoteInput {
+  type: TransactionType;
+  refNo?: TransactionCreateOneInput;
+  receiptNo: Int;
+  order?: OrderCreateOneWithoutTransactionInput;
+  isPaid: Boolean;
+  balance: Float;
+}
+
+export interface DeliveryUpdateManyWithWhereNestedInput {
+  where: DeliveryScalarWhereInput;
+  data: DeliveryUpdateManyDataInput;
+}
+
+export interface TransactionCreateInput {
+  type: TransactionType;
+  refNo?: TransactionCreateOneInput;
+  receiptNo: Int;
+  order?: OrderCreateOneWithoutTransactionInput;
+  quote: QuoteCreateOneWithoutTransactionInput;
+  isPaid: Boolean;
+  balance: Float;
+}
+
+export interface DeliveryUpdateManyDataInput {
+  status?: DeliveryStatus;
+}
+
+export interface OrderCreateWithoutTransactionInput {
+  delivery: DeliveryCreateOneWithoutOrdersInput;
+  status: OrderStatus;
+  owner: ProfileCreateOneInput;
+}
+
+export interface DeliveryUpdateManyWithoutReceiverInput {
+  create?:
+    | DeliveryCreateWithoutReceiverInput[]
+    | DeliveryCreateWithoutReceiverInput;
+  deleteMany?: DeliveryScalarWhereInput[] | DeliveryScalarWhereInput;
+  updateMany?:
+    | DeliveryUpdateManyWithWhereNestedInput[]
+    | DeliveryUpdateManyWithWhereNestedInput;
+}
+
+export interface DeliveryCreateWithoutOrdersInput {
+  sender: CompanyCreateOneWithoutSenderInput;
+  receiver: CompanyCreateOneWithoutReceiverInput;
+  status: DeliveryStatus;
+}
+
+export interface CompanyUpsertWithoutClientsInput {
+  update: CompanyUpdateWithoutClientsDataInput;
+  create: CompanyCreateWithoutClientsInput;
+}
+
+export interface CompanyCreateWithoutSenderInput {
+  companyName: String;
+  about?: String;
+  branches?: BranchCreateManyWithoutOwnerInput;
+  clients?: CompanyCreateOneWithoutSuppliersInput;
+  suppliers?: CompanyCreateOneWithoutClientsInput;
+  receiver?: DeliveryCreateManyWithoutReceiverInput;
+}
+
+export interface CompanyUpsertNestedInput {
+  update: CompanyUpdateDataInput;
+  create: CompanyCreateInput;
+}
+
+export interface CompanyCreateWithoutClientsInput {
+  companyName: String;
+  about?: String;
+  branches?: BranchCreateManyWithoutOwnerInput;
+  suppliers?: CompanyCreateOneWithoutClientsInput;
+  sender?: DeliveryCreateManyWithoutSenderInput;
+  receiver?: DeliveryCreateManyWithoutReceiverInput;
+}
+
+export interface AddressUpdateOneInput {
+  create?: AddressCreateInput;
+  update?: AddressUpdateDataInput;
+  upsert?: AddressUpsertNestedInput;
+  delete?: Boolean;
+  disconnect?: Boolean;
+}
+
+export interface DeliveryCreateWithoutSenderInput {
+  orders: OrderCreateOneWithoutDeliveryInput;
+  receiver: CompanyCreateOneWithoutReceiverInput;
+  status: DeliveryStatus;
+}
+
+export interface BranchUpdateOneRequiredWithoutManagerInput {
+  create?: BranchCreateWithoutManagerInput;
+  update?: BranchUpdateWithoutManagerDataInput;
+  upsert?: BranchUpsertWithoutManagerInput;
+  connect?: BranchWhereUniqueInput;
 }
 
 export interface UserSubscriptionWhereInput {
@@ -172,28 +3538,2156 @@ export interface UserSubscriptionWhereInput {
   NOT?: UserSubscriptionWhereInput[] | UserSubscriptionWhereInput;
 }
 
-export type UserWhereUniqueInput = AtLeastOne<{
+export interface BranchUpdateWithoutManagerDataInput {
+  owner?: CompanyUpdateOneRequiredWithoutBranchesInput;
+  type?: BranchType;
+  branchName?: String;
+  address?: AddressUpdateOneRequiredInput;
+  contactInfo?: ContactInfoUpdateOneRequiredInput;
+}
+
+export interface StockSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: StockWhereInput;
+  AND?: StockSubscriptionWhereInput[] | StockSubscriptionWhereInput;
+  OR?: StockSubscriptionWhereInput[] | StockSubscriptionWhereInput;
+  NOT?: StockSubscriptionWhereInput[] | StockSubscriptionWhereInput;
+}
+
+export interface BranchUpsertWithoutManagerInput {
+  update: BranchUpdateWithoutManagerDataInput;
+  create: BranchCreateWithoutManagerInput;
+}
+
+export interface PurchasePriceSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: PurchasePriceWhereInput;
+  AND?:
+    | PurchasePriceSubscriptionWhereInput[]
+    | PurchasePriceSubscriptionWhereInput;
+  OR?:
+    | PurchasePriceSubscriptionWhereInput[]
+    | PurchasePriceSubscriptionWhereInput;
+  NOT?:
+    | PurchasePriceSubscriptionWhereInput[]
+    | PurchasePriceSubscriptionWhereInput;
+}
+
+export interface FileUpdateManyInput {
+  create?: FileCreateInput[] | FileCreateInput;
+  deleteMany?: FileScalarWhereInput[] | FileScalarWhereInput;
+  updateMany?:
+    | FileUpdateManyWithWhereNestedInput[]
+    | FileUpdateManyWithWhereNestedInput;
+}
+
+export interface CompanyWhereInput {
+  companyName?: String;
+  companyName_not?: String;
+  companyName_in?: String[] | String;
+  companyName_not_in?: String[] | String;
+  companyName_lt?: String;
+  companyName_lte?: String;
+  companyName_gt?: String;
+  companyName_gte?: String;
+  companyName_contains?: String;
+  companyName_not_contains?: String;
+  companyName_starts_with?: String;
+  companyName_not_starts_with?: String;
+  companyName_ends_with?: String;
+  companyName_not_ends_with?: String;
+  about?: String;
+  about_not?: String;
+  about_in?: String[] | String;
+  about_not_in?: String[] | String;
+  about_lt?: String;
+  about_lte?: String;
+  about_gt?: String;
+  about_gte?: String;
+  about_contains?: String;
+  about_not_contains?: String;
+  about_starts_with?: String;
+  about_not_starts_with?: String;
+  about_ends_with?: String;
+  about_not_ends_with?: String;
+  branches_every?: BranchWhereInput;
+  branches_some?: BranchWhereInput;
+  branches_none?: BranchWhereInput;
+  clients?: CompanyWhereInput;
+  suppliers?: CompanyWhereInput;
+  sender_every?: DeliveryWhereInput;
+  sender_some?: DeliveryWhereInput;
+  sender_none?: DeliveryWhereInput;
+  receiver_every?: DeliveryWhereInput;
+  receiver_some?: DeliveryWhereInput;
+  receiver_none?: DeliveryWhereInput;
+  AND?: CompanyWhereInput[] | CompanyWhereInput;
+  OR?: CompanyWhereInput[] | CompanyWhereInput;
+  NOT?: CompanyWhereInput[] | CompanyWhereInput;
+}
+
+export interface FileScalarWhereInput {
+  fileType?: String;
+  fileType_not?: String;
+  fileType_in?: String[] | String;
+  fileType_not_in?: String[] | String;
+  fileType_lt?: String;
+  fileType_lte?: String;
+  fileType_gt?: String;
+  fileType_gte?: String;
+  fileType_contains?: String;
+  fileType_not_contains?: String;
+  fileType_starts_with?: String;
+  fileType_not_starts_with?: String;
+  fileType_ends_with?: String;
+  fileType_not_ends_with?: String;
+  fileName?: String;
+  fileName_not?: String;
+  fileName_in?: String[] | String;
+  fileName_not_in?: String[] | String;
+  fileName_lt?: String;
+  fileName_lte?: String;
+  fileName_gt?: String;
+  fileName_gte?: String;
+  fileName_contains?: String;
+  fileName_not_contains?: String;
+  fileName_starts_with?: String;
+  fileName_not_starts_with?: String;
+  fileName_ends_with?: String;
+  fileName_not_ends_with?: String;
+  fileSize?: String;
+  fileSize_not?: String;
+  fileSize_in?: String[] | String;
+  fileSize_not_in?: String[] | String;
+  fileSize_lt?: String;
+  fileSize_lte?: String;
+  fileSize_gt?: String;
+  fileSize_gte?: String;
+  fileSize_contains?: String;
+  fileSize_not_contains?: String;
+  fileSize_starts_with?: String;
+  fileSize_not_starts_with?: String;
+  fileSize_ends_with?: String;
+  fileSize_not_ends_with?: String;
+  filePath?: String;
+  filePath_not?: String;
+  filePath_in?: String[] | String;
+  filePath_not_in?: String[] | String;
+  filePath_lt?: String;
+  filePath_lte?: String;
+  filePath_gt?: String;
+  filePath_gte?: String;
+  filePath_contains?: String;
+  filePath_not_contains?: String;
+  filePath_starts_with?: String;
+  filePath_not_starts_with?: String;
+  filePath_ends_with?: String;
+  filePath_not_ends_with?: String;
+  AND?: FileScalarWhereInput[] | FileScalarWhereInput;
+  OR?: FileScalarWhereInput[] | FileScalarWhereInput;
+  NOT?: FileScalarWhereInput[] | FileScalarWhereInput;
+}
+
+export interface ItemSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: ItemWhereInput;
+  AND?: ItemSubscriptionWhereInput[] | ItemSubscriptionWhereInput;
+  OR?: ItemSubscriptionWhereInput[] | ItemSubscriptionWhereInput;
+  NOT?: ItemSubscriptionWhereInput[] | ItemSubscriptionWhereInput;
+}
+
+export interface FileUpdateManyWithWhereNestedInput {
+  where: FileScalarWhereInput;
+  data: FileUpdateManyDataInput;
+}
+
+export interface BranchWhereInput {
+  owner?: CompanyWhereInput;
+  type?: BranchType;
+  type_not?: BranchType;
+  type_in?: BranchType[] | BranchType;
+  type_not_in?: BranchType[] | BranchType;
+  branchName?: String;
+  branchName_not?: String;
+  branchName_in?: String[] | String;
+  branchName_not_in?: String[] | String;
+  branchName_lt?: String;
+  branchName_lte?: String;
+  branchName_gt?: String;
+  branchName_gte?: String;
+  branchName_contains?: String;
+  branchName_not_contains?: String;
+  branchName_starts_with?: String;
+  branchName_not_starts_with?: String;
+  branchName_ends_with?: String;
+  branchName_not_ends_with?: String;
+  address?: AddressWhereInput;
+  contactInfo?: ContactInfoWhereInput;
+  manager?: ProfileWhereInput;
+  AND?: BranchWhereInput[] | BranchWhereInput;
+  OR?: BranchWhereInput[] | BranchWhereInput;
+  NOT?: BranchWhereInput[] | BranchWhereInput;
+}
+
+export interface FileUpdateManyDataInput {
+  fileType?: String;
+  fileName?: String;
+  fileSize?: String;
+  filePath?: String;
+}
+
+export interface PurchasePriceWhereInput {
+  product?: ProductWhereInput;
+  price?: Float;
+  price_not?: Float;
+  price_in?: Float[] | Float;
+  price_not_in?: Float[] | Float;
+  price_lt?: Float;
+  price_lte?: Float;
+  price_gt?: Float;
+  price_gte?: Float;
+  AND?: PurchasePriceWhereInput[] | PurchasePriceWhereInput;
+  OR?: PurchasePriceWhereInput[] | PurchasePriceWhereInput;
+  NOT?: PurchasePriceWhereInput[] | PurchasePriceWhereInput;
+}
+
+export interface LogUpdateManyInput {
+  create?: LogCreateInput[] | LogCreateInput;
+  deleteMany?: LogScalarWhereInput[] | LogScalarWhereInput;
+  updateMany?:
+    | LogUpdateManyWithWhereNestedInput[]
+    | LogUpdateManyWithWhereNestedInput;
+}
+
+export interface BranchSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: BranchWhereInput;
+  AND?: BranchSubscriptionWhereInput[] | BranchSubscriptionWhereInput;
+  OR?: BranchSubscriptionWhereInput[] | BranchSubscriptionWhereInput;
+  NOT?: BranchSubscriptionWhereInput[] | BranchSubscriptionWhereInput;
+}
+
+export interface LogScalarWhereInput {
+  sourceTable?: String;
+  sourceTable_not?: String;
+  sourceTable_in?: String[] | String;
+  sourceTable_not_in?: String[] | String;
+  sourceTable_lt?: String;
+  sourceTable_lte?: String;
+  sourceTable_gt?: String;
+  sourceTable_gte?: String;
+  sourceTable_contains?: String;
+  sourceTable_not_contains?: String;
+  sourceTable_starts_with?: String;
+  sourceTable_not_starts_with?: String;
+  sourceTable_ends_with?: String;
+  sourceTable_not_ends_with?: String;
+  sourceId?: String;
+  sourceId_not?: String;
+  sourceId_in?: String[] | String;
+  sourceId_not_in?: String[] | String;
+  sourceId_lt?: String;
+  sourceId_lte?: String;
+  sourceId_gt?: String;
+  sourceId_gte?: String;
+  sourceId_contains?: String;
+  sourceId_not_contains?: String;
+  sourceId_starts_with?: String;
+  sourceId_not_starts_with?: String;
+  sourceId_ends_with?: String;
+  sourceId_not_ends_with?: String;
+  actionNo?: String;
+  actionNo_not?: String;
+  actionNo_in?: String[] | String;
+  actionNo_not_in?: String[] | String;
+  actionNo_lt?: String;
+  actionNo_lte?: String;
+  actionNo_gt?: String;
+  actionNo_gte?: String;
+  actionNo_contains?: String;
+  actionNo_not_contains?: String;
+  actionNo_starts_with?: String;
+  actionNo_not_starts_with?: String;
+  actionNo_ends_with?: String;
+  actionNo_not_ends_with?: String;
+  actionType?: String;
+  actionType_not?: String;
+  actionType_in?: String[] | String;
+  actionType_not_in?: String[] | String;
+  actionType_lt?: String;
+  actionType_lte?: String;
+  actionType_gt?: String;
+  actionType_gte?: String;
+  actionType_contains?: String;
+  actionType_not_contains?: String;
+  actionType_starts_with?: String;
+  actionType_not_starts_with?: String;
+  actionType_ends_with?: String;
+  actionType_not_ends_with?: String;
+  actionTitle?: String;
+  actionTitle_not?: String;
+  actionTitle_in?: String[] | String;
+  actionTitle_not_in?: String[] | String;
+  actionTitle_lt?: String;
+  actionTitle_lte?: String;
+  actionTitle_gt?: String;
+  actionTitle_gte?: String;
+  actionTitle_contains?: String;
+  actionTitle_not_contains?: String;
+  actionTitle_starts_with?: String;
+  actionTitle_not_starts_with?: String;
+  actionTitle_ends_with?: String;
+  actionTitle_not_ends_with?: String;
+  tableField?: String;
+  tableField_not?: String;
+  tableField_in?: String[] | String;
+  tableField_not_in?: String[] | String;
+  tableField_lt?: String;
+  tableField_lte?: String;
+  tableField_gt?: String;
+  tableField_gte?: String;
+  tableField_contains?: String;
+  tableField_not_contains?: String;
+  tableField_starts_with?: String;
+  tableField_not_starts_with?: String;
+  tableField_ends_with?: String;
+  tableField_not_ends_with?: String;
+  oldValue?: String;
+  oldValue_not?: String;
+  oldValue_in?: String[] | String;
+  oldValue_not_in?: String[] | String;
+  oldValue_lt?: String;
+  oldValue_lte?: String;
+  oldValue_gt?: String;
+  oldValue_gte?: String;
+  oldValue_contains?: String;
+  oldValue_not_contains?: String;
+  oldValue_starts_with?: String;
+  oldValue_not_starts_with?: String;
+  oldValue_ends_with?: String;
+  oldValue_not_ends_with?: String;
+  newValue?: String;
+  newValue_not?: String;
+  newValue_in?: String[] | String;
+  newValue_not_in?: String[] | String;
+  newValue_lt?: String;
+  newValue_lte?: String;
+  newValue_gt?: String;
+  newValue_gte?: String;
+  newValue_contains?: String;
+  newValue_not_contains?: String;
+  newValue_starts_with?: String;
+  newValue_not_starts_with?: String;
+  newValue_ends_with?: String;
+  newValue_not_ends_with?: String;
+  comment?: String;
+  comment_not?: String;
+  comment_in?: String[] | String;
+  comment_not_in?: String[] | String;
+  comment_lt?: String;
+  comment_lte?: String;
+  comment_gt?: String;
+  comment_gte?: String;
+  comment_contains?: String;
+  comment_not_contains?: String;
+  comment_starts_with?: String;
+  comment_not_starts_with?: String;
+  comment_ends_with?: String;
+  comment_not_ends_with?: String;
+  createdAt?: DateTimeInput;
+  createdAt_not?: DateTimeInput;
+  createdAt_in?: DateTimeInput[] | DateTimeInput;
+  createdAt_not_in?: DateTimeInput[] | DateTimeInput;
+  createdAt_lt?: DateTimeInput;
+  createdAt_lte?: DateTimeInput;
+  createdAt_gt?: DateTimeInput;
+  createdAt_gte?: DateTimeInput;
+  AND?: LogScalarWhereInput[] | LogScalarWhereInput;
+  OR?: LogScalarWhereInput[] | LogScalarWhereInput;
+  NOT?: LogScalarWhereInput[] | LogScalarWhereInput;
+}
+
+export type BranchWhereUniqueInput = AtLeastOne<{
+  branchName: String;
+}>;
+
+export interface LogUpdateManyWithWhereNestedInput {
+  where: LogScalarWhereInput;
+  data: LogUpdateManyDataInput;
+}
+
+export type BrandWhereUniqueInput = AtLeastOne<{
+  brandName: String;
+}>;
+
+export interface LogUpdateManyDataInput {
+  sourceTable?: String;
+  sourceId?: String;
+  actionNo?: String;
+  actionType?: String;
+  actionTitle?: String;
+  tableField?: String;
+  oldValue?: String;
+  newValue?: String;
+  comment?: String;
+}
+
+export interface ProfileUpdateOneInput {
+  create?: ProfileCreateInput;
+  update?: ProfileUpdateDataInput;
+  upsert?: ProfileUpsertNestedInput;
+  delete?: Boolean;
+  disconnect?: Boolean;
+  connect?: ProfileWhereUniqueInput;
+}
+
+export interface QuoteUpdateManyWithoutTechnicianInput {
+  create?:
+    | QuoteCreateWithoutTechnicianInput[]
+    | QuoteCreateWithoutTechnicianInput;
+  deleteMany?: QuoteScalarWhereInput[] | QuoteScalarWhereInput;
+  updateMany?:
+    | QuoteUpdateManyWithWhereNestedInput[]
+    | QuoteUpdateManyWithWhereNestedInput;
+}
+
+export interface ProfileUpdateWithoutTechnicianDataInput {
+  login?: UserUpdateOneWithoutProfileInput;
+  firstName?: String;
+  middleName?: String;
+  lastName?: String;
+  birthdate?: DateTimeInput;
+  gender?: Gender;
+  contactInfo?: ContactInfoUpdateOneRequiredWithoutOwnerInput;
+  position?: Position;
+  employer?: CompanyUpdateOneRequiredInput;
+  address?: AddressUpdateOneInput;
+  station?: BranchUpdateOneRequiredWithoutManagerInput;
+  files?: FileUpdateManyInput;
+  logs?: LogUpdateManyInput;
+  assistant?: QuoteUpdateManyInput;
+}
+
+export interface QuoteUpdateManyInput {
+  create?: QuoteCreateInput[] | QuoteCreateInput;
+  deleteMany?: QuoteScalarWhereInput[] | QuoteScalarWhereInput;
+  updateMany?:
+    | QuoteUpdateManyWithWhereNestedInput[]
+    | QuoteUpdateManyWithWhereNestedInput;
+}
+
+export interface UserUpsertWithoutTransactionsInput {
+  update: UserUpdateWithoutTransactionsDataInput;
+  create: UserCreateWithoutTransactionsInput;
+}
+
+export interface ProfileUpsertWithoutContactInfoInput {
+  update: ProfileUpdateWithoutContactInfoDataInput;
+  create: ProfileCreateWithoutContactInfoInput;
+}
+
+export interface CategoryWhereInput {
+  catName?: String;
+  catName_not?: String;
+  catName_in?: String[] | String;
+  catName_not_in?: String[] | String;
+  catName_lt?: String;
+  catName_lte?: String;
+  catName_gt?: String;
+  catName_gte?: String;
+  catName_contains?: String;
+  catName_not_contains?: String;
+  catName_starts_with?: String;
+  catName_not_starts_with?: String;
+  catName_ends_with?: String;
+  catName_not_ends_with?: String;
+  catDesc?: String;
+  catDesc_not?: String;
+  catDesc_in?: String[] | String;
+  catDesc_not_in?: String[] | String;
+  catDesc_lt?: String;
+  catDesc_lte?: String;
+  catDesc_gt?: String;
+  catDesc_gte?: String;
+  catDesc_contains?: String;
+  catDesc_not_contains?: String;
+  catDesc_starts_with?: String;
+  catDesc_not_starts_with?: String;
+  catDesc_ends_with?: String;
+  catDesc_not_ends_with?: String;
+  products_every?: ProductWhereInput;
+  products_some?: ProductWhereInput;
+  products_none?: ProductWhereInput;
+  AND?: CategoryWhereInput[] | CategoryWhereInput;
+  OR?: CategoryWhereInput[] | CategoryWhereInput;
+  NOT?: CategoryWhereInput[] | CategoryWhereInput;
+}
+
+export interface ContactInfoUpsertNestedInput {
+  update: ContactInfoUpdateDataInput;
+  create: ContactInfoCreateInput;
+}
+
+export interface QuoteUpdateWithoutTransactionDataInput {
+  cashier?: UserUpdateOneRequiredWithoutTransactionsInput;
+  technician?: ProfileUpdateOneWithoutTechnicianInput;
+  assistant?: ProfileUpdateOneInput;
+  descriptions?: ItemUpdateManyInput;
+  grossAmount?: Float;
+  isDiscounted?: Boolean;
+  discountedAmount?: Float;
+  netAmount?: Float;
+  amountPaid?: Float;
+}
+
+export interface ProfileUpdateOneRequiredWithoutStationInput {
+  create?: ProfileCreateWithoutStationInput;
+  update?: ProfileUpdateWithoutStationDataInput;
+  upsert?: ProfileUpsertWithoutStationInput;
+  connect?: ProfileWhereUniqueInput;
+}
+
+export interface ProfileUpdateDataInput {
+  login?: UserUpdateOneWithoutProfileInput;
+  firstName?: String;
+  middleName?: String;
+  lastName?: String;
+  birthdate?: DateTimeInput;
+  gender?: Gender;
+  contactInfo?: ContactInfoUpdateOneRequiredWithoutOwnerInput;
+  position?: Position;
+  employer?: CompanyUpdateOneRequiredInput;
+  address?: AddressUpdateOneInput;
+  station?: BranchUpdateOneRequiredWithoutManagerInput;
+  files?: FileUpdateManyInput;
+  logs?: LogUpdateManyInput;
+  technician?: QuoteUpdateManyWithoutTechnicianInput;
+  assistant?: QuoteUpdateManyInput;
+}
+
+export interface ProfileUpdateWithoutStationDataInput {
+  login?: UserUpdateOneWithoutProfileInput;
+  firstName?: String;
+  middleName?: String;
+  lastName?: String;
+  birthdate?: DateTimeInput;
+  gender?: Gender;
+  contactInfo?: ContactInfoUpdateOneRequiredWithoutOwnerInput;
+  position?: Position;
+  employer?: CompanyUpdateOneRequiredInput;
+  address?: AddressUpdateOneInput;
+  files?: FileUpdateManyInput;
+  logs?: LogUpdateManyInput;
+  technician?: QuoteUpdateManyWithoutTechnicianInput;
+  assistant?: QuoteUpdateManyInput;
+}
+
+export interface CompanyUpsertWithoutReceiverInput {
+  update: CompanyUpdateWithoutReceiverDataInput;
+  create: CompanyCreateWithoutReceiverInput;
+}
+
+export interface ContactInfoUpdateOneRequiredWithoutOwnerInput {
+  create?: ContactInfoCreateWithoutOwnerInput;
+  update?: ContactInfoUpdateWithoutOwnerDataInput;
+  upsert?: ContactInfoUpsertWithoutOwnerInput;
+  connect?: ContactInfoWhereUniqueInput;
+}
+
+export interface CompanyUpdateWithoutSenderDataInput {
+  companyName?: String;
+  about?: String;
+  branches?: BranchUpdateManyWithoutOwnerInput;
+  clients?: CompanyUpdateOneWithoutSuppliersInput;
+  suppliers?: CompanyUpdateOneWithoutClientsInput;
+  receiver?: DeliveryUpdateManyWithoutReceiverInput;
+}
+
+export interface ContactInfoUpdateWithoutOwnerDataInput {
+  email?: String;
+  primaryTel?: String;
+  secondaryTel?: String;
+  primaryMobile?: String;
+  secondaryMobile?: String;
+}
+
+export interface AttributeWhereInput {
+  product?: ProductWhereInput;
+  attributeName?: AttributeType;
+  attributeName_not?: AttributeType;
+  attributeName_in?: AttributeType[] | AttributeType;
+  attributeName_not_in?: AttributeType[] | AttributeType;
+  value?: String;
+  value_not?: String;
+  value_in?: String[] | String;
+  value_not_in?: String[] | String;
+  value_lt?: String;
+  value_lte?: String;
+  value_gt?: String;
+  value_gte?: String;
+  value_contains?: String;
+  value_not_contains?: String;
+  value_starts_with?: String;
+  value_not_starts_with?: String;
+  value_ends_with?: String;
+  value_not_ends_with?: String;
+  AND?: AttributeWhereInput[] | AttributeWhereInput;
+  OR?: AttributeWhereInput[] | AttributeWhereInput;
+  NOT?: AttributeWhereInput[] | AttributeWhereInput;
+}
+
+export interface ContactInfoUpsertWithoutOwnerInput {
+  update: ContactInfoUpdateWithoutOwnerDataInput;
+  create: ContactInfoCreateWithoutOwnerInput;
+}
+
+export type ProductWhereUniqueInput = AtLeastOne<{
+  productName: String;
+  slug?: String;
+}>;
+
+export interface ProfileUpsertWithoutStationInput {
+  update: ProfileUpdateWithoutStationDataInput;
+  create: ProfileCreateWithoutStationInput;
+}
+
+export interface ProductUpsertWithWhereUniqueWithoutSubCategoryInput {
+  where: ProductWhereUniqueInput;
+  update: ProductUpdateWithoutSubCategoryDataInput;
+  create: ProductCreateWithoutSubCategoryInput;
+}
+
+export interface BranchUpsertWithWhereUniqueWithoutOwnerInput {
+  where: BranchWhereUniqueInput;
+  update: BranchUpdateWithoutOwnerDataInput;
+  create: BranchCreateWithoutOwnerInput;
+}
+
+export type ProfileWhereUniqueInput = AtLeastOne<{
   id: ID_Input;
 }>;
+
+export interface BranchScalarWhereInput {
+  type?: BranchType;
+  type_not?: BranchType;
+  type_in?: BranchType[] | BranchType;
+  type_not_in?: BranchType[] | BranchType;
+  branchName?: String;
+  branchName_not?: String;
+  branchName_in?: String[] | String;
+  branchName_not_in?: String[] | String;
+  branchName_lt?: String;
+  branchName_lte?: String;
+  branchName_gt?: String;
+  branchName_gte?: String;
+  branchName_contains?: String;
+  branchName_not_contains?: String;
+  branchName_starts_with?: String;
+  branchName_not_starts_with?: String;
+  branchName_ends_with?: String;
+  branchName_not_ends_with?: String;
+  AND?: BranchScalarWhereInput[] | BranchScalarWhereInput;
+  OR?: BranchScalarWhereInput[] | BranchScalarWhereInput;
+  NOT?: BranchScalarWhereInput[] | BranchScalarWhereInput;
+}
+
+export interface SubCategoryCreateInput {
+  category: CategoryCreateOneInput;
+  subCatName: String;
+  subCatDesc?: String;
+  products?: ProductCreateManyWithoutSubCategoryInput;
+}
+
+export interface BranchUpdateManyWithWhereNestedInput {
+  where: BranchScalarWhereInput;
+  data: BranchUpdateManyDataInput;
+}
+
+export interface ProductUpdateOneRequiredWithoutStocksInput {
+  create?: ProductCreateWithoutStocksInput;
+  update?: ProductUpdateWithoutStocksDataInput;
+  upsert?: ProductUpsertWithoutStocksInput;
+  connect?: ProductWhereUniqueInput;
+}
+
+export interface BranchUpdateManyDataInput {
+  type?: BranchType;
+  branchName?: String;
+}
+
+export interface QuoteUpdateManyMutationInput {
+  grossAmount?: Float;
+  isDiscounted?: Boolean;
+  discountedAmount?: Float;
+  netAmount?: Float;
+  amountPaid?: Float;
+}
+
+export interface CompanyUpsertWithoutSuppliersInput {
+  update: CompanyUpdateWithoutSuppliersDataInput;
+  create: CompanyCreateWithoutSuppliersInput;
+}
+
+export interface ProductUpdateOneRequiredWithoutQrcodeInput {
+  create?: ProductCreateWithoutQrcodeInput;
+  update?: ProductUpdateWithoutQrcodeDataInput;
+  upsert?: ProductUpsertWithoutQrcodeInput;
+  connect?: ProductWhereUniqueInput;
+}
+
+export interface CompanyUpsertWithoutBranchesInput {
+  update: CompanyUpdateWithoutBranchesDataInput;
+  create: CompanyCreateWithoutBranchesInput;
+}
+
+export interface ProductCreateOneWithoutQrcodeInput {
+  create?: ProductCreateWithoutQrcodeInput;
+  connect?: ProductWhereUniqueInput;
+}
+
+export interface BranchUpdateManyMutationInput {
+  type?: BranchType;
+  branchName?: String;
+}
+
+export interface ProfileUpdateManyMutationInput {
+  firstName?: String;
+  middleName?: String;
+  lastName?: String;
+  birthdate?: DateTimeInput;
+  gender?: Gender;
+  position?: Position;
+}
+
+export interface BrandCreateInput {
+  brandName: String;
+  manufacturer?: String;
+  products?: ProductCreateManyWithoutBrandInput;
+}
+
+export interface ProductUpdateManyMutationInput {
+  type?: ProductType;
+  productName?: String;
+  barcode?: Int;
+  desc?: String;
+  slug?: String;
+}
+
+export interface ProductCreateManyWithoutBrandInput {
+  create?: ProductCreateWithoutBrandInput[] | ProductCreateWithoutBrandInput;
+  connect?: ProductWhereUniqueInput[] | ProductWhereUniqueInput;
+}
+
+export interface OrderUpdateManyMutationInput {
+  status?: OrderStatus;
+}
+
+export interface ProductCreateWithoutBrandInput {
+  type: ProductType;
+  category: CategoryCreateOneWithoutProductsInput;
+  subCategory?: SubCategoryCreateOneWithoutProductsInput;
+  productName: String;
+  barcode: Int;
+  qrcode?: QRCodeCreateOneWithoutProductInput;
+  desc?: String;
+  attributes?: AttributeCreateManyWithoutProductInput;
+  slug: String;
+  srp: ProductSrpCreateOneWithoutProductInput;
+  purchasePrice: PurchasePriceCreateOneWithoutProductInput;
+  stocks?: StockCreateManyWithoutProductInput;
+}
+
+export interface AddressCreateInput {
+  address1: String;
+  address2?: String;
+  barangay: String;
+  city: String;
+  province: String;
+  zip?: Int;
+}
+
+export interface BrandUpdateInput {
+  brandName?: String;
+  manufacturer?: String;
+  products?: ProductUpdateManyWithoutBrandInput;
+}
+
+export interface AttributeCreateInput {
+  product: ProductCreateOneWithoutAttributesInput;
+  attributeName: AttributeType;
+  value: String;
+}
+
+export interface ProductUpdateManyWithoutBrandInput {
+  create?: ProductCreateWithoutBrandInput[] | ProductCreateWithoutBrandInput;
+  delete?: ProductWhereUniqueInput[] | ProductWhereUniqueInput;
+  connect?: ProductWhereUniqueInput[] | ProductWhereUniqueInput;
+  set?: ProductWhereUniqueInput[] | ProductWhereUniqueInput;
+  disconnect?: ProductWhereUniqueInput[] | ProductWhereUniqueInput;
+  update?:
+    | ProductUpdateWithWhereUniqueWithoutBrandInput[]
+    | ProductUpdateWithWhereUniqueWithoutBrandInput;
+  upsert?:
+    | ProductUpsertWithWhereUniqueWithoutBrandInput[]
+    | ProductUpsertWithWhereUniqueWithoutBrandInput;
+  deleteMany?: ProductScalarWhereInput[] | ProductScalarWhereInput;
+  updateMany?:
+    | ProductUpdateManyWithWhereNestedInput[]
+    | ProductUpdateManyWithWhereNestedInput;
+}
+
+export interface CategoryCreateWithoutProductsInput {
+  catName: String;
+  catDesc?: String;
+}
+
+export interface ProductUpdateWithWhereUniqueWithoutBrandInput {
+  where: ProductWhereUniqueInput;
+  data: ProductUpdateWithoutBrandDataInput;
+}
+
+export interface CategoryCreateInput {
+  catName: String;
+  catDesc?: String;
+  products?: ProductCreateManyWithoutCategoryInput;
+}
+
+export interface ProductUpdateWithoutBrandDataInput {
+  type?: ProductType;
+  category?: CategoryUpdateOneRequiredWithoutProductsInput;
+  subCategory?: SubCategoryUpdateOneWithoutProductsInput;
+  productName?: String;
+  barcode?: Int;
+  qrcode?: QRCodeUpdateOneWithoutProductInput;
+  desc?: String;
+  attributes?: AttributeUpdateManyWithoutProductInput;
+  slug?: String;
+  srp?: ProductSrpUpdateOneRequiredWithoutProductInput;
+  purchasePrice?: PurchasePriceUpdateOneRequiredWithoutProductInput;
+  stocks?: StockUpdateManyWithoutProductInput;
+}
+
+export interface BrandCreateWithoutProductsInput {
+  brandName: String;
+  manufacturer?: String;
+}
+
+export interface CategoryUpdateOneRequiredWithoutProductsInput {
+  create?: CategoryCreateWithoutProductsInput;
+  update?: CategoryUpdateWithoutProductsDataInput;
+  upsert?: CategoryUpsertWithoutProductsInput;
+  connect?: CategoryWhereUniqueInput;
+}
+
+export interface AttributeCreateWithoutProductInput {
+  attributeName: AttributeType;
+  value: String;
+}
+
+export interface CategoryUpdateWithoutProductsDataInput {
+  catName?: String;
+  catDesc?: String;
+}
+
+export interface PurchasePriceCreateWithoutProductInput {
+  price: Float;
+}
+
+export interface CategoryUpsertWithoutProductsInput {
+  update: CategoryUpdateWithoutProductsDataInput;
+  create: CategoryCreateWithoutProductsInput;
+}
+
+export interface BranchCreateInput {
+  owner: CompanyCreateOneWithoutBranchesInput;
+  type: BranchType;
+  branchName: String;
+  address: AddressCreateOneInput;
+  contactInfo: ContactInfoCreateOneInput;
+  manager: ProfileCreateOneWithoutStationInput;
+}
+
+export interface SubCategoryUpdateOneWithoutProductsInput {
+  create?: SubCategoryCreateWithoutProductsInput;
+  update?: SubCategoryUpdateWithoutProductsDataInput;
+  upsert?: SubCategoryUpsertWithoutProductsInput;
+  delete?: Boolean;
+  disconnect?: Boolean;
+  connect?: SubCategoryWhereUniqueInput;
+}
+
+export interface CompanyCreateWithoutSuppliersInput {
+  companyName: String;
+  about?: String;
+  branches?: BranchCreateManyWithoutOwnerInput;
+  clients?: CompanyCreateOneWithoutSuppliersInput;
+  sender?: DeliveryCreateManyWithoutSenderInput;
+  receiver?: DeliveryCreateManyWithoutReceiverInput;
+}
+
+export interface SubCategoryUpdateWithoutProductsDataInput {
+  category?: CategoryUpdateOneRequiredInput;
+  subCatName?: String;
+  subCatDesc?: String;
+}
+
+export interface ContactInfoCreateOneInput {
+  create?: ContactInfoCreateInput;
+  connect?: ContactInfoWhereUniqueInput;
+}
+
+export interface CategoryUpdateOneRequiredInput {
+  create?: CategoryCreateInput;
+  update?: CategoryUpdateDataInput;
+  upsert?: CategoryUpsertNestedInput;
+  connect?: CategoryWhereUniqueInput;
+}
+
+export interface UserCreateOneWithoutProfileInput {
+  create?: UserCreateWithoutProfileInput;
+  connect?: UserWhereUniqueInput;
+}
+
+export interface CategoryUpdateDataInput {
+  catName?: String;
+  catDesc?: String;
+  products?: ProductUpdateManyWithoutCategoryInput;
+}
+
+export interface TransactionCreateOneWithoutQuoteInput {
+  create?: TransactionCreateWithoutQuoteInput;
+  connect?: TransactionWhereUniqueInput;
+}
+
+export interface ProductUpdateManyWithoutCategoryInput {
+  create?:
+    | ProductCreateWithoutCategoryInput[]
+    | ProductCreateWithoutCategoryInput;
+  delete?: ProductWhereUniqueInput[] | ProductWhereUniqueInput;
+  connect?: ProductWhereUniqueInput[] | ProductWhereUniqueInput;
+  set?: ProductWhereUniqueInput[] | ProductWhereUniqueInput;
+  disconnect?: ProductWhereUniqueInput[] | ProductWhereUniqueInput;
+  update?:
+    | ProductUpdateWithWhereUniqueWithoutCategoryInput[]
+    | ProductUpdateWithWhereUniqueWithoutCategoryInput;
+  upsert?:
+    | ProductUpsertWithWhereUniqueWithoutCategoryInput[]
+    | ProductUpsertWithWhereUniqueWithoutCategoryInput;
+  deleteMany?: ProductScalarWhereInput[] | ProductScalarWhereInput;
+  updateMany?:
+    | ProductUpdateManyWithWhereNestedInput[]
+    | ProductUpdateManyWithWhereNestedInput;
+}
+
+export interface OrderCreateOneWithoutTransactionInput {
+  create?: OrderCreateWithoutTransactionInput;
+}
+
+export interface ProductUpdateWithWhereUniqueWithoutCategoryInput {
+  where: ProductWhereUniqueInput;
+  data: ProductUpdateWithoutCategoryDataInput;
+}
+
+export interface CompanyCreateOneWithoutSenderInput {
+  create?: CompanyCreateWithoutSenderInput;
+  connect?: CompanyWhereUniqueInput;
+}
+
+export interface ProductUpdateWithoutCategoryDataInput {
+  type?: ProductType;
+  subCategory?: SubCategoryUpdateOneWithoutProductsInput;
+  brand?: BrandUpdateOneWithoutProductsInput;
+  productName?: String;
+  barcode?: Int;
+  qrcode?: QRCodeUpdateOneWithoutProductInput;
+  desc?: String;
+  attributes?: AttributeUpdateManyWithoutProductInput;
+  slug?: String;
+  srp?: ProductSrpUpdateOneRequiredWithoutProductInput;
+  purchasePrice?: PurchasePriceUpdateOneRequiredWithoutProductInput;
+  stocks?: StockUpdateManyWithoutProductInput;
+}
+
+export interface DeliveryCreateManyWithoutSenderInput {
+  create?:
+    | DeliveryCreateWithoutSenderInput[]
+    | DeliveryCreateWithoutSenderInput;
+}
+
+export interface BrandUpdateOneWithoutProductsInput {
+  create?: BrandCreateWithoutProductsInput;
+  update?: BrandUpdateWithoutProductsDataInput;
+  upsert?: BrandUpsertWithoutProductsInput;
+  delete?: Boolean;
+  disconnect?: Boolean;
+  connect?: BrandWhereUniqueInput;
+}
+
+export interface TransactionSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: TransactionWhereInput;
+  AND?: TransactionSubscriptionWhereInput[] | TransactionSubscriptionWhereInput;
+  OR?: TransactionSubscriptionWhereInput[] | TransactionSubscriptionWhereInput;
+  NOT?: TransactionSubscriptionWhereInput[] | TransactionSubscriptionWhereInput;
+}
+
+export interface BrandUpdateWithoutProductsDataInput {
+  brandName?: String;
+  manufacturer?: String;
+}
+
+export interface ProductSrpSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: ProductSrpWhereInput;
+  AND?: ProductSrpSubscriptionWhereInput[] | ProductSrpSubscriptionWhereInput;
+  OR?: ProductSrpSubscriptionWhereInput[] | ProductSrpSubscriptionWhereInput;
+  NOT?: ProductSrpSubscriptionWhereInput[] | ProductSrpSubscriptionWhereInput;
+}
+
+export interface BrandUpsertWithoutProductsInput {
+  update: BrandUpdateWithoutProductsDataInput;
+  create: BrandCreateWithoutProductsInput;
+}
+
+export interface FileSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: FileWhereInput;
+  AND?: FileSubscriptionWhereInput[] | FileSubscriptionWhereInput;
+  OR?: FileSubscriptionWhereInput[] | FileSubscriptionWhereInput;
+  NOT?: FileSubscriptionWhereInput[] | FileSubscriptionWhereInput;
+}
+
+export interface QRCodeUpdateOneWithoutProductInput {
+  create?: QRCodeCreateWithoutProductInput;
+  update?: QRCodeUpdateWithoutProductDataInput;
+  upsert?: QRCodeUpsertWithoutProductInput;
+  delete?: Boolean;
+  disconnect?: Boolean;
+  connect?: QRCodeWhereUniqueInput;
+}
+
+export interface ProductSrpWhereInput {
+  product?: ProductWhereInput;
+  price?: Float;
+  price_not?: Float;
+  price_in?: Float[] | Float;
+  price_not_in?: Float[] | Float;
+  price_lt?: Float;
+  price_lte?: Float;
+  price_gt?: Float;
+  price_gte?: Float;
+  AND?: ProductSrpWhereInput[] | ProductSrpWhereInput;
+  OR?: ProductSrpWhereInput[] | ProductSrpWhereInput;
+  NOT?: ProductSrpWhereInput[] | ProductSrpWhereInput;
+}
+
+export interface QRCodeUpdateWithoutProductDataInput {
+  qrcode?: String;
+}
+
+export interface TransactionUpdateManyMutationInput {
+  type?: TransactionType;
+  receiptNo?: Int;
+  isPaid?: Boolean;
+  balance?: Float;
+}
+
+export interface QRCodeUpsertWithoutProductInput {
+  update: QRCodeUpdateWithoutProductDataInput;
+  create: QRCodeCreateWithoutProductInput;
+}
+
+export interface BrandWhereInput {
+  brandName?: String;
+  brandName_not?: String;
+  brandName_in?: String[] | String;
+  brandName_not_in?: String[] | String;
+  brandName_lt?: String;
+  brandName_lte?: String;
+  brandName_gt?: String;
+  brandName_gte?: String;
+  brandName_contains?: String;
+  brandName_not_contains?: String;
+  brandName_starts_with?: String;
+  brandName_not_starts_with?: String;
+  brandName_ends_with?: String;
+  brandName_not_ends_with?: String;
+  manufacturer?: String;
+  manufacturer_not?: String;
+  manufacturer_in?: String[] | String;
+  manufacturer_not_in?: String[] | String;
+  manufacturer_lt?: String;
+  manufacturer_lte?: String;
+  manufacturer_gt?: String;
+  manufacturer_gte?: String;
+  manufacturer_contains?: String;
+  manufacturer_not_contains?: String;
+  manufacturer_starts_with?: String;
+  manufacturer_not_starts_with?: String;
+  manufacturer_ends_with?: String;
+  manufacturer_not_ends_with?: String;
+  products_every?: ProductWhereInput;
+  products_some?: ProductWhereInput;
+  products_none?: ProductWhereInput;
+  AND?: BrandWhereInput[] | BrandWhereInput;
+  OR?: BrandWhereInput[] | BrandWhereInput;
+  NOT?: BrandWhereInput[] | BrandWhereInput;
+}
+
+export interface AttributeUpdateManyWithoutProductInput {
+  create?:
+    | AttributeCreateWithoutProductInput[]
+    | AttributeCreateWithoutProductInput;
+  deleteMany?: AttributeScalarWhereInput[] | AttributeScalarWhereInput;
+  updateMany?:
+    | AttributeUpdateManyWithWhereNestedInput[]
+    | AttributeUpdateManyWithWhereNestedInput;
+}
+
+export interface ProfileUpdateWithoutLoginDataInput {
+  firstName?: String;
+  middleName?: String;
+  lastName?: String;
+  birthdate?: DateTimeInput;
+  gender?: Gender;
+  contactInfo?: ContactInfoUpdateOneRequiredWithoutOwnerInput;
+  position?: Position;
+  employer?: CompanyUpdateOneRequiredInput;
+  address?: AddressUpdateOneInput;
+  station?: BranchUpdateOneRequiredWithoutManagerInput;
+  files?: FileUpdateManyInput;
+  logs?: LogUpdateManyInput;
+  technician?: QuoteUpdateManyWithoutTechnicianInput;
+  assistant?: QuoteUpdateManyInput;
+}
+
+export interface AttributeScalarWhereInput {
+  attributeName?: AttributeType;
+  attributeName_not?: AttributeType;
+  attributeName_in?: AttributeType[] | AttributeType;
+  attributeName_not_in?: AttributeType[] | AttributeType;
+  value?: String;
+  value_not?: String;
+  value_in?: String[] | String;
+  value_not_in?: String[] | String;
+  value_lt?: String;
+  value_lte?: String;
+  value_gt?: String;
+  value_gte?: String;
+  value_contains?: String;
+  value_not_contains?: String;
+  value_starts_with?: String;
+  value_not_starts_with?: String;
+  value_ends_with?: String;
+  value_not_ends_with?: String;
+  AND?: AttributeScalarWhereInput[] | AttributeScalarWhereInput;
+  OR?: AttributeScalarWhereInput[] | AttributeScalarWhereInput;
+  NOT?: AttributeScalarWhereInput[] | AttributeScalarWhereInput;
+}
+
+export interface OrderUpsertWithoutTransactionInput {
+  update: OrderUpdateWithoutTransactionDataInput;
+  create: OrderCreateWithoutTransactionInput;
+}
+
+export interface AttributeUpdateManyWithWhereNestedInput {
+  where: AttributeScalarWhereInput;
+  data: AttributeUpdateManyDataInput;
+}
+
+export interface CompanyUpdateOneRequiredWithoutReceiverInput {
+  create?: CompanyCreateWithoutReceiverInput;
+  update?: CompanyUpdateWithoutReceiverDataInput;
+  upsert?: CompanyUpsertWithoutReceiverInput;
+  connect?: CompanyWhereUniqueInput;
+}
+
+export interface AttributeUpdateManyDataInput {
+  attributeName?: AttributeType;
+  value?: String;
+}
+
+export interface OrderUpdateOneWithoutTransactionInput {
+  create?: OrderCreateWithoutTransactionInput;
+  update?: OrderUpdateWithoutTransactionDataInput;
+  upsert?: OrderUpsertWithoutTransactionInput;
+  delete?: Boolean;
+  disconnect?: Boolean;
+}
+
+export interface ProductSrpUpdateOneRequiredWithoutProductInput {
+  create?: ProductSrpCreateWithoutProductInput;
+  update?: ProductSrpUpdateWithoutProductDataInput;
+  upsert?: ProductSrpUpsertWithoutProductInput;
+}
+
+export interface ProductUpdateWithWhereUniqueWithoutSubCategoryInput {
+  where: ProductWhereUniqueInput;
+  data: ProductUpdateWithoutSubCategoryDataInput;
+}
+
+export interface ProductSrpUpdateWithoutProductDataInput {
+  price?: Float;
+}
+
+export interface ProductUpsertWithoutStocksInput {
+  update: ProductUpdateWithoutStocksDataInput;
+  create: ProductCreateWithoutStocksInput;
+}
+
+export interface ProductSrpUpsertWithoutProductInput {
+  update: ProductSrpUpdateWithoutProductDataInput;
+  create: ProductSrpCreateWithoutProductInput;
+}
+
+export interface ProductUpsertWithoutQrcodeInput {
+  update: ProductUpdateWithoutQrcodeDataInput;
+  create: ProductCreateWithoutQrcodeInput;
+}
+
+export interface PurchasePriceUpdateOneRequiredWithoutProductInput {
+  create?: PurchasePriceCreateWithoutProductInput;
+  update?: PurchasePriceUpdateWithoutProductDataInput;
+  upsert?: PurchasePriceUpsertWithoutProductInput;
+}
+
+export interface QRCodeCreateInput {
+  qrcode: String;
+  product: ProductCreateOneWithoutQrcodeInput;
+}
+
+export interface PurchasePriceUpdateWithoutProductDataInput {
+  price?: Float;
+}
+
+export interface ProductCreateInput {
+  type: ProductType;
+  category: CategoryCreateOneWithoutProductsInput;
+  subCategory?: SubCategoryCreateOneWithoutProductsInput;
+  brand?: BrandCreateOneWithoutProductsInput;
+  productName: String;
+  barcode: Int;
+  qrcode?: QRCodeCreateOneWithoutProductInput;
+  desc?: String;
+  attributes?: AttributeCreateManyWithoutProductInput;
+  slug: String;
+  srp: ProductSrpCreateOneWithoutProductInput;
+  purchasePrice: PurchasePriceCreateOneWithoutProductInput;
+  stocks?: StockCreateManyWithoutProductInput;
+}
+
+export interface PurchasePriceUpsertWithoutProductInput {
+  update: PurchasePriceUpdateWithoutProductDataInput;
+  create: PurchasePriceCreateWithoutProductInput;
+}
+
+export interface ItemUpdateManyMutationInput {
+  units?: Int;
+  amount?: Float;
+}
+
+export interface StockUpdateManyWithoutProductInput {
+  create?: StockCreateWithoutProductInput[] | StockCreateWithoutProductInput;
+  delete?: StockWhereUniqueInput[] | StockWhereUniqueInput;
+  connect?: StockWhereUniqueInput[] | StockWhereUniqueInput;
+  set?: StockWhereUniqueInput[] | StockWhereUniqueInput;
+  disconnect?: StockWhereUniqueInput[] | StockWhereUniqueInput;
+  update?:
+    | StockUpdateWithWhereUniqueWithoutProductInput[]
+    | StockUpdateWithWhereUniqueWithoutProductInput;
+  upsert?:
+    | StockUpsertWithWhereUniqueWithoutProductInput[]
+    | StockUpsertWithWhereUniqueWithoutProductInput;
+  deleteMany?: StockScalarWhereInput[] | StockScalarWhereInput;
+  updateMany?:
+    | StockUpdateManyWithWhereNestedInput[]
+    | StockUpdateManyWithWhereNestedInput;
+}
+
+export interface SubCategoryCreateWithoutProductsInput {
+  category: CategoryCreateOneInput;
+  subCatName: String;
+  subCatDesc?: String;
+}
+
+export interface StockUpdateWithWhereUniqueWithoutProductInput {
+  where: StockWhereUniqueInput;
+  data: StockUpdateWithoutProductDataInput;
+}
+
+export interface QRCodeCreateWithoutProductInput {
+  qrcode: String;
+}
+
+export interface StockUpdateWithoutProductDataInput {
+  sku?: String;
+  warehouse?: BranchUpdateOneRequiredInput;
+  units?: Int;
+  inventory?: InventoryUpdateOneWithoutProductInput;
+}
+
+export interface StockCreateWithoutProductInput {
+  sku: String;
+  warehouse: BranchCreateOneInput;
+  units: Int;
+  inventory?: InventoryCreateOneWithoutProductInput;
+}
+
+export interface BranchUpdateOneRequiredInput {
+  create?: BranchCreateInput;
+  update?: BranchUpdateDataInput;
+  upsert?: BranchUpsertNestedInput;
+  connect?: BranchWhereUniqueInput;
+}
+
+export interface BranchCreateWithoutOwnerInput {
+  type: BranchType;
+  branchName: String;
+  address: AddressCreateOneInput;
+  contactInfo: ContactInfoCreateOneInput;
+  manager: ProfileCreateOneWithoutStationInput;
+}
+
+export interface BranchUpdateDataInput {
+  owner?: CompanyUpdateOneRequiredWithoutBranchesInput;
+  type?: BranchType;
+  branchName?: String;
+  address?: AddressUpdateOneRequiredInput;
+  contactInfo?: ContactInfoUpdateOneRequiredInput;
+  manager?: ProfileUpdateOneRequiredWithoutStationInput;
+}
+
+export interface QuoteCreateManyWithoutCashierInput {
+  create?: QuoteCreateWithoutCashierInput[] | QuoteCreateWithoutCashierInput;
+}
+
+export interface BranchUpsertNestedInput {
+  update: BranchUpdateDataInput;
+  create: BranchCreateInput;
+}
+
+export interface DeliveryCreateOneWithoutOrdersInput {
+  create?: DeliveryCreateWithoutOrdersInput;
+}
+
+export interface InventoryUpdateOneWithoutProductInput {
+  create?: InventoryCreateWithoutProductInput;
+  update?: InventoryUpdateWithoutProductDataInput;
+  upsert?: InventoryUpsertWithoutProductInput;
+  delete?: Boolean;
+  disconnect?: Boolean;
+}
+
+export interface OrderCreateOneWithoutDeliveryInput {
+  create?: OrderCreateWithoutDeliveryInput;
+}
+
+export interface InventoryUpdateWithoutProductDataInput {
+  items?: ItemUpdateManyWithoutInventoryInput;
+}
+
+export interface OrderSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: OrderWhereInput;
+  AND?: OrderSubscriptionWhereInput[] | OrderSubscriptionWhereInput;
+  OR?: OrderSubscriptionWhereInput[] | OrderSubscriptionWhereInput;
+  NOT?: OrderSubscriptionWhereInput[] | OrderSubscriptionWhereInput;
+}
+
+export interface ItemUpdateManyWithoutInventoryInput {
+  create?: ItemCreateWithoutInventoryInput[] | ItemCreateWithoutInventoryInput;
+  deleteMany?: ItemScalarWhereInput[] | ItemScalarWhereInput;
+  updateMany?:
+    | ItemUpdateManyWithWhereNestedInput[]
+    | ItemUpdateManyWithWhereNestedInput;
+}
+
+export interface AddressSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: AddressWhereInput;
+  AND?: AddressSubscriptionWhereInput[] | AddressSubscriptionWhereInput;
+  OR?: AddressSubscriptionWhereInput[] | AddressSubscriptionWhereInput;
+  NOT?: AddressSubscriptionWhereInput[] | AddressSubscriptionWhereInput;
+}
+
+export interface ItemScalarWhereInput {
+  units?: Int;
+  units_not?: Int;
+  units_in?: Int[] | Int;
+  units_not_in?: Int[] | Int;
+  units_lt?: Int;
+  units_lte?: Int;
+  units_gt?: Int;
+  units_gte?: Int;
+  amount?: Float;
+  amount_not?: Float;
+  amount_in?: Float[] | Float;
+  amount_not_in?: Float[] | Float;
+  amount_lt?: Float;
+  amount_lte?: Float;
+  amount_gt?: Float;
+  amount_gte?: Float;
+  createdAt?: DateTimeInput;
+  createdAt_not?: DateTimeInput;
+  createdAt_in?: DateTimeInput[] | DateTimeInput;
+  createdAt_not_in?: DateTimeInput[] | DateTimeInput;
+  createdAt_lt?: DateTimeInput;
+  createdAt_lte?: DateTimeInput;
+  createdAt_gt?: DateTimeInput;
+  createdAt_gte?: DateTimeInput;
+  updatedAt?: DateTimeInput;
+  updatedAt_not?: DateTimeInput;
+  updatedAt_in?: DateTimeInput[] | DateTimeInput;
+  updatedAt_not_in?: DateTimeInput[] | DateTimeInput;
+  updatedAt_lt?: DateTimeInput;
+  updatedAt_lte?: DateTimeInput;
+  updatedAt_gt?: DateTimeInput;
+  updatedAt_gte?: DateTimeInput;
+  AND?: ItemScalarWhereInput[] | ItemScalarWhereInput;
+  OR?: ItemScalarWhereInput[] | ItemScalarWhereInput;
+  NOT?: ItemScalarWhereInput[] | ItemScalarWhereInput;
+}
+
+export type CompanyWhereUniqueInput = AtLeastOne<{
+  companyName: String;
+}>;
+
+export interface ItemUpdateManyWithWhereNestedInput {
+  where: ItemScalarWhereInput;
+  data: ItemUpdateManyDataInput;
+}
+
+export interface ProductWhereInput {
+  type?: ProductType;
+  type_not?: ProductType;
+  type_in?: ProductType[] | ProductType;
+  type_not_in?: ProductType[] | ProductType;
+  category?: CategoryWhereInput;
+  subCategory?: SubCategoryWhereInput;
+  brand?: BrandWhereInput;
+  productName?: String;
+  productName_not?: String;
+  productName_in?: String[] | String;
+  productName_not_in?: String[] | String;
+  productName_lt?: String;
+  productName_lte?: String;
+  productName_gt?: String;
+  productName_gte?: String;
+  productName_contains?: String;
+  productName_not_contains?: String;
+  productName_starts_with?: String;
+  productName_not_starts_with?: String;
+  productName_ends_with?: String;
+  productName_not_ends_with?: String;
+  barcode?: Int;
+  barcode_not?: Int;
+  barcode_in?: Int[] | Int;
+  barcode_not_in?: Int[] | Int;
+  barcode_lt?: Int;
+  barcode_lte?: Int;
+  barcode_gt?: Int;
+  barcode_gte?: Int;
+  qrcode?: QRCodeWhereInput;
+  desc?: String;
+  desc_not?: String;
+  desc_in?: String[] | String;
+  desc_not_in?: String[] | String;
+  desc_lt?: String;
+  desc_lte?: String;
+  desc_gt?: String;
+  desc_gte?: String;
+  desc_contains?: String;
+  desc_not_contains?: String;
+  desc_starts_with?: String;
+  desc_not_starts_with?: String;
+  desc_ends_with?: String;
+  desc_not_ends_with?: String;
+  attributes_every?: AttributeWhereInput;
+  attributes_some?: AttributeWhereInput;
+  attributes_none?: AttributeWhereInput;
+  slug?: String;
+  slug_not?: String;
+  slug_in?: String[] | String;
+  slug_not_in?: String[] | String;
+  slug_lt?: String;
+  slug_lte?: String;
+  slug_gt?: String;
+  slug_gte?: String;
+  slug_contains?: String;
+  slug_not_contains?: String;
+  slug_starts_with?: String;
+  slug_not_starts_with?: String;
+  slug_ends_with?: String;
+  slug_not_ends_with?: String;
+  srp?: ProductSrpWhereInput;
+  purchasePrice?: PurchasePriceWhereInput;
+  stocks_every?: StockWhereInput;
+  stocks_some?: StockWhereInput;
+  stocks_none?: StockWhereInput;
+  AND?: ProductWhereInput[] | ProductWhereInput;
+  OR?: ProductWhereInput[] | ProductWhereInput;
+  NOT?: ProductWhereInput[] | ProductWhereInput;
+}
+
+export interface ItemUpdateManyDataInput {
+  units?: Int;
+  amount?: Float;
+}
+
+export interface TransactionUpdateInput {
+  type?: TransactionType;
+  refNo?: TransactionUpdateOneInput;
+  receiptNo?: Int;
+  order?: OrderUpdateOneWithoutTransactionInput;
+  quote?: QuoteUpdateOneRequiredWithoutTransactionInput;
+  isPaid?: Boolean;
+  balance?: Float;
+}
+
+export interface InventoryUpsertWithoutProductInput {
+  update: InventoryUpdateWithoutProductDataInput;
+  create: InventoryCreateWithoutProductInput;
+}
+
+export interface StockUpdateInput {
+  sku?: String;
+  product?: ProductUpdateOneRequiredWithoutStocksInput;
+  warehouse?: BranchUpdateOneRequiredInput;
+  units?: Int;
+  inventory?: InventoryUpdateOneWithoutProductInput;
+}
+
+export interface StockUpsertWithWhereUniqueWithoutProductInput {
+  where: StockWhereUniqueInput;
+  update: StockUpdateWithoutProductDataInput;
+  create: StockCreateWithoutProductInput;
+}
+
+export type TransactionWhereUniqueInput = AtLeastOne<{
+  id: ID_Input;
+}>;
+
+export interface StockScalarWhereInput {
+  sku?: String;
+  sku_not?: String;
+  sku_in?: String[] | String;
+  sku_not_in?: String[] | String;
+  sku_lt?: String;
+  sku_lte?: String;
+  sku_gt?: String;
+  sku_gte?: String;
+  sku_contains?: String;
+  sku_not_contains?: String;
+  sku_starts_with?: String;
+  sku_not_starts_with?: String;
+  sku_ends_with?: String;
+  sku_not_ends_with?: String;
+  units?: Int;
+  units_not?: Int;
+  units_in?: Int[] | Int;
+  units_not_in?: Int[] | Int;
+  units_lt?: Int;
+  units_lte?: Int;
+  units_gt?: Int;
+  units_gte?: Int;
+  AND?: StockScalarWhereInput[] | StockScalarWhereInput;
+  OR?: StockScalarWhereInput[] | StockScalarWhereInput;
+  NOT?: StockScalarWhereInput[] | StockScalarWhereInput;
+}
+
+export interface ProductCreateWithoutAttributesInput {
+  type: ProductType;
+  category: CategoryCreateOneWithoutProductsInput;
+  subCategory?: SubCategoryCreateOneWithoutProductsInput;
+  brand?: BrandCreateOneWithoutProductsInput;
+  productName: String;
+  barcode: Int;
+  qrcode?: QRCodeCreateOneWithoutProductInput;
+  desc?: String;
+  slug: String;
+  srp: ProductSrpCreateOneWithoutProductInput;
+  purchasePrice: PurchasePriceCreateOneWithoutProductInput;
+  stocks?: StockCreateManyWithoutProductInput;
+}
+
+export interface StockUpdateManyWithWhereNestedInput {
+  where: StockScalarWhereInput;
+  data: StockUpdateManyDataInput;
+}
+
+export interface ProductSrpCreateWithoutProductInput {
+  price: Float;
+}
+
+export interface StockUpdateManyDataInput {
+  sku?: String;
+  units?: Int;
+}
+
+export interface ProfileCreateOneWithoutContactInfoInput {
+  create?: ProfileCreateWithoutContactInfoInput;
+  connect?: ProfileWhereUniqueInput;
+}
+
+export interface ProductUpsertWithWhereUniqueWithoutCategoryInput {
+  where: ProductWhereUniqueInput;
+  update: ProductUpdateWithoutCategoryDataInput;
+  create: ProductCreateWithoutCategoryInput;
+}
+
+export interface CompanyCreateOneWithoutClientsInput {
+  create?: CompanyCreateWithoutClientsInput;
+  connect?: CompanyWhereUniqueInput;
+}
+
+export interface ProductScalarWhereInput {
+  type?: ProductType;
+  type_not?: ProductType;
+  type_in?: ProductType[] | ProductType;
+  type_not_in?: ProductType[] | ProductType;
+  productName?: String;
+  productName_not?: String;
+  productName_in?: String[] | String;
+  productName_not_in?: String[] | String;
+  productName_lt?: String;
+  productName_lte?: String;
+  productName_gt?: String;
+  productName_gte?: String;
+  productName_contains?: String;
+  productName_not_contains?: String;
+  productName_starts_with?: String;
+  productName_not_starts_with?: String;
+  productName_ends_with?: String;
+  productName_not_ends_with?: String;
+  barcode?: Int;
+  barcode_not?: Int;
+  barcode_in?: Int[] | Int;
+  barcode_not_in?: Int[] | Int;
+  barcode_lt?: Int;
+  barcode_lte?: Int;
+  barcode_gt?: Int;
+  barcode_gte?: Int;
+  desc?: String;
+  desc_not?: String;
+  desc_in?: String[] | String;
+  desc_not_in?: String[] | String;
+  desc_lt?: String;
+  desc_lte?: String;
+  desc_gt?: String;
+  desc_gte?: String;
+  desc_contains?: String;
+  desc_not_contains?: String;
+  desc_starts_with?: String;
+  desc_not_starts_with?: String;
+  desc_ends_with?: String;
+  desc_not_ends_with?: String;
+  slug?: String;
+  slug_not?: String;
+  slug_in?: String[] | String;
+  slug_not_in?: String[] | String;
+  slug_lt?: String;
+  slug_lte?: String;
+  slug_gt?: String;
+  slug_gte?: String;
+  slug_contains?: String;
+  slug_not_contains?: String;
+  slug_starts_with?: String;
+  slug_not_starts_with?: String;
+  slug_ends_with?: String;
+  slug_not_ends_with?: String;
+  AND?: ProductScalarWhereInput[] | ProductScalarWhereInput;
+  OR?: ProductScalarWhereInput[] | ProductScalarWhereInput;
+  NOT?: ProductScalarWhereInput[] | ProductScalarWhereInput;
+}
+
+export interface StockWhereInput {
+  sku?: String;
+  sku_not?: String;
+  sku_in?: String[] | String;
+  sku_not_in?: String[] | String;
+  sku_lt?: String;
+  sku_lte?: String;
+  sku_gt?: String;
+  sku_gte?: String;
+  sku_contains?: String;
+  sku_not_contains?: String;
+  sku_starts_with?: String;
+  sku_not_starts_with?: String;
+  sku_ends_with?: String;
+  sku_not_ends_with?: String;
+  product?: ProductWhereInput;
+  warehouse?: BranchWhereInput;
+  units?: Int;
+  units_not?: Int;
+  units_in?: Int[] | Int;
+  units_not_in?: Int[] | Int;
+  units_lt?: Int;
+  units_lte?: Int;
+  units_gt?: Int;
+  units_gte?: Int;
+  inventory?: InventoryWhereInput;
+  AND?: StockWhereInput[] | StockWhereInput;
+  OR?: StockWhereInput[] | StockWhereInput;
+  NOT?: StockWhereInput[] | StockWhereInput;
+}
+
+export interface ProductUpdateManyWithWhereNestedInput {
+  where: ProductScalarWhereInput;
+  data: ProductUpdateManyDataInput;
+}
+
+export interface UserUpdateWithoutTransactionsDataInput {
+  username?: String;
+  password?: String;
+  role?: Role;
+  profile?: ProfileUpdateOneRequiredWithoutLoginInput;
+}
+
+export interface ProductUpdateManyDataInput {
+  type?: ProductType;
+  productName?: String;
+  barcode?: Int;
+  desc?: String;
+  slug?: String;
+}
+
+export interface ProductCreateWithoutSubCategoryInput {
+  type: ProductType;
+  category: CategoryCreateOneWithoutProductsInput;
+  brand?: BrandCreateOneWithoutProductsInput;
+  productName: String;
+  barcode: Int;
+  qrcode?: QRCodeCreateOneWithoutProductInput;
+  desc?: String;
+  attributes?: AttributeCreateManyWithoutProductInput;
+  slug: String;
+  srp: ProductSrpCreateOneWithoutProductInput;
+  purchasePrice: PurchasePriceCreateOneWithoutProductInput;
+  stocks?: StockCreateManyWithoutProductInput;
+}
+
+export interface CategoryUpsertNestedInput {
+  update: CategoryUpdateDataInput;
+  create: CategoryCreateInput;
+}
+
+export interface LogUpdateManyMutationInput {
+  sourceTable?: String;
+  sourceId?: String;
+  actionNo?: String;
+  actionType?: String;
+  actionTitle?: String;
+  tableField?: String;
+  oldValue?: String;
+  newValue?: String;
+  comment?: String;
+}
+
+export interface SubCategoryUpsertWithoutProductsInput {
+  update: SubCategoryUpdateWithoutProductsDataInput;
+  create: SubCategoryCreateWithoutProductsInput;
+}
+
+export interface CompanyCreateWithoutBranchesInput {
+  companyName: String;
+  about?: String;
+  clients?: CompanyCreateOneWithoutSuppliersInput;
+  suppliers?: CompanyCreateOneWithoutClientsInput;
+  sender?: DeliveryCreateManyWithoutSenderInput;
+  receiver?: DeliveryCreateManyWithoutReceiverInput;
+}
+
+export interface ProductUpsertWithWhereUniqueWithoutBrandInput {
+  where: ProductWhereUniqueInput;
+  update: ProductUpdateWithoutBrandDataInput;
+  create: ProductCreateWithoutBrandInput;
+}
+
+export interface QRCodeSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: QRCodeWhereInput;
+  AND?: QRCodeSubscriptionWhereInput[] | QRCodeSubscriptionWhereInput;
+  OR?: QRCodeSubscriptionWhereInput[] | QRCodeSubscriptionWhereInput;
+  NOT?: QRCodeSubscriptionWhereInput[] | QRCodeSubscriptionWhereInput;
+}
+
+export interface BrandUpdateManyMutationInput {
+  brandName?: String;
+  manufacturer?: String;
+}
+
+export interface DeliveryUpdateWithoutOrdersDataInput {
+  sender?: CompanyUpdateOneRequiredWithoutSenderInput;
+  receiver?: CompanyUpdateOneRequiredWithoutReceiverInput;
+  status?: DeliveryStatus;
+}
+
+export interface CompanyUpdateManyMutationInput {
+  companyName?: String;
+  about?: String;
+}
+
+export interface CompanyUpdateInput {
+  companyName?: String;
+  about?: String;
+  branches?: BranchUpdateManyWithoutOwnerInput;
+  clients?: CompanyUpdateOneWithoutSuppliersInput;
+  suppliers?: CompanyUpdateOneWithoutClientsInput;
+  sender?: DeliveryUpdateManyWithoutSenderInput;
+  receiver?: DeliveryUpdateManyWithoutReceiverInput;
+}
+
+export interface CategoryUpdateManyMutationInput {
+  catName?: String;
+  catDesc?: String;
+}
+
+export interface CategoryUpdateInput {
+  catName?: String;
+  catDesc?: String;
+  products?: ProductUpdateManyWithoutCategoryInput;
+}
+
+export interface QRCodeUpdateInput {
+  qrcode?: String;
+  product?: ProductUpdateOneRequiredWithoutQrcodeInput;
+}
+
+export interface QuoteUpsertWithoutTransactionInput {
+  update: QuoteUpdateWithoutTransactionDataInput;
+  create: QuoteCreateWithoutTransactionInput;
+}
+
+export interface TransactionCreateOneInput {
+  create?: TransactionCreateInput;
+  connect?: TransactionWhereUniqueInput;
+}
+
+export interface ProductCreateWithoutCategoryInput {
+  type: ProductType;
+  subCategory?: SubCategoryCreateOneWithoutProductsInput;
+  brand?: BrandCreateOneWithoutProductsInput;
+  productName: String;
+  barcode: Int;
+  qrcode?: QRCodeCreateOneWithoutProductInput;
+  desc?: String;
+  attributes?: AttributeCreateManyWithoutProductInput;
+  slug: String;
+  srp: ProductSrpCreateOneWithoutProductInput;
+  purchasePrice: PurchasePriceCreateOneWithoutProductInput;
+  stocks?: StockCreateManyWithoutProductInput;
+}
 
 export interface NodeNode {
   id: ID_Output;
 }
 
-export interface AggregateUser {
+export interface UserPreviousValues {
+  id: ID_Output;
+  username: String;
+  password: String;
+  role: Role;
+  createdAt: DateTimeOutput;
+  updatedAt: DateTimeOutput;
+}
+
+export interface UserPreviousValuesPromise
+  extends Promise<UserPreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  username: () => Promise<String>;
+  password: () => Promise<String>;
+  role: () => Promise<Role>;
+  createdAt: () => Promise<DateTimeOutput>;
+  updatedAt: () => Promise<DateTimeOutput>;
+}
+
+export interface UserPreviousValuesSubscription
+  extends Promise<AsyncIterator<UserPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  username: () => Promise<AsyncIterator<String>>;
+  password: () => Promise<AsyncIterator<String>>;
+  role: () => Promise<AsyncIterator<Role>>;
+  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+}
+
+export interface AggregateBranch {
   count: Int;
 }
 
-export interface AggregateUserPromise
-  extends Promise<AggregateUser>,
+export interface AggregateBranchPromise
+  extends Promise<AggregateBranch>,
     Fragmentable {
   count: () => Promise<Int>;
 }
 
-export interface AggregateUserSubscription
-  extends Promise<AsyncIterator<AggregateUser>>,
+export interface AggregateBranchSubscription
+  extends Promise<AsyncIterator<AggregateBranch>>,
     Fragmentable {
   count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface Attribute {
+  attributeName: AttributeType;
+  value: String;
+}
+
+export interface AttributePromise extends Promise<Attribute>, Fragmentable {
+  product: <T = ProductPromise>() => T;
+  attributeName: () => Promise<AttributeType>;
+  value: () => Promise<String>;
+}
+
+export interface AttributeSubscription
+  extends Promise<AsyncIterator<Attribute>>,
+    Fragmentable {
+  product: <T = ProductSubscription>() => T;
+  attributeName: () => Promise<AsyncIterator<AttributeType>>;
+  value: () => Promise<AsyncIterator<String>>;
+}
+
+export interface BranchEdge {
+  node: Branch;
+  cursor: String;
+}
+
+export interface BranchEdgePromise extends Promise<BranchEdge>, Fragmentable {
+  node: <T = BranchPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface BranchEdgeSubscription
+  extends Promise<AsyncIterator<BranchEdge>>,
+    Fragmentable {
+  node: <T = BranchSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface Product {
+  type: ProductType;
+  productName: String;
+  barcode: Int;
+  desc?: String;
+  slug: String;
+}
+
+export interface ProductPromise extends Promise<Product>, Fragmentable {
+  type: () => Promise<ProductType>;
+  category: <T = CategoryPromise>() => T;
+  subCategory: <T = SubCategoryPromise>() => T;
+  brand: <T = BrandPromise>() => T;
+  productName: () => Promise<String>;
+  barcode: () => Promise<Int>;
+  qrcode: <T = QRCodePromise>() => T;
+  desc: () => Promise<String>;
+  attributes: <T = FragmentableArray<Attribute>>(
+    args?: {
+      where?: AttributeWhereInput;
+      orderBy?: AttributeOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  slug: () => Promise<String>;
+  srp: <T = ProductSrpPromise>() => T;
+  purchasePrice: <T = PurchasePricePromise>() => T;
+  stocks: <T = FragmentableArray<Stock>>(
+    args?: {
+      where?: StockWhereInput;
+      orderBy?: StockOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+}
+
+export interface ProductSubscription
+  extends Promise<AsyncIterator<Product>>,
+    Fragmentable {
+  type: () => Promise<AsyncIterator<ProductType>>;
+  category: <T = CategorySubscription>() => T;
+  subCategory: <T = SubCategorySubscription>() => T;
+  brand: <T = BrandSubscription>() => T;
+  productName: () => Promise<AsyncIterator<String>>;
+  barcode: () => Promise<AsyncIterator<Int>>;
+  qrcode: <T = QRCodeSubscription>() => T;
+  desc: () => Promise<AsyncIterator<String>>;
+  attributes: <T = Promise<AsyncIterator<AttributeSubscription>>>(
+    args?: {
+      where?: AttributeWhereInput;
+      orderBy?: AttributeOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  slug: () => Promise<AsyncIterator<String>>;
+  srp: <T = ProductSrpSubscription>() => T;
+  purchasePrice: <T = PurchasePriceSubscription>() => T;
+  stocks: <T = Promise<AsyncIterator<StockSubscription>>>(
+    args?: {
+      where?: StockWhereInput;
+      orderBy?: StockOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+}
+
+export interface Category {
+  catName: String;
+  catDesc?: String;
+}
+
+export interface CategoryPromise extends Promise<Category>, Fragmentable {
+  catName: () => Promise<String>;
+  catDesc: () => Promise<String>;
+  products: <T = FragmentableArray<Product>>(
+    args?: {
+      where?: ProductWhereInput;
+      orderBy?: ProductOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+}
+
+export interface CategorySubscription
+  extends Promise<AsyncIterator<Category>>,
+    Fragmentable {
+  catName: () => Promise<AsyncIterator<String>>;
+  catDesc: () => Promise<AsyncIterator<String>>;
+  products: <T = Promise<AsyncIterator<ProductSubscription>>>(
+    args?: {
+      where?: ProductWhereInput;
+      orderBy?: ProductOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+}
+
+export interface SubCategoryPreviousValues {
+  subCatName: String;
+  subCatDesc?: String;
+}
+
+export interface SubCategoryPreviousValuesPromise
+  extends Promise<SubCategoryPreviousValues>,
+    Fragmentable {
+  subCatName: () => Promise<String>;
+  subCatDesc: () => Promise<String>;
+}
+
+export interface SubCategoryPreviousValuesSubscription
+  extends Promise<AsyncIterator<SubCategoryPreviousValues>>,
+    Fragmentable {
+  subCatName: () => Promise<AsyncIterator<String>>;
+  subCatDesc: () => Promise<AsyncIterator<String>>;
+}
+
+export interface TransactionPreviousValues {
+  id: ID_Output;
+  type: TransactionType;
+  receiptNo: Int;
+  isPaid: Boolean;
+  balance: Float;
+  createdAt: DateTimeOutput;
+  updatedAt: DateTimeOutput;
+}
+
+export interface TransactionPreviousValuesPromise
+  extends Promise<TransactionPreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  type: () => Promise<TransactionType>;
+  receiptNo: () => Promise<Int>;
+  isPaid: () => Promise<Boolean>;
+  balance: () => Promise<Float>;
+  createdAt: () => Promise<DateTimeOutput>;
+  updatedAt: () => Promise<DateTimeOutput>;
+}
+
+export interface TransactionPreviousValuesSubscription
+  extends Promise<AsyncIterator<TransactionPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  type: () => Promise<AsyncIterator<TransactionType>>;
+  receiptNo: () => Promise<AsyncIterator<Int>>;
+  isPaid: () => Promise<AsyncIterator<Boolean>>;
+  balance: () => Promise<AsyncIterator<Float>>;
+  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+}
+
+export interface BranchConnection {
+  pageInfo: PageInfo;
+  edges: BranchEdge[];
+}
+
+export interface BranchConnectionPromise
+  extends Promise<BranchConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<BranchEdge>>() => T;
+  aggregate: <T = AggregateBranchPromise>() => T;
+}
+
+export interface BranchConnectionSubscription
+  extends Promise<AsyncIterator<BranchConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<BranchEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateBranchSubscription>() => T;
 }
 
 export interface BatchPayload {
@@ -212,25 +5706,6 @@ export interface BatchPayloadSubscription
   count: () => Promise<AsyncIterator<Long>>;
 }
 
-export interface UserPreviousValues {
-  id: ID_Output;
-  name: String;
-}
-
-export interface UserPreviousValuesPromise
-  extends Promise<UserPreviousValues>,
-    Fragmentable {
-  id: () => Promise<ID_Output>;
-  name: () => Promise<String>;
-}
-
-export interface UserPreviousValuesSubscription
-  extends Promise<AsyncIterator<UserPreviousValues>>,
-    Fragmentable {
-  id: () => Promise<AsyncIterator<ID_Output>>;
-  name: () => Promise<AsyncIterator<String>>;
-}
-
 export interface UserEdge {
   node: User;
   cursor: String;
@@ -246,6 +5721,2507 @@ export interface UserEdgeSubscription
     Fragmentable {
   node: <T = UserSubscription>() => T;
   cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateAttribute {
+  count: Int;
+}
+
+export interface AggregateAttributePromise
+  extends Promise<AggregateAttribute>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateAttributeSubscription
+  extends Promise<AsyncIterator<AggregateAttribute>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface AggregateTransaction {
+  count: Int;
+}
+
+export interface AggregateTransactionPromise
+  extends Promise<AggregateTransaction>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateTransactionSubscription
+  extends Promise<AsyncIterator<AggregateTransaction>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface AttributeEdge {
+  node: Attribute;
+  cursor: String;
+}
+
+export interface AttributeEdgePromise
+  extends Promise<AttributeEdge>,
+    Fragmentable {
+  node: <T = AttributePromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface AttributeEdgeSubscription
+  extends Promise<AsyncIterator<AttributeEdge>>,
+    Fragmentable {
+  node: <T = AttributeSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface TransactionConnection {
+  pageInfo: PageInfo;
+  edges: TransactionEdge[];
+}
+
+export interface TransactionConnectionPromise
+  extends Promise<TransactionConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<TransactionEdge>>() => T;
+  aggregate: <T = AggregateTransactionPromise>() => T;
+}
+
+export interface TransactionConnectionSubscription
+  extends Promise<AsyncIterator<TransactionConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<TransactionEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateTransactionSubscription>() => T;
+}
+
+export interface TransactionSubscriptionPayload {
+  mutation: MutationType;
+  node: Transaction;
+  updatedFields: String[];
+  previousValues: TransactionPreviousValues;
+}
+
+export interface TransactionSubscriptionPayloadPromise
+  extends Promise<TransactionSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = TransactionPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = TransactionPreviousValuesPromise>() => T;
+}
+
+export interface TransactionSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<TransactionSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = TransactionSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = TransactionPreviousValuesSubscription>() => T;
+}
+
+export interface AggregateSubCategory {
+  count: Int;
+}
+
+export interface AggregateSubCategoryPromise
+  extends Promise<AggregateSubCategory>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateSubCategorySubscription
+  extends Promise<AsyncIterator<AggregateSubCategory>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface AddressSubscriptionPayload {
+  mutation: MutationType;
+  node: Address;
+  updatedFields: String[];
+  previousValues: AddressPreviousValues;
+}
+
+export interface AddressSubscriptionPayloadPromise
+  extends Promise<AddressSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = AddressPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = AddressPreviousValuesPromise>() => T;
+}
+
+export interface AddressSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<AddressSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = AddressSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = AddressPreviousValuesSubscription>() => T;
+}
+
+export interface SubCategoryConnection {
+  pageInfo: PageInfo;
+  edges: SubCategoryEdge[];
+}
+
+export interface SubCategoryConnectionPromise
+  extends Promise<SubCategoryConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<SubCategoryEdge>>() => T;
+  aggregate: <T = AggregateSubCategoryPromise>() => T;
+}
+
+export interface SubCategoryConnectionSubscription
+  extends Promise<AsyncIterator<SubCategoryConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<SubCategoryEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateSubCategorySubscription>() => T;
+}
+
+export interface AddressPreviousValues {
+  address1: String;
+  address2?: String;
+  barangay: String;
+  city: String;
+  province: String;
+  zip?: Int;
+}
+
+export interface AddressPreviousValuesPromise
+  extends Promise<AddressPreviousValues>,
+    Fragmentable {
+  address1: () => Promise<String>;
+  address2: () => Promise<String>;
+  barangay: () => Promise<String>;
+  city: () => Promise<String>;
+  province: () => Promise<String>;
+  zip: () => Promise<Int>;
+}
+
+export interface AddressPreviousValuesSubscription
+  extends Promise<AsyncIterator<AddressPreviousValues>>,
+    Fragmentable {
+  address1: () => Promise<AsyncIterator<String>>;
+  address2: () => Promise<AsyncIterator<String>>;
+  barangay: () => Promise<AsyncIterator<String>>;
+  city: () => Promise<AsyncIterator<String>>;
+  province: () => Promise<AsyncIterator<String>>;
+  zip: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface AggregateStock {
+  count: Int;
+}
+
+export interface AggregateStockPromise
+  extends Promise<AggregateStock>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateStockSubscription
+  extends Promise<AsyncIterator<AggregateStock>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface AttributeConnection {
+  pageInfo: PageInfo;
+  edges: AttributeEdge[];
+}
+
+export interface AttributeConnectionPromise
+  extends Promise<AttributeConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<AttributeEdge>>() => T;
+  aggregate: <T = AggregateAttributePromise>() => T;
+}
+
+export interface AttributeConnectionSubscription
+  extends Promise<AsyncIterator<AttributeConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<AttributeEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateAttributeSubscription>() => T;
+}
+
+export interface StockConnection {
+  pageInfo: PageInfo;
+  edges: StockEdge[];
+}
+
+export interface StockConnectionPromise
+  extends Promise<StockConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<StockEdge>>() => T;
+  aggregate: <T = AggregateStockPromise>() => T;
+}
+
+export interface StockConnectionSubscription
+  extends Promise<AsyncIterator<StockConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<StockEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateStockSubscription>() => T;
+}
+
+export interface AttributeSubscriptionPayload {
+  mutation: MutationType;
+  node: Attribute;
+  updatedFields: String[];
+  previousValues: AttributePreviousValues;
+}
+
+export interface AttributeSubscriptionPayloadPromise
+  extends Promise<AttributeSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = AttributePromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = AttributePreviousValuesPromise>() => T;
+}
+
+export interface AttributeSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<AttributeSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = AttributeSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = AttributePreviousValuesSubscription>() => T;
+}
+
+export interface QuoteEdge {
+  node: Quote;
+  cursor: String;
+}
+
+export interface QuoteEdgePromise extends Promise<QuoteEdge>, Fragmentable {
+  node: <T = QuotePromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface QuoteEdgeSubscription
+  extends Promise<AsyncIterator<QuoteEdge>>,
+    Fragmentable {
+  node: <T = QuoteSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AttributePreviousValues {
+  attributeName: AttributeType;
+  value: String;
+}
+
+export interface AttributePreviousValuesPromise
+  extends Promise<AttributePreviousValues>,
+    Fragmentable {
+  attributeName: () => Promise<AttributeType>;
+  value: () => Promise<String>;
+}
+
+export interface AttributePreviousValuesSubscription
+  extends Promise<AsyncIterator<AttributePreviousValues>>,
+    Fragmentable {
+  attributeName: () => Promise<AsyncIterator<AttributeType>>;
+  value: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateQRCode {
+  count: Int;
+}
+
+export interface AggregateQRCodePromise
+  extends Promise<AggregateQRCode>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateQRCodeSubscription
+  extends Promise<AsyncIterator<AggregateQRCode>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface Inventory {}
+
+export interface InventoryPromise extends Promise<Inventory>, Fragmentable {
+  product: <T = StockPromise>() => T;
+  items: <T = FragmentableArray<Item>>(
+    args?: {
+      where?: ItemWhereInput;
+      orderBy?: ItemOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+}
+
+export interface InventorySubscription
+  extends Promise<AsyncIterator<Inventory>>,
+    Fragmentable {
+  product: <T = StockSubscription>() => T;
+  items: <T = Promise<AsyncIterator<ItemSubscription>>>(
+    args?: {
+      where?: ItemWhereInput;
+      orderBy?: ItemOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+}
+
+export interface QRCodeConnection {
+  pageInfo: PageInfo;
+  edges: QRCodeEdge[];
+}
+
+export interface QRCodeConnectionPromise
+  extends Promise<QRCodeConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<QRCodeEdge>>() => T;
+  aggregate: <T = AggregateQRCodePromise>() => T;
+}
+
+export interface QRCodeConnectionSubscription
+  extends Promise<AsyncIterator<QRCodeConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<QRCodeEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateQRCodeSubscription>() => T;
+}
+
+export interface BranchSubscriptionPayload {
+  mutation: MutationType;
+  node: Branch;
+  updatedFields: String[];
+  previousValues: BranchPreviousValues;
+}
+
+export interface BranchSubscriptionPayloadPromise
+  extends Promise<BranchSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = BranchPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = BranchPreviousValuesPromise>() => T;
+}
+
+export interface BranchSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<BranchSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = BranchSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = BranchPreviousValuesSubscription>() => T;
+}
+
+export interface AggregatePurchasePrice {
+  count: Int;
+}
+
+export interface AggregatePurchasePricePromise
+  extends Promise<AggregatePurchasePrice>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregatePurchasePriceSubscription
+  extends Promise<AsyncIterator<AggregatePurchasePrice>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface BranchPreviousValues {
+  type: BranchType;
+  branchName: String;
+}
+
+export interface BranchPreviousValuesPromise
+  extends Promise<BranchPreviousValues>,
+    Fragmentable {
+  type: () => Promise<BranchType>;
+  branchName: () => Promise<String>;
+}
+
+export interface BranchPreviousValuesSubscription
+  extends Promise<AsyncIterator<BranchPreviousValues>>,
+    Fragmentable {
+  type: () => Promise<AsyncIterator<BranchType>>;
+  branchName: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PurchasePriceConnection {
+  pageInfo: PageInfo;
+  edges: PurchasePriceEdge[];
+}
+
+export interface PurchasePriceConnectionPromise
+  extends Promise<PurchasePriceConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<PurchasePriceEdge>>() => T;
+  aggregate: <T = AggregatePurchasePricePromise>() => T;
+}
+
+export interface PurchasePriceConnectionSubscription
+  extends Promise<AsyncIterator<PurchasePriceConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PurchasePriceEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePurchasePriceSubscription>() => T;
+}
+
+export interface Item {
+  units: Int;
+  amount: Float;
+  createdAt: DateTimeOutput;
+  updatedAt: DateTimeOutput;
+}
+
+export interface ItemPromise extends Promise<Item>, Fragmentable {
+  transaction: <T = TransactionPromise>() => T;
+  inventory: <T = InventoryPromise>() => T;
+  srp: <T = ProductSrpPromise>() => T;
+  purchasePrice: <T = PurchasePricePromise>() => T;
+  units: () => Promise<Int>;
+  amount: () => Promise<Float>;
+  createdAt: () => Promise<DateTimeOutput>;
+  updatedAt: () => Promise<DateTimeOutput>;
+}
+
+export interface ItemSubscription
+  extends Promise<AsyncIterator<Item>>,
+    Fragmentable {
+  transaction: <T = TransactionSubscription>() => T;
+  inventory: <T = InventorySubscription>() => T;
+  srp: <T = ProductSrpSubscription>() => T;
+  purchasePrice: <T = PurchasePriceSubscription>() => T;
+  units: () => Promise<AsyncIterator<Int>>;
+  amount: () => Promise<AsyncIterator<Float>>;
+  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+}
+
+export interface AggregateProfile {
+  count: Int;
+}
+
+export interface AggregateProfilePromise
+  extends Promise<AggregateProfile>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateProfileSubscription
+  extends Promise<AsyncIterator<AggregateProfile>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface BrandSubscriptionPayload {
+  mutation: MutationType;
+  node: Brand;
+  updatedFields: String[];
+  previousValues: BrandPreviousValues;
+}
+
+export interface BrandSubscriptionPayloadPromise
+  extends Promise<BrandSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = BrandPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = BrandPreviousValuesPromise>() => T;
+}
+
+export interface BrandSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<BrandSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = BrandSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = BrandPreviousValuesSubscription>() => T;
+}
+
+export interface ProfileConnection {
+  pageInfo: PageInfo;
+  edges: ProfileEdge[];
+}
+
+export interface ProfileConnectionPromise
+  extends Promise<ProfileConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<ProfileEdge>>() => T;
+  aggregate: <T = AggregateProfilePromise>() => T;
+}
+
+export interface ProfileConnectionSubscription
+  extends Promise<AsyncIterator<ProfileConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<ProfileEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateProfileSubscription>() => T;
+}
+
+export interface BrandPreviousValues {
+  brandName: String;
+  manufacturer?: String;
+}
+
+export interface BrandPreviousValuesPromise
+  extends Promise<BrandPreviousValues>,
+    Fragmentable {
+  brandName: () => Promise<String>;
+  manufacturer: () => Promise<String>;
+}
+
+export interface BrandPreviousValuesSubscription
+  extends Promise<AsyncIterator<BrandPreviousValues>>,
+    Fragmentable {
+  brandName: () => Promise<AsyncIterator<String>>;
+  manufacturer: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateProductSrp {
+  count: Int;
+}
+
+export interface AggregateProductSrpPromise
+  extends Promise<AggregateProductSrp>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateProductSrpSubscription
+  extends Promise<AsyncIterator<AggregateProductSrp>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface SubCategory {
+  subCatName: String;
+  subCatDesc?: String;
+}
+
+export interface SubCategoryPromise extends Promise<SubCategory>, Fragmentable {
+  category: <T = CategoryPromise>() => T;
+  subCatName: () => Promise<String>;
+  subCatDesc: () => Promise<String>;
+  products: <T = FragmentableArray<Product>>(
+    args?: {
+      where?: ProductWhereInput;
+      orderBy?: ProductOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+}
+
+export interface SubCategorySubscription
+  extends Promise<AsyncIterator<SubCategory>>,
+    Fragmentable {
+  category: <T = CategorySubscription>() => T;
+  subCatName: () => Promise<AsyncIterator<String>>;
+  subCatDesc: () => Promise<AsyncIterator<String>>;
+  products: <T = Promise<AsyncIterator<ProductSubscription>>>(
+    args?: {
+      where?: ProductWhereInput;
+      orderBy?: ProductOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+}
+
+export interface ProductSrpConnection {
+  pageInfo: PageInfo;
+  edges: ProductSrpEdge[];
+}
+
+export interface ProductSrpConnectionPromise
+  extends Promise<ProductSrpConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<ProductSrpEdge>>() => T;
+  aggregate: <T = AggregateProductSrpPromise>() => T;
+}
+
+export interface ProductSrpConnectionSubscription
+  extends Promise<AsyncIterator<ProductSrpConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<ProductSrpEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateProductSrpSubscription>() => T;
+}
+
+export interface CategorySubscriptionPayload {
+  mutation: MutationType;
+  node: Category;
+  updatedFields: String[];
+  previousValues: CategoryPreviousValues;
+}
+
+export interface CategorySubscriptionPayloadPromise
+  extends Promise<CategorySubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = CategoryPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = CategoryPreviousValuesPromise>() => T;
+}
+
+export interface CategorySubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<CategorySubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = CategorySubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = CategoryPreviousValuesSubscription>() => T;
+}
+
+export interface AggregateProduct {
+  count: Int;
+}
+
+export interface AggregateProductPromise
+  extends Promise<AggregateProduct>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateProductSubscription
+  extends Promise<AsyncIterator<AggregateProduct>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface CategoryPreviousValues {
+  catName: String;
+  catDesc?: String;
+}
+
+export interface CategoryPreviousValuesPromise
+  extends Promise<CategoryPreviousValues>,
+    Fragmentable {
+  catName: () => Promise<String>;
+  catDesc: () => Promise<String>;
+}
+
+export interface CategoryPreviousValuesSubscription
+  extends Promise<AsyncIterator<CategoryPreviousValues>>,
+    Fragmentable {
+  catName: () => Promise<AsyncIterator<String>>;
+  catDesc: () => Promise<AsyncIterator<String>>;
+}
+
+export interface ProductConnection {
+  pageInfo: PageInfo;
+  edges: ProductEdge[];
+}
+
+export interface ProductConnectionPromise
+  extends Promise<ProductConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<ProductEdge>>() => T;
+  aggregate: <T = AggregateProductPromise>() => T;
+}
+
+export interface ProductConnectionSubscription
+  extends Promise<AsyncIterator<ProductConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<ProductEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateProductSubscription>() => T;
+}
+
+export interface Log {
+  sourceTable: String;
+  sourceId: String;
+  actionNo: String;
+  actionType: String;
+  actionTitle: String;
+  tableField: String;
+  oldValue: String;
+  newValue: String;
+  comment?: String;
+  createdAt: DateTimeOutput;
+}
+
+export interface LogPromise extends Promise<Log>, Fragmentable {
+  user: <T = FragmentableArray<User>>(
+    args?: {
+      where?: UserWhereInput;
+      orderBy?: UserOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  sourceTable: () => Promise<String>;
+  sourceId: () => Promise<String>;
+  actionNo: () => Promise<String>;
+  actionType: () => Promise<String>;
+  actionTitle: () => Promise<String>;
+  tableField: () => Promise<String>;
+  oldValue: () => Promise<String>;
+  newValue: () => Promise<String>;
+  comment: () => Promise<String>;
+  createdAt: () => Promise<DateTimeOutput>;
+}
+
+export interface LogSubscription
+  extends Promise<AsyncIterator<Log>>,
+    Fragmentable {
+  user: <T = Promise<AsyncIterator<UserSubscription>>>(
+    args?: {
+      where?: UserWhereInput;
+      orderBy?: UserOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  sourceTable: () => Promise<AsyncIterator<String>>;
+  sourceId: () => Promise<AsyncIterator<String>>;
+  actionNo: () => Promise<AsyncIterator<String>>;
+  actionType: () => Promise<AsyncIterator<String>>;
+  actionTitle: () => Promise<AsyncIterator<String>>;
+  tableField: () => Promise<AsyncIterator<String>>;
+  oldValue: () => Promise<AsyncIterator<String>>;
+  newValue: () => Promise<AsyncIterator<String>>;
+  comment: () => Promise<AsyncIterator<String>>;
+  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+}
+
+export interface OrderEdge {
+  node: Order;
+  cursor: String;
+}
+
+export interface OrderEdgePromise extends Promise<OrderEdge>, Fragmentable {
+  node: <T = OrderPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface OrderEdgeSubscription
+  extends Promise<AsyncIterator<OrderEdge>>,
+    Fragmentable {
+  node: <T = OrderSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface CompanySubscriptionPayload {
+  mutation: MutationType;
+  node: Company;
+  updatedFields: String[];
+  previousValues: CompanyPreviousValues;
+}
+
+export interface CompanySubscriptionPayloadPromise
+  extends Promise<CompanySubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = CompanyPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = CompanyPreviousValuesPromise>() => T;
+}
+
+export interface CompanySubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<CompanySubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = CompanySubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = CompanyPreviousValuesSubscription>() => T;
+}
+
+export interface AggregateLog {
+  count: Int;
+}
+
+export interface AggregateLogPromise
+  extends Promise<AggregateLog>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateLogSubscription
+  extends Promise<AsyncIterator<AggregateLog>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface CompanyPreviousValues {
+  companyName: String;
+  about?: String;
+}
+
+export interface CompanyPreviousValuesPromise
+  extends Promise<CompanyPreviousValues>,
+    Fragmentable {
+  companyName: () => Promise<String>;
+  about: () => Promise<String>;
+}
+
+export interface CompanyPreviousValuesSubscription
+  extends Promise<AsyncIterator<CompanyPreviousValues>>,
+    Fragmentable {
+  companyName: () => Promise<AsyncIterator<String>>;
+  about: () => Promise<AsyncIterator<String>>;
+}
+
+export interface LogConnection {
+  pageInfo: PageInfo;
+  edges: LogEdge[];
+}
+
+export interface LogConnectionPromise
+  extends Promise<LogConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<LogEdge>>() => T;
+  aggregate: <T = AggregateLogPromise>() => T;
+}
+
+export interface LogConnectionSubscription
+  extends Promise<AsyncIterator<LogConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<LogEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateLogSubscription>() => T;
+}
+
+export interface File {
+  fileType: String;
+  fileName: String;
+  fileSize: String;
+  filePath: String;
+}
+
+export interface FilePromise extends Promise<File>, Fragmentable {
+  fileType: () => Promise<String>;
+  fileName: () => Promise<String>;
+  fileSize: () => Promise<String>;
+  filePath: () => Promise<String>;
+}
+
+export interface FileSubscription
+  extends Promise<AsyncIterator<File>>,
+    Fragmentable {
+  fileType: () => Promise<AsyncIterator<String>>;
+  fileName: () => Promise<AsyncIterator<String>>;
+  fileSize: () => Promise<AsyncIterator<String>>;
+  filePath: () => Promise<AsyncIterator<String>>;
+}
+
+export interface ItemEdge {
+  node: Item;
+  cursor: String;
+}
+
+export interface ItemEdgePromise extends Promise<ItemEdge>, Fragmentable {
+  node: <T = ItemPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface ItemEdgeSubscription
+  extends Promise<AsyncIterator<ItemEdge>>,
+    Fragmentable {
+  node: <T = ItemSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface ContactInfoSubscriptionPayload {
+  mutation: MutationType;
+  node: ContactInfo;
+  updatedFields: String[];
+  previousValues: ContactInfoPreviousValues;
+}
+
+export interface ContactInfoSubscriptionPayloadPromise
+  extends Promise<ContactInfoSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = ContactInfoPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = ContactInfoPreviousValuesPromise>() => T;
+}
+
+export interface ContactInfoSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<ContactInfoSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = ContactInfoSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = ContactInfoPreviousValuesSubscription>() => T;
+}
+
+export interface AggregateInventory {
+  count: Int;
+}
+
+export interface AggregateInventoryPromise
+  extends Promise<AggregateInventory>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateInventorySubscription
+  extends Promise<AsyncIterator<AggregateInventory>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface ContactInfoPreviousValues {
+  email: String;
+  primaryTel?: String;
+  secondaryTel?: String;
+  primaryMobile?: String;
+  secondaryMobile?: String;
+}
+
+export interface ContactInfoPreviousValuesPromise
+  extends Promise<ContactInfoPreviousValues>,
+    Fragmentable {
+  email: () => Promise<String>;
+  primaryTel: () => Promise<String>;
+  secondaryTel: () => Promise<String>;
+  primaryMobile: () => Promise<String>;
+  secondaryMobile: () => Promise<String>;
+}
+
+export interface ContactInfoPreviousValuesSubscription
+  extends Promise<AsyncIterator<ContactInfoPreviousValues>>,
+    Fragmentable {
+  email: () => Promise<AsyncIterator<String>>;
+  primaryTel: () => Promise<AsyncIterator<String>>;
+  secondaryTel: () => Promise<AsyncIterator<String>>;
+  primaryMobile: () => Promise<AsyncIterator<String>>;
+  secondaryMobile: () => Promise<AsyncIterator<String>>;
+}
+
+export interface InventoryConnection {}
+
+export interface InventoryConnectionPromise
+  extends Promise<InventoryConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<InventoryEdge>>() => T;
+  aggregate: <T = AggregateInventoryPromise>() => T;
+}
+
+export interface InventoryConnectionSubscription
+  extends Promise<AsyncIterator<InventoryConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<InventoryEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateInventorySubscription>() => T;
+}
+
+export interface ContactInfo {
+  email: String;
+  primaryTel?: String;
+  secondaryTel?: String;
+  primaryMobile?: String;
+  secondaryMobile?: String;
+}
+
+export interface ContactInfoPromise extends Promise<ContactInfo>, Fragmentable {
+  owner: <T = ProfilePromise>() => T;
+  email: () => Promise<String>;
+  primaryTel: () => Promise<String>;
+  secondaryTel: () => Promise<String>;
+  primaryMobile: () => Promise<String>;
+  secondaryMobile: () => Promise<String>;
+}
+
+export interface ContactInfoSubscription
+  extends Promise<AsyncIterator<ContactInfo>>,
+    Fragmentable {
+  owner: <T = ProfileSubscription>() => T;
+  email: () => Promise<AsyncIterator<String>>;
+  primaryTel: () => Promise<AsyncIterator<String>>;
+  secondaryTel: () => Promise<AsyncIterator<String>>;
+  primaryMobile: () => Promise<AsyncIterator<String>>;
+  secondaryMobile: () => Promise<AsyncIterator<String>>;
+}
+
+export interface FileEdge {
+  node: File;
+  cursor: String;
+}
+
+export interface FileEdgePromise extends Promise<FileEdge>, Fragmentable {
+  node: <T = FilePromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface FileEdgeSubscription
+  extends Promise<AsyncIterator<FileEdge>>,
+    Fragmentable {
+  node: <T = FileSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface DeliverySubscriptionPayload {
+  mutation: MutationType;
+  node: Delivery;
+  updatedFields: String[];
+  previousValues: DeliveryPreviousValues;
+}
+
+export interface DeliverySubscriptionPayloadPromise
+  extends Promise<DeliverySubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = DeliveryPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = DeliveryPreviousValuesPromise>() => T;
+}
+
+export interface DeliverySubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<DeliverySubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = DeliverySubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = DeliveryPreviousValuesSubscription>() => T;
+}
+
+export interface AggregateDelivery {
+  count: Int;
+}
+
+export interface AggregateDeliveryPromise
+  extends Promise<AggregateDelivery>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateDeliverySubscription
+  extends Promise<AsyncIterator<AggregateDelivery>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface DeliveryPreviousValues {
+  status: DeliveryStatus;
+}
+
+export interface DeliveryPreviousValuesPromise
+  extends Promise<DeliveryPreviousValues>,
+    Fragmentable {
+  status: () => Promise<DeliveryStatus>;
+}
+
+export interface DeliveryPreviousValuesSubscription
+  extends Promise<AsyncIterator<DeliveryPreviousValues>>,
+    Fragmentable {
+  status: () => Promise<AsyncIterator<DeliveryStatus>>;
+}
+
+export interface DeliveryConnection {
+  pageInfo: PageInfo;
+  edges: DeliveryEdge[];
+}
+
+export interface DeliveryConnectionPromise
+  extends Promise<DeliveryConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<DeliveryEdge>>() => T;
+  aggregate: <T = AggregateDeliveryPromise>() => T;
+}
+
+export interface DeliveryConnectionSubscription
+  extends Promise<AsyncIterator<DeliveryConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<DeliveryEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateDeliverySubscription>() => T;
+}
+
+export interface Profile {
+  id: ID_Output;
+  firstName: String;
+  middleName?: String;
+  lastName: String;
+  birthdate: DateTimeOutput;
+  gender: Gender;
+  position: Position;
+}
+
+export interface ProfilePromise extends Promise<Profile>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  login: <T = UserPromise>() => T;
+  firstName: () => Promise<String>;
+  middleName: () => Promise<String>;
+  lastName: () => Promise<String>;
+  birthdate: () => Promise<DateTimeOutput>;
+  gender: () => Promise<Gender>;
+  contactInfo: <T = ContactInfoPromise>() => T;
+  position: () => Promise<Position>;
+  employer: <T = CompanyPromise>() => T;
+  address: <T = AddressPromise>() => T;
+  station: <T = BranchPromise>() => T;
+  files: <T = FragmentableArray<File>>(
+    args?: {
+      where?: FileWhereInput;
+      orderBy?: FileOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  logs: <T = FragmentableArray<Log>>(
+    args?: {
+      where?: LogWhereInput;
+      orderBy?: LogOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  technician: <T = FragmentableArray<Quote>>(
+    args?: {
+      where?: QuoteWhereInput;
+      orderBy?: QuoteOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  assistant: <T = FragmentableArray<Quote>>(
+    args?: {
+      where?: QuoteWhereInput;
+      orderBy?: QuoteOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+}
+
+export interface ProfileSubscription
+  extends Promise<AsyncIterator<Profile>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  login: <T = UserSubscription>() => T;
+  firstName: () => Promise<AsyncIterator<String>>;
+  middleName: () => Promise<AsyncIterator<String>>;
+  lastName: () => Promise<AsyncIterator<String>>;
+  birthdate: () => Promise<AsyncIterator<DateTimeOutput>>;
+  gender: () => Promise<AsyncIterator<Gender>>;
+  contactInfo: <T = ContactInfoSubscription>() => T;
+  position: () => Promise<AsyncIterator<Position>>;
+  employer: <T = CompanySubscription>() => T;
+  address: <T = AddressSubscription>() => T;
+  station: <T = BranchSubscription>() => T;
+  files: <T = Promise<AsyncIterator<FileSubscription>>>(
+    args?: {
+      where?: FileWhereInput;
+      orderBy?: FileOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  logs: <T = Promise<AsyncIterator<LogSubscription>>>(
+    args?: {
+      where?: LogWhereInput;
+      orderBy?: LogOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  technician: <T = Promise<AsyncIterator<QuoteSubscription>>>(
+    args?: {
+      where?: QuoteWhereInput;
+      orderBy?: QuoteOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  assistant: <T = Promise<AsyncIterator<QuoteSubscription>>>(
+    args?: {
+      where?: QuoteWhereInput;
+      orderBy?: QuoteOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+}
+
+export interface ContactInfoEdge {
+  node: ContactInfo;
+  cursor: String;
+}
+
+export interface ContactInfoEdgePromise
+  extends Promise<ContactInfoEdge>,
+    Fragmentable {
+  node: <T = ContactInfoPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface ContactInfoEdgeSubscription
+  extends Promise<AsyncIterator<ContactInfoEdge>>,
+    Fragmentable {
+  node: <T = ContactInfoSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface FileSubscriptionPayload {
+  mutation: MutationType;
+  node: File;
+  updatedFields: String[];
+  previousValues: FilePreviousValues;
+}
+
+export interface FileSubscriptionPayloadPromise
+  extends Promise<FileSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = FilePromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = FilePreviousValuesPromise>() => T;
+}
+
+export interface FileSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<FileSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = FileSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = FilePreviousValuesSubscription>() => T;
+}
+
+export interface AggregateCompany {
+  count: Int;
+}
+
+export interface AggregateCompanyPromise
+  extends Promise<AggregateCompany>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateCompanySubscription
+  extends Promise<AsyncIterator<AggregateCompany>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface FilePreviousValues {
+  fileType: String;
+  fileName: String;
+  fileSize: String;
+  filePath: String;
+}
+
+export interface FilePreviousValuesPromise
+  extends Promise<FilePreviousValues>,
+    Fragmentable {
+  fileType: () => Promise<String>;
+  fileName: () => Promise<String>;
+  fileSize: () => Promise<String>;
+  filePath: () => Promise<String>;
+}
+
+export interface FilePreviousValuesSubscription
+  extends Promise<AsyncIterator<FilePreviousValues>>,
+    Fragmentable {
+  fileType: () => Promise<AsyncIterator<String>>;
+  fileName: () => Promise<AsyncIterator<String>>;
+  fileSize: () => Promise<AsyncIterator<String>>;
+  filePath: () => Promise<AsyncIterator<String>>;
+}
+
+export interface CompanyConnection {
+  pageInfo: PageInfo;
+  edges: CompanyEdge[];
+}
+
+export interface CompanyConnectionPromise
+  extends Promise<CompanyConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<CompanyEdge>>() => T;
+  aggregate: <T = AggregateCompanyPromise>() => T;
+}
+
+export interface CompanyConnectionSubscription
+  extends Promise<AsyncIterator<CompanyConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<CompanyEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateCompanySubscription>() => T;
+}
+
+export interface User {
+  id: ID_Output;
+  username: String;
+  password: String;
+  role: Role;
+  createdAt: DateTimeOutput;
+  updatedAt: DateTimeOutput;
+}
+
+export interface UserPromise extends Promise<User>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  username: () => Promise<String>;
+  password: () => Promise<String>;
+  role: () => Promise<Role>;
+  profile: <T = ProfilePromise>() => T;
+  createdAt: () => Promise<DateTimeOutput>;
+  updatedAt: () => Promise<DateTimeOutput>;
+  transactions: <T = FragmentableArray<Quote>>(
+    args?: {
+      where?: QuoteWhereInput;
+      orderBy?: QuoteOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+}
+
+export interface UserSubscription
+  extends Promise<AsyncIterator<User>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  username: () => Promise<AsyncIterator<String>>;
+  password: () => Promise<AsyncIterator<String>>;
+  role: () => Promise<AsyncIterator<Role>>;
+  profile: <T = ProfileSubscription>() => T;
+  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+  transactions: <T = Promise<AsyncIterator<QuoteSubscription>>>(
+    args?: {
+      where?: QuoteWhereInput;
+      orderBy?: QuoteOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+}
+
+export interface CategoryEdge {
+  node: Category;
+  cursor: String;
+}
+
+export interface CategoryEdgePromise
+  extends Promise<CategoryEdge>,
+    Fragmentable {
+  node: <T = CategoryPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface CategoryEdgeSubscription
+  extends Promise<AsyncIterator<CategoryEdge>>,
+    Fragmentable {
+  node: <T = CategorySubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface InventorySubscriptionPayload {
+  mutation: MutationType;
+  node: Inventory;
+  updatedFields: String[];
+}
+
+export interface InventorySubscriptionPayloadPromise
+  extends Promise<InventorySubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = InventoryPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+}
+
+export interface InventorySubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<InventorySubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = InventorySubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+}
+
+export interface AggregateBrand {
+  count: Int;
+}
+
+export interface AggregateBrandPromise
+  extends Promise<AggregateBrand>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateBrandSubscription
+  extends Promise<AsyncIterator<AggregateBrand>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface Quote {
+  grossAmount: Float;
+  isDiscounted: Boolean;
+  discountedAmount: Float;
+  netAmount: Float;
+  amountPaid: Float;
+  createdAt: DateTimeOutput;
+  updatedAt: DateTimeOutput;
+}
+
+export interface QuotePromise extends Promise<Quote>, Fragmentable {
+  transaction: <T = TransactionPromise>() => T;
+  cashier: <T = UserPromise>() => T;
+  technician: <T = ProfilePromise>() => T;
+  assistant: <T = ProfilePromise>() => T;
+  descriptions: <T = FragmentableArray<Item>>(
+    args?: {
+      where?: ItemWhereInput;
+      orderBy?: ItemOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  grossAmount: () => Promise<Float>;
+  isDiscounted: () => Promise<Boolean>;
+  discountedAmount: () => Promise<Float>;
+  netAmount: () => Promise<Float>;
+  amountPaid: () => Promise<Float>;
+  createdAt: () => Promise<DateTimeOutput>;
+  updatedAt: () => Promise<DateTimeOutput>;
+}
+
+export interface QuoteSubscription
+  extends Promise<AsyncIterator<Quote>>,
+    Fragmentable {
+  transaction: <T = TransactionSubscription>() => T;
+  cashier: <T = UserSubscription>() => T;
+  technician: <T = ProfileSubscription>() => T;
+  assistant: <T = ProfileSubscription>() => T;
+  descriptions: <T = Promise<AsyncIterator<ItemSubscription>>>(
+    args?: {
+      where?: ItemWhereInput;
+      orderBy?: ItemOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  grossAmount: () => Promise<AsyncIterator<Float>>;
+  isDiscounted: () => Promise<AsyncIterator<Boolean>>;
+  discountedAmount: () => Promise<AsyncIterator<Float>>;
+  netAmount: () => Promise<AsyncIterator<Float>>;
+  amountPaid: () => Promise<AsyncIterator<Float>>;
+  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+}
+
+export interface BrandConnection {
+  pageInfo: PageInfo;
+  edges: BrandEdge[];
+}
+
+export interface BrandConnectionPromise
+  extends Promise<BrandConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<BrandEdge>>() => T;
+  aggregate: <T = AggregateBrandPromise>() => T;
+}
+
+export interface BrandConnectionSubscription
+  extends Promise<AsyncIterator<BrandConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<BrandEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateBrandSubscription>() => T;
+}
+
+export interface ItemSubscriptionPayload {
+  mutation: MutationType;
+  node: Item;
+  updatedFields: String[];
+  previousValues: ItemPreviousValues;
+}
+
+export interface ItemSubscriptionPayloadPromise
+  extends Promise<ItemSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = ItemPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = ItemPreviousValuesPromise>() => T;
+}
+
+export interface ItemSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<ItemSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = ItemSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = ItemPreviousValuesSubscription>() => T;
+}
+
+export interface UserConnection {
+  pageInfo: PageInfo;
+  edges: UserEdge[];
+}
+
+export interface UserConnectionPromise
+  extends Promise<UserConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<UserEdge>>() => T;
+  aggregate: <T = AggregateUserPromise>() => T;
+}
+
+export interface UserConnectionSubscription
+  extends Promise<AsyncIterator<UserConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<UserEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateUserSubscription>() => T;
+}
+
+export interface ItemPreviousValues {
+  units: Int;
+  amount: Float;
+  createdAt: DateTimeOutput;
+  updatedAt: DateTimeOutput;
+}
+
+export interface ItemPreviousValuesPromise
+  extends Promise<ItemPreviousValues>,
+    Fragmentable {
+  units: () => Promise<Int>;
+  amount: () => Promise<Float>;
+  createdAt: () => Promise<DateTimeOutput>;
+  updatedAt: () => Promise<DateTimeOutput>;
+}
+
+export interface ItemPreviousValuesSubscription
+  extends Promise<AsyncIterator<ItemPreviousValues>>,
+    Fragmentable {
+  units: () => Promise<AsyncIterator<Int>>;
+  amount: () => Promise<AsyncIterator<Float>>;
+  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+}
+
+export interface Address {
+  address1: String;
+  address2?: String;
+  barangay: String;
+  city: String;
+  province: String;
+  zip?: Int;
+}
+
+export interface AddressPromise extends Promise<Address>, Fragmentable {
+  address1: () => Promise<String>;
+  address2: () => Promise<String>;
+  barangay: () => Promise<String>;
+  city: () => Promise<String>;
+  province: () => Promise<String>;
+  zip: () => Promise<Int>;
+}
+
+export interface AddressSubscription
+  extends Promise<AsyncIterator<Address>>,
+    Fragmentable {
+  address1: () => Promise<AsyncIterator<String>>;
+  address2: () => Promise<AsyncIterator<String>>;
+  barangay: () => Promise<AsyncIterator<String>>;
+  city: () => Promise<AsyncIterator<String>>;
+  province: () => Promise<AsyncIterator<String>>;
+  zip: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface Transaction {
+  id: ID_Output;
+  type: TransactionType;
+  receiptNo: Int;
+  isPaid: Boolean;
+  balance: Float;
+  createdAt: DateTimeOutput;
+  updatedAt: DateTimeOutput;
+}
+
+export interface TransactionPromise extends Promise<Transaction>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  type: () => Promise<TransactionType>;
+  refNo: <T = TransactionPromise>() => T;
+  receiptNo: () => Promise<Int>;
+  order: <T = OrderPromise>() => T;
+  quote: <T = QuotePromise>() => T;
+  isPaid: () => Promise<Boolean>;
+  balance: () => Promise<Float>;
+  createdAt: () => Promise<DateTimeOutput>;
+  updatedAt: () => Promise<DateTimeOutput>;
+}
+
+export interface TransactionSubscription
+  extends Promise<AsyncIterator<Transaction>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  type: () => Promise<AsyncIterator<TransactionType>>;
+  refNo: <T = TransactionSubscription>() => T;
+  receiptNo: () => Promise<AsyncIterator<Int>>;
+  order: <T = OrderSubscription>() => T;
+  quote: <T = QuoteSubscription>() => T;
+  isPaid: () => Promise<AsyncIterator<Boolean>>;
+  balance: () => Promise<AsyncIterator<Float>>;
+  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+}
+
+export interface AddressConnection {
+  pageInfo: PageInfo;
+  edges: AddressEdge[];
+}
+
+export interface AddressConnectionPromise
+  extends Promise<AddressConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<AddressEdge>>() => T;
+  aggregate: <T = AggregateAddressPromise>() => T;
+}
+
+export interface AddressConnectionSubscription
+  extends Promise<AsyncIterator<AddressConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<AddressEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateAddressSubscription>() => T;
+}
+
+export interface LogSubscriptionPayload {
+  mutation: MutationType;
+  node: Log;
+  updatedFields: String[];
+  previousValues: LogPreviousValues;
+}
+
+export interface LogSubscriptionPayloadPromise
+  extends Promise<LogSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = LogPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = LogPreviousValuesPromise>() => T;
+}
+
+export interface LogSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<LogSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = LogSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = LogPreviousValuesSubscription>() => T;
+}
+
+export interface AggregateQuote {
+  count: Int;
+}
+
+export interface AggregateQuotePromise
+  extends Promise<AggregateQuote>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateQuoteSubscription
+  extends Promise<AsyncIterator<AggregateQuote>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface LogPreviousValues {
+  sourceTable: String;
+  sourceId: String;
+  actionNo: String;
+  actionType: String;
+  actionTitle: String;
+  tableField: String;
+  oldValue: String;
+  newValue: String;
+  comment?: String;
+  createdAt: DateTimeOutput;
+}
+
+export interface LogPreviousValuesPromise
+  extends Promise<LogPreviousValues>,
+    Fragmentable {
+  sourceTable: () => Promise<String>;
+  sourceId: () => Promise<String>;
+  actionNo: () => Promise<String>;
+  actionType: () => Promise<String>;
+  actionTitle: () => Promise<String>;
+  tableField: () => Promise<String>;
+  oldValue: () => Promise<String>;
+  newValue: () => Promise<String>;
+  comment: () => Promise<String>;
+  createdAt: () => Promise<DateTimeOutput>;
+}
+
+export interface LogPreviousValuesSubscription
+  extends Promise<AsyncIterator<LogPreviousValues>>,
+    Fragmentable {
+  sourceTable: () => Promise<AsyncIterator<String>>;
+  sourceId: () => Promise<AsyncIterator<String>>;
+  actionNo: () => Promise<AsyncIterator<String>>;
+  actionType: () => Promise<AsyncIterator<String>>;
+  actionTitle: () => Promise<AsyncIterator<String>>;
+  tableField: () => Promise<AsyncIterator<String>>;
+  oldValue: () => Promise<AsyncIterator<String>>;
+  newValue: () => Promise<AsyncIterator<String>>;
+  comment: () => Promise<AsyncIterator<String>>;
+  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+}
+
+export interface QRCodeEdge {
+  node: QRCode;
+  cursor: String;
+}
+
+export interface QRCodeEdgePromise extends Promise<QRCodeEdge>, Fragmentable {
+  node: <T = QRCodePromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface QRCodeEdgeSubscription
+  extends Promise<AsyncIterator<QRCodeEdge>>,
+    Fragmentable {
+  node: <T = QRCodeSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface Order {
+  status: OrderStatus;
+}
+
+export interface OrderPromise extends Promise<Order>, Fragmentable {
+  transaction: <T = TransactionPromise>() => T;
+  delivery: <T = DeliveryPromise>() => T;
+  status: () => Promise<OrderStatus>;
+  owner: <T = ProfilePromise>() => T;
+}
+
+export interface OrderSubscription
+  extends Promise<AsyncIterator<Order>>,
+    Fragmentable {
+  transaction: <T = TransactionSubscription>() => T;
+  delivery: <T = DeliverySubscription>() => T;
+  status: () => Promise<AsyncIterator<OrderStatus>>;
+  owner: <T = ProfileSubscription>() => T;
+}
+
+export interface PurchasePriceEdge {
+  node: PurchasePrice;
+  cursor: String;
+}
+
+export interface PurchasePriceEdgePromise
+  extends Promise<PurchasePriceEdge>,
+    Fragmentable {
+  node: <T = PurchasePricePromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface PurchasePriceEdgeSubscription
+  extends Promise<AsyncIterator<PurchasePriceEdge>>,
+    Fragmentable {
+  node: <T = PurchasePriceSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface OrderSubscriptionPayload {
+  mutation: MutationType;
+  node: Order;
+  updatedFields: String[];
+  previousValues: OrderPreviousValues;
+}
+
+export interface OrderSubscriptionPayloadPromise
+  extends Promise<OrderSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = OrderPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = OrderPreviousValuesPromise>() => T;
+}
+
+export interface OrderSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<OrderSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = OrderSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = OrderPreviousValuesSubscription>() => T;
+}
+
+export interface ProfileEdge {
+  node: Profile;
+  cursor: String;
+}
+
+export interface ProfileEdgePromise extends Promise<ProfileEdge>, Fragmentable {
+  node: <T = ProfilePromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface ProfileEdgeSubscription
+  extends Promise<AsyncIterator<ProfileEdge>>,
+    Fragmentable {
+  node: <T = ProfileSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface OrderPreviousValues {
+  status: OrderStatus;
+}
+
+export interface OrderPreviousValuesPromise
+  extends Promise<OrderPreviousValues>,
+    Fragmentable {
+  status: () => Promise<OrderStatus>;
+}
+
+export interface OrderPreviousValuesSubscription
+  extends Promise<AsyncIterator<OrderPreviousValues>>,
+    Fragmentable {
+  status: () => Promise<AsyncIterator<OrderStatus>>;
+}
+
+export interface ProductSrpEdge {
+  node: ProductSrp;
+  cursor: String;
+}
+
+export interface ProductSrpEdgePromise
+  extends Promise<ProductSrpEdge>,
+    Fragmentable {
+  node: <T = ProductSrpPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface ProductSrpEdgeSubscription
+  extends Promise<AsyncIterator<ProductSrpEdge>>,
+    Fragmentable {
+  node: <T = ProductSrpSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface Delivery {
+  status: DeliveryStatus;
+}
+
+export interface DeliveryPromise extends Promise<Delivery>, Fragmentable {
+  orders: <T = OrderPromise>() => T;
+  sender: <T = CompanyPromise>() => T;
+  receiver: <T = CompanyPromise>() => T;
+  status: () => Promise<DeliveryStatus>;
+}
+
+export interface DeliverySubscription
+  extends Promise<AsyncIterator<Delivery>>,
+    Fragmentable {
+  orders: <T = OrderSubscription>() => T;
+  sender: <T = CompanySubscription>() => T;
+  receiver: <T = CompanySubscription>() => T;
+  status: () => Promise<AsyncIterator<DeliveryStatus>>;
+}
+
+export interface ProductEdge {
+  node: Product;
+  cursor: String;
+}
+
+export interface ProductEdgePromise extends Promise<ProductEdge>, Fragmentable {
+  node: <T = ProductPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface ProductEdgeSubscription
+  extends Promise<AsyncIterator<ProductEdge>>,
+    Fragmentable {
+  node: <T = ProductSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface ProductSubscriptionPayload {
+  mutation: MutationType;
+  node: Product;
+  updatedFields: String[];
+  previousValues: ProductPreviousValues;
+}
+
+export interface ProductSubscriptionPayloadPromise
+  extends Promise<ProductSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = ProductPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = ProductPreviousValuesPromise>() => T;
+}
+
+export interface ProductSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<ProductSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = ProductSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = ProductPreviousValuesSubscription>() => T;
+}
+
+export interface OrderConnection {
+  pageInfo: PageInfo;
+  edges: OrderEdge[];
+}
+
+export interface OrderConnectionPromise
+  extends Promise<OrderConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<OrderEdge>>() => T;
+  aggregate: <T = AggregateOrderPromise>() => T;
+}
+
+export interface OrderConnectionSubscription
+  extends Promise<AsyncIterator<OrderConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<OrderEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateOrderSubscription>() => T;
+}
+
+export interface ProductPreviousValues {
+  type: ProductType;
+  productName: String;
+  barcode: Int;
+  desc?: String;
+  slug: String;
+}
+
+export interface ProductPreviousValuesPromise
+  extends Promise<ProductPreviousValues>,
+    Fragmentable {
+  type: () => Promise<ProductType>;
+  productName: () => Promise<String>;
+  barcode: () => Promise<Int>;
+  desc: () => Promise<String>;
+  slug: () => Promise<String>;
+}
+
+export interface ProductPreviousValuesSubscription
+  extends Promise<AsyncIterator<ProductPreviousValues>>,
+    Fragmentable {
+  type: () => Promise<AsyncIterator<ProductType>>;
+  productName: () => Promise<AsyncIterator<String>>;
+  barcode: () => Promise<AsyncIterator<Int>>;
+  desc: () => Promise<AsyncIterator<String>>;
+  slug: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateItem {
+  count: Int;
+}
+
+export interface AggregateItemPromise
+  extends Promise<AggregateItem>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateItemSubscription
+  extends Promise<AsyncIterator<AggregateItem>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface Company {
+  companyName: String;
+  about?: String;
+}
+
+export interface CompanyPromise extends Promise<Company>, Fragmentable {
+  companyName: () => Promise<String>;
+  about: () => Promise<String>;
+  branches: <T = FragmentableArray<Branch>>(
+    args?: {
+      where?: BranchWhereInput;
+      orderBy?: BranchOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  clients: <T = CompanyPromise>() => T;
+  suppliers: <T = CompanyPromise>() => T;
+  sender: <T = FragmentableArray<Delivery>>(
+    args?: {
+      where?: DeliveryWhereInput;
+      orderBy?: DeliveryOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  receiver: <T = FragmentableArray<Delivery>>(
+    args?: {
+      where?: DeliveryWhereInput;
+      orderBy?: DeliveryOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+}
+
+export interface CompanySubscription
+  extends Promise<AsyncIterator<Company>>,
+    Fragmentable {
+  companyName: () => Promise<AsyncIterator<String>>;
+  about: () => Promise<AsyncIterator<String>>;
+  branches: <T = Promise<AsyncIterator<BranchSubscription>>>(
+    args?: {
+      where?: BranchWhereInput;
+      orderBy?: BranchOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  clients: <T = CompanySubscription>() => T;
+  suppliers: <T = CompanySubscription>() => T;
+  sender: <T = Promise<AsyncIterator<DeliverySubscription>>>(
+    args?: {
+      where?: DeliveryWhereInput;
+      orderBy?: DeliveryOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  receiver: <T = Promise<AsyncIterator<DeliverySubscription>>>(
+    args?: {
+      where?: DeliveryWhereInput;
+      orderBy?: DeliveryOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+}
+
+export interface InventoryEdge {
+  node: Inventory;
+  cursor: String;
+}
+
+export interface InventoryEdgePromise
+  extends Promise<InventoryEdge>,
+    Fragmentable {
+  node: <T = InventoryPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface InventoryEdgeSubscription
+  extends Promise<AsyncIterator<InventoryEdge>>,
+    Fragmentable {
+  node: <T = InventorySubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface ProductSrpSubscriptionPayload {
+  mutation: MutationType;
+  node: ProductSrp;
+  updatedFields: String[];
+  previousValues: ProductSrpPreviousValues;
+}
+
+export interface ProductSrpSubscriptionPayloadPromise
+  extends Promise<ProductSrpSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = ProductSrpPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = ProductSrpPreviousValuesPromise>() => T;
+}
+
+export interface ProductSrpSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<ProductSrpSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = ProductSrpSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = ProductSrpPreviousValuesSubscription>() => T;
+}
+
+export interface FileConnection {
+  pageInfo: PageInfo;
+  edges: FileEdge[];
+}
+
+export interface FileConnectionPromise
+  extends Promise<FileConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<FileEdge>>() => T;
+  aggregate: <T = AggregateFilePromise>() => T;
+}
+
+export interface FileConnectionSubscription
+  extends Promise<AsyncIterator<FileConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<FileEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateFileSubscription>() => T;
+}
+
+export interface ProductSrpPreviousValues {
+  price: Float;
+}
+
+export interface ProductSrpPreviousValuesPromise
+  extends Promise<ProductSrpPreviousValues>,
+    Fragmentable {
+  price: () => Promise<Float>;
+}
+
+export interface ProductSrpPreviousValuesSubscription
+  extends Promise<AsyncIterator<ProductSrpPreviousValues>>,
+    Fragmentable {
+  price: () => Promise<AsyncIterator<Float>>;
+}
+
+export interface AggregateContactInfo {
+  count: Int;
+}
+
+export interface AggregateContactInfoPromise
+  extends Promise<AggregateContactInfo>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateContactInfoSubscription
+  extends Promise<AsyncIterator<AggregateContactInfo>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface Branch {
+  type: BranchType;
+  branchName: String;
+}
+
+export interface BranchPromise extends Promise<Branch>, Fragmentable {
+  owner: <T = CompanyPromise>() => T;
+  type: () => Promise<BranchType>;
+  branchName: () => Promise<String>;
+  address: <T = AddressPromise>() => T;
+  contactInfo: <T = ContactInfoPromise>() => T;
+  manager: <T = ProfilePromise>() => T;
+}
+
+export interface BranchSubscription
+  extends Promise<AsyncIterator<Branch>>,
+    Fragmentable {
+  owner: <T = CompanySubscription>() => T;
+  type: () => Promise<AsyncIterator<BranchType>>;
+  branchName: () => Promise<AsyncIterator<String>>;
+  address: <T = AddressSubscription>() => T;
+  contactInfo: <T = ContactInfoSubscription>() => T;
+  manager: <T = ProfileSubscription>() => T;
+}
+
+export interface CompanyEdge {
+  node: Company;
+  cursor: String;
+}
+
+export interface CompanyEdgePromise extends Promise<CompanyEdge>, Fragmentable {
+  node: <T = CompanyPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface CompanyEdgeSubscription
+  extends Promise<AsyncIterator<CompanyEdge>>,
+    Fragmentable {
+  node: <T = CompanySubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface ProfileSubscriptionPayload {
+  mutation: MutationType;
+  node: Profile;
+  updatedFields: String[];
+  previousValues: ProfilePreviousValues;
+}
+
+export interface ProfileSubscriptionPayloadPromise
+  extends Promise<ProfileSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = ProfilePromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = ProfilePreviousValuesPromise>() => T;
+}
+
+export interface ProfileSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<ProfileSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = ProfileSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = ProfilePreviousValuesSubscription>() => T;
+}
+
+export interface CategoryConnection {
+  pageInfo: PageInfo;
+  edges: CategoryEdge[];
+}
+
+export interface CategoryConnectionPromise
+  extends Promise<CategoryConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<CategoryEdge>>() => T;
+  aggregate: <T = AggregateCategoryPromise>() => T;
+}
+
+export interface CategoryConnectionSubscription
+  extends Promise<AsyncIterator<CategoryConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<CategoryEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateCategorySubscription>() => T;
+}
+
+export interface ProfilePreviousValues {
+  id: ID_Output;
+  firstName: String;
+  middleName?: String;
+  lastName: String;
+  birthdate: DateTimeOutput;
+  gender: Gender;
+  position: Position;
+}
+
+export interface ProfilePreviousValuesPromise
+  extends Promise<ProfilePreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  firstName: () => Promise<String>;
+  middleName: () => Promise<String>;
+  lastName: () => Promise<String>;
+  birthdate: () => Promise<DateTimeOutput>;
+  gender: () => Promise<Gender>;
+  position: () => Promise<Position>;
+}
+
+export interface ProfilePreviousValuesSubscription
+  extends Promise<AsyncIterator<ProfilePreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  firstName: () => Promise<AsyncIterator<String>>;
+  middleName: () => Promise<AsyncIterator<String>>;
+  lastName: () => Promise<AsyncIterator<String>>;
+  birthdate: () => Promise<AsyncIterator<DateTimeOutput>>;
+  gender: () => Promise<AsyncIterator<Gender>>;
+  position: () => Promise<AsyncIterator<Position>>;
+}
+
+export interface AggregateUser {
+  count: Int;
+}
+
+export interface AggregateUserPromise
+  extends Promise<AggregateUser>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateUserSubscription
+  extends Promise<AsyncIterator<AggregateUser>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface Stock {
+  sku: String;
+  units: Int;
+}
+
+export interface StockPromise extends Promise<Stock>, Fragmentable {
+  sku: () => Promise<String>;
+  product: <T = ProductPromise>() => T;
+  warehouse: <T = BranchPromise>() => T;
+  units: () => Promise<Int>;
+  inventory: <T = InventoryPromise>() => T;
+}
+
+export interface StockSubscription
+  extends Promise<AsyncIterator<Stock>>,
+    Fragmentable {
+  sku: () => Promise<AsyncIterator<String>>;
+  product: <T = ProductSubscription>() => T;
+  warehouse: <T = BranchSubscription>() => T;
+  units: () => Promise<AsyncIterator<Int>>;
+  inventory: <T = InventorySubscription>() => T;
+}
+
+export interface SubCategoryEdge {
+  node: SubCategory;
+  cursor: String;
+}
+
+export interface SubCategoryEdgePromise
+  extends Promise<SubCategoryEdge>,
+    Fragmentable {
+  node: <T = SubCategoryPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface SubCategoryEdgeSubscription
+  extends Promise<AsyncIterator<SubCategoryEdge>>,
+    Fragmentable {
+  node: <T = SubCategorySubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PurchasePriceSubscriptionPayload {
+  mutation: MutationType;
+  node: PurchasePrice;
+  updatedFields: String[];
+  previousValues: PurchasePricePreviousValues;
+}
+
+export interface PurchasePriceSubscriptionPayloadPromise
+  extends Promise<PurchasePriceSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PurchasePricePromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PurchasePricePreviousValuesPromise>() => T;
+}
+
+export interface PurchasePriceSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PurchasePriceSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PurchasePriceSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PurchasePricePreviousValuesSubscription>() => T;
+}
+
+export interface QuoteConnection {
+  pageInfo: PageInfo;
+  edges: QuoteEdge[];
+}
+
+export interface QuoteConnectionPromise
+  extends Promise<QuoteConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<QuoteEdge>>() => T;
+  aggregate: <T = AggregateQuotePromise>() => T;
+}
+
+export interface QuoteConnectionSubscription
+  extends Promise<AsyncIterator<QuoteConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<QuoteEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateQuoteSubscription>() => T;
+}
+
+export interface PurchasePricePreviousValues {
+  price: Float;
+}
+
+export interface PurchasePricePreviousValuesPromise
+  extends Promise<PurchasePricePreviousValues>,
+    Fragmentable {
+  price: () => Promise<Float>;
+}
+
+export interface PurchasePricePreviousValuesSubscription
+  extends Promise<AsyncIterator<PurchasePricePreviousValues>>,
+    Fragmentable {
+  price: () => Promise<AsyncIterator<Float>>;
 }
 
 export interface UserSubscriptionPayload {
@@ -273,42 +8249,439 @@ export interface UserSubscriptionPayloadSubscription
   previousValues: <T = UserPreviousValuesSubscription>() => T;
 }
 
-export interface User {
-  id: ID_Output;
-  name: String;
+export interface PurchasePrice {
+  price: Float;
 }
 
-export interface UserPromise extends Promise<User>, Fragmentable {
-  id: () => Promise<ID_Output>;
-  name: () => Promise<String>;
-}
-
-export interface UserSubscription
-  extends Promise<AsyncIterator<User>>,
+export interface PurchasePricePromise
+  extends Promise<PurchasePrice>,
     Fragmentable {
-  id: () => Promise<AsyncIterator<ID_Output>>;
-  name: () => Promise<AsyncIterator<String>>;
+  product: <T = ProductPromise>() => T;
+  price: () => Promise<Float>;
 }
 
-export interface UserConnection {
+export interface PurchasePriceSubscription
+  extends Promise<AsyncIterator<PurchasePrice>>,
+    Fragmentable {
+  product: <T = ProductSubscription>() => T;
+  price: () => Promise<AsyncIterator<Float>>;
+}
+
+export interface AggregateAddress {
+  count: Int;
+}
+
+export interface AggregateAddressPromise
+  extends Promise<AggregateAddress>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateAddressSubscription
+  extends Promise<AsyncIterator<AggregateAddress>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface QRCodeSubscriptionPayload {
+  mutation: MutationType;
+  node: QRCode;
+  updatedFields: String[];
+  previousValues: QRCodePreviousValues;
+}
+
+export interface QRCodeSubscriptionPayloadPromise
+  extends Promise<QRCodeSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = QRCodePromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = QRCodePreviousValuesPromise>() => T;
+}
+
+export interface QRCodeSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<QRCodeSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = QRCodeSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = QRCodePreviousValuesSubscription>() => T;
+}
+
+export interface LogEdge {
+  node: Log;
+  cursor: String;
+}
+
+export interface LogEdgePromise extends Promise<LogEdge>, Fragmentable {
+  node: <T = LogPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface LogEdgeSubscription
+  extends Promise<AsyncIterator<LogEdge>>,
+    Fragmentable {
+  node: <T = LogSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface QRCodePreviousValues {
+  qrcode: String;
+}
+
+export interface QRCodePreviousValuesPromise
+  extends Promise<QRCodePreviousValues>,
+    Fragmentable {
+  qrcode: () => Promise<String>;
+}
+
+export interface QRCodePreviousValuesSubscription
+  extends Promise<AsyncIterator<QRCodePreviousValues>>,
+    Fragmentable {
+  qrcode: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateFile {
+  count: Int;
+}
+
+export interface AggregateFilePromise
+  extends Promise<AggregateFile>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateFileSubscription
+  extends Promise<AsyncIterator<AggregateFile>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface ProductSrp {
+  price: Float;
+}
+
+export interface ProductSrpPromise extends Promise<ProductSrp>, Fragmentable {
+  product: <T = ProductPromise>() => T;
+  price: () => Promise<Float>;
+}
+
+export interface ProductSrpSubscription
+  extends Promise<AsyncIterator<ProductSrp>>,
+    Fragmentable {
+  product: <T = ProductSubscription>() => T;
+  price: () => Promise<AsyncIterator<Float>>;
+}
+
+export interface ContactInfoConnection {
   pageInfo: PageInfo;
-  edges: UserEdge[];
+  edges: ContactInfoEdge[];
 }
 
-export interface UserConnectionPromise
-  extends Promise<UserConnection>,
+export interface ContactInfoConnectionPromise
+  extends Promise<ContactInfoConnection>,
     Fragmentable {
   pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<UserEdge>>() => T;
-  aggregate: <T = AggregateUserPromise>() => T;
+  edges: <T = FragmentableArray<ContactInfoEdge>>() => T;
+  aggregate: <T = AggregateContactInfoPromise>() => T;
 }
 
-export interface UserConnectionSubscription
-  extends Promise<AsyncIterator<UserConnection>>,
+export interface ContactInfoConnectionSubscription
+  extends Promise<AsyncIterator<ContactInfoConnection>>,
     Fragmentable {
   pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<UserEdgeSubscription>>>() => T;
-  aggregate: <T = AggregateUserSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<ContactInfoEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateContactInfoSubscription>() => T;
+}
+
+export interface QuoteSubscriptionPayload {
+  mutation: MutationType;
+  node: Quote;
+  updatedFields: String[];
+  previousValues: QuotePreviousValues;
+}
+
+export interface QuoteSubscriptionPayloadPromise
+  extends Promise<QuoteSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = QuotePromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = QuotePreviousValuesPromise>() => T;
+}
+
+export interface QuoteSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<QuoteSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = QuoteSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = QuotePreviousValuesSubscription>() => T;
+}
+
+export interface BrandEdge {
+  node: Brand;
+  cursor: String;
+}
+
+export interface BrandEdgePromise extends Promise<BrandEdge>, Fragmentable {
+  node: <T = BrandPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface BrandEdgeSubscription
+  extends Promise<AsyncIterator<BrandEdge>>,
+    Fragmentable {
+  node: <T = BrandSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface QuotePreviousValues {
+  grossAmount: Float;
+  isDiscounted: Boolean;
+  discountedAmount: Float;
+  netAmount: Float;
+  amountPaid: Float;
+  createdAt: DateTimeOutput;
+  updatedAt: DateTimeOutput;
+}
+
+export interface QuotePreviousValuesPromise
+  extends Promise<QuotePreviousValues>,
+    Fragmentable {
+  grossAmount: () => Promise<Float>;
+  isDiscounted: () => Promise<Boolean>;
+  discountedAmount: () => Promise<Float>;
+  netAmount: () => Promise<Float>;
+  amountPaid: () => Promise<Float>;
+  createdAt: () => Promise<DateTimeOutput>;
+  updatedAt: () => Promise<DateTimeOutput>;
+}
+
+export interface QuotePreviousValuesSubscription
+  extends Promise<AsyncIterator<QuotePreviousValues>>,
+    Fragmentable {
+  grossAmount: () => Promise<AsyncIterator<Float>>;
+  isDiscounted: () => Promise<AsyncIterator<Boolean>>;
+  discountedAmount: () => Promise<AsyncIterator<Float>>;
+  netAmount: () => Promise<AsyncIterator<Float>>;
+  amountPaid: () => Promise<AsyncIterator<Float>>;
+  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+}
+
+export interface StockEdge {
+  node: Stock;
+  cursor: String;
+}
+
+export interface StockEdgePromise extends Promise<StockEdge>, Fragmentable {
+  node: <T = StockPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface StockEdgeSubscription
+  extends Promise<AsyncIterator<StockEdge>>,
+    Fragmentable {
+  node: <T = StockSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface QRCode {
+  qrcode: String;
+}
+
+export interface QRCodePromise extends Promise<QRCode>, Fragmentable {
+  qrcode: () => Promise<String>;
+  product: <T = ProductPromise>() => T;
+}
+
+export interface QRCodeSubscription
+  extends Promise<AsyncIterator<QRCode>>,
+    Fragmentable {
+  qrcode: () => Promise<AsyncIterator<String>>;
+  product: <T = ProductSubscription>() => T;
+}
+
+export interface AddressEdge {
+  node: Address;
+  cursor: String;
+}
+
+export interface AddressEdgePromise extends Promise<AddressEdge>, Fragmentable {
+  node: <T = AddressPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface AddressEdgeSubscription
+  extends Promise<AsyncIterator<AddressEdge>>,
+    Fragmentable {
+  node: <T = AddressSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface ItemConnection {
+  pageInfo: PageInfo;
+  edges: ItemEdge[];
+}
+
+export interface ItemConnectionPromise
+  extends Promise<ItemConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<ItemEdge>>() => T;
+  aggregate: <T = AggregateItemPromise>() => T;
+}
+
+export interface ItemConnectionSubscription
+  extends Promise<AsyncIterator<ItemConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<ItemEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateItemSubscription>() => T;
+}
+
+export interface SubCategorySubscriptionPayload {
+  mutation: MutationType;
+  node: SubCategory;
+  updatedFields: String[];
+  previousValues: SubCategoryPreviousValues;
+}
+
+export interface SubCategorySubscriptionPayloadPromise
+  extends Promise<SubCategorySubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = SubCategoryPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = SubCategoryPreviousValuesPromise>() => T;
+}
+
+export interface SubCategorySubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<SubCategorySubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = SubCategorySubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = SubCategoryPreviousValuesSubscription>() => T;
+}
+
+export interface Brand {
+  brandName: String;
+  manufacturer?: String;
+}
+
+export interface BrandPromise extends Promise<Brand>, Fragmentable {
+  brandName: () => Promise<String>;
+  manufacturer: () => Promise<String>;
+  products: <T = FragmentableArray<Product>>(
+    args?: {
+      where?: ProductWhereInput;
+      orderBy?: ProductOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+}
+
+export interface BrandSubscription
+  extends Promise<AsyncIterator<Brand>>,
+    Fragmentable {
+  brandName: () => Promise<AsyncIterator<String>>;
+  manufacturer: () => Promise<AsyncIterator<String>>;
+  products: <T = Promise<AsyncIterator<ProductSubscription>>>(
+    args?: {
+      where?: ProductWhereInput;
+      orderBy?: ProductOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+}
+
+export interface StockPreviousValues {
+  sku: String;
+  units: Int;
+}
+
+export interface StockPreviousValuesPromise
+  extends Promise<StockPreviousValues>,
+    Fragmentable {
+  sku: () => Promise<String>;
+  units: () => Promise<Int>;
+}
+
+export interface StockPreviousValuesSubscription
+  extends Promise<AsyncIterator<StockPreviousValues>>,
+    Fragmentable {
+  sku: () => Promise<AsyncIterator<String>>;
+  units: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface StockSubscriptionPayload {
+  mutation: MutationType;
+  node: Stock;
+  updatedFields: String[];
+  previousValues: StockPreviousValues;
+}
+
+export interface StockSubscriptionPayloadPromise
+  extends Promise<StockSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = StockPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = StockPreviousValuesPromise>() => T;
+}
+
+export interface StockSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<StockSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = StockSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = StockPreviousValuesSubscription>() => T;
+}
+
+export interface DeliveryEdge {
+  node: Delivery;
+  cursor: String;
+}
+
+export interface DeliveryEdgePromise
+  extends Promise<DeliveryEdge>,
+    Fragmentable {
+  node: <T = DeliveryPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface DeliveryEdgeSubscription
+  extends Promise<AsyncIterator<DeliveryEdge>>,
+    Fragmentable {
+  node: <T = DeliverySubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateOrder {
+  count: Int;
+}
+
+export interface AggregateOrderPromise
+  extends Promise<AggregateOrder>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateOrderSubscription
+  extends Promise<AsyncIterator<AggregateOrder>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
 }
 
 export interface PageInfo {
@@ -334,12 +8707,57 @@ export interface PageInfoSubscription
   endCursor: () => Promise<AsyncIterator<String>>;
 }
 
+export interface TransactionEdge {
+  node: Transaction;
+  cursor: String;
+}
+
+export interface TransactionEdgePromise
+  extends Promise<TransactionEdge>,
+    Fragmentable {
+  node: <T = TransactionPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface TransactionEdgeSubscription
+  extends Promise<AsyncIterator<TransactionEdge>>,
+    Fragmentable {
+  node: <T = TransactionSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateCategory {
+  count: Int;
+}
+
+export interface AggregateCategoryPromise
+  extends Promise<AggregateCategory>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateCategorySubscription
+  extends Promise<AsyncIterator<AggregateCategory>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
 /*
-The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+DateTime scalar input type, allowing Date
 */
-export type String = string;
+export type DateTimeInput = Date | string;
+
+/*
+DateTime scalar output type, which is always a string
+*/
+export type DateTimeOutput = string;
 
 export type Long = string;
+
+/*
+The `Boolean` scalar type represents `true` or `false`.
+*/
+export type Boolean = boolean;
 
 /*
 The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `"4"`) or integer (such as `4`) input value will be accepted as an ID.
@@ -348,14 +8766,19 @@ export type ID_Input = string | number;
 export type ID_Output = string;
 
 /*
+The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+*/
+export type String = string;
+
+/*
 The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1. 
 */
 export type Int = number;
 
 /*
-The `Boolean` scalar type represents `true` or `false`.
+The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point). 
 */
-export type Boolean = boolean;
+export type Float = number;
 
 /**
  * Model Metadata
@@ -364,6 +8787,130 @@ export type Boolean = boolean;
 export const models: Model[] = [
   {
     name: "User",
+    embedded: false
+  },
+  {
+    name: "Profile",
+    embedded: false
+  },
+  {
+    name: "ContactInfo",
+    embedded: false
+  },
+  {
+    name: "Company",
+    embedded: false
+  },
+  {
+    name: "Address",
+    embedded: false
+  },
+  {
+    name: "Branch",
+    embedded: false
+  },
+  {
+    name: "Log",
+    embedded: false
+  },
+  {
+    name: "File",
+    embedded: false
+  },
+  {
+    name: "Product",
+    embedded: false
+  },
+  {
+    name: "Attribute",
+    embedded: false
+  },
+  {
+    name: "Category",
+    embedded: false
+  },
+  {
+    name: "SubCategory",
+    embedded: false
+  },
+  {
+    name: "Brand",
+    embedded: false
+  },
+  {
+    name: "QRCode",
+    embedded: false
+  },
+  {
+    name: "ProductSrp",
+    embedded: false
+  },
+  {
+    name: "PurchasePrice",
+    embedded: false
+  },
+  {
+    name: "Stock",
+    embedded: false
+  },
+  {
+    name: "Inventory",
+    embedded: false
+  },
+  {
+    name: "Transaction",
+    embedded: false
+  },
+  {
+    name: "Order",
+    embedded: false
+  },
+  {
+    name: "Delivery",
+    embedded: false
+  },
+  {
+    name: "Quote",
+    embedded: false
+  },
+  {
+    name: "Item",
+    embedded: false
+  },
+  {
+    name: "Role",
+    embedded: false
+  },
+  {
+    name: "Position",
+    embedded: false
+  },
+  {
+    name: "Gender",
+    embedded: false
+  },
+  {
+    name: "BranchType",
+    embedded: false
+  },
+  {
+    name: "ProductType",
+    embedded: false
+  },
+  {
+    name: "TransactionType",
+    embedded: false
+  },
+  {
+    name: "OrderStatus",
+    embedded: false
+  },
+  {
+    name: "DeliveryStatus",
+    embedded: false
+  },
+  {
+    name: "AttributeType",
     embedded: false
   }
 ];

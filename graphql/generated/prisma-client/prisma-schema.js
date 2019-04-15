@@ -3,17 +3,2766 @@ module.exports = {
   // Please don't change this file manually but run `prisma generate` to update it.
   // For more information, please read the docs: https://www.prisma.io/docs/prisma-client/
 
-/* GraphQL */ `type AggregateUser {
+/* GraphQL */ `type Address {
+  address1: String!
+  address2: String
+  barangay: String!
+  city: String!
+  province: String!
+  zip: Int
+}
+
+type AddressConnection {
+  pageInfo: PageInfo!
+  edges: [AddressEdge]!
+  aggregate: AggregateAddress!
+}
+
+input AddressCreateInput {
+  address1: String!
+  address2: String
+  barangay: String!
+  city: String!
+  province: String!
+  zip: Int
+}
+
+input AddressCreateOneInput {
+  create: AddressCreateInput
+}
+
+type AddressEdge {
+  node: Address!
+  cursor: String!
+}
+
+enum AddressOrderByInput {
+  address1_ASC
+  address1_DESC
+  address2_ASC
+  address2_DESC
+  barangay_ASC
+  barangay_DESC
+  city_ASC
+  city_DESC
+  province_ASC
+  province_DESC
+  zip_ASC
+  zip_DESC
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type AddressPreviousValues {
+  address1: String!
+  address2: String
+  barangay: String!
+  city: String!
+  province: String!
+  zip: Int
+}
+
+type AddressSubscriptionPayload {
+  mutation: MutationType!
+  node: Address
+  updatedFields: [String!]
+  previousValues: AddressPreviousValues
+}
+
+input AddressSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: AddressWhereInput
+  AND: [AddressSubscriptionWhereInput!]
+  OR: [AddressSubscriptionWhereInput!]
+  NOT: [AddressSubscriptionWhereInput!]
+}
+
+input AddressUpdateDataInput {
+  address1: String
+  address2: String
+  barangay: String
+  city: String
+  province: String
+  zip: Int
+}
+
+input AddressUpdateManyMutationInput {
+  address1: String
+  address2: String
+  barangay: String
+  city: String
+  province: String
+  zip: Int
+}
+
+input AddressUpdateOneInput {
+  create: AddressCreateInput
+  update: AddressUpdateDataInput
+  upsert: AddressUpsertNestedInput
+  delete: Boolean
+  disconnect: Boolean
+}
+
+input AddressUpdateOneRequiredInput {
+  create: AddressCreateInput
+  update: AddressUpdateDataInput
+  upsert: AddressUpsertNestedInput
+}
+
+input AddressUpsertNestedInput {
+  update: AddressUpdateDataInput!
+  create: AddressCreateInput!
+}
+
+input AddressWhereInput {
+  address1: String
+  address1_not: String
+  address1_in: [String!]
+  address1_not_in: [String!]
+  address1_lt: String
+  address1_lte: String
+  address1_gt: String
+  address1_gte: String
+  address1_contains: String
+  address1_not_contains: String
+  address1_starts_with: String
+  address1_not_starts_with: String
+  address1_ends_with: String
+  address1_not_ends_with: String
+  address2: String
+  address2_not: String
+  address2_in: [String!]
+  address2_not_in: [String!]
+  address2_lt: String
+  address2_lte: String
+  address2_gt: String
+  address2_gte: String
+  address2_contains: String
+  address2_not_contains: String
+  address2_starts_with: String
+  address2_not_starts_with: String
+  address2_ends_with: String
+  address2_not_ends_with: String
+  barangay: String
+  barangay_not: String
+  barangay_in: [String!]
+  barangay_not_in: [String!]
+  barangay_lt: String
+  barangay_lte: String
+  barangay_gt: String
+  barangay_gte: String
+  barangay_contains: String
+  barangay_not_contains: String
+  barangay_starts_with: String
+  barangay_not_starts_with: String
+  barangay_ends_with: String
+  barangay_not_ends_with: String
+  city: String
+  city_not: String
+  city_in: [String!]
+  city_not_in: [String!]
+  city_lt: String
+  city_lte: String
+  city_gt: String
+  city_gte: String
+  city_contains: String
+  city_not_contains: String
+  city_starts_with: String
+  city_not_starts_with: String
+  city_ends_with: String
+  city_not_ends_with: String
+  province: String
+  province_not: String
+  province_in: [String!]
+  province_not_in: [String!]
+  province_lt: String
+  province_lte: String
+  province_gt: String
+  province_gte: String
+  province_contains: String
+  province_not_contains: String
+  province_starts_with: String
+  province_not_starts_with: String
+  province_ends_with: String
+  province_not_ends_with: String
+  zip: Int
+  zip_not: Int
+  zip_in: [Int!]
+  zip_not_in: [Int!]
+  zip_lt: Int
+  zip_lte: Int
+  zip_gt: Int
+  zip_gte: Int
+  AND: [AddressWhereInput!]
+  OR: [AddressWhereInput!]
+  NOT: [AddressWhereInput!]
+}
+
+type AggregateAddress {
   count: Int!
+}
+
+type AggregateAttribute {
+  count: Int!
+}
+
+type AggregateBranch {
+  count: Int!
+}
+
+type AggregateBrand {
+  count: Int!
+}
+
+type AggregateCategory {
+  count: Int!
+}
+
+type AggregateCompany {
+  count: Int!
+}
+
+type AggregateContactInfo {
+  count: Int!
+}
+
+type AggregateDelivery {
+  count: Int!
+}
+
+type AggregateFile {
+  count: Int!
+}
+
+type AggregateInventory {
+  count: Int!
+}
+
+type AggregateItem {
+  count: Int!
+}
+
+type AggregateLog {
+  count: Int!
+}
+
+type AggregateOrder {
+  count: Int!
+}
+
+type AggregateProduct {
+  count: Int!
+}
+
+type AggregateProductSrp {
+  count: Int!
+}
+
+type AggregateProfile {
+  count: Int!
+}
+
+type AggregatePurchasePrice {
+  count: Int!
+}
+
+type AggregateQRCode {
+  count: Int!
+}
+
+type AggregateQuote {
+  count: Int!
+}
+
+type AggregateStock {
+  count: Int!
+}
+
+type AggregateSubCategory {
+  count: Int!
+}
+
+type AggregateTransaction {
+  count: Int!
+}
+
+type AggregateUser {
+  count: Int!
+}
+
+type Attribute {
+  product: Product!
+  attributeName: AttributeType!
+  value: String!
+}
+
+type AttributeConnection {
+  pageInfo: PageInfo!
+  edges: [AttributeEdge]!
+  aggregate: AggregateAttribute!
+}
+
+input AttributeCreateInput {
+  product: ProductCreateOneWithoutAttributesInput!
+  attributeName: AttributeType!
+  value: String!
+}
+
+input AttributeCreateManyWithoutProductInput {
+  create: [AttributeCreateWithoutProductInput!]
+}
+
+input AttributeCreateWithoutProductInput {
+  attributeName: AttributeType!
+  value: String!
+}
+
+type AttributeEdge {
+  node: Attribute!
+  cursor: String!
+}
+
+enum AttributeOrderByInput {
+  attributeName_ASC
+  attributeName_DESC
+  value_ASC
+  value_DESC
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type AttributePreviousValues {
+  attributeName: AttributeType!
+  value: String!
+}
+
+input AttributeScalarWhereInput {
+  attributeName: AttributeType
+  attributeName_not: AttributeType
+  attributeName_in: [AttributeType!]
+  attributeName_not_in: [AttributeType!]
+  value: String
+  value_not: String
+  value_in: [String!]
+  value_not_in: [String!]
+  value_lt: String
+  value_lte: String
+  value_gt: String
+  value_gte: String
+  value_contains: String
+  value_not_contains: String
+  value_starts_with: String
+  value_not_starts_with: String
+  value_ends_with: String
+  value_not_ends_with: String
+  AND: [AttributeScalarWhereInput!]
+  OR: [AttributeScalarWhereInput!]
+  NOT: [AttributeScalarWhereInput!]
+}
+
+type AttributeSubscriptionPayload {
+  mutation: MutationType!
+  node: Attribute
+  updatedFields: [String!]
+  previousValues: AttributePreviousValues
+}
+
+input AttributeSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: AttributeWhereInput
+  AND: [AttributeSubscriptionWhereInput!]
+  OR: [AttributeSubscriptionWhereInput!]
+  NOT: [AttributeSubscriptionWhereInput!]
+}
+
+enum AttributeType {
+  Color
+  Size
+  Volume
+  Weight
+  Length
+  Width
+  Height
+  Voltage
+}
+
+input AttributeUpdateManyDataInput {
+  attributeName: AttributeType
+  value: String
+}
+
+input AttributeUpdateManyMutationInput {
+  attributeName: AttributeType
+  value: String
+}
+
+input AttributeUpdateManyWithoutProductInput {
+  create: [AttributeCreateWithoutProductInput!]
+  deleteMany: [AttributeScalarWhereInput!]
+  updateMany: [AttributeUpdateManyWithWhereNestedInput!]
+}
+
+input AttributeUpdateManyWithWhereNestedInput {
+  where: AttributeScalarWhereInput!
+  data: AttributeUpdateManyDataInput!
+}
+
+input AttributeWhereInput {
+  product: ProductWhereInput
+  attributeName: AttributeType
+  attributeName_not: AttributeType
+  attributeName_in: [AttributeType!]
+  attributeName_not_in: [AttributeType!]
+  value: String
+  value_not: String
+  value_in: [String!]
+  value_not_in: [String!]
+  value_lt: String
+  value_lte: String
+  value_gt: String
+  value_gte: String
+  value_contains: String
+  value_not_contains: String
+  value_starts_with: String
+  value_not_starts_with: String
+  value_ends_with: String
+  value_not_ends_with: String
+  AND: [AttributeWhereInput!]
+  OR: [AttributeWhereInput!]
+  NOT: [AttributeWhereInput!]
 }
 
 type BatchPayload {
   count: Long!
 }
 
+type Branch {
+  owner: Company!
+  type: BranchType!
+  branchName: String!
+  address: Address!
+  contactInfo: ContactInfo!
+  manager: Profile!
+}
+
+type BranchConnection {
+  pageInfo: PageInfo!
+  edges: [BranchEdge]!
+  aggregate: AggregateBranch!
+}
+
+input BranchCreateInput {
+  owner: CompanyCreateOneWithoutBranchesInput!
+  type: BranchType!
+  branchName: String!
+  address: AddressCreateOneInput!
+  contactInfo: ContactInfoCreateOneInput!
+  manager: ProfileCreateOneWithoutStationInput!
+}
+
+input BranchCreateManyWithoutOwnerInput {
+  create: [BranchCreateWithoutOwnerInput!]
+  connect: [BranchWhereUniqueInput!]
+}
+
+input BranchCreateOneInput {
+  create: BranchCreateInput
+  connect: BranchWhereUniqueInput
+}
+
+input BranchCreateOneWithoutManagerInput {
+  create: BranchCreateWithoutManagerInput
+  connect: BranchWhereUniqueInput
+}
+
+input BranchCreateWithoutManagerInput {
+  owner: CompanyCreateOneWithoutBranchesInput!
+  type: BranchType!
+  branchName: String!
+  address: AddressCreateOneInput!
+  contactInfo: ContactInfoCreateOneInput!
+}
+
+input BranchCreateWithoutOwnerInput {
+  type: BranchType!
+  branchName: String!
+  address: AddressCreateOneInput!
+  contactInfo: ContactInfoCreateOneInput!
+  manager: ProfileCreateOneWithoutStationInput!
+}
+
+type BranchEdge {
+  node: Branch!
+  cursor: String!
+}
+
+enum BranchOrderByInput {
+  type_ASC
+  type_DESC
+  branchName_ASC
+  branchName_DESC
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type BranchPreviousValues {
+  type: BranchType!
+  branchName: String!
+}
+
+input BranchScalarWhereInput {
+  type: BranchType
+  type_not: BranchType
+  type_in: [BranchType!]
+  type_not_in: [BranchType!]
+  branchName: String
+  branchName_not: String
+  branchName_in: [String!]
+  branchName_not_in: [String!]
+  branchName_lt: String
+  branchName_lte: String
+  branchName_gt: String
+  branchName_gte: String
+  branchName_contains: String
+  branchName_not_contains: String
+  branchName_starts_with: String
+  branchName_not_starts_with: String
+  branchName_ends_with: String
+  branchName_not_ends_with: String
+  AND: [BranchScalarWhereInput!]
+  OR: [BranchScalarWhereInput!]
+  NOT: [BranchScalarWhereInput!]
+}
+
+type BranchSubscriptionPayload {
+  mutation: MutationType!
+  node: Branch
+  updatedFields: [String!]
+  previousValues: BranchPreviousValues
+}
+
+input BranchSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: BranchWhereInput
+  AND: [BranchSubscriptionWhereInput!]
+  OR: [BranchSubscriptionWhereInput!]
+  NOT: [BranchSubscriptionWhereInput!]
+}
+
+enum BranchType {
+  Head
+  Quarters
+  Store
+  Warehouse
+  Main
+  Branch
+}
+
+input BranchUpdateDataInput {
+  owner: CompanyUpdateOneRequiredWithoutBranchesInput
+  type: BranchType
+  branchName: String
+  address: AddressUpdateOneRequiredInput
+  contactInfo: ContactInfoUpdateOneRequiredInput
+  manager: ProfileUpdateOneRequiredWithoutStationInput
+}
+
+input BranchUpdateInput {
+  owner: CompanyUpdateOneRequiredWithoutBranchesInput
+  type: BranchType
+  branchName: String
+  address: AddressUpdateOneRequiredInput
+  contactInfo: ContactInfoUpdateOneRequiredInput
+  manager: ProfileUpdateOneRequiredWithoutStationInput
+}
+
+input BranchUpdateManyDataInput {
+  type: BranchType
+  branchName: String
+}
+
+input BranchUpdateManyMutationInput {
+  type: BranchType
+  branchName: String
+}
+
+input BranchUpdateManyWithoutOwnerInput {
+  create: [BranchCreateWithoutOwnerInput!]
+  delete: [BranchWhereUniqueInput!]
+  connect: [BranchWhereUniqueInput!]
+  set: [BranchWhereUniqueInput!]
+  disconnect: [BranchWhereUniqueInput!]
+  update: [BranchUpdateWithWhereUniqueWithoutOwnerInput!]
+  upsert: [BranchUpsertWithWhereUniqueWithoutOwnerInput!]
+  deleteMany: [BranchScalarWhereInput!]
+  updateMany: [BranchUpdateManyWithWhereNestedInput!]
+}
+
+input BranchUpdateManyWithWhereNestedInput {
+  where: BranchScalarWhereInput!
+  data: BranchUpdateManyDataInput!
+}
+
+input BranchUpdateOneRequiredInput {
+  create: BranchCreateInput
+  update: BranchUpdateDataInput
+  upsert: BranchUpsertNestedInput
+  connect: BranchWhereUniqueInput
+}
+
+input BranchUpdateOneRequiredWithoutManagerInput {
+  create: BranchCreateWithoutManagerInput
+  update: BranchUpdateWithoutManagerDataInput
+  upsert: BranchUpsertWithoutManagerInput
+  connect: BranchWhereUniqueInput
+}
+
+input BranchUpdateWithoutManagerDataInput {
+  owner: CompanyUpdateOneRequiredWithoutBranchesInput
+  type: BranchType
+  branchName: String
+  address: AddressUpdateOneRequiredInput
+  contactInfo: ContactInfoUpdateOneRequiredInput
+}
+
+input BranchUpdateWithoutOwnerDataInput {
+  type: BranchType
+  branchName: String
+  address: AddressUpdateOneRequiredInput
+  contactInfo: ContactInfoUpdateOneRequiredInput
+  manager: ProfileUpdateOneRequiredWithoutStationInput
+}
+
+input BranchUpdateWithWhereUniqueWithoutOwnerInput {
+  where: BranchWhereUniqueInput!
+  data: BranchUpdateWithoutOwnerDataInput!
+}
+
+input BranchUpsertNestedInput {
+  update: BranchUpdateDataInput!
+  create: BranchCreateInput!
+}
+
+input BranchUpsertWithoutManagerInput {
+  update: BranchUpdateWithoutManagerDataInput!
+  create: BranchCreateWithoutManagerInput!
+}
+
+input BranchUpsertWithWhereUniqueWithoutOwnerInput {
+  where: BranchWhereUniqueInput!
+  update: BranchUpdateWithoutOwnerDataInput!
+  create: BranchCreateWithoutOwnerInput!
+}
+
+input BranchWhereInput {
+  owner: CompanyWhereInput
+  type: BranchType
+  type_not: BranchType
+  type_in: [BranchType!]
+  type_not_in: [BranchType!]
+  branchName: String
+  branchName_not: String
+  branchName_in: [String!]
+  branchName_not_in: [String!]
+  branchName_lt: String
+  branchName_lte: String
+  branchName_gt: String
+  branchName_gte: String
+  branchName_contains: String
+  branchName_not_contains: String
+  branchName_starts_with: String
+  branchName_not_starts_with: String
+  branchName_ends_with: String
+  branchName_not_ends_with: String
+  address: AddressWhereInput
+  contactInfo: ContactInfoWhereInput
+  manager: ProfileWhereInput
+  AND: [BranchWhereInput!]
+  OR: [BranchWhereInput!]
+  NOT: [BranchWhereInput!]
+}
+
+input BranchWhereUniqueInput {
+  branchName: String
+}
+
+type Brand {
+  brandName: String!
+  manufacturer: String
+  products(where: ProductWhereInput, orderBy: ProductOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Product!]
+}
+
+type BrandConnection {
+  pageInfo: PageInfo!
+  edges: [BrandEdge]!
+  aggregate: AggregateBrand!
+}
+
+input BrandCreateInput {
+  brandName: String!
+  manufacturer: String
+  products: ProductCreateManyWithoutBrandInput
+}
+
+input BrandCreateOneWithoutProductsInput {
+  create: BrandCreateWithoutProductsInput
+  connect: BrandWhereUniqueInput
+}
+
+input BrandCreateWithoutProductsInput {
+  brandName: String!
+  manufacturer: String
+}
+
+type BrandEdge {
+  node: Brand!
+  cursor: String!
+}
+
+enum BrandOrderByInput {
+  brandName_ASC
+  brandName_DESC
+  manufacturer_ASC
+  manufacturer_DESC
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type BrandPreviousValues {
+  brandName: String!
+  manufacturer: String
+}
+
+type BrandSubscriptionPayload {
+  mutation: MutationType!
+  node: Brand
+  updatedFields: [String!]
+  previousValues: BrandPreviousValues
+}
+
+input BrandSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: BrandWhereInput
+  AND: [BrandSubscriptionWhereInput!]
+  OR: [BrandSubscriptionWhereInput!]
+  NOT: [BrandSubscriptionWhereInput!]
+}
+
+input BrandUpdateInput {
+  brandName: String
+  manufacturer: String
+  products: ProductUpdateManyWithoutBrandInput
+}
+
+input BrandUpdateManyMutationInput {
+  brandName: String
+  manufacturer: String
+}
+
+input BrandUpdateOneWithoutProductsInput {
+  create: BrandCreateWithoutProductsInput
+  update: BrandUpdateWithoutProductsDataInput
+  upsert: BrandUpsertWithoutProductsInput
+  delete: Boolean
+  disconnect: Boolean
+  connect: BrandWhereUniqueInput
+}
+
+input BrandUpdateWithoutProductsDataInput {
+  brandName: String
+  manufacturer: String
+}
+
+input BrandUpsertWithoutProductsInput {
+  update: BrandUpdateWithoutProductsDataInput!
+  create: BrandCreateWithoutProductsInput!
+}
+
+input BrandWhereInput {
+  brandName: String
+  brandName_not: String
+  brandName_in: [String!]
+  brandName_not_in: [String!]
+  brandName_lt: String
+  brandName_lte: String
+  brandName_gt: String
+  brandName_gte: String
+  brandName_contains: String
+  brandName_not_contains: String
+  brandName_starts_with: String
+  brandName_not_starts_with: String
+  brandName_ends_with: String
+  brandName_not_ends_with: String
+  manufacturer: String
+  manufacturer_not: String
+  manufacturer_in: [String!]
+  manufacturer_not_in: [String!]
+  manufacturer_lt: String
+  manufacturer_lte: String
+  manufacturer_gt: String
+  manufacturer_gte: String
+  manufacturer_contains: String
+  manufacturer_not_contains: String
+  manufacturer_starts_with: String
+  manufacturer_not_starts_with: String
+  manufacturer_ends_with: String
+  manufacturer_not_ends_with: String
+  products_every: ProductWhereInput
+  products_some: ProductWhereInput
+  products_none: ProductWhereInput
+  AND: [BrandWhereInput!]
+  OR: [BrandWhereInput!]
+  NOT: [BrandWhereInput!]
+}
+
+input BrandWhereUniqueInput {
+  brandName: String
+}
+
+type Category {
+  catName: String!
+  catDesc: String
+  products(where: ProductWhereInput, orderBy: ProductOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Product!]
+}
+
+type CategoryConnection {
+  pageInfo: PageInfo!
+  edges: [CategoryEdge]!
+  aggregate: AggregateCategory!
+}
+
+input CategoryCreateInput {
+  catName: String!
+  catDesc: String
+  products: ProductCreateManyWithoutCategoryInput
+}
+
+input CategoryCreateOneInput {
+  create: CategoryCreateInput
+  connect: CategoryWhereUniqueInput
+}
+
+input CategoryCreateOneWithoutProductsInput {
+  create: CategoryCreateWithoutProductsInput
+  connect: CategoryWhereUniqueInput
+}
+
+input CategoryCreateWithoutProductsInput {
+  catName: String!
+  catDesc: String
+}
+
+type CategoryEdge {
+  node: Category!
+  cursor: String!
+}
+
+enum CategoryOrderByInput {
+  catName_ASC
+  catName_DESC
+  catDesc_ASC
+  catDesc_DESC
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type CategoryPreviousValues {
+  catName: String!
+  catDesc: String
+}
+
+type CategorySubscriptionPayload {
+  mutation: MutationType!
+  node: Category
+  updatedFields: [String!]
+  previousValues: CategoryPreviousValues
+}
+
+input CategorySubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: CategoryWhereInput
+  AND: [CategorySubscriptionWhereInput!]
+  OR: [CategorySubscriptionWhereInput!]
+  NOT: [CategorySubscriptionWhereInput!]
+}
+
+input CategoryUpdateDataInput {
+  catName: String
+  catDesc: String
+  products: ProductUpdateManyWithoutCategoryInput
+}
+
+input CategoryUpdateInput {
+  catName: String
+  catDesc: String
+  products: ProductUpdateManyWithoutCategoryInput
+}
+
+input CategoryUpdateManyMutationInput {
+  catName: String
+  catDesc: String
+}
+
+input CategoryUpdateOneRequiredInput {
+  create: CategoryCreateInput
+  update: CategoryUpdateDataInput
+  upsert: CategoryUpsertNestedInput
+  connect: CategoryWhereUniqueInput
+}
+
+input CategoryUpdateOneRequiredWithoutProductsInput {
+  create: CategoryCreateWithoutProductsInput
+  update: CategoryUpdateWithoutProductsDataInput
+  upsert: CategoryUpsertWithoutProductsInput
+  connect: CategoryWhereUniqueInput
+}
+
+input CategoryUpdateWithoutProductsDataInput {
+  catName: String
+  catDesc: String
+}
+
+input CategoryUpsertNestedInput {
+  update: CategoryUpdateDataInput!
+  create: CategoryCreateInput!
+}
+
+input CategoryUpsertWithoutProductsInput {
+  update: CategoryUpdateWithoutProductsDataInput!
+  create: CategoryCreateWithoutProductsInput!
+}
+
+input CategoryWhereInput {
+  catName: String
+  catName_not: String
+  catName_in: [String!]
+  catName_not_in: [String!]
+  catName_lt: String
+  catName_lte: String
+  catName_gt: String
+  catName_gte: String
+  catName_contains: String
+  catName_not_contains: String
+  catName_starts_with: String
+  catName_not_starts_with: String
+  catName_ends_with: String
+  catName_not_ends_with: String
+  catDesc: String
+  catDesc_not: String
+  catDesc_in: [String!]
+  catDesc_not_in: [String!]
+  catDesc_lt: String
+  catDesc_lte: String
+  catDesc_gt: String
+  catDesc_gte: String
+  catDesc_contains: String
+  catDesc_not_contains: String
+  catDesc_starts_with: String
+  catDesc_not_starts_with: String
+  catDesc_ends_with: String
+  catDesc_not_ends_with: String
+  products_every: ProductWhereInput
+  products_some: ProductWhereInput
+  products_none: ProductWhereInput
+  AND: [CategoryWhereInput!]
+  OR: [CategoryWhereInput!]
+  NOT: [CategoryWhereInput!]
+}
+
+input CategoryWhereUniqueInput {
+  catName: String
+}
+
+type Company {
+  companyName: String!
+  about: String
+  branches(where: BranchWhereInput, orderBy: BranchOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Branch!]
+  clients: Company
+  suppliers: Company
+  sender(where: DeliveryWhereInput, orderBy: DeliveryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Delivery!]
+  receiver(where: DeliveryWhereInput, orderBy: DeliveryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Delivery!]
+}
+
+type CompanyConnection {
+  pageInfo: PageInfo!
+  edges: [CompanyEdge]!
+  aggregate: AggregateCompany!
+}
+
+input CompanyCreateInput {
+  companyName: String!
+  about: String
+  branches: BranchCreateManyWithoutOwnerInput
+  clients: CompanyCreateOneWithoutSuppliersInput
+  suppliers: CompanyCreateOneWithoutClientsInput
+  sender: DeliveryCreateManyWithoutSenderInput
+  receiver: DeliveryCreateManyWithoutReceiverInput
+}
+
+input CompanyCreateOneInput {
+  create: CompanyCreateInput
+  connect: CompanyWhereUniqueInput
+}
+
+input CompanyCreateOneWithoutBranchesInput {
+  create: CompanyCreateWithoutBranchesInput
+  connect: CompanyWhereUniqueInput
+}
+
+input CompanyCreateOneWithoutClientsInput {
+  create: CompanyCreateWithoutClientsInput
+  connect: CompanyWhereUniqueInput
+}
+
+input CompanyCreateOneWithoutReceiverInput {
+  create: CompanyCreateWithoutReceiverInput
+  connect: CompanyWhereUniqueInput
+}
+
+input CompanyCreateOneWithoutSenderInput {
+  create: CompanyCreateWithoutSenderInput
+  connect: CompanyWhereUniqueInput
+}
+
+input CompanyCreateOneWithoutSuppliersInput {
+  create: CompanyCreateWithoutSuppliersInput
+  connect: CompanyWhereUniqueInput
+}
+
+input CompanyCreateWithoutBranchesInput {
+  companyName: String!
+  about: String
+  clients: CompanyCreateOneWithoutSuppliersInput
+  suppliers: CompanyCreateOneWithoutClientsInput
+  sender: DeliveryCreateManyWithoutSenderInput
+  receiver: DeliveryCreateManyWithoutReceiverInput
+}
+
+input CompanyCreateWithoutClientsInput {
+  companyName: String!
+  about: String
+  branches: BranchCreateManyWithoutOwnerInput
+  suppliers: CompanyCreateOneWithoutClientsInput
+  sender: DeliveryCreateManyWithoutSenderInput
+  receiver: DeliveryCreateManyWithoutReceiverInput
+}
+
+input CompanyCreateWithoutReceiverInput {
+  companyName: String!
+  about: String
+  branches: BranchCreateManyWithoutOwnerInput
+  clients: CompanyCreateOneWithoutSuppliersInput
+  suppliers: CompanyCreateOneWithoutClientsInput
+  sender: DeliveryCreateManyWithoutSenderInput
+}
+
+input CompanyCreateWithoutSenderInput {
+  companyName: String!
+  about: String
+  branches: BranchCreateManyWithoutOwnerInput
+  clients: CompanyCreateOneWithoutSuppliersInput
+  suppliers: CompanyCreateOneWithoutClientsInput
+  receiver: DeliveryCreateManyWithoutReceiverInput
+}
+
+input CompanyCreateWithoutSuppliersInput {
+  companyName: String!
+  about: String
+  branches: BranchCreateManyWithoutOwnerInput
+  clients: CompanyCreateOneWithoutSuppliersInput
+  sender: DeliveryCreateManyWithoutSenderInput
+  receiver: DeliveryCreateManyWithoutReceiverInput
+}
+
+type CompanyEdge {
+  node: Company!
+  cursor: String!
+}
+
+enum CompanyOrderByInput {
+  companyName_ASC
+  companyName_DESC
+  about_ASC
+  about_DESC
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type CompanyPreviousValues {
+  companyName: String!
+  about: String
+}
+
+type CompanySubscriptionPayload {
+  mutation: MutationType!
+  node: Company
+  updatedFields: [String!]
+  previousValues: CompanyPreviousValues
+}
+
+input CompanySubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: CompanyWhereInput
+  AND: [CompanySubscriptionWhereInput!]
+  OR: [CompanySubscriptionWhereInput!]
+  NOT: [CompanySubscriptionWhereInput!]
+}
+
+input CompanyUpdateDataInput {
+  companyName: String
+  about: String
+  branches: BranchUpdateManyWithoutOwnerInput
+  clients: CompanyUpdateOneWithoutSuppliersInput
+  suppliers: CompanyUpdateOneWithoutClientsInput
+  sender: DeliveryUpdateManyWithoutSenderInput
+  receiver: DeliveryUpdateManyWithoutReceiverInput
+}
+
+input CompanyUpdateInput {
+  companyName: String
+  about: String
+  branches: BranchUpdateManyWithoutOwnerInput
+  clients: CompanyUpdateOneWithoutSuppliersInput
+  suppliers: CompanyUpdateOneWithoutClientsInput
+  sender: DeliveryUpdateManyWithoutSenderInput
+  receiver: DeliveryUpdateManyWithoutReceiverInput
+}
+
+input CompanyUpdateManyMutationInput {
+  companyName: String
+  about: String
+}
+
+input CompanyUpdateOneRequiredInput {
+  create: CompanyCreateInput
+  update: CompanyUpdateDataInput
+  upsert: CompanyUpsertNestedInput
+  connect: CompanyWhereUniqueInput
+}
+
+input CompanyUpdateOneRequiredWithoutBranchesInput {
+  create: CompanyCreateWithoutBranchesInput
+  update: CompanyUpdateWithoutBranchesDataInput
+  upsert: CompanyUpsertWithoutBranchesInput
+  connect: CompanyWhereUniqueInput
+}
+
+input CompanyUpdateOneRequiredWithoutReceiverInput {
+  create: CompanyCreateWithoutReceiverInput
+  update: CompanyUpdateWithoutReceiverDataInput
+  upsert: CompanyUpsertWithoutReceiverInput
+  connect: CompanyWhereUniqueInput
+}
+
+input CompanyUpdateOneRequiredWithoutSenderInput {
+  create: CompanyCreateWithoutSenderInput
+  update: CompanyUpdateWithoutSenderDataInput
+  upsert: CompanyUpsertWithoutSenderInput
+  connect: CompanyWhereUniqueInput
+}
+
+input CompanyUpdateOneWithoutClientsInput {
+  create: CompanyCreateWithoutClientsInput
+  update: CompanyUpdateWithoutClientsDataInput
+  upsert: CompanyUpsertWithoutClientsInput
+  delete: Boolean
+  disconnect: Boolean
+  connect: CompanyWhereUniqueInput
+}
+
+input CompanyUpdateOneWithoutSuppliersInput {
+  create: CompanyCreateWithoutSuppliersInput
+  update: CompanyUpdateWithoutSuppliersDataInput
+  upsert: CompanyUpsertWithoutSuppliersInput
+  delete: Boolean
+  disconnect: Boolean
+  connect: CompanyWhereUniqueInput
+}
+
+input CompanyUpdateWithoutBranchesDataInput {
+  companyName: String
+  about: String
+  clients: CompanyUpdateOneWithoutSuppliersInput
+  suppliers: CompanyUpdateOneWithoutClientsInput
+  sender: DeliveryUpdateManyWithoutSenderInput
+  receiver: DeliveryUpdateManyWithoutReceiverInput
+}
+
+input CompanyUpdateWithoutClientsDataInput {
+  companyName: String
+  about: String
+  branches: BranchUpdateManyWithoutOwnerInput
+  suppliers: CompanyUpdateOneWithoutClientsInput
+  sender: DeliveryUpdateManyWithoutSenderInput
+  receiver: DeliveryUpdateManyWithoutReceiverInput
+}
+
+input CompanyUpdateWithoutReceiverDataInput {
+  companyName: String
+  about: String
+  branches: BranchUpdateManyWithoutOwnerInput
+  clients: CompanyUpdateOneWithoutSuppliersInput
+  suppliers: CompanyUpdateOneWithoutClientsInput
+  sender: DeliveryUpdateManyWithoutSenderInput
+}
+
+input CompanyUpdateWithoutSenderDataInput {
+  companyName: String
+  about: String
+  branches: BranchUpdateManyWithoutOwnerInput
+  clients: CompanyUpdateOneWithoutSuppliersInput
+  suppliers: CompanyUpdateOneWithoutClientsInput
+  receiver: DeliveryUpdateManyWithoutReceiverInput
+}
+
+input CompanyUpdateWithoutSuppliersDataInput {
+  companyName: String
+  about: String
+  branches: BranchUpdateManyWithoutOwnerInput
+  clients: CompanyUpdateOneWithoutSuppliersInput
+  sender: DeliveryUpdateManyWithoutSenderInput
+  receiver: DeliveryUpdateManyWithoutReceiverInput
+}
+
+input CompanyUpsertNestedInput {
+  update: CompanyUpdateDataInput!
+  create: CompanyCreateInput!
+}
+
+input CompanyUpsertWithoutBranchesInput {
+  update: CompanyUpdateWithoutBranchesDataInput!
+  create: CompanyCreateWithoutBranchesInput!
+}
+
+input CompanyUpsertWithoutClientsInput {
+  update: CompanyUpdateWithoutClientsDataInput!
+  create: CompanyCreateWithoutClientsInput!
+}
+
+input CompanyUpsertWithoutReceiverInput {
+  update: CompanyUpdateWithoutReceiverDataInput!
+  create: CompanyCreateWithoutReceiverInput!
+}
+
+input CompanyUpsertWithoutSenderInput {
+  update: CompanyUpdateWithoutSenderDataInput!
+  create: CompanyCreateWithoutSenderInput!
+}
+
+input CompanyUpsertWithoutSuppliersInput {
+  update: CompanyUpdateWithoutSuppliersDataInput!
+  create: CompanyCreateWithoutSuppliersInput!
+}
+
+input CompanyWhereInput {
+  companyName: String
+  companyName_not: String
+  companyName_in: [String!]
+  companyName_not_in: [String!]
+  companyName_lt: String
+  companyName_lte: String
+  companyName_gt: String
+  companyName_gte: String
+  companyName_contains: String
+  companyName_not_contains: String
+  companyName_starts_with: String
+  companyName_not_starts_with: String
+  companyName_ends_with: String
+  companyName_not_ends_with: String
+  about: String
+  about_not: String
+  about_in: [String!]
+  about_not_in: [String!]
+  about_lt: String
+  about_lte: String
+  about_gt: String
+  about_gte: String
+  about_contains: String
+  about_not_contains: String
+  about_starts_with: String
+  about_not_starts_with: String
+  about_ends_with: String
+  about_not_ends_with: String
+  branches_every: BranchWhereInput
+  branches_some: BranchWhereInput
+  branches_none: BranchWhereInput
+  clients: CompanyWhereInput
+  suppliers: CompanyWhereInput
+  sender_every: DeliveryWhereInput
+  sender_some: DeliveryWhereInput
+  sender_none: DeliveryWhereInput
+  receiver_every: DeliveryWhereInput
+  receiver_some: DeliveryWhereInput
+  receiver_none: DeliveryWhereInput
+  AND: [CompanyWhereInput!]
+  OR: [CompanyWhereInput!]
+  NOT: [CompanyWhereInput!]
+}
+
+input CompanyWhereUniqueInput {
+  companyName: String
+}
+
+type ContactInfo {
+  owner: Profile!
+  email: String!
+  primaryTel: String
+  secondaryTel: String
+  primaryMobile: String
+  secondaryMobile: String
+}
+
+type ContactInfoConnection {
+  pageInfo: PageInfo!
+  edges: [ContactInfoEdge]!
+  aggregate: AggregateContactInfo!
+}
+
+input ContactInfoCreateInput {
+  owner: ProfileCreateOneWithoutContactInfoInput!
+  email: String!
+  primaryTel: String
+  secondaryTel: String
+  primaryMobile: String
+  secondaryMobile: String
+}
+
+input ContactInfoCreateOneInput {
+  create: ContactInfoCreateInput
+  connect: ContactInfoWhereUniqueInput
+}
+
+input ContactInfoCreateOneWithoutOwnerInput {
+  create: ContactInfoCreateWithoutOwnerInput
+  connect: ContactInfoWhereUniqueInput
+}
+
+input ContactInfoCreateWithoutOwnerInput {
+  email: String!
+  primaryTel: String
+  secondaryTel: String
+  primaryMobile: String
+  secondaryMobile: String
+}
+
+type ContactInfoEdge {
+  node: ContactInfo!
+  cursor: String!
+}
+
+enum ContactInfoOrderByInput {
+  email_ASC
+  email_DESC
+  primaryTel_ASC
+  primaryTel_DESC
+  secondaryTel_ASC
+  secondaryTel_DESC
+  primaryMobile_ASC
+  primaryMobile_DESC
+  secondaryMobile_ASC
+  secondaryMobile_DESC
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type ContactInfoPreviousValues {
+  email: String!
+  primaryTel: String
+  secondaryTel: String
+  primaryMobile: String
+  secondaryMobile: String
+}
+
+type ContactInfoSubscriptionPayload {
+  mutation: MutationType!
+  node: ContactInfo
+  updatedFields: [String!]
+  previousValues: ContactInfoPreviousValues
+}
+
+input ContactInfoSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: ContactInfoWhereInput
+  AND: [ContactInfoSubscriptionWhereInput!]
+  OR: [ContactInfoSubscriptionWhereInput!]
+  NOT: [ContactInfoSubscriptionWhereInput!]
+}
+
+input ContactInfoUpdateDataInput {
+  owner: ProfileUpdateOneRequiredWithoutContactInfoInput
+  email: String
+  primaryTel: String
+  secondaryTel: String
+  primaryMobile: String
+  secondaryMobile: String
+}
+
+input ContactInfoUpdateInput {
+  owner: ProfileUpdateOneRequiredWithoutContactInfoInput
+  email: String
+  primaryTel: String
+  secondaryTel: String
+  primaryMobile: String
+  secondaryMobile: String
+}
+
+input ContactInfoUpdateManyMutationInput {
+  email: String
+  primaryTel: String
+  secondaryTel: String
+  primaryMobile: String
+  secondaryMobile: String
+}
+
+input ContactInfoUpdateOneRequiredInput {
+  create: ContactInfoCreateInput
+  update: ContactInfoUpdateDataInput
+  upsert: ContactInfoUpsertNestedInput
+  connect: ContactInfoWhereUniqueInput
+}
+
+input ContactInfoUpdateOneRequiredWithoutOwnerInput {
+  create: ContactInfoCreateWithoutOwnerInput
+  update: ContactInfoUpdateWithoutOwnerDataInput
+  upsert: ContactInfoUpsertWithoutOwnerInput
+  connect: ContactInfoWhereUniqueInput
+}
+
+input ContactInfoUpdateWithoutOwnerDataInput {
+  email: String
+  primaryTel: String
+  secondaryTel: String
+  primaryMobile: String
+  secondaryMobile: String
+}
+
+input ContactInfoUpsertNestedInput {
+  update: ContactInfoUpdateDataInput!
+  create: ContactInfoCreateInput!
+}
+
+input ContactInfoUpsertWithoutOwnerInput {
+  update: ContactInfoUpdateWithoutOwnerDataInput!
+  create: ContactInfoCreateWithoutOwnerInput!
+}
+
+input ContactInfoWhereInput {
+  owner: ProfileWhereInput
+  email: String
+  email_not: String
+  email_in: [String!]
+  email_not_in: [String!]
+  email_lt: String
+  email_lte: String
+  email_gt: String
+  email_gte: String
+  email_contains: String
+  email_not_contains: String
+  email_starts_with: String
+  email_not_starts_with: String
+  email_ends_with: String
+  email_not_ends_with: String
+  primaryTel: String
+  primaryTel_not: String
+  primaryTel_in: [String!]
+  primaryTel_not_in: [String!]
+  primaryTel_lt: String
+  primaryTel_lte: String
+  primaryTel_gt: String
+  primaryTel_gte: String
+  primaryTel_contains: String
+  primaryTel_not_contains: String
+  primaryTel_starts_with: String
+  primaryTel_not_starts_with: String
+  primaryTel_ends_with: String
+  primaryTel_not_ends_with: String
+  secondaryTel: String
+  secondaryTel_not: String
+  secondaryTel_in: [String!]
+  secondaryTel_not_in: [String!]
+  secondaryTel_lt: String
+  secondaryTel_lte: String
+  secondaryTel_gt: String
+  secondaryTel_gte: String
+  secondaryTel_contains: String
+  secondaryTel_not_contains: String
+  secondaryTel_starts_with: String
+  secondaryTel_not_starts_with: String
+  secondaryTel_ends_with: String
+  secondaryTel_not_ends_with: String
+  primaryMobile: String
+  primaryMobile_not: String
+  primaryMobile_in: [String!]
+  primaryMobile_not_in: [String!]
+  primaryMobile_lt: String
+  primaryMobile_lte: String
+  primaryMobile_gt: String
+  primaryMobile_gte: String
+  primaryMobile_contains: String
+  primaryMobile_not_contains: String
+  primaryMobile_starts_with: String
+  primaryMobile_not_starts_with: String
+  primaryMobile_ends_with: String
+  primaryMobile_not_ends_with: String
+  secondaryMobile: String
+  secondaryMobile_not: String
+  secondaryMobile_in: [String!]
+  secondaryMobile_not_in: [String!]
+  secondaryMobile_lt: String
+  secondaryMobile_lte: String
+  secondaryMobile_gt: String
+  secondaryMobile_gte: String
+  secondaryMobile_contains: String
+  secondaryMobile_not_contains: String
+  secondaryMobile_starts_with: String
+  secondaryMobile_not_starts_with: String
+  secondaryMobile_ends_with: String
+  secondaryMobile_not_ends_with: String
+  AND: [ContactInfoWhereInput!]
+  OR: [ContactInfoWhereInput!]
+  NOT: [ContactInfoWhereInput!]
+}
+
+input ContactInfoWhereUniqueInput {
+  email: String
+}
+
+scalar DateTime
+
+type Delivery {
+  orders: Order!
+  sender: Company!
+  receiver: Company!
+  status: DeliveryStatus!
+}
+
+type DeliveryConnection {
+  pageInfo: PageInfo!
+  edges: [DeliveryEdge]!
+  aggregate: AggregateDelivery!
+}
+
+input DeliveryCreateInput {
+  orders: OrderCreateOneWithoutDeliveryInput!
+  sender: CompanyCreateOneWithoutSenderInput!
+  receiver: CompanyCreateOneWithoutReceiverInput!
+  status: DeliveryStatus!
+}
+
+input DeliveryCreateManyWithoutReceiverInput {
+  create: [DeliveryCreateWithoutReceiverInput!]
+}
+
+input DeliveryCreateManyWithoutSenderInput {
+  create: [DeliveryCreateWithoutSenderInput!]
+}
+
+input DeliveryCreateOneWithoutOrdersInput {
+  create: DeliveryCreateWithoutOrdersInput
+}
+
+input DeliveryCreateWithoutOrdersInput {
+  sender: CompanyCreateOneWithoutSenderInput!
+  receiver: CompanyCreateOneWithoutReceiverInput!
+  status: DeliveryStatus!
+}
+
+input DeliveryCreateWithoutReceiverInput {
+  orders: OrderCreateOneWithoutDeliveryInput!
+  sender: CompanyCreateOneWithoutSenderInput!
+  status: DeliveryStatus!
+}
+
+input DeliveryCreateWithoutSenderInput {
+  orders: OrderCreateOneWithoutDeliveryInput!
+  receiver: CompanyCreateOneWithoutReceiverInput!
+  status: DeliveryStatus!
+}
+
+type DeliveryEdge {
+  node: Delivery!
+  cursor: String!
+}
+
+enum DeliveryOrderByInput {
+  status_ASC
+  status_DESC
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type DeliveryPreviousValues {
+  status: DeliveryStatus!
+}
+
+input DeliveryScalarWhereInput {
+  status: DeliveryStatus
+  status_not: DeliveryStatus
+  status_in: [DeliveryStatus!]
+  status_not_in: [DeliveryStatus!]
+  AND: [DeliveryScalarWhereInput!]
+  OR: [DeliveryScalarWhereInput!]
+  NOT: [DeliveryScalarWhereInput!]
+}
+
+enum DeliveryStatus {
+  Packaging
+  Delivering
+  Received
+}
+
+type DeliverySubscriptionPayload {
+  mutation: MutationType!
+  node: Delivery
+  updatedFields: [String!]
+  previousValues: DeliveryPreviousValues
+}
+
+input DeliverySubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: DeliveryWhereInput
+  AND: [DeliverySubscriptionWhereInput!]
+  OR: [DeliverySubscriptionWhereInput!]
+  NOT: [DeliverySubscriptionWhereInput!]
+}
+
+input DeliveryUpdateManyDataInput {
+  status: DeliveryStatus
+}
+
+input DeliveryUpdateManyMutationInput {
+  status: DeliveryStatus
+}
+
+input DeliveryUpdateManyWithoutReceiverInput {
+  create: [DeliveryCreateWithoutReceiverInput!]
+  deleteMany: [DeliveryScalarWhereInput!]
+  updateMany: [DeliveryUpdateManyWithWhereNestedInput!]
+}
+
+input DeliveryUpdateManyWithoutSenderInput {
+  create: [DeliveryCreateWithoutSenderInput!]
+  deleteMany: [DeliveryScalarWhereInput!]
+  updateMany: [DeliveryUpdateManyWithWhereNestedInput!]
+}
+
+input DeliveryUpdateManyWithWhereNestedInput {
+  where: DeliveryScalarWhereInput!
+  data: DeliveryUpdateManyDataInput!
+}
+
+input DeliveryUpdateOneRequiredWithoutOrdersInput {
+  create: DeliveryCreateWithoutOrdersInput
+  update: DeliveryUpdateWithoutOrdersDataInput
+  upsert: DeliveryUpsertWithoutOrdersInput
+}
+
+input DeliveryUpdateWithoutOrdersDataInput {
+  sender: CompanyUpdateOneRequiredWithoutSenderInput
+  receiver: CompanyUpdateOneRequiredWithoutReceiverInput
+  status: DeliveryStatus
+}
+
+input DeliveryUpsertWithoutOrdersInput {
+  update: DeliveryUpdateWithoutOrdersDataInput!
+  create: DeliveryCreateWithoutOrdersInput!
+}
+
+input DeliveryWhereInput {
+  orders: OrderWhereInput
+  sender: CompanyWhereInput
+  receiver: CompanyWhereInput
+  status: DeliveryStatus
+  status_not: DeliveryStatus
+  status_in: [DeliveryStatus!]
+  status_not_in: [DeliveryStatus!]
+  AND: [DeliveryWhereInput!]
+  OR: [DeliveryWhereInput!]
+  NOT: [DeliveryWhereInput!]
+}
+
+type File {
+  fileType: String!
+  fileName: String!
+  fileSize: String!
+  filePath: String!
+}
+
+type FileConnection {
+  pageInfo: PageInfo!
+  edges: [FileEdge]!
+  aggregate: AggregateFile!
+}
+
+input FileCreateInput {
+  fileType: String!
+  fileName: String!
+  fileSize: String!
+  filePath: String!
+}
+
+input FileCreateManyInput {
+  create: [FileCreateInput!]
+}
+
+type FileEdge {
+  node: File!
+  cursor: String!
+}
+
+enum FileOrderByInput {
+  fileType_ASC
+  fileType_DESC
+  fileName_ASC
+  fileName_DESC
+  fileSize_ASC
+  fileSize_DESC
+  filePath_ASC
+  filePath_DESC
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type FilePreviousValues {
+  fileType: String!
+  fileName: String!
+  fileSize: String!
+  filePath: String!
+}
+
+input FileScalarWhereInput {
+  fileType: String
+  fileType_not: String
+  fileType_in: [String!]
+  fileType_not_in: [String!]
+  fileType_lt: String
+  fileType_lte: String
+  fileType_gt: String
+  fileType_gte: String
+  fileType_contains: String
+  fileType_not_contains: String
+  fileType_starts_with: String
+  fileType_not_starts_with: String
+  fileType_ends_with: String
+  fileType_not_ends_with: String
+  fileName: String
+  fileName_not: String
+  fileName_in: [String!]
+  fileName_not_in: [String!]
+  fileName_lt: String
+  fileName_lte: String
+  fileName_gt: String
+  fileName_gte: String
+  fileName_contains: String
+  fileName_not_contains: String
+  fileName_starts_with: String
+  fileName_not_starts_with: String
+  fileName_ends_with: String
+  fileName_not_ends_with: String
+  fileSize: String
+  fileSize_not: String
+  fileSize_in: [String!]
+  fileSize_not_in: [String!]
+  fileSize_lt: String
+  fileSize_lte: String
+  fileSize_gt: String
+  fileSize_gte: String
+  fileSize_contains: String
+  fileSize_not_contains: String
+  fileSize_starts_with: String
+  fileSize_not_starts_with: String
+  fileSize_ends_with: String
+  fileSize_not_ends_with: String
+  filePath: String
+  filePath_not: String
+  filePath_in: [String!]
+  filePath_not_in: [String!]
+  filePath_lt: String
+  filePath_lte: String
+  filePath_gt: String
+  filePath_gte: String
+  filePath_contains: String
+  filePath_not_contains: String
+  filePath_starts_with: String
+  filePath_not_starts_with: String
+  filePath_ends_with: String
+  filePath_not_ends_with: String
+  AND: [FileScalarWhereInput!]
+  OR: [FileScalarWhereInput!]
+  NOT: [FileScalarWhereInput!]
+}
+
+type FileSubscriptionPayload {
+  mutation: MutationType!
+  node: File
+  updatedFields: [String!]
+  previousValues: FilePreviousValues
+}
+
+input FileSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: FileWhereInput
+  AND: [FileSubscriptionWhereInput!]
+  OR: [FileSubscriptionWhereInput!]
+  NOT: [FileSubscriptionWhereInput!]
+}
+
+input FileUpdateManyDataInput {
+  fileType: String
+  fileName: String
+  fileSize: String
+  filePath: String
+}
+
+input FileUpdateManyInput {
+  create: [FileCreateInput!]
+  deleteMany: [FileScalarWhereInput!]
+  updateMany: [FileUpdateManyWithWhereNestedInput!]
+}
+
+input FileUpdateManyMutationInput {
+  fileType: String
+  fileName: String
+  fileSize: String
+  filePath: String
+}
+
+input FileUpdateManyWithWhereNestedInput {
+  where: FileScalarWhereInput!
+  data: FileUpdateManyDataInput!
+}
+
+input FileWhereInput {
+  fileType: String
+  fileType_not: String
+  fileType_in: [String!]
+  fileType_not_in: [String!]
+  fileType_lt: String
+  fileType_lte: String
+  fileType_gt: String
+  fileType_gte: String
+  fileType_contains: String
+  fileType_not_contains: String
+  fileType_starts_with: String
+  fileType_not_starts_with: String
+  fileType_ends_with: String
+  fileType_not_ends_with: String
+  fileName: String
+  fileName_not: String
+  fileName_in: [String!]
+  fileName_not_in: [String!]
+  fileName_lt: String
+  fileName_lte: String
+  fileName_gt: String
+  fileName_gte: String
+  fileName_contains: String
+  fileName_not_contains: String
+  fileName_starts_with: String
+  fileName_not_starts_with: String
+  fileName_ends_with: String
+  fileName_not_ends_with: String
+  fileSize: String
+  fileSize_not: String
+  fileSize_in: [String!]
+  fileSize_not_in: [String!]
+  fileSize_lt: String
+  fileSize_lte: String
+  fileSize_gt: String
+  fileSize_gte: String
+  fileSize_contains: String
+  fileSize_not_contains: String
+  fileSize_starts_with: String
+  fileSize_not_starts_with: String
+  fileSize_ends_with: String
+  fileSize_not_ends_with: String
+  filePath: String
+  filePath_not: String
+  filePath_in: [String!]
+  filePath_not_in: [String!]
+  filePath_lt: String
+  filePath_lte: String
+  filePath_gt: String
+  filePath_gte: String
+  filePath_contains: String
+  filePath_not_contains: String
+  filePath_starts_with: String
+  filePath_not_starts_with: String
+  filePath_ends_with: String
+  filePath_not_ends_with: String
+  AND: [FileWhereInput!]
+  OR: [FileWhereInput!]
+  NOT: [FileWhereInput!]
+}
+
+enum Gender {
+  Female
+  Male
+}
+
+type Inventory {
+  product: Stock!
+  items(where: ItemWhereInput, orderBy: ItemOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Item!]
+}
+
+type InventoryConnection {
+  pageInfo: PageInfo!
+  edges: [InventoryEdge]!
+  aggregate: AggregateInventory!
+}
+
+input InventoryCreateInput {
+  product: StockCreateOneWithoutInventoryInput!
+  items: ItemCreateManyWithoutInventoryInput
+}
+
+input InventoryCreateOneWithoutItemsInput {
+  create: InventoryCreateWithoutItemsInput
+}
+
+input InventoryCreateOneWithoutProductInput {
+  create: InventoryCreateWithoutProductInput
+}
+
+input InventoryCreateWithoutItemsInput {
+  product: StockCreateOneWithoutInventoryInput!
+}
+
+input InventoryCreateWithoutProductInput {
+  items: ItemCreateManyWithoutInventoryInput
+}
+
+type InventoryEdge {
+  node: Inventory!
+  cursor: String!
+}
+
+enum InventoryOrderByInput {
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type InventorySubscriptionPayload {
+  mutation: MutationType!
+  node: Inventory
+  updatedFields: [String!]
+}
+
+input InventorySubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: InventoryWhereInput
+  AND: [InventorySubscriptionWhereInput!]
+  OR: [InventorySubscriptionWhereInput!]
+  NOT: [InventorySubscriptionWhereInput!]
+}
+
+input InventoryUpdateOneWithoutProductInput {
+  create: InventoryCreateWithoutProductInput
+  update: InventoryUpdateWithoutProductDataInput
+  upsert: InventoryUpsertWithoutProductInput
+  delete: Boolean
+  disconnect: Boolean
+}
+
+input InventoryUpdateWithoutProductDataInput {
+  items: ItemUpdateManyWithoutInventoryInput
+}
+
+input InventoryUpsertWithoutProductInput {
+  update: InventoryUpdateWithoutProductDataInput!
+  create: InventoryCreateWithoutProductInput!
+}
+
+input InventoryWhereInput {
+  product: StockWhereInput
+  items_every: ItemWhereInput
+  items_some: ItemWhereInput
+  items_none: ItemWhereInput
+  AND: [InventoryWhereInput!]
+  OR: [InventoryWhereInput!]
+  NOT: [InventoryWhereInput!]
+}
+
+type Item {
+  transaction: Transaction!
+  inventory: Inventory!
+  srp: ProductSrp
+  purchasePrice: PurchasePrice
+  units: Int!
+  amount: Float!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type ItemConnection {
+  pageInfo: PageInfo!
+  edges: [ItemEdge]!
+  aggregate: AggregateItem!
+}
+
+input ItemCreateInput {
+  transaction: TransactionCreateOneInput!
+  inventory: InventoryCreateOneWithoutItemsInput!
+  srp: ProductSrpCreateOneInput
+  purchasePrice: PurchasePriceCreateOneInput
+  units: Int!
+  amount: Float!
+}
+
+input ItemCreateManyInput {
+  create: [ItemCreateInput!]
+}
+
+input ItemCreateManyWithoutInventoryInput {
+  create: [ItemCreateWithoutInventoryInput!]
+}
+
+input ItemCreateWithoutInventoryInput {
+  transaction: TransactionCreateOneInput!
+  srp: ProductSrpCreateOneInput
+  purchasePrice: PurchasePriceCreateOneInput
+  units: Int!
+  amount: Float!
+}
+
+type ItemEdge {
+  node: Item!
+  cursor: String!
+}
+
+enum ItemOrderByInput {
+  units_ASC
+  units_DESC
+  amount_ASC
+  amount_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  id_ASC
+  id_DESC
+}
+
+type ItemPreviousValues {
+  units: Int!
+  amount: Float!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+input ItemScalarWhereInput {
+  units: Int
+  units_not: Int
+  units_in: [Int!]
+  units_not_in: [Int!]
+  units_lt: Int
+  units_lte: Int
+  units_gt: Int
+  units_gte: Int
+  amount: Float
+  amount_not: Float
+  amount_in: [Float!]
+  amount_not_in: [Float!]
+  amount_lt: Float
+  amount_lte: Float
+  amount_gt: Float
+  amount_gte: Float
+  createdAt: DateTime
+  createdAt_not: DateTime
+  createdAt_in: [DateTime!]
+  createdAt_not_in: [DateTime!]
+  createdAt_lt: DateTime
+  createdAt_lte: DateTime
+  createdAt_gt: DateTime
+  createdAt_gte: DateTime
+  updatedAt: DateTime
+  updatedAt_not: DateTime
+  updatedAt_in: [DateTime!]
+  updatedAt_not_in: [DateTime!]
+  updatedAt_lt: DateTime
+  updatedAt_lte: DateTime
+  updatedAt_gt: DateTime
+  updatedAt_gte: DateTime
+  AND: [ItemScalarWhereInput!]
+  OR: [ItemScalarWhereInput!]
+  NOT: [ItemScalarWhereInput!]
+}
+
+type ItemSubscriptionPayload {
+  mutation: MutationType!
+  node: Item
+  updatedFields: [String!]
+  previousValues: ItemPreviousValues
+}
+
+input ItemSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: ItemWhereInput
+  AND: [ItemSubscriptionWhereInput!]
+  OR: [ItemSubscriptionWhereInput!]
+  NOT: [ItemSubscriptionWhereInput!]
+}
+
+input ItemUpdateManyDataInput {
+  units: Int
+  amount: Float
+}
+
+input ItemUpdateManyInput {
+  create: [ItemCreateInput!]
+  deleteMany: [ItemScalarWhereInput!]
+  updateMany: [ItemUpdateManyWithWhereNestedInput!]
+}
+
+input ItemUpdateManyMutationInput {
+  units: Int
+  amount: Float
+}
+
+input ItemUpdateManyWithoutInventoryInput {
+  create: [ItemCreateWithoutInventoryInput!]
+  deleteMany: [ItemScalarWhereInput!]
+  updateMany: [ItemUpdateManyWithWhereNestedInput!]
+}
+
+input ItemUpdateManyWithWhereNestedInput {
+  where: ItemScalarWhereInput!
+  data: ItemUpdateManyDataInput!
+}
+
+input ItemWhereInput {
+  transaction: TransactionWhereInput
+  inventory: InventoryWhereInput
+  srp: ProductSrpWhereInput
+  purchasePrice: PurchasePriceWhereInput
+  units: Int
+  units_not: Int
+  units_in: [Int!]
+  units_not_in: [Int!]
+  units_lt: Int
+  units_lte: Int
+  units_gt: Int
+  units_gte: Int
+  amount: Float
+  amount_not: Float
+  amount_in: [Float!]
+  amount_not_in: [Float!]
+  amount_lt: Float
+  amount_lte: Float
+  amount_gt: Float
+  amount_gte: Float
+  createdAt: DateTime
+  createdAt_not: DateTime
+  createdAt_in: [DateTime!]
+  createdAt_not_in: [DateTime!]
+  createdAt_lt: DateTime
+  createdAt_lte: DateTime
+  createdAt_gt: DateTime
+  createdAt_gte: DateTime
+  updatedAt: DateTime
+  updatedAt_not: DateTime
+  updatedAt_in: [DateTime!]
+  updatedAt_not_in: [DateTime!]
+  updatedAt_lt: DateTime
+  updatedAt_lte: DateTime
+  updatedAt_gt: DateTime
+  updatedAt_gte: DateTime
+  AND: [ItemWhereInput!]
+  OR: [ItemWhereInput!]
+  NOT: [ItemWhereInput!]
+}
+
+type Log {
+  user(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User!]
+  sourceTable: String!
+  sourceId: String!
+  actionNo: String!
+  actionType: String!
+  actionTitle: String!
+  tableField: String!
+  oldValue: String!
+  newValue: String!
+  comment: String
+  createdAt: DateTime!
+}
+
+type LogConnection {
+  pageInfo: PageInfo!
+  edges: [LogEdge]!
+  aggregate: AggregateLog!
+}
+
+input LogCreateInput {
+  user: UserCreateManyInput
+  sourceTable: String!
+  sourceId: String!
+  actionNo: String!
+  actionType: String!
+  actionTitle: String!
+  tableField: String!
+  oldValue: String!
+  newValue: String!
+  comment: String
+}
+
+input LogCreateManyInput {
+  create: [LogCreateInput!]
+}
+
+type LogEdge {
+  node: Log!
+  cursor: String!
+}
+
+enum LogOrderByInput {
+  sourceTable_ASC
+  sourceTable_DESC
+  sourceId_ASC
+  sourceId_DESC
+  actionNo_ASC
+  actionNo_DESC
+  actionType_ASC
+  actionType_DESC
+  actionTitle_ASC
+  actionTitle_DESC
+  tableField_ASC
+  tableField_DESC
+  oldValue_ASC
+  oldValue_DESC
+  newValue_ASC
+  newValue_DESC
+  comment_ASC
+  comment_DESC
+  createdAt_ASC
+  createdAt_DESC
+  id_ASC
+  id_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type LogPreviousValues {
+  sourceTable: String!
+  sourceId: String!
+  actionNo: String!
+  actionType: String!
+  actionTitle: String!
+  tableField: String!
+  oldValue: String!
+  newValue: String!
+  comment: String
+  createdAt: DateTime!
+}
+
+input LogScalarWhereInput {
+  sourceTable: String
+  sourceTable_not: String
+  sourceTable_in: [String!]
+  sourceTable_not_in: [String!]
+  sourceTable_lt: String
+  sourceTable_lte: String
+  sourceTable_gt: String
+  sourceTable_gte: String
+  sourceTable_contains: String
+  sourceTable_not_contains: String
+  sourceTable_starts_with: String
+  sourceTable_not_starts_with: String
+  sourceTable_ends_with: String
+  sourceTable_not_ends_with: String
+  sourceId: String
+  sourceId_not: String
+  sourceId_in: [String!]
+  sourceId_not_in: [String!]
+  sourceId_lt: String
+  sourceId_lte: String
+  sourceId_gt: String
+  sourceId_gte: String
+  sourceId_contains: String
+  sourceId_not_contains: String
+  sourceId_starts_with: String
+  sourceId_not_starts_with: String
+  sourceId_ends_with: String
+  sourceId_not_ends_with: String
+  actionNo: String
+  actionNo_not: String
+  actionNo_in: [String!]
+  actionNo_not_in: [String!]
+  actionNo_lt: String
+  actionNo_lte: String
+  actionNo_gt: String
+  actionNo_gte: String
+  actionNo_contains: String
+  actionNo_not_contains: String
+  actionNo_starts_with: String
+  actionNo_not_starts_with: String
+  actionNo_ends_with: String
+  actionNo_not_ends_with: String
+  actionType: String
+  actionType_not: String
+  actionType_in: [String!]
+  actionType_not_in: [String!]
+  actionType_lt: String
+  actionType_lte: String
+  actionType_gt: String
+  actionType_gte: String
+  actionType_contains: String
+  actionType_not_contains: String
+  actionType_starts_with: String
+  actionType_not_starts_with: String
+  actionType_ends_with: String
+  actionType_not_ends_with: String
+  actionTitle: String
+  actionTitle_not: String
+  actionTitle_in: [String!]
+  actionTitle_not_in: [String!]
+  actionTitle_lt: String
+  actionTitle_lte: String
+  actionTitle_gt: String
+  actionTitle_gte: String
+  actionTitle_contains: String
+  actionTitle_not_contains: String
+  actionTitle_starts_with: String
+  actionTitle_not_starts_with: String
+  actionTitle_ends_with: String
+  actionTitle_not_ends_with: String
+  tableField: String
+  tableField_not: String
+  tableField_in: [String!]
+  tableField_not_in: [String!]
+  tableField_lt: String
+  tableField_lte: String
+  tableField_gt: String
+  tableField_gte: String
+  tableField_contains: String
+  tableField_not_contains: String
+  tableField_starts_with: String
+  tableField_not_starts_with: String
+  tableField_ends_with: String
+  tableField_not_ends_with: String
+  oldValue: String
+  oldValue_not: String
+  oldValue_in: [String!]
+  oldValue_not_in: [String!]
+  oldValue_lt: String
+  oldValue_lte: String
+  oldValue_gt: String
+  oldValue_gte: String
+  oldValue_contains: String
+  oldValue_not_contains: String
+  oldValue_starts_with: String
+  oldValue_not_starts_with: String
+  oldValue_ends_with: String
+  oldValue_not_ends_with: String
+  newValue: String
+  newValue_not: String
+  newValue_in: [String!]
+  newValue_not_in: [String!]
+  newValue_lt: String
+  newValue_lte: String
+  newValue_gt: String
+  newValue_gte: String
+  newValue_contains: String
+  newValue_not_contains: String
+  newValue_starts_with: String
+  newValue_not_starts_with: String
+  newValue_ends_with: String
+  newValue_not_ends_with: String
+  comment: String
+  comment_not: String
+  comment_in: [String!]
+  comment_not_in: [String!]
+  comment_lt: String
+  comment_lte: String
+  comment_gt: String
+  comment_gte: String
+  comment_contains: String
+  comment_not_contains: String
+  comment_starts_with: String
+  comment_not_starts_with: String
+  comment_ends_with: String
+  comment_not_ends_with: String
+  createdAt: DateTime
+  createdAt_not: DateTime
+  createdAt_in: [DateTime!]
+  createdAt_not_in: [DateTime!]
+  createdAt_lt: DateTime
+  createdAt_lte: DateTime
+  createdAt_gt: DateTime
+  createdAt_gte: DateTime
+  AND: [LogScalarWhereInput!]
+  OR: [LogScalarWhereInput!]
+  NOT: [LogScalarWhereInput!]
+}
+
+type LogSubscriptionPayload {
+  mutation: MutationType!
+  node: Log
+  updatedFields: [String!]
+  previousValues: LogPreviousValues
+}
+
+input LogSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: LogWhereInput
+  AND: [LogSubscriptionWhereInput!]
+  OR: [LogSubscriptionWhereInput!]
+  NOT: [LogSubscriptionWhereInput!]
+}
+
+input LogUpdateManyDataInput {
+  sourceTable: String
+  sourceId: String
+  actionNo: String
+  actionType: String
+  actionTitle: String
+  tableField: String
+  oldValue: String
+  newValue: String
+  comment: String
+}
+
+input LogUpdateManyInput {
+  create: [LogCreateInput!]
+  deleteMany: [LogScalarWhereInput!]
+  updateMany: [LogUpdateManyWithWhereNestedInput!]
+}
+
+input LogUpdateManyMutationInput {
+  sourceTable: String
+  sourceId: String
+  actionNo: String
+  actionType: String
+  actionTitle: String
+  tableField: String
+  oldValue: String
+  newValue: String
+  comment: String
+}
+
+input LogUpdateManyWithWhereNestedInput {
+  where: LogScalarWhereInput!
+  data: LogUpdateManyDataInput!
+}
+
+input LogWhereInput {
+  user_every: UserWhereInput
+  user_some: UserWhereInput
+  user_none: UserWhereInput
+  sourceTable: String
+  sourceTable_not: String
+  sourceTable_in: [String!]
+  sourceTable_not_in: [String!]
+  sourceTable_lt: String
+  sourceTable_lte: String
+  sourceTable_gt: String
+  sourceTable_gte: String
+  sourceTable_contains: String
+  sourceTable_not_contains: String
+  sourceTable_starts_with: String
+  sourceTable_not_starts_with: String
+  sourceTable_ends_with: String
+  sourceTable_not_ends_with: String
+  sourceId: String
+  sourceId_not: String
+  sourceId_in: [String!]
+  sourceId_not_in: [String!]
+  sourceId_lt: String
+  sourceId_lte: String
+  sourceId_gt: String
+  sourceId_gte: String
+  sourceId_contains: String
+  sourceId_not_contains: String
+  sourceId_starts_with: String
+  sourceId_not_starts_with: String
+  sourceId_ends_with: String
+  sourceId_not_ends_with: String
+  actionNo: String
+  actionNo_not: String
+  actionNo_in: [String!]
+  actionNo_not_in: [String!]
+  actionNo_lt: String
+  actionNo_lte: String
+  actionNo_gt: String
+  actionNo_gte: String
+  actionNo_contains: String
+  actionNo_not_contains: String
+  actionNo_starts_with: String
+  actionNo_not_starts_with: String
+  actionNo_ends_with: String
+  actionNo_not_ends_with: String
+  actionType: String
+  actionType_not: String
+  actionType_in: [String!]
+  actionType_not_in: [String!]
+  actionType_lt: String
+  actionType_lte: String
+  actionType_gt: String
+  actionType_gte: String
+  actionType_contains: String
+  actionType_not_contains: String
+  actionType_starts_with: String
+  actionType_not_starts_with: String
+  actionType_ends_with: String
+  actionType_not_ends_with: String
+  actionTitle: String
+  actionTitle_not: String
+  actionTitle_in: [String!]
+  actionTitle_not_in: [String!]
+  actionTitle_lt: String
+  actionTitle_lte: String
+  actionTitle_gt: String
+  actionTitle_gte: String
+  actionTitle_contains: String
+  actionTitle_not_contains: String
+  actionTitle_starts_with: String
+  actionTitle_not_starts_with: String
+  actionTitle_ends_with: String
+  actionTitle_not_ends_with: String
+  tableField: String
+  tableField_not: String
+  tableField_in: [String!]
+  tableField_not_in: [String!]
+  tableField_lt: String
+  tableField_lte: String
+  tableField_gt: String
+  tableField_gte: String
+  tableField_contains: String
+  tableField_not_contains: String
+  tableField_starts_with: String
+  tableField_not_starts_with: String
+  tableField_ends_with: String
+  tableField_not_ends_with: String
+  oldValue: String
+  oldValue_not: String
+  oldValue_in: [String!]
+  oldValue_not_in: [String!]
+  oldValue_lt: String
+  oldValue_lte: String
+  oldValue_gt: String
+  oldValue_gte: String
+  oldValue_contains: String
+  oldValue_not_contains: String
+  oldValue_starts_with: String
+  oldValue_not_starts_with: String
+  oldValue_ends_with: String
+  oldValue_not_ends_with: String
+  newValue: String
+  newValue_not: String
+  newValue_in: [String!]
+  newValue_not_in: [String!]
+  newValue_lt: String
+  newValue_lte: String
+  newValue_gt: String
+  newValue_gte: String
+  newValue_contains: String
+  newValue_not_contains: String
+  newValue_starts_with: String
+  newValue_not_starts_with: String
+  newValue_ends_with: String
+  newValue_not_ends_with: String
+  comment: String
+  comment_not: String
+  comment_in: [String!]
+  comment_not_in: [String!]
+  comment_lt: String
+  comment_lte: String
+  comment_gt: String
+  comment_gte: String
+  comment_contains: String
+  comment_not_contains: String
+  comment_starts_with: String
+  comment_not_starts_with: String
+  comment_ends_with: String
+  comment_not_ends_with: String
+  createdAt: DateTime
+  createdAt_not: DateTime
+  createdAt_in: [DateTime!]
+  createdAt_not_in: [DateTime!]
+  createdAt_lt: DateTime
+  createdAt_lte: DateTime
+  createdAt_gt: DateTime
+  createdAt_gte: DateTime
+  AND: [LogWhereInput!]
+  OR: [LogWhereInput!]
+  NOT: [LogWhereInput!]
+}
+
 scalar Long
 
 type Mutation {
+  createAddress(data: AddressCreateInput!): Address!
+  updateManyAddresses(data: AddressUpdateManyMutationInput!, where: AddressWhereInput): BatchPayload!
+  deleteManyAddresses(where: AddressWhereInput): BatchPayload!
+  createAttribute(data: AttributeCreateInput!): Attribute!
+  updateManyAttributes(data: AttributeUpdateManyMutationInput!, where: AttributeWhereInput): BatchPayload!
+  deleteManyAttributes(where: AttributeWhereInput): BatchPayload!
+  createBranch(data: BranchCreateInput!): Branch!
+  updateBranch(data: BranchUpdateInput!, where: BranchWhereUniqueInput!): Branch
+  updateManyBranches(data: BranchUpdateManyMutationInput!, where: BranchWhereInput): BatchPayload!
+  upsertBranch(where: BranchWhereUniqueInput!, create: BranchCreateInput!, update: BranchUpdateInput!): Branch!
+  deleteBranch(where: BranchWhereUniqueInput!): Branch
+  deleteManyBranches(where: BranchWhereInput): BatchPayload!
+  createBrand(data: BrandCreateInput!): Brand!
+  updateBrand(data: BrandUpdateInput!, where: BrandWhereUniqueInput!): Brand
+  updateManyBrands(data: BrandUpdateManyMutationInput!, where: BrandWhereInput): BatchPayload!
+  upsertBrand(where: BrandWhereUniqueInput!, create: BrandCreateInput!, update: BrandUpdateInput!): Brand!
+  deleteBrand(where: BrandWhereUniqueInput!): Brand
+  deleteManyBrands(where: BrandWhereInput): BatchPayload!
+  createCategory(data: CategoryCreateInput!): Category!
+  updateCategory(data: CategoryUpdateInput!, where: CategoryWhereUniqueInput!): Category
+  updateManyCategories(data: CategoryUpdateManyMutationInput!, where: CategoryWhereInput): BatchPayload!
+  upsertCategory(where: CategoryWhereUniqueInput!, create: CategoryCreateInput!, update: CategoryUpdateInput!): Category!
+  deleteCategory(where: CategoryWhereUniqueInput!): Category
+  deleteManyCategories(where: CategoryWhereInput): BatchPayload!
+  createCompany(data: CompanyCreateInput!): Company!
+  updateCompany(data: CompanyUpdateInput!, where: CompanyWhereUniqueInput!): Company
+  updateManyCompanies(data: CompanyUpdateManyMutationInput!, where: CompanyWhereInput): BatchPayload!
+  upsertCompany(where: CompanyWhereUniqueInput!, create: CompanyCreateInput!, update: CompanyUpdateInput!): Company!
+  deleteCompany(where: CompanyWhereUniqueInput!): Company
+  deleteManyCompanies(where: CompanyWhereInput): BatchPayload!
+  createContactInfo(data: ContactInfoCreateInput!): ContactInfo!
+  updateContactInfo(data: ContactInfoUpdateInput!, where: ContactInfoWhereUniqueInput!): ContactInfo
+  updateManyContactInfoes(data: ContactInfoUpdateManyMutationInput!, where: ContactInfoWhereInput): BatchPayload!
+  upsertContactInfo(where: ContactInfoWhereUniqueInput!, create: ContactInfoCreateInput!, update: ContactInfoUpdateInput!): ContactInfo!
+  deleteContactInfo(where: ContactInfoWhereUniqueInput!): ContactInfo
+  deleteManyContactInfoes(where: ContactInfoWhereInput): BatchPayload!
+  createDelivery(data: DeliveryCreateInput!): Delivery!
+  updateManyDeliveries(data: DeliveryUpdateManyMutationInput!, where: DeliveryWhereInput): BatchPayload!
+  deleteManyDeliveries(where: DeliveryWhereInput): BatchPayload!
+  createFile(data: FileCreateInput!): File!
+  updateManyFiles(data: FileUpdateManyMutationInput!, where: FileWhereInput): BatchPayload!
+  deleteManyFiles(where: FileWhereInput): BatchPayload!
+  createInventory(data: InventoryCreateInput!): Inventory!
+  deleteManyInventories(where: InventoryWhereInput): BatchPayload!
+  createItem(data: ItemCreateInput!): Item!
+  updateManyItems(data: ItemUpdateManyMutationInput!, where: ItemWhereInput): BatchPayload!
+  deleteManyItems(where: ItemWhereInput): BatchPayload!
+  createLog(data: LogCreateInput!): Log!
+  updateManyLogs(data: LogUpdateManyMutationInput!, where: LogWhereInput): BatchPayload!
+  deleteManyLogs(where: LogWhereInput): BatchPayload!
+  createOrder(data: OrderCreateInput!): Order!
+  updateManyOrders(data: OrderUpdateManyMutationInput!, where: OrderWhereInput): BatchPayload!
+  deleteManyOrders(where: OrderWhereInput): BatchPayload!
+  createProduct(data: ProductCreateInput!): Product!
+  updateProduct(data: ProductUpdateInput!, where: ProductWhereUniqueInput!): Product
+  updateManyProducts(data: ProductUpdateManyMutationInput!, where: ProductWhereInput): BatchPayload!
+  upsertProduct(where: ProductWhereUniqueInput!, create: ProductCreateInput!, update: ProductUpdateInput!): Product!
+  deleteProduct(where: ProductWhereUniqueInput!): Product
+  deleteManyProducts(where: ProductWhereInput): BatchPayload!
+  createProductSrp(data: ProductSrpCreateInput!): ProductSrp!
+  updateManyProductSrps(data: ProductSrpUpdateManyMutationInput!, where: ProductSrpWhereInput): BatchPayload!
+  deleteManyProductSrps(where: ProductSrpWhereInput): BatchPayload!
+  createProfile(data: ProfileCreateInput!): Profile!
+  updateProfile(data: ProfileUpdateInput!, where: ProfileWhereUniqueInput!): Profile
+  updateManyProfiles(data: ProfileUpdateManyMutationInput!, where: ProfileWhereInput): BatchPayload!
+  upsertProfile(where: ProfileWhereUniqueInput!, create: ProfileCreateInput!, update: ProfileUpdateInput!): Profile!
+  deleteProfile(where: ProfileWhereUniqueInput!): Profile
+  deleteManyProfiles(where: ProfileWhereInput): BatchPayload!
+  createPurchasePrice(data: PurchasePriceCreateInput!): PurchasePrice!
+  updateManyPurchasePrices(data: PurchasePriceUpdateManyMutationInput!, where: PurchasePriceWhereInput): BatchPayload!
+  deleteManyPurchasePrices(where: PurchasePriceWhereInput): BatchPayload!
+  createQRCode(data: QRCodeCreateInput!): QRCode!
+  updateQRCode(data: QRCodeUpdateInput!, where: QRCodeWhereUniqueInput!): QRCode
+  updateManyQRCodes(data: QRCodeUpdateManyMutationInput!, where: QRCodeWhereInput): BatchPayload!
+  upsertQRCode(where: QRCodeWhereUniqueInput!, create: QRCodeCreateInput!, update: QRCodeUpdateInput!): QRCode!
+  deleteQRCode(where: QRCodeWhereUniqueInput!): QRCode
+  deleteManyQRCodes(where: QRCodeWhereInput): BatchPayload!
+  createQuote(data: QuoteCreateInput!): Quote!
+  updateManyQuotes(data: QuoteUpdateManyMutationInput!, where: QuoteWhereInput): BatchPayload!
+  deleteManyQuotes(where: QuoteWhereInput): BatchPayload!
+  createStock(data: StockCreateInput!): Stock!
+  updateStock(data: StockUpdateInput!, where: StockWhereUniqueInput!): Stock
+  updateManyStocks(data: StockUpdateManyMutationInput!, where: StockWhereInput): BatchPayload!
+  upsertStock(where: StockWhereUniqueInput!, create: StockCreateInput!, update: StockUpdateInput!): Stock!
+  deleteStock(where: StockWhereUniqueInput!): Stock
+  deleteManyStocks(where: StockWhereInput): BatchPayload!
+  createSubCategory(data: SubCategoryCreateInput!): SubCategory!
+  updateSubCategory(data: SubCategoryUpdateInput!, where: SubCategoryWhereUniqueInput!): SubCategory
+  updateManySubCategories(data: SubCategoryUpdateManyMutationInput!, where: SubCategoryWhereInput): BatchPayload!
+  upsertSubCategory(where: SubCategoryWhereUniqueInput!, create: SubCategoryCreateInput!, update: SubCategoryUpdateInput!): SubCategory!
+  deleteSubCategory(where: SubCategoryWhereUniqueInput!): SubCategory
+  deleteManySubCategories(where: SubCategoryWhereInput): BatchPayload!
+  createTransaction(data: TransactionCreateInput!): Transaction!
+  updateTransaction(data: TransactionUpdateInput!, where: TransactionWhereUniqueInput!): Transaction
+  updateManyTransactions(data: TransactionUpdateManyMutationInput!, where: TransactionWhereInput): BatchPayload!
+  upsertTransaction(where: TransactionWhereUniqueInput!, create: TransactionCreateInput!, update: TransactionUpdateInput!): Transaction!
+  deleteTransaction(where: TransactionWhereUniqueInput!): Transaction
+  deleteManyTransactions(where: TransactionWhereInput): BatchPayload!
   createUser(data: UserCreateInput!): User!
   updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
   updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
@@ -32,6 +2781,125 @@ interface Node {
   id: ID!
 }
 
+type Order {
+  transaction: Transaction!
+  delivery: Delivery!
+  status: OrderStatus!
+  owner: Profile!
+}
+
+type OrderConnection {
+  pageInfo: PageInfo!
+  edges: [OrderEdge]!
+  aggregate: AggregateOrder!
+}
+
+input OrderCreateInput {
+  transaction: TransactionCreateOneWithoutOrderInput!
+  delivery: DeliveryCreateOneWithoutOrdersInput!
+  status: OrderStatus!
+  owner: ProfileCreateOneInput!
+}
+
+input OrderCreateOneWithoutDeliveryInput {
+  create: OrderCreateWithoutDeliveryInput
+}
+
+input OrderCreateOneWithoutTransactionInput {
+  create: OrderCreateWithoutTransactionInput
+}
+
+input OrderCreateWithoutDeliveryInput {
+  transaction: TransactionCreateOneWithoutOrderInput!
+  status: OrderStatus!
+  owner: ProfileCreateOneInput!
+}
+
+input OrderCreateWithoutTransactionInput {
+  delivery: DeliveryCreateOneWithoutOrdersInput!
+  status: OrderStatus!
+  owner: ProfileCreateOneInput!
+}
+
+type OrderEdge {
+  node: Order!
+  cursor: String!
+}
+
+enum OrderOrderByInput {
+  status_ASC
+  status_DESC
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type OrderPreviousValues {
+  status: OrderStatus!
+}
+
+enum OrderStatus {
+  Cart
+  Confirmed
+}
+
+type OrderSubscriptionPayload {
+  mutation: MutationType!
+  node: Order
+  updatedFields: [String!]
+  previousValues: OrderPreviousValues
+}
+
+input OrderSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: OrderWhereInput
+  AND: [OrderSubscriptionWhereInput!]
+  OR: [OrderSubscriptionWhereInput!]
+  NOT: [OrderSubscriptionWhereInput!]
+}
+
+input OrderUpdateManyMutationInput {
+  status: OrderStatus
+}
+
+input OrderUpdateOneWithoutTransactionInput {
+  create: OrderCreateWithoutTransactionInput
+  update: OrderUpdateWithoutTransactionDataInput
+  upsert: OrderUpsertWithoutTransactionInput
+  delete: Boolean
+  disconnect: Boolean
+}
+
+input OrderUpdateWithoutTransactionDataInput {
+  delivery: DeliveryUpdateOneRequiredWithoutOrdersInput
+  status: OrderStatus
+  owner: ProfileUpdateOneRequiredInput
+}
+
+input OrderUpsertWithoutTransactionInput {
+  update: OrderUpdateWithoutTransactionDataInput!
+  create: OrderCreateWithoutTransactionInput!
+}
+
+input OrderWhereInput {
+  transaction: TransactionWhereInput
+  delivery: DeliveryWhereInput
+  status: OrderStatus
+  status_not: OrderStatus
+  status_in: [OrderStatus!]
+  status_not_in: [OrderStatus!]
+  owner: ProfileWhereInput
+  AND: [OrderWhereInput!]
+  OR: [OrderWhereInput!]
+  NOT: [OrderWhereInput!]
+}
+
 type PageInfo {
   hasNextPage: Boolean!
   hasPreviousPage: Boolean!
@@ -39,20 +2907,2393 @@ type PageInfo {
   endCursor: String
 }
 
+enum Position {
+  Manager
+  Cashier
+  Technician
+  Admin
+  Driver
+  Agent
+}
+
+type Product {
+  type: ProductType!
+  category: Category!
+  subCategory: SubCategory
+  brand: Brand
+  productName: String!
+  barcode: Int!
+  qrcode: QRCode
+  desc: String
+  attributes(where: AttributeWhereInput, orderBy: AttributeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Attribute!]
+  slug: String!
+  srp: ProductSrp!
+  purchasePrice: PurchasePrice!
+  stocks(where: StockWhereInput, orderBy: StockOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Stock!]
+}
+
+type ProductConnection {
+  pageInfo: PageInfo!
+  edges: [ProductEdge]!
+  aggregate: AggregateProduct!
+}
+
+input ProductCreateInput {
+  type: ProductType!
+  category: CategoryCreateOneWithoutProductsInput!
+  subCategory: SubCategoryCreateOneWithoutProductsInput
+  brand: BrandCreateOneWithoutProductsInput
+  productName: String!
+  barcode: Int!
+  qrcode: QRCodeCreateOneWithoutProductInput
+  desc: String
+  attributes: AttributeCreateManyWithoutProductInput
+  slug: String!
+  srp: ProductSrpCreateOneWithoutProductInput!
+  purchasePrice: PurchasePriceCreateOneWithoutProductInput!
+  stocks: StockCreateManyWithoutProductInput
+}
+
+input ProductCreateManyWithoutBrandInput {
+  create: [ProductCreateWithoutBrandInput!]
+  connect: [ProductWhereUniqueInput!]
+}
+
+input ProductCreateManyWithoutCategoryInput {
+  create: [ProductCreateWithoutCategoryInput!]
+  connect: [ProductWhereUniqueInput!]
+}
+
+input ProductCreateManyWithoutSubCategoryInput {
+  create: [ProductCreateWithoutSubCategoryInput!]
+  connect: [ProductWhereUniqueInput!]
+}
+
+input ProductCreateOneWithoutAttributesInput {
+  create: ProductCreateWithoutAttributesInput
+  connect: ProductWhereUniqueInput
+}
+
+input ProductCreateOneWithoutPurchasePriceInput {
+  create: ProductCreateWithoutPurchasePriceInput
+  connect: ProductWhereUniqueInput
+}
+
+input ProductCreateOneWithoutQrcodeInput {
+  create: ProductCreateWithoutQrcodeInput
+  connect: ProductWhereUniqueInput
+}
+
+input ProductCreateOneWithoutSrpInput {
+  create: ProductCreateWithoutSrpInput
+  connect: ProductWhereUniqueInput
+}
+
+input ProductCreateOneWithoutStocksInput {
+  create: ProductCreateWithoutStocksInput
+  connect: ProductWhereUniqueInput
+}
+
+input ProductCreateWithoutAttributesInput {
+  type: ProductType!
+  category: CategoryCreateOneWithoutProductsInput!
+  subCategory: SubCategoryCreateOneWithoutProductsInput
+  brand: BrandCreateOneWithoutProductsInput
+  productName: String!
+  barcode: Int!
+  qrcode: QRCodeCreateOneWithoutProductInput
+  desc: String
+  slug: String!
+  srp: ProductSrpCreateOneWithoutProductInput!
+  purchasePrice: PurchasePriceCreateOneWithoutProductInput!
+  stocks: StockCreateManyWithoutProductInput
+}
+
+input ProductCreateWithoutBrandInput {
+  type: ProductType!
+  category: CategoryCreateOneWithoutProductsInput!
+  subCategory: SubCategoryCreateOneWithoutProductsInput
+  productName: String!
+  barcode: Int!
+  qrcode: QRCodeCreateOneWithoutProductInput
+  desc: String
+  attributes: AttributeCreateManyWithoutProductInput
+  slug: String!
+  srp: ProductSrpCreateOneWithoutProductInput!
+  purchasePrice: PurchasePriceCreateOneWithoutProductInput!
+  stocks: StockCreateManyWithoutProductInput
+}
+
+input ProductCreateWithoutCategoryInput {
+  type: ProductType!
+  subCategory: SubCategoryCreateOneWithoutProductsInput
+  brand: BrandCreateOneWithoutProductsInput
+  productName: String!
+  barcode: Int!
+  qrcode: QRCodeCreateOneWithoutProductInput
+  desc: String
+  attributes: AttributeCreateManyWithoutProductInput
+  slug: String!
+  srp: ProductSrpCreateOneWithoutProductInput!
+  purchasePrice: PurchasePriceCreateOneWithoutProductInput!
+  stocks: StockCreateManyWithoutProductInput
+}
+
+input ProductCreateWithoutPurchasePriceInput {
+  type: ProductType!
+  category: CategoryCreateOneWithoutProductsInput!
+  subCategory: SubCategoryCreateOneWithoutProductsInput
+  brand: BrandCreateOneWithoutProductsInput
+  productName: String!
+  barcode: Int!
+  qrcode: QRCodeCreateOneWithoutProductInput
+  desc: String
+  attributes: AttributeCreateManyWithoutProductInput
+  slug: String!
+  srp: ProductSrpCreateOneWithoutProductInput!
+  stocks: StockCreateManyWithoutProductInput
+}
+
+input ProductCreateWithoutQrcodeInput {
+  type: ProductType!
+  category: CategoryCreateOneWithoutProductsInput!
+  subCategory: SubCategoryCreateOneWithoutProductsInput
+  brand: BrandCreateOneWithoutProductsInput
+  productName: String!
+  barcode: Int!
+  desc: String
+  attributes: AttributeCreateManyWithoutProductInput
+  slug: String!
+  srp: ProductSrpCreateOneWithoutProductInput!
+  purchasePrice: PurchasePriceCreateOneWithoutProductInput!
+  stocks: StockCreateManyWithoutProductInput
+}
+
+input ProductCreateWithoutSrpInput {
+  type: ProductType!
+  category: CategoryCreateOneWithoutProductsInput!
+  subCategory: SubCategoryCreateOneWithoutProductsInput
+  brand: BrandCreateOneWithoutProductsInput
+  productName: String!
+  barcode: Int!
+  qrcode: QRCodeCreateOneWithoutProductInput
+  desc: String
+  attributes: AttributeCreateManyWithoutProductInput
+  slug: String!
+  purchasePrice: PurchasePriceCreateOneWithoutProductInput!
+  stocks: StockCreateManyWithoutProductInput
+}
+
+input ProductCreateWithoutStocksInput {
+  type: ProductType!
+  category: CategoryCreateOneWithoutProductsInput!
+  subCategory: SubCategoryCreateOneWithoutProductsInput
+  brand: BrandCreateOneWithoutProductsInput
+  productName: String!
+  barcode: Int!
+  qrcode: QRCodeCreateOneWithoutProductInput
+  desc: String
+  attributes: AttributeCreateManyWithoutProductInput
+  slug: String!
+  srp: ProductSrpCreateOneWithoutProductInput!
+  purchasePrice: PurchasePriceCreateOneWithoutProductInput!
+}
+
+input ProductCreateWithoutSubCategoryInput {
+  type: ProductType!
+  category: CategoryCreateOneWithoutProductsInput!
+  brand: BrandCreateOneWithoutProductsInput
+  productName: String!
+  barcode: Int!
+  qrcode: QRCodeCreateOneWithoutProductInput
+  desc: String
+  attributes: AttributeCreateManyWithoutProductInput
+  slug: String!
+  srp: ProductSrpCreateOneWithoutProductInput!
+  purchasePrice: PurchasePriceCreateOneWithoutProductInput!
+  stocks: StockCreateManyWithoutProductInput
+}
+
+type ProductEdge {
+  node: Product!
+  cursor: String!
+}
+
+enum ProductOrderByInput {
+  type_ASC
+  type_DESC
+  productName_ASC
+  productName_DESC
+  barcode_ASC
+  barcode_DESC
+  desc_ASC
+  desc_DESC
+  slug_ASC
+  slug_DESC
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type ProductPreviousValues {
+  type: ProductType!
+  productName: String!
+  barcode: Int!
+  desc: String
+  slug: String!
+}
+
+input ProductScalarWhereInput {
+  type: ProductType
+  type_not: ProductType
+  type_in: [ProductType!]
+  type_not_in: [ProductType!]
+  productName: String
+  productName_not: String
+  productName_in: [String!]
+  productName_not_in: [String!]
+  productName_lt: String
+  productName_lte: String
+  productName_gt: String
+  productName_gte: String
+  productName_contains: String
+  productName_not_contains: String
+  productName_starts_with: String
+  productName_not_starts_with: String
+  productName_ends_with: String
+  productName_not_ends_with: String
+  barcode: Int
+  barcode_not: Int
+  barcode_in: [Int!]
+  barcode_not_in: [Int!]
+  barcode_lt: Int
+  barcode_lte: Int
+  barcode_gt: Int
+  barcode_gte: Int
+  desc: String
+  desc_not: String
+  desc_in: [String!]
+  desc_not_in: [String!]
+  desc_lt: String
+  desc_lte: String
+  desc_gt: String
+  desc_gte: String
+  desc_contains: String
+  desc_not_contains: String
+  desc_starts_with: String
+  desc_not_starts_with: String
+  desc_ends_with: String
+  desc_not_ends_with: String
+  slug: String
+  slug_not: String
+  slug_in: [String!]
+  slug_not_in: [String!]
+  slug_lt: String
+  slug_lte: String
+  slug_gt: String
+  slug_gte: String
+  slug_contains: String
+  slug_not_contains: String
+  slug_starts_with: String
+  slug_not_starts_with: String
+  slug_ends_with: String
+  slug_not_ends_with: String
+  AND: [ProductScalarWhereInput!]
+  OR: [ProductScalarWhereInput!]
+  NOT: [ProductScalarWhereInput!]
+}
+
+type ProductSrp {
+  product: Product!
+  price: Float!
+}
+
+type ProductSrpConnection {
+  pageInfo: PageInfo!
+  edges: [ProductSrpEdge]!
+  aggregate: AggregateProductSrp!
+}
+
+input ProductSrpCreateInput {
+  product: ProductCreateOneWithoutSrpInput!
+  price: Float!
+}
+
+input ProductSrpCreateOneInput {
+  create: ProductSrpCreateInput
+}
+
+input ProductSrpCreateOneWithoutProductInput {
+  create: ProductSrpCreateWithoutProductInput
+}
+
+input ProductSrpCreateWithoutProductInput {
+  price: Float!
+}
+
+type ProductSrpEdge {
+  node: ProductSrp!
+  cursor: String!
+}
+
+enum ProductSrpOrderByInput {
+  price_ASC
+  price_DESC
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type ProductSrpPreviousValues {
+  price: Float!
+}
+
+type ProductSrpSubscriptionPayload {
+  mutation: MutationType!
+  node: ProductSrp
+  updatedFields: [String!]
+  previousValues: ProductSrpPreviousValues
+}
+
+input ProductSrpSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: ProductSrpWhereInput
+  AND: [ProductSrpSubscriptionWhereInput!]
+  OR: [ProductSrpSubscriptionWhereInput!]
+  NOT: [ProductSrpSubscriptionWhereInput!]
+}
+
+input ProductSrpUpdateManyMutationInput {
+  price: Float
+}
+
+input ProductSrpUpdateOneRequiredWithoutProductInput {
+  create: ProductSrpCreateWithoutProductInput
+  update: ProductSrpUpdateWithoutProductDataInput
+  upsert: ProductSrpUpsertWithoutProductInput
+}
+
+input ProductSrpUpdateWithoutProductDataInput {
+  price: Float
+}
+
+input ProductSrpUpsertWithoutProductInput {
+  update: ProductSrpUpdateWithoutProductDataInput!
+  create: ProductSrpCreateWithoutProductInput!
+}
+
+input ProductSrpWhereInput {
+  product: ProductWhereInput
+  price: Float
+  price_not: Float
+  price_in: [Float!]
+  price_not_in: [Float!]
+  price_lt: Float
+  price_lte: Float
+  price_gt: Float
+  price_gte: Float
+  AND: [ProductSrpWhereInput!]
+  OR: [ProductSrpWhereInput!]
+  NOT: [ProductSrpWhereInput!]
+}
+
+type ProductSubscriptionPayload {
+  mutation: MutationType!
+  node: Product
+  updatedFields: [String!]
+  previousValues: ProductPreviousValues
+}
+
+input ProductSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: ProductWhereInput
+  AND: [ProductSubscriptionWhereInput!]
+  OR: [ProductSubscriptionWhereInput!]
+  NOT: [ProductSubscriptionWhereInput!]
+}
+
+enum ProductType {
+  Item
+  Service
+}
+
+input ProductUpdateInput {
+  type: ProductType
+  category: CategoryUpdateOneRequiredWithoutProductsInput
+  subCategory: SubCategoryUpdateOneWithoutProductsInput
+  brand: BrandUpdateOneWithoutProductsInput
+  productName: String
+  barcode: Int
+  qrcode: QRCodeUpdateOneWithoutProductInput
+  desc: String
+  attributes: AttributeUpdateManyWithoutProductInput
+  slug: String
+  srp: ProductSrpUpdateOneRequiredWithoutProductInput
+  purchasePrice: PurchasePriceUpdateOneRequiredWithoutProductInput
+  stocks: StockUpdateManyWithoutProductInput
+}
+
+input ProductUpdateManyDataInput {
+  type: ProductType
+  productName: String
+  barcode: Int
+  desc: String
+  slug: String
+}
+
+input ProductUpdateManyMutationInput {
+  type: ProductType
+  productName: String
+  barcode: Int
+  desc: String
+  slug: String
+}
+
+input ProductUpdateManyWithoutBrandInput {
+  create: [ProductCreateWithoutBrandInput!]
+  delete: [ProductWhereUniqueInput!]
+  connect: [ProductWhereUniqueInput!]
+  set: [ProductWhereUniqueInput!]
+  disconnect: [ProductWhereUniqueInput!]
+  update: [ProductUpdateWithWhereUniqueWithoutBrandInput!]
+  upsert: [ProductUpsertWithWhereUniqueWithoutBrandInput!]
+  deleteMany: [ProductScalarWhereInput!]
+  updateMany: [ProductUpdateManyWithWhereNestedInput!]
+}
+
+input ProductUpdateManyWithoutCategoryInput {
+  create: [ProductCreateWithoutCategoryInput!]
+  delete: [ProductWhereUniqueInput!]
+  connect: [ProductWhereUniqueInput!]
+  set: [ProductWhereUniqueInput!]
+  disconnect: [ProductWhereUniqueInput!]
+  update: [ProductUpdateWithWhereUniqueWithoutCategoryInput!]
+  upsert: [ProductUpsertWithWhereUniqueWithoutCategoryInput!]
+  deleteMany: [ProductScalarWhereInput!]
+  updateMany: [ProductUpdateManyWithWhereNestedInput!]
+}
+
+input ProductUpdateManyWithoutSubCategoryInput {
+  create: [ProductCreateWithoutSubCategoryInput!]
+  delete: [ProductWhereUniqueInput!]
+  connect: [ProductWhereUniqueInput!]
+  set: [ProductWhereUniqueInput!]
+  disconnect: [ProductWhereUniqueInput!]
+  update: [ProductUpdateWithWhereUniqueWithoutSubCategoryInput!]
+  upsert: [ProductUpsertWithWhereUniqueWithoutSubCategoryInput!]
+  deleteMany: [ProductScalarWhereInput!]
+  updateMany: [ProductUpdateManyWithWhereNestedInput!]
+}
+
+input ProductUpdateManyWithWhereNestedInput {
+  where: ProductScalarWhereInput!
+  data: ProductUpdateManyDataInput!
+}
+
+input ProductUpdateOneRequiredWithoutQrcodeInput {
+  create: ProductCreateWithoutQrcodeInput
+  update: ProductUpdateWithoutQrcodeDataInput
+  upsert: ProductUpsertWithoutQrcodeInput
+  connect: ProductWhereUniqueInput
+}
+
+input ProductUpdateOneRequiredWithoutStocksInput {
+  create: ProductCreateWithoutStocksInput
+  update: ProductUpdateWithoutStocksDataInput
+  upsert: ProductUpsertWithoutStocksInput
+  connect: ProductWhereUniqueInput
+}
+
+input ProductUpdateWithoutBrandDataInput {
+  type: ProductType
+  category: CategoryUpdateOneRequiredWithoutProductsInput
+  subCategory: SubCategoryUpdateOneWithoutProductsInput
+  productName: String
+  barcode: Int
+  qrcode: QRCodeUpdateOneWithoutProductInput
+  desc: String
+  attributes: AttributeUpdateManyWithoutProductInput
+  slug: String
+  srp: ProductSrpUpdateOneRequiredWithoutProductInput
+  purchasePrice: PurchasePriceUpdateOneRequiredWithoutProductInput
+  stocks: StockUpdateManyWithoutProductInput
+}
+
+input ProductUpdateWithoutCategoryDataInput {
+  type: ProductType
+  subCategory: SubCategoryUpdateOneWithoutProductsInput
+  brand: BrandUpdateOneWithoutProductsInput
+  productName: String
+  barcode: Int
+  qrcode: QRCodeUpdateOneWithoutProductInput
+  desc: String
+  attributes: AttributeUpdateManyWithoutProductInput
+  slug: String
+  srp: ProductSrpUpdateOneRequiredWithoutProductInput
+  purchasePrice: PurchasePriceUpdateOneRequiredWithoutProductInput
+  stocks: StockUpdateManyWithoutProductInput
+}
+
+input ProductUpdateWithoutQrcodeDataInput {
+  type: ProductType
+  category: CategoryUpdateOneRequiredWithoutProductsInput
+  subCategory: SubCategoryUpdateOneWithoutProductsInput
+  brand: BrandUpdateOneWithoutProductsInput
+  productName: String
+  barcode: Int
+  desc: String
+  attributes: AttributeUpdateManyWithoutProductInput
+  slug: String
+  srp: ProductSrpUpdateOneRequiredWithoutProductInput
+  purchasePrice: PurchasePriceUpdateOneRequiredWithoutProductInput
+  stocks: StockUpdateManyWithoutProductInput
+}
+
+input ProductUpdateWithoutStocksDataInput {
+  type: ProductType
+  category: CategoryUpdateOneRequiredWithoutProductsInput
+  subCategory: SubCategoryUpdateOneWithoutProductsInput
+  brand: BrandUpdateOneWithoutProductsInput
+  productName: String
+  barcode: Int
+  qrcode: QRCodeUpdateOneWithoutProductInput
+  desc: String
+  attributes: AttributeUpdateManyWithoutProductInput
+  slug: String
+  srp: ProductSrpUpdateOneRequiredWithoutProductInput
+  purchasePrice: PurchasePriceUpdateOneRequiredWithoutProductInput
+}
+
+input ProductUpdateWithoutSubCategoryDataInput {
+  type: ProductType
+  category: CategoryUpdateOneRequiredWithoutProductsInput
+  brand: BrandUpdateOneWithoutProductsInput
+  productName: String
+  barcode: Int
+  qrcode: QRCodeUpdateOneWithoutProductInput
+  desc: String
+  attributes: AttributeUpdateManyWithoutProductInput
+  slug: String
+  srp: ProductSrpUpdateOneRequiredWithoutProductInput
+  purchasePrice: PurchasePriceUpdateOneRequiredWithoutProductInput
+  stocks: StockUpdateManyWithoutProductInput
+}
+
+input ProductUpdateWithWhereUniqueWithoutBrandInput {
+  where: ProductWhereUniqueInput!
+  data: ProductUpdateWithoutBrandDataInput!
+}
+
+input ProductUpdateWithWhereUniqueWithoutCategoryInput {
+  where: ProductWhereUniqueInput!
+  data: ProductUpdateWithoutCategoryDataInput!
+}
+
+input ProductUpdateWithWhereUniqueWithoutSubCategoryInput {
+  where: ProductWhereUniqueInput!
+  data: ProductUpdateWithoutSubCategoryDataInput!
+}
+
+input ProductUpsertWithoutQrcodeInput {
+  update: ProductUpdateWithoutQrcodeDataInput!
+  create: ProductCreateWithoutQrcodeInput!
+}
+
+input ProductUpsertWithoutStocksInput {
+  update: ProductUpdateWithoutStocksDataInput!
+  create: ProductCreateWithoutStocksInput!
+}
+
+input ProductUpsertWithWhereUniqueWithoutBrandInput {
+  where: ProductWhereUniqueInput!
+  update: ProductUpdateWithoutBrandDataInput!
+  create: ProductCreateWithoutBrandInput!
+}
+
+input ProductUpsertWithWhereUniqueWithoutCategoryInput {
+  where: ProductWhereUniqueInput!
+  update: ProductUpdateWithoutCategoryDataInput!
+  create: ProductCreateWithoutCategoryInput!
+}
+
+input ProductUpsertWithWhereUniqueWithoutSubCategoryInput {
+  where: ProductWhereUniqueInput!
+  update: ProductUpdateWithoutSubCategoryDataInput!
+  create: ProductCreateWithoutSubCategoryInput!
+}
+
+input ProductWhereInput {
+  type: ProductType
+  type_not: ProductType
+  type_in: [ProductType!]
+  type_not_in: [ProductType!]
+  category: CategoryWhereInput
+  subCategory: SubCategoryWhereInput
+  brand: BrandWhereInput
+  productName: String
+  productName_not: String
+  productName_in: [String!]
+  productName_not_in: [String!]
+  productName_lt: String
+  productName_lte: String
+  productName_gt: String
+  productName_gte: String
+  productName_contains: String
+  productName_not_contains: String
+  productName_starts_with: String
+  productName_not_starts_with: String
+  productName_ends_with: String
+  productName_not_ends_with: String
+  barcode: Int
+  barcode_not: Int
+  barcode_in: [Int!]
+  barcode_not_in: [Int!]
+  barcode_lt: Int
+  barcode_lte: Int
+  barcode_gt: Int
+  barcode_gte: Int
+  qrcode: QRCodeWhereInput
+  desc: String
+  desc_not: String
+  desc_in: [String!]
+  desc_not_in: [String!]
+  desc_lt: String
+  desc_lte: String
+  desc_gt: String
+  desc_gte: String
+  desc_contains: String
+  desc_not_contains: String
+  desc_starts_with: String
+  desc_not_starts_with: String
+  desc_ends_with: String
+  desc_not_ends_with: String
+  attributes_every: AttributeWhereInput
+  attributes_some: AttributeWhereInput
+  attributes_none: AttributeWhereInput
+  slug: String
+  slug_not: String
+  slug_in: [String!]
+  slug_not_in: [String!]
+  slug_lt: String
+  slug_lte: String
+  slug_gt: String
+  slug_gte: String
+  slug_contains: String
+  slug_not_contains: String
+  slug_starts_with: String
+  slug_not_starts_with: String
+  slug_ends_with: String
+  slug_not_ends_with: String
+  srp: ProductSrpWhereInput
+  purchasePrice: PurchasePriceWhereInput
+  stocks_every: StockWhereInput
+  stocks_some: StockWhereInput
+  stocks_none: StockWhereInput
+  AND: [ProductWhereInput!]
+  OR: [ProductWhereInput!]
+  NOT: [ProductWhereInput!]
+}
+
+input ProductWhereUniqueInput {
+  productName: String
+  slug: String
+}
+
+type Profile {
+  id: ID!
+  login: User
+  firstName: String!
+  middleName: String
+  lastName: String!
+  birthdate: DateTime!
+  gender: Gender!
+  contactInfo: ContactInfo!
+  position: Position!
+  employer: Company!
+  address: Address
+  station: Branch!
+  files(where: FileWhereInput, orderBy: FileOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [File!]
+  logs(where: LogWhereInput, orderBy: LogOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Log!]
+  technician(where: QuoteWhereInput, orderBy: QuoteOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Quote!]
+  assistant(where: QuoteWhereInput, orderBy: QuoteOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Quote!]
+}
+
+type ProfileConnection {
+  pageInfo: PageInfo!
+  edges: [ProfileEdge]!
+  aggregate: AggregateProfile!
+}
+
+input ProfileCreateInput {
+  login: UserCreateOneWithoutProfileInput
+  firstName: String!
+  middleName: String
+  lastName: String!
+  birthdate: DateTime!
+  gender: Gender!
+  contactInfo: ContactInfoCreateOneWithoutOwnerInput!
+  position: Position!
+  employer: CompanyCreateOneInput!
+  address: AddressCreateOneInput
+  station: BranchCreateOneWithoutManagerInput!
+  files: FileCreateManyInput
+  logs: LogCreateManyInput
+  technician: QuoteCreateManyWithoutTechnicianInput
+  assistant: QuoteCreateManyInput
+}
+
+input ProfileCreateOneInput {
+  create: ProfileCreateInput
+  connect: ProfileWhereUniqueInput
+}
+
+input ProfileCreateOneWithoutContactInfoInput {
+  create: ProfileCreateWithoutContactInfoInput
+  connect: ProfileWhereUniqueInput
+}
+
+input ProfileCreateOneWithoutLoginInput {
+  create: ProfileCreateWithoutLoginInput
+  connect: ProfileWhereUniqueInput
+}
+
+input ProfileCreateOneWithoutStationInput {
+  create: ProfileCreateWithoutStationInput
+  connect: ProfileWhereUniqueInput
+}
+
+input ProfileCreateOneWithoutTechnicianInput {
+  create: ProfileCreateWithoutTechnicianInput
+  connect: ProfileWhereUniqueInput
+}
+
+input ProfileCreateWithoutContactInfoInput {
+  login: UserCreateOneWithoutProfileInput
+  firstName: String!
+  middleName: String
+  lastName: String!
+  birthdate: DateTime!
+  gender: Gender!
+  position: Position!
+  employer: CompanyCreateOneInput!
+  address: AddressCreateOneInput
+  station: BranchCreateOneWithoutManagerInput!
+  files: FileCreateManyInput
+  logs: LogCreateManyInput
+  technician: QuoteCreateManyWithoutTechnicianInput
+  assistant: QuoteCreateManyInput
+}
+
+input ProfileCreateWithoutLoginInput {
+  firstName: String!
+  middleName: String
+  lastName: String!
+  birthdate: DateTime!
+  gender: Gender!
+  contactInfo: ContactInfoCreateOneWithoutOwnerInput!
+  position: Position!
+  employer: CompanyCreateOneInput!
+  address: AddressCreateOneInput
+  station: BranchCreateOneWithoutManagerInput!
+  files: FileCreateManyInput
+  logs: LogCreateManyInput
+  technician: QuoteCreateManyWithoutTechnicianInput
+  assistant: QuoteCreateManyInput
+}
+
+input ProfileCreateWithoutStationInput {
+  login: UserCreateOneWithoutProfileInput
+  firstName: String!
+  middleName: String
+  lastName: String!
+  birthdate: DateTime!
+  gender: Gender!
+  contactInfo: ContactInfoCreateOneWithoutOwnerInput!
+  position: Position!
+  employer: CompanyCreateOneInput!
+  address: AddressCreateOneInput
+  files: FileCreateManyInput
+  logs: LogCreateManyInput
+  technician: QuoteCreateManyWithoutTechnicianInput
+  assistant: QuoteCreateManyInput
+}
+
+input ProfileCreateWithoutTechnicianInput {
+  login: UserCreateOneWithoutProfileInput
+  firstName: String!
+  middleName: String
+  lastName: String!
+  birthdate: DateTime!
+  gender: Gender!
+  contactInfo: ContactInfoCreateOneWithoutOwnerInput!
+  position: Position!
+  employer: CompanyCreateOneInput!
+  address: AddressCreateOneInput
+  station: BranchCreateOneWithoutManagerInput!
+  files: FileCreateManyInput
+  logs: LogCreateManyInput
+  assistant: QuoteCreateManyInput
+}
+
+type ProfileEdge {
+  node: Profile!
+  cursor: String!
+}
+
+enum ProfileOrderByInput {
+  id_ASC
+  id_DESC
+  firstName_ASC
+  firstName_DESC
+  middleName_ASC
+  middleName_DESC
+  lastName_ASC
+  lastName_DESC
+  birthdate_ASC
+  birthdate_DESC
+  gender_ASC
+  gender_DESC
+  position_ASC
+  position_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type ProfilePreviousValues {
+  id: ID!
+  firstName: String!
+  middleName: String
+  lastName: String!
+  birthdate: DateTime!
+  gender: Gender!
+  position: Position!
+}
+
+type ProfileSubscriptionPayload {
+  mutation: MutationType!
+  node: Profile
+  updatedFields: [String!]
+  previousValues: ProfilePreviousValues
+}
+
+input ProfileSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: ProfileWhereInput
+  AND: [ProfileSubscriptionWhereInput!]
+  OR: [ProfileSubscriptionWhereInput!]
+  NOT: [ProfileSubscriptionWhereInput!]
+}
+
+input ProfileUpdateDataInput {
+  login: UserUpdateOneWithoutProfileInput
+  firstName: String
+  middleName: String
+  lastName: String
+  birthdate: DateTime
+  gender: Gender
+  contactInfo: ContactInfoUpdateOneRequiredWithoutOwnerInput
+  position: Position
+  employer: CompanyUpdateOneRequiredInput
+  address: AddressUpdateOneInput
+  station: BranchUpdateOneRequiredWithoutManagerInput
+  files: FileUpdateManyInput
+  logs: LogUpdateManyInput
+  technician: QuoteUpdateManyWithoutTechnicianInput
+  assistant: QuoteUpdateManyInput
+}
+
+input ProfileUpdateInput {
+  login: UserUpdateOneWithoutProfileInput
+  firstName: String
+  middleName: String
+  lastName: String
+  birthdate: DateTime
+  gender: Gender
+  contactInfo: ContactInfoUpdateOneRequiredWithoutOwnerInput
+  position: Position
+  employer: CompanyUpdateOneRequiredInput
+  address: AddressUpdateOneInput
+  station: BranchUpdateOneRequiredWithoutManagerInput
+  files: FileUpdateManyInput
+  logs: LogUpdateManyInput
+  technician: QuoteUpdateManyWithoutTechnicianInput
+  assistant: QuoteUpdateManyInput
+}
+
+input ProfileUpdateManyMutationInput {
+  firstName: String
+  middleName: String
+  lastName: String
+  birthdate: DateTime
+  gender: Gender
+  position: Position
+}
+
+input ProfileUpdateOneInput {
+  create: ProfileCreateInput
+  update: ProfileUpdateDataInput
+  upsert: ProfileUpsertNestedInput
+  delete: Boolean
+  disconnect: Boolean
+  connect: ProfileWhereUniqueInput
+}
+
+input ProfileUpdateOneRequiredInput {
+  create: ProfileCreateInput
+  update: ProfileUpdateDataInput
+  upsert: ProfileUpsertNestedInput
+  connect: ProfileWhereUniqueInput
+}
+
+input ProfileUpdateOneRequiredWithoutContactInfoInput {
+  create: ProfileCreateWithoutContactInfoInput
+  update: ProfileUpdateWithoutContactInfoDataInput
+  upsert: ProfileUpsertWithoutContactInfoInput
+  connect: ProfileWhereUniqueInput
+}
+
+input ProfileUpdateOneRequiredWithoutLoginInput {
+  create: ProfileCreateWithoutLoginInput
+  update: ProfileUpdateWithoutLoginDataInput
+  upsert: ProfileUpsertWithoutLoginInput
+  connect: ProfileWhereUniqueInput
+}
+
+input ProfileUpdateOneRequiredWithoutStationInput {
+  create: ProfileCreateWithoutStationInput
+  update: ProfileUpdateWithoutStationDataInput
+  upsert: ProfileUpsertWithoutStationInput
+  connect: ProfileWhereUniqueInput
+}
+
+input ProfileUpdateOneWithoutTechnicianInput {
+  create: ProfileCreateWithoutTechnicianInput
+  update: ProfileUpdateWithoutTechnicianDataInput
+  upsert: ProfileUpsertWithoutTechnicianInput
+  delete: Boolean
+  disconnect: Boolean
+  connect: ProfileWhereUniqueInput
+}
+
+input ProfileUpdateWithoutContactInfoDataInput {
+  login: UserUpdateOneWithoutProfileInput
+  firstName: String
+  middleName: String
+  lastName: String
+  birthdate: DateTime
+  gender: Gender
+  position: Position
+  employer: CompanyUpdateOneRequiredInput
+  address: AddressUpdateOneInput
+  station: BranchUpdateOneRequiredWithoutManagerInput
+  files: FileUpdateManyInput
+  logs: LogUpdateManyInput
+  technician: QuoteUpdateManyWithoutTechnicianInput
+  assistant: QuoteUpdateManyInput
+}
+
+input ProfileUpdateWithoutLoginDataInput {
+  firstName: String
+  middleName: String
+  lastName: String
+  birthdate: DateTime
+  gender: Gender
+  contactInfo: ContactInfoUpdateOneRequiredWithoutOwnerInput
+  position: Position
+  employer: CompanyUpdateOneRequiredInput
+  address: AddressUpdateOneInput
+  station: BranchUpdateOneRequiredWithoutManagerInput
+  files: FileUpdateManyInput
+  logs: LogUpdateManyInput
+  technician: QuoteUpdateManyWithoutTechnicianInput
+  assistant: QuoteUpdateManyInput
+}
+
+input ProfileUpdateWithoutStationDataInput {
+  login: UserUpdateOneWithoutProfileInput
+  firstName: String
+  middleName: String
+  lastName: String
+  birthdate: DateTime
+  gender: Gender
+  contactInfo: ContactInfoUpdateOneRequiredWithoutOwnerInput
+  position: Position
+  employer: CompanyUpdateOneRequiredInput
+  address: AddressUpdateOneInput
+  files: FileUpdateManyInput
+  logs: LogUpdateManyInput
+  technician: QuoteUpdateManyWithoutTechnicianInput
+  assistant: QuoteUpdateManyInput
+}
+
+input ProfileUpdateWithoutTechnicianDataInput {
+  login: UserUpdateOneWithoutProfileInput
+  firstName: String
+  middleName: String
+  lastName: String
+  birthdate: DateTime
+  gender: Gender
+  contactInfo: ContactInfoUpdateOneRequiredWithoutOwnerInput
+  position: Position
+  employer: CompanyUpdateOneRequiredInput
+  address: AddressUpdateOneInput
+  station: BranchUpdateOneRequiredWithoutManagerInput
+  files: FileUpdateManyInput
+  logs: LogUpdateManyInput
+  assistant: QuoteUpdateManyInput
+}
+
+input ProfileUpsertNestedInput {
+  update: ProfileUpdateDataInput!
+  create: ProfileCreateInput!
+}
+
+input ProfileUpsertWithoutContactInfoInput {
+  update: ProfileUpdateWithoutContactInfoDataInput!
+  create: ProfileCreateWithoutContactInfoInput!
+}
+
+input ProfileUpsertWithoutLoginInput {
+  update: ProfileUpdateWithoutLoginDataInput!
+  create: ProfileCreateWithoutLoginInput!
+}
+
+input ProfileUpsertWithoutStationInput {
+  update: ProfileUpdateWithoutStationDataInput!
+  create: ProfileCreateWithoutStationInput!
+}
+
+input ProfileUpsertWithoutTechnicianInput {
+  update: ProfileUpdateWithoutTechnicianDataInput!
+  create: ProfileCreateWithoutTechnicianInput!
+}
+
+input ProfileWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  login: UserWhereInput
+  firstName: String
+  firstName_not: String
+  firstName_in: [String!]
+  firstName_not_in: [String!]
+  firstName_lt: String
+  firstName_lte: String
+  firstName_gt: String
+  firstName_gte: String
+  firstName_contains: String
+  firstName_not_contains: String
+  firstName_starts_with: String
+  firstName_not_starts_with: String
+  firstName_ends_with: String
+  firstName_not_ends_with: String
+  middleName: String
+  middleName_not: String
+  middleName_in: [String!]
+  middleName_not_in: [String!]
+  middleName_lt: String
+  middleName_lte: String
+  middleName_gt: String
+  middleName_gte: String
+  middleName_contains: String
+  middleName_not_contains: String
+  middleName_starts_with: String
+  middleName_not_starts_with: String
+  middleName_ends_with: String
+  middleName_not_ends_with: String
+  lastName: String
+  lastName_not: String
+  lastName_in: [String!]
+  lastName_not_in: [String!]
+  lastName_lt: String
+  lastName_lte: String
+  lastName_gt: String
+  lastName_gte: String
+  lastName_contains: String
+  lastName_not_contains: String
+  lastName_starts_with: String
+  lastName_not_starts_with: String
+  lastName_ends_with: String
+  lastName_not_ends_with: String
+  birthdate: DateTime
+  birthdate_not: DateTime
+  birthdate_in: [DateTime!]
+  birthdate_not_in: [DateTime!]
+  birthdate_lt: DateTime
+  birthdate_lte: DateTime
+  birthdate_gt: DateTime
+  birthdate_gte: DateTime
+  gender: Gender
+  gender_not: Gender
+  gender_in: [Gender!]
+  gender_not_in: [Gender!]
+  contactInfo: ContactInfoWhereInput
+  position: Position
+  position_not: Position
+  position_in: [Position!]
+  position_not_in: [Position!]
+  employer: CompanyWhereInput
+  address: AddressWhereInput
+  station: BranchWhereInput
+  files_every: FileWhereInput
+  files_some: FileWhereInput
+  files_none: FileWhereInput
+  logs_every: LogWhereInput
+  logs_some: LogWhereInput
+  logs_none: LogWhereInput
+  technician_every: QuoteWhereInput
+  technician_some: QuoteWhereInput
+  technician_none: QuoteWhereInput
+  assistant_every: QuoteWhereInput
+  assistant_some: QuoteWhereInput
+  assistant_none: QuoteWhereInput
+  AND: [ProfileWhereInput!]
+  OR: [ProfileWhereInput!]
+  NOT: [ProfileWhereInput!]
+}
+
+input ProfileWhereUniqueInput {
+  id: ID
+}
+
+type PurchasePrice {
+  product: Product!
+  price: Float!
+}
+
+type PurchasePriceConnection {
+  pageInfo: PageInfo!
+  edges: [PurchasePriceEdge]!
+  aggregate: AggregatePurchasePrice!
+}
+
+input PurchasePriceCreateInput {
+  product: ProductCreateOneWithoutPurchasePriceInput!
+  price: Float!
+}
+
+input PurchasePriceCreateOneInput {
+  create: PurchasePriceCreateInput
+}
+
+input PurchasePriceCreateOneWithoutProductInput {
+  create: PurchasePriceCreateWithoutProductInput
+}
+
+input PurchasePriceCreateWithoutProductInput {
+  price: Float!
+}
+
+type PurchasePriceEdge {
+  node: PurchasePrice!
+  cursor: String!
+}
+
+enum PurchasePriceOrderByInput {
+  price_ASC
+  price_DESC
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type PurchasePricePreviousValues {
+  price: Float!
+}
+
+type PurchasePriceSubscriptionPayload {
+  mutation: MutationType!
+  node: PurchasePrice
+  updatedFields: [String!]
+  previousValues: PurchasePricePreviousValues
+}
+
+input PurchasePriceSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PurchasePriceWhereInput
+  AND: [PurchasePriceSubscriptionWhereInput!]
+  OR: [PurchasePriceSubscriptionWhereInput!]
+  NOT: [PurchasePriceSubscriptionWhereInput!]
+}
+
+input PurchasePriceUpdateManyMutationInput {
+  price: Float
+}
+
+input PurchasePriceUpdateOneRequiredWithoutProductInput {
+  create: PurchasePriceCreateWithoutProductInput
+  update: PurchasePriceUpdateWithoutProductDataInput
+  upsert: PurchasePriceUpsertWithoutProductInput
+}
+
+input PurchasePriceUpdateWithoutProductDataInput {
+  price: Float
+}
+
+input PurchasePriceUpsertWithoutProductInput {
+  update: PurchasePriceUpdateWithoutProductDataInput!
+  create: PurchasePriceCreateWithoutProductInput!
+}
+
+input PurchasePriceWhereInput {
+  product: ProductWhereInput
+  price: Float
+  price_not: Float
+  price_in: [Float!]
+  price_not_in: [Float!]
+  price_lt: Float
+  price_lte: Float
+  price_gt: Float
+  price_gte: Float
+  AND: [PurchasePriceWhereInput!]
+  OR: [PurchasePriceWhereInput!]
+  NOT: [PurchasePriceWhereInput!]
+}
+
+type QRCode {
+  qrcode: String!
+  product: Product!
+}
+
+type QRCodeConnection {
+  pageInfo: PageInfo!
+  edges: [QRCodeEdge]!
+  aggregate: AggregateQRCode!
+}
+
+input QRCodeCreateInput {
+  qrcode: String!
+  product: ProductCreateOneWithoutQrcodeInput!
+}
+
+input QRCodeCreateOneWithoutProductInput {
+  create: QRCodeCreateWithoutProductInput
+  connect: QRCodeWhereUniqueInput
+}
+
+input QRCodeCreateWithoutProductInput {
+  qrcode: String!
+}
+
+type QRCodeEdge {
+  node: QRCode!
+  cursor: String!
+}
+
+enum QRCodeOrderByInput {
+  qrcode_ASC
+  qrcode_DESC
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type QRCodePreviousValues {
+  qrcode: String!
+}
+
+type QRCodeSubscriptionPayload {
+  mutation: MutationType!
+  node: QRCode
+  updatedFields: [String!]
+  previousValues: QRCodePreviousValues
+}
+
+input QRCodeSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: QRCodeWhereInput
+  AND: [QRCodeSubscriptionWhereInput!]
+  OR: [QRCodeSubscriptionWhereInput!]
+  NOT: [QRCodeSubscriptionWhereInput!]
+}
+
+input QRCodeUpdateInput {
+  qrcode: String
+  product: ProductUpdateOneRequiredWithoutQrcodeInput
+}
+
+input QRCodeUpdateManyMutationInput {
+  qrcode: String
+}
+
+input QRCodeUpdateOneWithoutProductInput {
+  create: QRCodeCreateWithoutProductInput
+  update: QRCodeUpdateWithoutProductDataInput
+  upsert: QRCodeUpsertWithoutProductInput
+  delete: Boolean
+  disconnect: Boolean
+  connect: QRCodeWhereUniqueInput
+}
+
+input QRCodeUpdateWithoutProductDataInput {
+  qrcode: String
+}
+
+input QRCodeUpsertWithoutProductInput {
+  update: QRCodeUpdateWithoutProductDataInput!
+  create: QRCodeCreateWithoutProductInput!
+}
+
+input QRCodeWhereInput {
+  qrcode: String
+  qrcode_not: String
+  qrcode_in: [String!]
+  qrcode_not_in: [String!]
+  qrcode_lt: String
+  qrcode_lte: String
+  qrcode_gt: String
+  qrcode_gte: String
+  qrcode_contains: String
+  qrcode_not_contains: String
+  qrcode_starts_with: String
+  qrcode_not_starts_with: String
+  qrcode_ends_with: String
+  qrcode_not_ends_with: String
+  product: ProductWhereInput
+  AND: [QRCodeWhereInput!]
+  OR: [QRCodeWhereInput!]
+  NOT: [QRCodeWhereInput!]
+}
+
+input QRCodeWhereUniqueInput {
+  qrcode: String
+}
+
 type Query {
+  addresses(where: AddressWhereInput, orderBy: AddressOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Address]!
+  addressesConnection(where: AddressWhereInput, orderBy: AddressOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): AddressConnection!
+  attributes(where: AttributeWhereInput, orderBy: AttributeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Attribute]!
+  attributesConnection(where: AttributeWhereInput, orderBy: AttributeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): AttributeConnection!
+  branch(where: BranchWhereUniqueInput!): Branch
+  branches(where: BranchWhereInput, orderBy: BranchOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Branch]!
+  branchesConnection(where: BranchWhereInput, orderBy: BranchOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): BranchConnection!
+  brand(where: BrandWhereUniqueInput!): Brand
+  brands(where: BrandWhereInput, orderBy: BrandOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Brand]!
+  brandsConnection(where: BrandWhereInput, orderBy: BrandOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): BrandConnection!
+  category(where: CategoryWhereUniqueInput!): Category
+  categories(where: CategoryWhereInput, orderBy: CategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Category]!
+  categoriesConnection(where: CategoryWhereInput, orderBy: CategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CategoryConnection!
+  company(where: CompanyWhereUniqueInput!): Company
+  companies(where: CompanyWhereInput, orderBy: CompanyOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Company]!
+  companiesConnection(where: CompanyWhereInput, orderBy: CompanyOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CompanyConnection!
+  contactInfo(where: ContactInfoWhereUniqueInput!): ContactInfo
+  contactInfoes(where: ContactInfoWhereInput, orderBy: ContactInfoOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [ContactInfo]!
+  contactInfoesConnection(where: ContactInfoWhereInput, orderBy: ContactInfoOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ContactInfoConnection!
+  deliveries(where: DeliveryWhereInput, orderBy: DeliveryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Delivery]!
+  deliveriesConnection(where: DeliveryWhereInput, orderBy: DeliveryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): DeliveryConnection!
+  files(where: FileWhereInput, orderBy: FileOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [File]!
+  filesConnection(where: FileWhereInput, orderBy: FileOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): FileConnection!
+  inventories(where: InventoryWhereInput, orderBy: InventoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Inventory]!
+  inventoriesConnection(where: InventoryWhereInput, orderBy: InventoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): InventoryConnection!
+  items(where: ItemWhereInput, orderBy: ItemOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Item]!
+  itemsConnection(where: ItemWhereInput, orderBy: ItemOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ItemConnection!
+  logs(where: LogWhereInput, orderBy: LogOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Log]!
+  logsConnection(where: LogWhereInput, orderBy: LogOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): LogConnection!
+  orders(where: OrderWhereInput, orderBy: OrderOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Order]!
+  ordersConnection(where: OrderWhereInput, orderBy: OrderOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): OrderConnection!
+  product(where: ProductWhereUniqueInput!): Product
+  products(where: ProductWhereInput, orderBy: ProductOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Product]!
+  productsConnection(where: ProductWhereInput, orderBy: ProductOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ProductConnection!
+  productSrps(where: ProductSrpWhereInput, orderBy: ProductSrpOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [ProductSrp]!
+  productSrpsConnection(where: ProductSrpWhereInput, orderBy: ProductSrpOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ProductSrpConnection!
+  profile(where: ProfileWhereUniqueInput!): Profile
+  profiles(where: ProfileWhereInput, orderBy: ProfileOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Profile]!
+  profilesConnection(where: ProfileWhereInput, orderBy: ProfileOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ProfileConnection!
+  purchasePrices(where: PurchasePriceWhereInput, orderBy: PurchasePriceOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PurchasePrice]!
+  purchasePricesConnection(where: PurchasePriceWhereInput, orderBy: PurchasePriceOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PurchasePriceConnection!
+  qRCode(where: QRCodeWhereUniqueInput!): QRCode
+  qRCodes(where: QRCodeWhereInput, orderBy: QRCodeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [QRCode]!
+  qRCodesConnection(where: QRCodeWhereInput, orderBy: QRCodeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): QRCodeConnection!
+  quotes(where: QuoteWhereInput, orderBy: QuoteOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Quote]!
+  quotesConnection(where: QuoteWhereInput, orderBy: QuoteOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): QuoteConnection!
+  stock(where: StockWhereUniqueInput!): Stock
+  stocks(where: StockWhereInput, orderBy: StockOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Stock]!
+  stocksConnection(where: StockWhereInput, orderBy: StockOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): StockConnection!
+  subCategory(where: SubCategoryWhereUniqueInput!): SubCategory
+  subCategories(where: SubCategoryWhereInput, orderBy: SubCategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [SubCategory]!
+  subCategoriesConnection(where: SubCategoryWhereInput, orderBy: SubCategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): SubCategoryConnection!
+  transaction(where: TransactionWhereUniqueInput!): Transaction
+  transactions(where: TransactionWhereInput, orderBy: TransactionOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Transaction]!
+  transactionsConnection(where: TransactionWhereInput, orderBy: TransactionOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): TransactionConnection!
   user(where: UserWhereUniqueInput!): User
   users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!
   usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!
   node(id: ID!): Node
 }
 
+type Quote {
+  transaction: Transaction!
+  cashier: User!
+  technician: Profile
+  assistant: Profile
+  descriptions(where: ItemWhereInput, orderBy: ItemOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Item!]
+  grossAmount: Float!
+  isDiscounted: Boolean!
+  discountedAmount: Float!
+  netAmount: Float!
+  amountPaid: Float!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type QuoteConnection {
+  pageInfo: PageInfo!
+  edges: [QuoteEdge]!
+  aggregate: AggregateQuote!
+}
+
+input QuoteCreateInput {
+  transaction: TransactionCreateOneWithoutQuoteInput!
+  cashier: UserCreateOneWithoutTransactionsInput!
+  technician: ProfileCreateOneWithoutTechnicianInput
+  assistant: ProfileCreateOneInput
+  descriptions: ItemCreateManyInput
+  grossAmount: Float!
+  isDiscounted: Boolean!
+  discountedAmount: Float!
+  netAmount: Float!
+  amountPaid: Float!
+}
+
+input QuoteCreateManyInput {
+  create: [QuoteCreateInput!]
+}
+
+input QuoteCreateManyWithoutCashierInput {
+  create: [QuoteCreateWithoutCashierInput!]
+}
+
+input QuoteCreateManyWithoutTechnicianInput {
+  create: [QuoteCreateWithoutTechnicianInput!]
+}
+
+input QuoteCreateOneWithoutTransactionInput {
+  create: QuoteCreateWithoutTransactionInput
+}
+
+input QuoteCreateWithoutCashierInput {
+  transaction: TransactionCreateOneWithoutQuoteInput!
+  technician: ProfileCreateOneWithoutTechnicianInput
+  assistant: ProfileCreateOneInput
+  descriptions: ItemCreateManyInput
+  grossAmount: Float!
+  isDiscounted: Boolean!
+  discountedAmount: Float!
+  netAmount: Float!
+  amountPaid: Float!
+}
+
+input QuoteCreateWithoutTechnicianInput {
+  transaction: TransactionCreateOneWithoutQuoteInput!
+  cashier: UserCreateOneWithoutTransactionsInput!
+  assistant: ProfileCreateOneInput
+  descriptions: ItemCreateManyInput
+  grossAmount: Float!
+  isDiscounted: Boolean!
+  discountedAmount: Float!
+  netAmount: Float!
+  amountPaid: Float!
+}
+
+input QuoteCreateWithoutTransactionInput {
+  cashier: UserCreateOneWithoutTransactionsInput!
+  technician: ProfileCreateOneWithoutTechnicianInput
+  assistant: ProfileCreateOneInput
+  descriptions: ItemCreateManyInput
+  grossAmount: Float!
+  isDiscounted: Boolean!
+  discountedAmount: Float!
+  netAmount: Float!
+  amountPaid: Float!
+}
+
+type QuoteEdge {
+  node: Quote!
+  cursor: String!
+}
+
+enum QuoteOrderByInput {
+  grossAmount_ASC
+  grossAmount_DESC
+  isDiscounted_ASC
+  isDiscounted_DESC
+  discountedAmount_ASC
+  discountedAmount_DESC
+  netAmount_ASC
+  netAmount_DESC
+  amountPaid_ASC
+  amountPaid_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  id_ASC
+  id_DESC
+}
+
+type QuotePreviousValues {
+  grossAmount: Float!
+  isDiscounted: Boolean!
+  discountedAmount: Float!
+  netAmount: Float!
+  amountPaid: Float!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+input QuoteScalarWhereInput {
+  grossAmount: Float
+  grossAmount_not: Float
+  grossAmount_in: [Float!]
+  grossAmount_not_in: [Float!]
+  grossAmount_lt: Float
+  grossAmount_lte: Float
+  grossAmount_gt: Float
+  grossAmount_gte: Float
+  isDiscounted: Boolean
+  isDiscounted_not: Boolean
+  discountedAmount: Float
+  discountedAmount_not: Float
+  discountedAmount_in: [Float!]
+  discountedAmount_not_in: [Float!]
+  discountedAmount_lt: Float
+  discountedAmount_lte: Float
+  discountedAmount_gt: Float
+  discountedAmount_gte: Float
+  netAmount: Float
+  netAmount_not: Float
+  netAmount_in: [Float!]
+  netAmount_not_in: [Float!]
+  netAmount_lt: Float
+  netAmount_lte: Float
+  netAmount_gt: Float
+  netAmount_gte: Float
+  amountPaid: Float
+  amountPaid_not: Float
+  amountPaid_in: [Float!]
+  amountPaid_not_in: [Float!]
+  amountPaid_lt: Float
+  amountPaid_lte: Float
+  amountPaid_gt: Float
+  amountPaid_gte: Float
+  createdAt: DateTime
+  createdAt_not: DateTime
+  createdAt_in: [DateTime!]
+  createdAt_not_in: [DateTime!]
+  createdAt_lt: DateTime
+  createdAt_lte: DateTime
+  createdAt_gt: DateTime
+  createdAt_gte: DateTime
+  updatedAt: DateTime
+  updatedAt_not: DateTime
+  updatedAt_in: [DateTime!]
+  updatedAt_not_in: [DateTime!]
+  updatedAt_lt: DateTime
+  updatedAt_lte: DateTime
+  updatedAt_gt: DateTime
+  updatedAt_gte: DateTime
+  AND: [QuoteScalarWhereInput!]
+  OR: [QuoteScalarWhereInput!]
+  NOT: [QuoteScalarWhereInput!]
+}
+
+type QuoteSubscriptionPayload {
+  mutation: MutationType!
+  node: Quote
+  updatedFields: [String!]
+  previousValues: QuotePreviousValues
+}
+
+input QuoteSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: QuoteWhereInput
+  AND: [QuoteSubscriptionWhereInput!]
+  OR: [QuoteSubscriptionWhereInput!]
+  NOT: [QuoteSubscriptionWhereInput!]
+}
+
+input QuoteUpdateManyDataInput {
+  grossAmount: Float
+  isDiscounted: Boolean
+  discountedAmount: Float
+  netAmount: Float
+  amountPaid: Float
+}
+
+input QuoteUpdateManyInput {
+  create: [QuoteCreateInput!]
+  deleteMany: [QuoteScalarWhereInput!]
+  updateMany: [QuoteUpdateManyWithWhereNestedInput!]
+}
+
+input QuoteUpdateManyMutationInput {
+  grossAmount: Float
+  isDiscounted: Boolean
+  discountedAmount: Float
+  netAmount: Float
+  amountPaid: Float
+}
+
+input QuoteUpdateManyWithoutCashierInput {
+  create: [QuoteCreateWithoutCashierInput!]
+  deleteMany: [QuoteScalarWhereInput!]
+  updateMany: [QuoteUpdateManyWithWhereNestedInput!]
+}
+
+input QuoteUpdateManyWithoutTechnicianInput {
+  create: [QuoteCreateWithoutTechnicianInput!]
+  deleteMany: [QuoteScalarWhereInput!]
+  updateMany: [QuoteUpdateManyWithWhereNestedInput!]
+}
+
+input QuoteUpdateManyWithWhereNestedInput {
+  where: QuoteScalarWhereInput!
+  data: QuoteUpdateManyDataInput!
+}
+
+input QuoteUpdateOneRequiredWithoutTransactionInput {
+  create: QuoteCreateWithoutTransactionInput
+  update: QuoteUpdateWithoutTransactionDataInput
+  upsert: QuoteUpsertWithoutTransactionInput
+}
+
+input QuoteUpdateWithoutTransactionDataInput {
+  cashier: UserUpdateOneRequiredWithoutTransactionsInput
+  technician: ProfileUpdateOneWithoutTechnicianInput
+  assistant: ProfileUpdateOneInput
+  descriptions: ItemUpdateManyInput
+  grossAmount: Float
+  isDiscounted: Boolean
+  discountedAmount: Float
+  netAmount: Float
+  amountPaid: Float
+}
+
+input QuoteUpsertWithoutTransactionInput {
+  update: QuoteUpdateWithoutTransactionDataInput!
+  create: QuoteCreateWithoutTransactionInput!
+}
+
+input QuoteWhereInput {
+  transaction: TransactionWhereInput
+  cashier: UserWhereInput
+  technician: ProfileWhereInput
+  assistant: ProfileWhereInput
+  descriptions_every: ItemWhereInput
+  descriptions_some: ItemWhereInput
+  descriptions_none: ItemWhereInput
+  grossAmount: Float
+  grossAmount_not: Float
+  grossAmount_in: [Float!]
+  grossAmount_not_in: [Float!]
+  grossAmount_lt: Float
+  grossAmount_lte: Float
+  grossAmount_gt: Float
+  grossAmount_gte: Float
+  isDiscounted: Boolean
+  isDiscounted_not: Boolean
+  discountedAmount: Float
+  discountedAmount_not: Float
+  discountedAmount_in: [Float!]
+  discountedAmount_not_in: [Float!]
+  discountedAmount_lt: Float
+  discountedAmount_lte: Float
+  discountedAmount_gt: Float
+  discountedAmount_gte: Float
+  netAmount: Float
+  netAmount_not: Float
+  netAmount_in: [Float!]
+  netAmount_not_in: [Float!]
+  netAmount_lt: Float
+  netAmount_lte: Float
+  netAmount_gt: Float
+  netAmount_gte: Float
+  amountPaid: Float
+  amountPaid_not: Float
+  amountPaid_in: [Float!]
+  amountPaid_not_in: [Float!]
+  amountPaid_lt: Float
+  amountPaid_lte: Float
+  amountPaid_gt: Float
+  amountPaid_gte: Float
+  createdAt: DateTime
+  createdAt_not: DateTime
+  createdAt_in: [DateTime!]
+  createdAt_not_in: [DateTime!]
+  createdAt_lt: DateTime
+  createdAt_lte: DateTime
+  createdAt_gt: DateTime
+  createdAt_gte: DateTime
+  updatedAt: DateTime
+  updatedAt_not: DateTime
+  updatedAt_in: [DateTime!]
+  updatedAt_not_in: [DateTime!]
+  updatedAt_lt: DateTime
+  updatedAt_lte: DateTime
+  updatedAt_gt: DateTime
+  updatedAt_gte: DateTime
+  AND: [QuoteWhereInput!]
+  OR: [QuoteWhereInput!]
+  NOT: [QuoteWhereInput!]
+}
+
+enum Role {
+  SysAdmin
+  Admin
+  Employee
+  User
+}
+
+type Stock {
+  sku: String!
+  product: Product!
+  warehouse: Branch!
+  units: Int!
+  inventory: Inventory
+}
+
+type StockConnection {
+  pageInfo: PageInfo!
+  edges: [StockEdge]!
+  aggregate: AggregateStock!
+}
+
+input StockCreateInput {
+  sku: String!
+  product: ProductCreateOneWithoutStocksInput!
+  warehouse: BranchCreateOneInput!
+  units: Int!
+  inventory: InventoryCreateOneWithoutProductInput
+}
+
+input StockCreateManyWithoutProductInput {
+  create: [StockCreateWithoutProductInput!]
+  connect: [StockWhereUniqueInput!]
+}
+
+input StockCreateOneWithoutInventoryInput {
+  create: StockCreateWithoutInventoryInput
+  connect: StockWhereUniqueInput
+}
+
+input StockCreateWithoutInventoryInput {
+  sku: String!
+  product: ProductCreateOneWithoutStocksInput!
+  warehouse: BranchCreateOneInput!
+  units: Int!
+}
+
+input StockCreateWithoutProductInput {
+  sku: String!
+  warehouse: BranchCreateOneInput!
+  units: Int!
+  inventory: InventoryCreateOneWithoutProductInput
+}
+
+type StockEdge {
+  node: Stock!
+  cursor: String!
+}
+
+enum StockOrderByInput {
+  sku_ASC
+  sku_DESC
+  units_ASC
+  units_DESC
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type StockPreviousValues {
+  sku: String!
+  units: Int!
+}
+
+input StockScalarWhereInput {
+  sku: String
+  sku_not: String
+  sku_in: [String!]
+  sku_not_in: [String!]
+  sku_lt: String
+  sku_lte: String
+  sku_gt: String
+  sku_gte: String
+  sku_contains: String
+  sku_not_contains: String
+  sku_starts_with: String
+  sku_not_starts_with: String
+  sku_ends_with: String
+  sku_not_ends_with: String
+  units: Int
+  units_not: Int
+  units_in: [Int!]
+  units_not_in: [Int!]
+  units_lt: Int
+  units_lte: Int
+  units_gt: Int
+  units_gte: Int
+  AND: [StockScalarWhereInput!]
+  OR: [StockScalarWhereInput!]
+  NOT: [StockScalarWhereInput!]
+}
+
+type StockSubscriptionPayload {
+  mutation: MutationType!
+  node: Stock
+  updatedFields: [String!]
+  previousValues: StockPreviousValues
+}
+
+input StockSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: StockWhereInput
+  AND: [StockSubscriptionWhereInput!]
+  OR: [StockSubscriptionWhereInput!]
+  NOT: [StockSubscriptionWhereInput!]
+}
+
+input StockUpdateInput {
+  sku: String
+  product: ProductUpdateOneRequiredWithoutStocksInput
+  warehouse: BranchUpdateOneRequiredInput
+  units: Int
+  inventory: InventoryUpdateOneWithoutProductInput
+}
+
+input StockUpdateManyDataInput {
+  sku: String
+  units: Int
+}
+
+input StockUpdateManyMutationInput {
+  sku: String
+  units: Int
+}
+
+input StockUpdateManyWithoutProductInput {
+  create: [StockCreateWithoutProductInput!]
+  delete: [StockWhereUniqueInput!]
+  connect: [StockWhereUniqueInput!]
+  set: [StockWhereUniqueInput!]
+  disconnect: [StockWhereUniqueInput!]
+  update: [StockUpdateWithWhereUniqueWithoutProductInput!]
+  upsert: [StockUpsertWithWhereUniqueWithoutProductInput!]
+  deleteMany: [StockScalarWhereInput!]
+  updateMany: [StockUpdateManyWithWhereNestedInput!]
+}
+
+input StockUpdateManyWithWhereNestedInput {
+  where: StockScalarWhereInput!
+  data: StockUpdateManyDataInput!
+}
+
+input StockUpdateWithoutProductDataInput {
+  sku: String
+  warehouse: BranchUpdateOneRequiredInput
+  units: Int
+  inventory: InventoryUpdateOneWithoutProductInput
+}
+
+input StockUpdateWithWhereUniqueWithoutProductInput {
+  where: StockWhereUniqueInput!
+  data: StockUpdateWithoutProductDataInput!
+}
+
+input StockUpsertWithWhereUniqueWithoutProductInput {
+  where: StockWhereUniqueInput!
+  update: StockUpdateWithoutProductDataInput!
+  create: StockCreateWithoutProductInput!
+}
+
+input StockWhereInput {
+  sku: String
+  sku_not: String
+  sku_in: [String!]
+  sku_not_in: [String!]
+  sku_lt: String
+  sku_lte: String
+  sku_gt: String
+  sku_gte: String
+  sku_contains: String
+  sku_not_contains: String
+  sku_starts_with: String
+  sku_not_starts_with: String
+  sku_ends_with: String
+  sku_not_ends_with: String
+  product: ProductWhereInput
+  warehouse: BranchWhereInput
+  units: Int
+  units_not: Int
+  units_in: [Int!]
+  units_not_in: [Int!]
+  units_lt: Int
+  units_lte: Int
+  units_gt: Int
+  units_gte: Int
+  inventory: InventoryWhereInput
+  AND: [StockWhereInput!]
+  OR: [StockWhereInput!]
+  NOT: [StockWhereInput!]
+}
+
+input StockWhereUniqueInput {
+  sku: String
+}
+
+type SubCategory {
+  category: Category!
+  subCatName: String!
+  subCatDesc: String
+  products(where: ProductWhereInput, orderBy: ProductOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Product!]
+}
+
+type SubCategoryConnection {
+  pageInfo: PageInfo!
+  edges: [SubCategoryEdge]!
+  aggregate: AggregateSubCategory!
+}
+
+input SubCategoryCreateInput {
+  category: CategoryCreateOneInput!
+  subCatName: String!
+  subCatDesc: String
+  products: ProductCreateManyWithoutSubCategoryInput
+}
+
+input SubCategoryCreateOneWithoutProductsInput {
+  create: SubCategoryCreateWithoutProductsInput
+  connect: SubCategoryWhereUniqueInput
+}
+
+input SubCategoryCreateWithoutProductsInput {
+  category: CategoryCreateOneInput!
+  subCatName: String!
+  subCatDesc: String
+}
+
+type SubCategoryEdge {
+  node: SubCategory!
+  cursor: String!
+}
+
+enum SubCategoryOrderByInput {
+  subCatName_ASC
+  subCatName_DESC
+  subCatDesc_ASC
+  subCatDesc_DESC
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type SubCategoryPreviousValues {
+  subCatName: String!
+  subCatDesc: String
+}
+
+type SubCategorySubscriptionPayload {
+  mutation: MutationType!
+  node: SubCategory
+  updatedFields: [String!]
+  previousValues: SubCategoryPreviousValues
+}
+
+input SubCategorySubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: SubCategoryWhereInput
+  AND: [SubCategorySubscriptionWhereInput!]
+  OR: [SubCategorySubscriptionWhereInput!]
+  NOT: [SubCategorySubscriptionWhereInput!]
+}
+
+input SubCategoryUpdateInput {
+  category: CategoryUpdateOneRequiredInput
+  subCatName: String
+  subCatDesc: String
+  products: ProductUpdateManyWithoutSubCategoryInput
+}
+
+input SubCategoryUpdateManyMutationInput {
+  subCatName: String
+  subCatDesc: String
+}
+
+input SubCategoryUpdateOneWithoutProductsInput {
+  create: SubCategoryCreateWithoutProductsInput
+  update: SubCategoryUpdateWithoutProductsDataInput
+  upsert: SubCategoryUpsertWithoutProductsInput
+  delete: Boolean
+  disconnect: Boolean
+  connect: SubCategoryWhereUniqueInput
+}
+
+input SubCategoryUpdateWithoutProductsDataInput {
+  category: CategoryUpdateOneRequiredInput
+  subCatName: String
+  subCatDesc: String
+}
+
+input SubCategoryUpsertWithoutProductsInput {
+  update: SubCategoryUpdateWithoutProductsDataInput!
+  create: SubCategoryCreateWithoutProductsInput!
+}
+
+input SubCategoryWhereInput {
+  category: CategoryWhereInput
+  subCatName: String
+  subCatName_not: String
+  subCatName_in: [String!]
+  subCatName_not_in: [String!]
+  subCatName_lt: String
+  subCatName_lte: String
+  subCatName_gt: String
+  subCatName_gte: String
+  subCatName_contains: String
+  subCatName_not_contains: String
+  subCatName_starts_with: String
+  subCatName_not_starts_with: String
+  subCatName_ends_with: String
+  subCatName_not_ends_with: String
+  subCatDesc: String
+  subCatDesc_not: String
+  subCatDesc_in: [String!]
+  subCatDesc_not_in: [String!]
+  subCatDesc_lt: String
+  subCatDesc_lte: String
+  subCatDesc_gt: String
+  subCatDesc_gte: String
+  subCatDesc_contains: String
+  subCatDesc_not_contains: String
+  subCatDesc_starts_with: String
+  subCatDesc_not_starts_with: String
+  subCatDesc_ends_with: String
+  subCatDesc_not_ends_with: String
+  products_every: ProductWhereInput
+  products_some: ProductWhereInput
+  products_none: ProductWhereInput
+  AND: [SubCategoryWhereInput!]
+  OR: [SubCategoryWhereInput!]
+  NOT: [SubCategoryWhereInput!]
+}
+
+input SubCategoryWhereUniqueInput {
+  subCatName: String
+}
+
 type Subscription {
+  address(where: AddressSubscriptionWhereInput): AddressSubscriptionPayload
+  attribute(where: AttributeSubscriptionWhereInput): AttributeSubscriptionPayload
+  branch(where: BranchSubscriptionWhereInput): BranchSubscriptionPayload
+  brand(where: BrandSubscriptionWhereInput): BrandSubscriptionPayload
+  category(where: CategorySubscriptionWhereInput): CategorySubscriptionPayload
+  company(where: CompanySubscriptionWhereInput): CompanySubscriptionPayload
+  contactInfo(where: ContactInfoSubscriptionWhereInput): ContactInfoSubscriptionPayload
+  delivery(where: DeliverySubscriptionWhereInput): DeliverySubscriptionPayload
+  file(where: FileSubscriptionWhereInput): FileSubscriptionPayload
+  inventory(where: InventorySubscriptionWhereInput): InventorySubscriptionPayload
+  item(where: ItemSubscriptionWhereInput): ItemSubscriptionPayload
+  log(where: LogSubscriptionWhereInput): LogSubscriptionPayload
+  order(where: OrderSubscriptionWhereInput): OrderSubscriptionPayload
+  product(where: ProductSubscriptionWhereInput): ProductSubscriptionPayload
+  productSrp(where: ProductSrpSubscriptionWhereInput): ProductSrpSubscriptionPayload
+  profile(where: ProfileSubscriptionWhereInput): ProfileSubscriptionPayload
+  purchasePrice(where: PurchasePriceSubscriptionWhereInput): PurchasePriceSubscriptionPayload
+  qRCode(where: QRCodeSubscriptionWhereInput): QRCodeSubscriptionPayload
+  quote(where: QuoteSubscriptionWhereInput): QuoteSubscriptionPayload
+  stock(where: StockSubscriptionWhereInput): StockSubscriptionPayload
+  subCategory(where: SubCategorySubscriptionWhereInput): SubCategorySubscriptionPayload
+  transaction(where: TransactionSubscriptionWhereInput): TransactionSubscriptionPayload
   user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
+}
+
+type Transaction {
+  id: ID!
+  type: TransactionType!
+  refNo: Transaction
+  receiptNo: Int!
+  order: Order
+  quote: Quote!
+  isPaid: Boolean!
+  balance: Float!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type TransactionConnection {
+  pageInfo: PageInfo!
+  edges: [TransactionEdge]!
+  aggregate: AggregateTransaction!
+}
+
+input TransactionCreateInput {
+  type: TransactionType!
+  refNo: TransactionCreateOneInput
+  receiptNo: Int!
+  order: OrderCreateOneWithoutTransactionInput
+  quote: QuoteCreateOneWithoutTransactionInput!
+  isPaid: Boolean!
+  balance: Float!
+}
+
+input TransactionCreateOneInput {
+  create: TransactionCreateInput
+  connect: TransactionWhereUniqueInput
+}
+
+input TransactionCreateOneWithoutOrderInput {
+  create: TransactionCreateWithoutOrderInput
+  connect: TransactionWhereUniqueInput
+}
+
+input TransactionCreateOneWithoutQuoteInput {
+  create: TransactionCreateWithoutQuoteInput
+  connect: TransactionWhereUniqueInput
+}
+
+input TransactionCreateWithoutOrderInput {
+  type: TransactionType!
+  refNo: TransactionCreateOneInput
+  receiptNo: Int!
+  quote: QuoteCreateOneWithoutTransactionInput!
+  isPaid: Boolean!
+  balance: Float!
+}
+
+input TransactionCreateWithoutQuoteInput {
+  type: TransactionType!
+  refNo: TransactionCreateOneInput
+  receiptNo: Int!
+  order: OrderCreateOneWithoutTransactionInput
+  isPaid: Boolean!
+  balance: Float!
+}
+
+type TransactionEdge {
+  node: Transaction!
+  cursor: String!
+}
+
+enum TransactionOrderByInput {
+  id_ASC
+  id_DESC
+  type_ASC
+  type_DESC
+  receiptNo_ASC
+  receiptNo_DESC
+  isPaid_ASC
+  isPaid_DESC
+  balance_ASC
+  balance_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type TransactionPreviousValues {
+  id: ID!
+  type: TransactionType!
+  receiptNo: Int!
+  isPaid: Boolean!
+  balance: Float!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type TransactionSubscriptionPayload {
+  mutation: MutationType!
+  node: Transaction
+  updatedFields: [String!]
+  previousValues: TransactionPreviousValues
+}
+
+input TransactionSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: TransactionWhereInput
+  AND: [TransactionSubscriptionWhereInput!]
+  OR: [TransactionSubscriptionWhereInput!]
+  NOT: [TransactionSubscriptionWhereInput!]
+}
+
+enum TransactionType {
+  Sales
+  Expenses
+}
+
+input TransactionUpdateDataInput {
+  type: TransactionType
+  refNo: TransactionUpdateOneInput
+  receiptNo: Int
+  order: OrderUpdateOneWithoutTransactionInput
+  quote: QuoteUpdateOneRequiredWithoutTransactionInput
+  isPaid: Boolean
+  balance: Float
+}
+
+input TransactionUpdateInput {
+  type: TransactionType
+  refNo: TransactionUpdateOneInput
+  receiptNo: Int
+  order: OrderUpdateOneWithoutTransactionInput
+  quote: QuoteUpdateOneRequiredWithoutTransactionInput
+  isPaid: Boolean
+  balance: Float
+}
+
+input TransactionUpdateManyMutationInput {
+  type: TransactionType
+  receiptNo: Int
+  isPaid: Boolean
+  balance: Float
+}
+
+input TransactionUpdateOneInput {
+  create: TransactionCreateInput
+  update: TransactionUpdateDataInput
+  upsert: TransactionUpsertNestedInput
+  delete: Boolean
+  disconnect: Boolean
+  connect: TransactionWhereUniqueInput
+}
+
+input TransactionUpsertNestedInput {
+  update: TransactionUpdateDataInput!
+  create: TransactionCreateInput!
+}
+
+input TransactionWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  type: TransactionType
+  type_not: TransactionType
+  type_in: [TransactionType!]
+  type_not_in: [TransactionType!]
+  refNo: TransactionWhereInput
+  receiptNo: Int
+  receiptNo_not: Int
+  receiptNo_in: [Int!]
+  receiptNo_not_in: [Int!]
+  receiptNo_lt: Int
+  receiptNo_lte: Int
+  receiptNo_gt: Int
+  receiptNo_gte: Int
+  order: OrderWhereInput
+  quote: QuoteWhereInput
+  isPaid: Boolean
+  isPaid_not: Boolean
+  balance: Float
+  balance_not: Float
+  balance_in: [Float!]
+  balance_not_in: [Float!]
+  balance_lt: Float
+  balance_lte: Float
+  balance_gt: Float
+  balance_gte: Float
+  createdAt: DateTime
+  createdAt_not: DateTime
+  createdAt_in: [DateTime!]
+  createdAt_not_in: [DateTime!]
+  createdAt_lt: DateTime
+  createdAt_lte: DateTime
+  createdAt_gt: DateTime
+  createdAt_gte: DateTime
+  updatedAt: DateTime
+  updatedAt_not: DateTime
+  updatedAt_in: [DateTime!]
+  updatedAt_not_in: [DateTime!]
+  updatedAt_lt: DateTime
+  updatedAt_lte: DateTime
+  updatedAt_gt: DateTime
+  updatedAt_gte: DateTime
+  AND: [TransactionWhereInput!]
+  OR: [TransactionWhereInput!]
+  NOT: [TransactionWhereInput!]
+}
+
+input TransactionWhereUniqueInput {
+  id: ID
 }
 
 type User {
   id: ID!
-  name: String!
+  username: String!
+  password: String!
+  role: Role!
+  profile: Profile!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  transactions(where: QuoteWhereInput, orderBy: QuoteOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Quote!]
 }
 
 type UserConnection {
@@ -62,7 +5303,40 @@ type UserConnection {
 }
 
 input UserCreateInput {
-  name: String!
+  username: String!
+  password: String!
+  role: Role!
+  profile: ProfileCreateOneWithoutLoginInput!
+  transactions: QuoteCreateManyWithoutCashierInput
+}
+
+input UserCreateManyInput {
+  create: [UserCreateInput!]
+  connect: [UserWhereUniqueInput!]
+}
+
+input UserCreateOneWithoutProfileInput {
+  create: UserCreateWithoutProfileInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateOneWithoutTransactionsInput {
+  create: UserCreateWithoutTransactionsInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateWithoutProfileInput {
+  username: String!
+  password: String!
+  role: Role!
+  transactions: QuoteCreateManyWithoutCashierInput
+}
+
+input UserCreateWithoutTransactionsInput {
+  username: String!
+  password: String!
+  role: Role!
+  profile: ProfileCreateOneWithoutLoginInput!
 }
 
 type UserEdge {
@@ -73,8 +5347,12 @@ type UserEdge {
 enum UserOrderByInput {
   id_ASC
   id_DESC
-  name_ASC
-  name_DESC
+  username_ASC
+  username_DESC
+  password_ASC
+  password_DESC
+  role_ASC
+  role_DESC
   createdAt_ASC
   createdAt_DESC
   updatedAt_ASC
@@ -83,7 +5361,11 @@ enum UserOrderByInput {
 
 type UserPreviousValues {
   id: ID!
-  name: String!
+  username: String!
+  password: String!
+  role: Role!
+  createdAt: DateTime!
+  updatedAt: DateTime!
 }
 
 type UserSubscriptionPayload {
@@ -105,11 +5387,57 @@ input UserSubscriptionWhereInput {
 }
 
 input UserUpdateInput {
-  name: String
+  username: String
+  password: String
+  role: Role
+  profile: ProfileUpdateOneRequiredWithoutLoginInput
+  transactions: QuoteUpdateManyWithoutCashierInput
 }
 
 input UserUpdateManyMutationInput {
-  name: String
+  username: String
+  password: String
+  role: Role
+}
+
+input UserUpdateOneRequiredWithoutTransactionsInput {
+  create: UserCreateWithoutTransactionsInput
+  update: UserUpdateWithoutTransactionsDataInput
+  upsert: UserUpsertWithoutTransactionsInput
+  connect: UserWhereUniqueInput
+}
+
+input UserUpdateOneWithoutProfileInput {
+  create: UserCreateWithoutProfileInput
+  update: UserUpdateWithoutProfileDataInput
+  upsert: UserUpsertWithoutProfileInput
+  delete: Boolean
+  disconnect: Boolean
+  connect: UserWhereUniqueInput
+}
+
+input UserUpdateWithoutProfileDataInput {
+  username: String
+  password: String
+  role: Role
+  transactions: QuoteUpdateManyWithoutCashierInput
+}
+
+input UserUpdateWithoutTransactionsDataInput {
+  username: String
+  password: String
+  role: Role
+  profile: ProfileUpdateOneRequiredWithoutLoginInput
+}
+
+input UserUpsertWithoutProfileInput {
+  update: UserUpdateWithoutProfileDataInput!
+  create: UserCreateWithoutProfileInput!
+}
+
+input UserUpsertWithoutTransactionsInput {
+  update: UserUpdateWithoutTransactionsDataInput!
+  create: UserCreateWithoutTransactionsInput!
 }
 
 input UserWhereInput {
@@ -127,20 +5455,58 @@ input UserWhereInput {
   id_not_starts_with: ID
   id_ends_with: ID
   id_not_ends_with: ID
-  name: String
-  name_not: String
-  name_in: [String!]
-  name_not_in: [String!]
-  name_lt: String
-  name_lte: String
-  name_gt: String
-  name_gte: String
-  name_contains: String
-  name_not_contains: String
-  name_starts_with: String
-  name_not_starts_with: String
-  name_ends_with: String
-  name_not_ends_with: String
+  username: String
+  username_not: String
+  username_in: [String!]
+  username_not_in: [String!]
+  username_lt: String
+  username_lte: String
+  username_gt: String
+  username_gte: String
+  username_contains: String
+  username_not_contains: String
+  username_starts_with: String
+  username_not_starts_with: String
+  username_ends_with: String
+  username_not_ends_with: String
+  password: String
+  password_not: String
+  password_in: [String!]
+  password_not_in: [String!]
+  password_lt: String
+  password_lte: String
+  password_gt: String
+  password_gte: String
+  password_contains: String
+  password_not_contains: String
+  password_starts_with: String
+  password_not_starts_with: String
+  password_ends_with: String
+  password_not_ends_with: String
+  role: Role
+  role_not: Role
+  role_in: [Role!]
+  role_not_in: [Role!]
+  profile: ProfileWhereInput
+  createdAt: DateTime
+  createdAt_not: DateTime
+  createdAt_in: [DateTime!]
+  createdAt_not_in: [DateTime!]
+  createdAt_lt: DateTime
+  createdAt_lte: DateTime
+  createdAt_gt: DateTime
+  createdAt_gte: DateTime
+  updatedAt: DateTime
+  updatedAt_not: DateTime
+  updatedAt_in: [DateTime!]
+  updatedAt_not_in: [DateTime!]
+  updatedAt_lt: DateTime
+  updatedAt_lte: DateTime
+  updatedAt_gt: DateTime
+  updatedAt_gte: DateTime
+  transactions_every: QuoteWhereInput
+  transactions_some: QuoteWhereInput
+  transactions_none: QuoteWhereInput
   AND: [UserWhereInput!]
   OR: [UserWhereInput!]
   NOT: [UserWhereInput!]
@@ -148,6 +5514,7 @@ input UserWhereInput {
 
 input UserWhereUniqueInput {
   id: ID
+  username: String
 }
 `
       }
