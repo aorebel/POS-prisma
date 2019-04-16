@@ -1,12 +1,12 @@
 type User {
   id: ID! @unique
-  username: String! @unique
+  name: String! @unique
   password: String!
   role:Role!
-  profile: Profile!
+  profile: Profile  
+  transactions: [Quote!]
   createdAt: DateTime!
   updatedAt:DateTime!
-  transactions: [Quote!]!
 }
 
 type Profile {
@@ -22,13 +22,14 @@ type Profile {
 	employer: Company!
 	address: Address
 	station: Branch!
-	files: [File!]!
-	logs:[Log!]!
-	technician: [Quote!]! @relation(name:"TransactionTechnician")
-	assistant: [Quote!]! @relation(name:"TransactionAssistant")
+	files: [File]
+	logs: [Log]
+	technicians: [Quote] @relation(name:"TransactionTechnician")
+	assistants: [Quote] @relation(name:"TransactionAssistant")
 }
 
 type ContactInfo {
+	id: ID! @unique
 	owner: Profile!
 	email: String! @unique
 	primaryTel: String
@@ -38,16 +39,18 @@ type ContactInfo {
 }
 
 type Company {
+	id: ID! @unique
 	companyName: String! @unique
 	about: String
-	branches: [Branch!]!	
-	clients: Company @relation(name:"ExternalRelations")
-	suppliers: Company @relation(name:"ExternalRelations")	
-	sender: [Delivery!]! @relation(name:"DeliverySender")
-	receiver: [Delivery!]! @relation(name:"DeliveryReceiver")
+	branches: [Branch]	
+	clients: [Company] @relation(name:"ExternalRelations")
+	suppliers: [Company] @relation(name:"ExternalRelations")	
+	sender: [Delivery] @relation(name:"DeliverySender")
+	receiver: [Delivery] @relation(name:"DeliveryReceiver")
 }
 
 type Address {
+	id: ID! @unique
 	address1: String!
 	address2: String
 	barangay: String!
@@ -57,6 +60,7 @@ type Address {
 }
 
 type Branch {
+	id: ID! @unique
 	owner: Company!
 	type: BranchType!
 	branchName: String! @unique
@@ -66,7 +70,8 @@ type Branch {
 }
 
 type Log {
-	user: [User!]!
+	id: ID! @unique
+	user: User
 	sourceTable: String!
 	sourceId: String!
 	actionNo: String!
@@ -80,13 +85,17 @@ type Log {
 }
 
 type File {
+	id: ID! @unique
 	fileType: String!
 	fileName: String!
 	fileSize: String!
 	filePath: String!
+	profiles: [Profile]
+	products: [Product]
 }
 
 type Product {
+	id: ID! @unique
 	type: ProductType!
 	category: Category!
 	subCategory: SubCategory
@@ -99,49 +108,58 @@ type Product {
 	slug: String! @unique
 	srp: ProductSrp!
 	purchasePrice: PurchasePrice!
-	stocks: [Stock!]!
+	stocks: [Stock]
 }
 
 type Attribute {
+	id: ID! @unique
 	product: Product!
 	attributeName: AttributeType!
 	value: String!	
 }
 
 type Category {
+	id: ID! @unique
 	catName: String! @unique
-	catDesc: String
-	products: [Product!]!
+	catDesc: String	
+	subcategories: [SubCategory]
+	products: [Product]
 }
 
 type SubCategory {
+	id: ID! @unique
 	category: Category!
 	subCatName: String! @unique
 	subCatDesc: String
-	products: [Product!]!
+	products: [Product]
 }
 
 type Brand {
+	id: ID! @unique
 	brandName: String! @unique
 	manufacturer: String
-	products: [Product!]!
+	products: [Product]
 }
 
 type QRCode {
+	id: ID! @unique
 	qrcode: String! @unique
 	product: Product!	
 }
 
 type ProductSrp {
+	id: ID! @unique
 	product: Product!
 	price: Float!
 }
 type PurchasePrice {
+	id: ID! @unique
 	product: Product!
 	price: Float!
 }
 
 type Stock {
+	id: ID! @unique
 	sku: String! @unique
 	product: Product!
 	warehouse: Branch!
@@ -150,8 +168,9 @@ type Stock {
 }
 
 type Inventory {
+	id: ID! @unique
 	product: Stock!
-	items: [Item!]!
+	items: [Item]
 }
 
 type Transaction {
@@ -168,6 +187,7 @@ type Transaction {
 }
 
 type Order {
+	id: ID! @unique
 	transaction: Transaction!
 	delivery: Delivery!
 	status: OrderStatus!
@@ -175,6 +195,7 @@ type Order {
 }
 
 type Delivery {
+	id: ID! @unique
 	orders: Order!
 	sender: Company! @relation(name:"DeliverySender")
 	receiver: Company! @relation(name:"DeliveryReceiver")
@@ -182,11 +203,12 @@ type Delivery {
 }
 
 type Quote {
+	id: ID! @unique
 	transaction: Transaction!
 	cashier: User! 
 	technician: Profile @relation(name:"TransactionTechnician")
 	assistant: Profile @relation(name:"TransactionsAssistant")
-	descriptions: [Item!]!
+	descriptions: [Item!]
 	grossAmount: Float!
 	isDiscounted: Boolean!
 	discountedAmount: Float!
@@ -197,6 +219,7 @@ type Quote {
 }
 
 type Item {
+	id: ID! @unique
 	transaction: Transaction!
 	inventory: Inventory!
 	srp: ProductSrp
